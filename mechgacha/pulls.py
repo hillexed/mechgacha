@@ -134,7 +134,8 @@ async def pull_command(message, message_body):
         player_mechs = get_user_current_mechs(playerdata)
 
         if not player_has_mech(mech_to_pull_from, playerdata):
-            await message.channel.send(f"Ya dont have that mech yet! Ya got: {','.join(player_mechs)}")
+            await message.channel.send(f"Ya dont have that mech yet! Ya got these mechs: {','.join(player_mechs)}")
+            return
 
         new_item = pull(mech_to_pull_from,1)[0]
 
