@@ -1,0 +1,13 @@
+version: "1"
+
+services:
+  mechgacha:
+    image: "mechgacha"
+    environment:
+      - TOKEN=...
+    volumes:
+      - db_data:/root/mechgacha/db_data
+
+volumes:
+    db_data:
+        external: true
