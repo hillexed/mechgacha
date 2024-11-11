@@ -14,14 +14,14 @@ def get_all_users():
 def regenerate_everyones_pulls(ratoon_pulls = True, mech_pulls = True):
     users = get_all_users()
     for user in users:
-        playerdata = get_playerdata(username)
+        playerdata = get_playerdata(user)
         if playerdata["ratoon_pulls"] < max_ratoon_pulls:
             playerdata["ratoon_pulls"] += 0.5 # this is a very silly way to make it one every two weeks but I like silly
 
         if playerdata["mech_pulls"] < max_mech_pulls:
             playerdata["mech_pulls"] += 4
 
-        db.set_player_data(username, playerdata)
+        db.set_player_data(user, playerdata)
 
 def get_playerdata(username):
     playerdata = db.get_player_data(username)

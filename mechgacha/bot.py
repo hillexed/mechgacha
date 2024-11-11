@@ -63,29 +63,25 @@ async def handle_commands(message):
 
         message_body = get_command_body(message, "inventory")
 
-        if user_is_admin(message) and len(message_body) > 0 and "regenerate" in message_body:
-            if "<@" in message_body and ">" in message_body:
-                atted_userID = message_body.split("<@")[1].split(">")[0]
-                db.delete_inventory_data(atted_userID)
-                await message.channel.send("Their inventory is now:"+ inventory.represent_inventory_as_string(atted_userID))
-                return
-            return await message.channel.send("on a new line, @ someone.")
+        #if user_is_admin(message) and len(message_body) > 0 and "regenerate" in message_body:
+        #    if "<@" in message_body and ">" in message_body:
+        #        atted_userID = message_body.split("<@")[1].split(">")[0]
+        #        db.delete_inventory_data(atted_userID)
+        #        await message.channel.send("Their inventory is now:"+ inventory.represent_inventory_as_string(atted_userID))
+        #        return
+        #    return await message.channel.send("on a new line, @ someone.")
             
-        if user_is_admin(message) and len(message_body) > 0 and "debug_gift" in message_body:
-            if "<@" in message_body and ">" in message_body:
-                atted_userID = message_body.split("<@")[1].split(">")[0]
-                inventory.give_random_gift(atted_userID)
-                return
-            else:
-                inventory.give_random_gift(userID)
+        #if user_is_admin(message) and len(message_body) > 0 and "debug_gift" in message_body:
+        #    if "<@" in message_body and ">" in message_body:
+        #        atted_userID = message_body.split("<@")[1].split(">")[0]
+        #        inventory.give_random_gift(atted_userID)
+        #        return
+        #    else:
+        #        inventory.give_random_gift(userID)
 
-        if user_is_admin(message) and len(message_body) > 0 and "give_gift_to_all_empty" in message_body:
-            inventory.give_gift_to_empty_inventories()
-            return await message.channel.send("Everyone with an empty inventory got a new gift!")
-
-        if user_is_admin(message) and len(message_body) > 0 and "give_gift_to_everyone" in message_body:
-            inventory.give_gift_to_everyone()
-            return await message.channel.send("Everyone with an inventory got a new gift!")
+        if user_is_admin(message) and len(message_body) > 0 and "regen_everyone" in message_body:
+            regeneration.regenerate_everyones_pulls()
+            return await message.channel.send("Everyone's pulls have regenerated!")
 
         await inventory.inventory_command(message, get_command_body(message, "inventory"), client)
 
