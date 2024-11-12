@@ -52,9 +52,8 @@ def give_random_gift(userid):
 
 
 def represent_inventory_as_string(username, page=0):
-    inventory = compute_inventory(username)
 
-    if len(inventory) == 0:
+    if inventory is None or len(inventory) == 0:
         return "**You have nothing in your inventory!** \n Use m!pull ratoon to get some mechs from Ratoon's gachapon, then m!pull <mech> to pull from their list!"
 
     prefix = "**Your inventory:**\n"
@@ -92,7 +91,14 @@ async def inventory_command(message, message_body, client):
     except:
         page = 0
 
-    return await message.channel.send(represent_inventory_as_string(userid, page))
+    inventory = compute_inventory(userid)
+
+    if inventory is None:
+        # player has no inventory!
+        add_new_player(userid)
+        inventory = compute_inventory(userid)
+
+    return await message.channel.send(represent_inventory_as_string(inventory, page))
 
 
 def get_first_item_of_type(userid, type):
