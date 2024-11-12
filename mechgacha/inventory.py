@@ -49,7 +49,7 @@ def give_random_gift(userid):
     logging.info(f"Gave userid {userid} a random gift")
 
 
-def represent_inventory_as_string(username, page=0):
+def represent_inventory_as_string(inventory, page=0):
 
     if inventory is None or len(inventory) == 0:
         return "**You have nothing in your inventory!** \n Use m!pull ratoon to get some mechs from Ratoon's gachapon, then m!pull <mech> to pull from their list!"
