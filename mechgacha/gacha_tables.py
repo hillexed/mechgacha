@@ -246,17 +246,52 @@ vel = Mech('vel',
 ]
 )
 
+amutecrypt = Mech('amutecrypt', 
+[
+    PowerItem("New Killer Star","A caged sun, kept behind some thick shielding"),
+    LegsItem("The Awesome Foursome","4 heavy, industrial legs, designed for defence and redundancy"),
+    ArmsItem("I Thought About The Arm-y","Two industrial robotic arms"),
+    BodyItem("! (The Part Formerly Known As)","A stout core with the arms mounted high up, like Atlas from Portal."),
+    CockpitItem("Okayish Computer","An AMD CPU hanging like a pair of fluffy dice would"),
+    Item("Thrill The DJ","a big set of speakers", ["back"]),
+    Item("Shellshot","A launcher capable of firing adhesive, caltrops and other traps", ["weapon"]),
+    Item("Thunderbirds Are Coming Out","Makes the mech look like a puppet", ["cosmetic"]),
+    Item("Disk Changer","Allows you to mount 3 power sources, but only one can be active at a time", stars=3),
+    Item("Parallel Player","Allows you to mount 3 power sources, **and all can be active at once**.",stars=5)
+]
+)
+
+intergalacticsky = Mech('intergalacticsky', 
+[
+    PowerItem("Microfission cell","A fairly small but notoriously temperamental setup, smaller than the batteries it charges. Must be shut down in combat and environmentally hazardous situations."),
+    LegsItem("Needlepoint contacts","Auto-balancing limbs designed to minimize environmental damage"),
+    ArmsItem("Augmenting Manipulators","A set of nimble, thin arms with a variety of ways to grasp and manipulate objects, ranging from the size of a cat to a small tree"),
+    BodyItem("Gyroscopic Pod","A fairly stable structure built to contain pilot, sensitive instruments, and any samples as securely as possible within a larger structure."),
+    CockpitItem("Stargazer's Instruments","A variety of measurement devices to assist in your endeavors"),
+    Item("Solar Fins","Large, retractable solar panels used as supplementary power support", ["back"]),
+    Item("Mistcutter","A sample cutting tool able to use water or grit, depending on environmental availability.", ["weapon"]),
+    Item("TEETH.","", ["cosmetic"],stars=3),
+    BodyPlanItem("Surveyor’s Adaptation","By sacrificing limb mobility (or consolidating them), the mech now can withstand over 16,000 PSI at the weakest point. (Not tested against damage from artillery, temperatures over 900C, or twisting force.)", {"legs": 1}),
+    Item("The Fishbowl","A mostly spherical core built of transparent, UV-protective material. May be rendered one-way.",["body"]),
+    Item("Paddleboards","Flexible fins originally made for movement in shallow waters. Can also be used for land maneuvers, to some effect.",["legs"]),
+    Item("Noodlers","Limbs made specifically for catching large, predatory fish.",["arms"]),
+    Item("Bare Joints","Through the power of easily-replaced and cleaned parts, the joints on limbs are now bare!",["cosmetic"]),
+    Item("Fogflare","A heavily modified and overclocked cutting tool able to use water or grit, depending on environmental availability. Dubiously legal.",["weapon"], stars=5),
+]
+)
+
+
+
 
 body_plans = [
 BodyPlanItem("Standard Bipedal","",{"leg": 2, "arm": 2, "power": 1}),
-
 ]
 
 
 
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
-all_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel)
+all_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky)
 
 def check_gacha_table():
     for mech in all_mechs:
