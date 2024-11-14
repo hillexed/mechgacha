@@ -137,6 +137,10 @@ async def pull_command(message, message_body):
 
     elif can_pull(playerdata):
         mech_to_pull_from = choose_mech_by_name(all_mechs, requested_mech)
+
+        if mech_to_pull_from is None:
+            await message.channel.send(f"I don't know that mech. Maybe ya typoed their name")
+
         player_mechs = get_user_current_mechs(playerdata)
 
         if not player_has_mech(mech_to_pull_from, playerdata):

@@ -71,7 +71,7 @@ def represent_inventory_as_string(inventory, page=0):
 
 def format_item(item_data):
 
-    tags_string = f'(Type: {", ".join(item_data["tags"])} )'
+    tags_string = f' (Type: {", ".join(item_data["tags"])})'
     if len(item_data["tags"]) == 0:
         tags_string = ""
 
