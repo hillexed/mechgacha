@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from enum import Enum
 
+partsList = {}
+
 class TagType:
     arm = "arm"
     leg = "leg"
@@ -17,6 +19,7 @@ class Mech:
 
 @dataclass
 class Item:
+    id: str
     name: str
     description: str
     tags:tuple = () # "arm", "leg", etc
@@ -32,10 +35,11 @@ class Item:
                     self.__dict__[name] = tuple(self.__dict__[name])
                 else:
                     raise TypeError(f"The field `{name}` was assigned by `{current_type}` instead of `{field_type}`")
+        partsList.setdefault(self.id, self)
 
     def to_dict(self):
         # convert item into a dict, for saving in the DB
-        return {"name": self.name, "description": self.description, "tags": self.tags, "stars": self.stars, "extradata": self.extradata}
+        return {"id": self.id, "name": self.name, "description": self.description, "tags": self.tags, "stars": self.stars, "extradata": self.extradata}
 
 # these are just helper functions
 def itemHelperFunction(requiredTag):
@@ -52,12 +56,12 @@ ArmsItem = itemHelperFunction("arms")
 BodyItem = itemHelperFunction("body")
 CockpitItem = itemHelperFunction("cockpit")
 
-def BodyPlanItem(name, description, bodyplan, stars=1):
+def BodyPlanItem(id, name, description, bodyplan, stars=1):
 
     #body plan is a dict of {tagName: number}
 
     # todo: expand this out
-    item = Item(name, description)
+    item = Item(id, name, description)
     item.bonusdata = bodyplan
     item.tags = ["bodyplan"]
     return item

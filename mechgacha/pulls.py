@@ -87,7 +87,7 @@ def add_new_mech(username, playerdata, new_mech):
 def add_to_inventory(new_item, username):
 
     inv = db.get_inventory_data(username)
-    inv.append(new_item.to_dict())
+    inv.append(new_item.id)
     print(inv)
     db.set_inventory_data(username, inv)
 
