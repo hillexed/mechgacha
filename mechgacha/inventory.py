@@ -76,7 +76,7 @@ def format_item(item_id):
 
     item_data = all_parts_list[item_id]
     # print(type(item_data))
-    tags_string = f'(Type: {", ".join(item_data.tags)} )'
+    tags_string = f' (Type: {", ".join(item_data.tags)})'
     if len(item_data.tags) == 0:
         tags_string = ""
 
