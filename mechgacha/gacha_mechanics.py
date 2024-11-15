@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from enum import Enum
 
-partsList = {}
+partsList = {} # populated every time a new Item() is created
 
 class TagType:
     arm = "arm"
@@ -35,7 +35,6 @@ class Item:
                     self.__dict__[name] = tuple(self.__dict__[name])
                 else:
                     raise TypeError(f"The field `{name}` was assigned by `{current_type}` instead of `{field_type}`")
-        partsList.setdefault(self.id, self)
 
     def to_dict(self):
         # convert item into a dict, for saving in the DB

@@ -4,7 +4,7 @@ import random
 import json
 import logging
 
-from gacha_mechanics import partsList 
+from gacha_tables import all_parts_list 
 
 import asyncio
 
@@ -74,7 +74,7 @@ def represent_inventory_as_string(inventory, page=1):
 
 def format_item(item_id):
 
-    item_data = partsList[item_id]
+    item_data = all_parts_list[item_id]
     # print(type(item_data))
     tags_string = f'(Type: {", ".join(item_data.tags)} )'
     if len(item_data.tags) == 0:

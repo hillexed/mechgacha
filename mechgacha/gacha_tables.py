@@ -292,6 +292,23 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 all_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky)
 
+
+all_parts_list = {} # a dict of item id: item
+
+# populate the parts list
+for mech in all_mechs:
+    for item in mech.loot:
+        if item.id in all_parts_list:
+            raise ValueError(f"Two items have the same ID {item.id}!")
+        all_parts_list[item.id] = item
+
+for item in body_plans:
+    all_parts_list[item.id] = item
+
+# done populating all_parts_list
+
+
+
 # update playerdata set data='{"unlocked_mechs":["bee", "oneirocartographer", "hillexed", "styietus", "triangle", "cheshire", "loading", "metanite64", "deric", "syl", "vel", "amutecrypt", "intergalacticsky"], "ratoon_pulls": 0, "mech_pulls":1000}' where name='178116262390398976';
 # update playerdata set data='{"unlocked_mechs":[], "ratoon_pulls": 1000, "mech_pulls":1000}' where name='178116262390398976';
 
