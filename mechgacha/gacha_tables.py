@@ -284,7 +284,6 @@ intergalacticsky = Mech("intergalacticsky",
 
 body_plans = [
 BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power": 1}),
-
 ]
 
 
@@ -292,11 +291,9 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 all_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky)
-# all_mechs = (bee,)
 
 # update playerdata set data='{"unlocked_mechs":["bee", "oneirocartographer", "hillexed", "styietus", "triangle", "cheshire", "loading", "metanite64", "deric", "syl", "vel", "amutecrypt", "intergalacticsky"], "ratoon_pulls": 0, "mech_pulls":1000}' where name='178116262390398976';
 # update playerdata set data='{"unlocked_mechs":[], "ratoon_pulls": 1000, "mech_pulls":1000}' where name='178116262390398976';
-
 
 def check_gacha_table():
     for mech in all_mechs:
