@@ -49,7 +49,7 @@ def give_random_gift(userid):
     logging.info(f"Gave userid {userid} a random gift")
 
 
-def represent_inventory_as_string(inventory, page=0):
+def represent_inventory_as_string(inventory, page=1):
 
     if inventory is None or len(inventory) == 0:
         return "**You have nothing in your inventory!** \n Use m!pull ratoon to get some mechs from Ratoon's gachapon, then m!pull <mech> to pull from their list!"
@@ -57,7 +57,8 @@ def represent_inventory_as_string(inventory, page=0):
     prefix = "**Your inventory:**\n"
 
     # pagination for when inventory gets big
-    page_size = 10
+    page_size = 8
+    page -= 1 #first page should be page 1, not page 0
     items_to_display = inventory[page * page_size : (page+1) * page_size]
 
     if len(inventory) > page_size:
@@ -85,7 +86,10 @@ async def inventory_command(message, message_body, client):
     try:
         page = int(message_body.strip())
     except:
-        page = 0
+        page = 1 # page 1 is the first page
+
+    if page <= 0:
+        return await message.channel.send("There ain't no such page of your inventory")
 
     inventory = compute_inventory(userid)
 
