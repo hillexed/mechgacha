@@ -16,10 +16,10 @@ def regenerate_everyones_pulls(ratoon_pulls = True, mech_pulls = True):
     for user in users:
         playerdata = get_playerdata(user)
         if playerdata["ratoon_pulls"] < max_ratoon_pulls:
-            playerdata["ratoon_pulls"] += 0.5 # this is a very silly way to make it one every two weeks but I like silly
+            playerdata["ratoon_pulls"] += 1/14 # this is a very silly way to make it one full pull every two weeks
 
-        if playerdata["mech_pulls"] < max_mech_pulls:
-            playerdata["mech_pulls"] += 4
+        if playerdata["mech_pulls"] < max_mech_pulls: # one per day
+            playerdata["mech_pulls"] += 1
 
         db.set_player_data(user, playerdata)
 
@@ -35,6 +35,8 @@ def get_playerdata(username):
 def regen_pulls_thread():
 
     while True:
+
+        '''
         # on a monday give everyone a regeneration
 
         # find next monday
@@ -45,9 +47,14 @@ def regen_pulls_thread():
         # compute how long until next midnight
         next_monday_midnight  = datetime.datetime.combine(next_regen_day, datetime.datetime.min.time())
         secs_till_next_monday = (next_monday_midnight - datetime.datetime.now()).total_seconds()
+        '''
         
-        logging.info(f"Sleeping {secs_till_next_monday} seconds until next monday...")
-        time.sleep(secs_till_next_monday)
+        # regen everyone once a day at midnight
+        tomorrow_midnight = datetime.datetime.combine(datetime.datetime.today() + datetime.timedelta(days=1), datetime.datetime.min.time())
+        secs_till_next_day = (tomorrow_midnight - datetime.datetime.now()).total_seconds()
+        
+        logging.info(f"Sleeping {secs_till_next_day} seconds until next midnight...")
+        time.sleep(secs_till_next_day)
         logging.info("Regenerating pulls!")
         regenerate_everyones_pulls()
 

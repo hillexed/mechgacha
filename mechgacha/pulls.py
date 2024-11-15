@@ -115,10 +115,10 @@ async def pull_command(message, message_body):
 
         if len(player_mechs) == 0:
            # player hasn't pulled from ratoon's gacha yet
-           return await message.channel.send(f"\nWelcome! To start getting parts, first use `m!pull ratoon` to get some mechs from Ratoon's gachapon (up to {get_ratoon_pulls(playerdata)} time{'s' if get_ratoon_pulls(playerdata) > 1 else ''}) Then use `m!pull <mech>` to get parts from any mech you have. You have {get_mech_pulls(playerdata)} pulls.")
+           return await message.channel.send(f"\nWelcome! To start getting parts, first use `m!pull ratoon` to get some mechs from Ratoon's gachapon (up to {get_ratoon_pulls(playerdata)} time{'s' if get_ratoon_pulls(playerdata) > 1 else ''}) Then use `m!pull <mech>` to get parts from any mech you have. You have {round(get_mech_pulls(playerdata), 2)} pulls.")
 
         else:
-            return await message.channel.send(f"\nUse m!pull <mech> to pull from their list! You can pull from: {', '.join(player_mechs)}. You have {get_mech_pulls(playerdata)} pulls.\n You can also use `m!pull ratoon` to get some mechs from Ratoon's gachapon. You have {get_ratoon_pulls(playerdata)} pulls from Ratoon's gachapon.")
+            return await message.channel.send(f"\nUse m!pull <mech> to pull from their list! You can pull from: {', '.join(player_mechs)}. You have {round(get_mech_pulls(playerdata), 2)} pulls.\n You can also use `m!pull ratoon` to get some mechs from Ratoon's gachapon. You have {round(get_ratoon_pulls(playerdata),2)} pulls from Ratoon's gachapon.")
 
 
     if requested_mech == "ratoon":
