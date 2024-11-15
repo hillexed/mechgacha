@@ -4,6 +4,8 @@ import random
 import json
 import logging
 
+from gacha_mechanics import partsList 
+
 import asyncio
 
 def add_new_player(userid):
@@ -68,15 +70,17 @@ def represent_inventory_as_string(inventory, page=1):
         return prefix + "Empty!"
 
 
-    return prefix + '\n'.join([format_item(item_data) for item_data in items_to_display])
+    return prefix + '\n'.join([format_item(item_id) for item_id in items_to_display])
 
-def format_item(item_data):
+def format_item(item_id):
 
-    tags_string = f' (Type: {", ".join(item_data["tags"])})'
-    if len(item_data["tags"]) == 0:
+    item_data = partsList[item_id]
+    # print(type(item_data))
+    tags_string = f'(Type: {", ".join(item_data.tags)} )'
+    if len(item_data.tags) == 0:
         tags_string = ""
 
-    return f'- {item_data["name"]} {"★" * item_data["stars"]} - {item_data["description"]}{tags_string}'
+    return f'- {item_data.name} {"★" * item_data.stars} - {item_data.description}{tags_string}'
 
 async def inventory_command(message, message_body, client):
     userid = message.author.id

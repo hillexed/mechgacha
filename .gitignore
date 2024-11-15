@@ -4,3 +4,6 @@ glolf/.env
 db_data/*
 
 glolf/db_data/*
+venv
+*.sqlite*
+*.sqlite
