@@ -166,14 +166,14 @@ cheshire = Mech("cheshire",
 
 loading = Mech("loading", 
 [
-    PowerItem("Kinetic Recycler","A kinetic generator powered by the grounded movement of the mech"),
-    LegsItem("Loading's XR2","Long double jointed legs that give the mech a low crouching position while stationary, but a long stride"),
-    ArmsItem("Knuckle Draggers","Long and delicate arms twice as long as the torso it is attached to"),
-    BodyItem("Elongated Segment Frame","Thin segmented spine that allows for maximum flexibility and aerodynamics"),
-    CockpitItem("Gyrobomber","A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts"),
-    Item("Big Jacket","A jacket that is two sizes too large. It flows in the wind, increasing evasion the more the mech moves.", ["back", "cosmetic"]),
-    Item("Hook Lash","A lash that looks not unlike the skyhook from Bioshock. it applies a random debuff on hit", ["weapon"]),
-    Item("Big Mechs Jacket","A long flowing jacket based on the Mechs bomber jacket that flows behind the mech as it moves obscuring the body. It increases evasion the more the mech moves.", ["back", "cosmetic"], stars=5),
+    PowerItem("loading:kinetic_recycler","Kinetic Recycler","A kinetic generator powered by the grounded movement of the mech"),
+    LegsItem("loading:xr2","Loading's XR2'","Long double jointed legs that give the mech a low crouching position while stationary, but a long stride"),
+    ArmsItem("loading:knuckle_draggers","Knuckle Draggers","Long and delicate arms twice as long as the torso it is attached to"),
+    BodyItem("loading:elongated_segment_frame","Elongated Segment Frame","Thin segmented spine that allows for maximum flexibility and aerodynamics"),
+    CockpitItem("loading:gyrobomber","Gyrobomber","A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts"),
+    Item("loading:big_jacket","Big Jacket","A jacket that is two sizes too large. It flows in the wind, increasing evasion the more the mech moves.", ["back", "cosmetic"]),
+    Item("loading:hook_lash","Hook Lash","A lash that looks not unlike the skyhook from Bioshock. it applies a random debuff on hit", ["weapon"]),
+    Item("loading:big_mechs_jacket","Big Mechs Jacket","A long flowing jacket based on the Mechs bomber jacket that flows behind the mech as it moves obscuring the body. It increases evasion the more the mech moves.", ["back", "cosmetic"], stars=5),
 ]
 )
 
@@ -291,7 +291,12 @@ BodyPlanItem("ratoon:","Standard Bipedal","",{"leg": 2, "arm": 2, "power": 1}),
 
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
-all_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky)
+all_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel)
+# all_mechs = (bee,)
+
+# update playerdata set data='{"unlocked_mechs":["bee", "oneirocartographer", "hillexed", "styietus", "triangle", "cheshire", "loading", "metanite64", "deric", "syl", "vel"], "ratoon_pulls": 0, "mech_pulls":1000}' where name='178116262390398976';
+# update playerdata set data='{"unlocked_mechs":[], "ratoon_pulls": 1000, "mech_pulls":1000}' where name='178116262390398976';
+
 
 def check_gacha_table():
     for mech in all_mechs:
