@@ -245,37 +245,37 @@ vel = Mech("vel",
 ]
 )
 
-amutecrypt = Mech('amutecrypt', 
+amutecrypt = Mech("amutecrypt", 
 [
-    PowerItem("New Killer Star","A caged sun, kept behind some thick shielding"),
-    LegsItem("The Awesome Foursome","4 heavy, industrial legs, designed for defence and redundancy"),
-    ArmsItem("I Thought About The Arm-y","Two industrial robotic arms"),
-    BodyItem("! (The Part Formerly Known As)","A stout core with the arms mounted high up, like Atlas from Portal."),
-    CockpitItem("Okayish Computer","An AMD CPU hanging like a pair of fluffy dice would"),
-    Item("Thrill The DJ","a big set of speakers", ["back"]),
-    Item("Shellshot","A launcher capable of firing adhesive, caltrops and other traps", ["weapon"]),
-    Item("Thunderbirds Are Coming Out","Makes the mech look like a puppet", ["cosmetic"]),
-    Item("Disk Changer","Allows you to mount 3 power sources, but only one can be active at a time", stars=3),
-    Item("Parallel Player","Allows you to mount 3 power sources, **and all can be active at once**.",stars=5)
+    PowerItem("amutecrypt:new_killer_star","New Killer Star","A caged sun, kept behind some thick shielding"),
+    LegsItem("amutecrypt:the_awesome_foursome","The Awesome Foursome","4 heavy, industrial legs, designed for defence and redundancy"),
+    ArmsItem("amutecrypt:i_thought_about_the_army","I Thought About The Arm-y","Two industrial robotic arms"),
+    BodyItem("amutecrypt:the_part_formerly_known_as","! (The Part Formerly Known As)","A stout core with the arms mounted high up, like Atlas from Portal."),
+    CockpitItem("amutecrypt:okayish_computer","Okayish Computer","An AMD CPU hanging like a pair of fluffy dice would"),
+    Item("amutecrypt:thrill_the_dj","Thrill The DJ","a big set of speakers", ["back"]),
+    Item("amutecrypt:shellshot","Shellshot","A launcher capable of firing adhesive, caltrops and other traps", ["weapon"]),
+    Item("amutecrypt:thunderbirds_are_coming_out","Thunderbirds Are Coming Out","Makes the mech look like a puppet", ["cosmetic"]),
+    Item("amutecrypt:disc_changer","Disk Changer","Allows you to mount 3 power sources, but only one can be active at a time", stars=3),
+    Item("amutecrypt:parallel_player","Parallel Player","Allows you to mount 3 power sources, **and all can be active at once**.",stars=5)
 ]
 )
 
-intergalacticsky = Mech('intergalacticsky', 
+intergalacticsky = Mech("intergalacticsky", 
 [
-    PowerItem("Microfission cell","A fairly small but notoriously temperamental setup, smaller than the batteries it charges. Must be shut down in combat and environmentally hazardous situations."),
-    LegsItem("Needlepoint contacts","Auto-balancing limbs designed to minimize environmental damage"),
-    ArmsItem("Augmenting Manipulators","A set of nimble, thin arms with a variety of ways to grasp and manipulate objects, ranging from the size of a cat to a small tree"),
-    BodyItem("Gyroscopic Pod","A fairly stable structure built to contain pilot, sensitive instruments, and any samples as securely as possible within a larger structure."),
-    CockpitItem("Stargazer's Instruments","A variety of measurement devices to assist in your endeavors"),
-    Item("Solar Fins","Large, retractable solar panels used as supplementary power support", ["back"]),
-    Item("Mistcutter","A sample cutting tool able to use water or grit, depending on environmental availability.", ["weapon"]),
-    Item("TEETH.","", ["cosmetic"],stars=3),
-    BodyPlanItem("Surveyor’s Adaptation","By sacrificing limb mobility (or consolidating them), the mech now can withstand over 16,000 PSI at the weakest point. (Not tested against damage from artillery, temperatures over 900C, or twisting force.)", {"legs": 1}),
-    Item("The Fishbowl","A mostly spherical core built of transparent, UV-protective material. May be rendered one-way.",["body"]),
-    Item("Paddleboards","Flexible fins originally made for movement in shallow waters. Can also be used for land maneuvers, to some effect.",["legs"]),
-    Item("Noodlers","Limbs made specifically for catching large, predatory fish.",["arms"]),
-    Item("Bare Joints","Through the power of easily-replaced and cleaned parts, the joints on limbs are now bare!",["cosmetic"]),
-    Item("Fogflare","A heavily modified and overclocked cutting tool able to use water or grit, depending on environmental availability. Dubiously legal.",["weapon"], stars=5),
+    PowerItem("intergalacticsky:microfission_cell","Microfission cell","A fairly small but notoriously temperamental setup, smaller than the batteries it charges. Must be shut down in combat and environmentally hazardous situations."),
+    LegsItem("intergalacticsky:needlepoint_contacts","Needlepoint contacts","Auto-balancing limbs designed to minimize environmental damage"),
+    ArmsItem("intergalacticsky:augmenting_manipulators","Augmenting Manipulators","A set of nimble, thin arms with a variety of ways to grasp and manipulate objects, ranging from the size of a cat to a small tree"),
+    BodyItem("intergalacticsky:gyroscopic_pod","Gyroscopic Pod","A fairly stable structure built to contain pilot, sensitive instruments, and any samples as securely as possible within a larger structure."),
+    CockpitItem("intergalacticsky:stargazers_instruments","Stargazer's Instruments","A variety of measurement devices to assist in your endeavors"),
+    Item("intergalacticsky:solar_fins","Solar Fins","Large, retractable solar panels used as supplementary power support", ["back"]),
+    Item("intergalacticsky:mistcutter","Mistcutter","A sample cutting tool able to use water or grit, depending on environmental availability.", ["weapon"]),
+    Item("intergalacticsky:teeth","TEETH.","", ["cosmetic"],stars=3),
+    BodyPlanItem("intergalacticsky:surveyors_adaptaion","Surveyor’s Adaptation","By sacrificing limb mobility (or consolidating them), the mech now can withstand over 16,000 PSI at the weakest point. (Not tested against damage from artillery, temperatures over 900C, or twisting force.)", {"legs": 1}),
+    Item("intergalacticsky:the_fishbowl","The Fishbowl","A mostly spherical core built of transparent, UV-protective material. May be rendered one-way.",["body"]),
+    Item("intergalacticsky:paddleboards","Paddleboards","Flexible fins originally made for movement in shallow waters. Can also be used for land maneuvers, to some effect.",["legs"]),
+    Item("intergalacticsky:noodlers","Noodlers","Limbs made specifically for catching large, predatory fish.",["arms"]),
+    Item("intergalacticsky:bare_joints","Bare Joints","Through the power of easily-replaced and cleaned parts, the joints on limbs are now bare!",["cosmetic"]),
+    Item("intergalacticsky:frogflare","Fogflare","A heavily modified and overclocked cutting tool able to use water or grit, depending on environmental availability. Dubiously legal.",["weapon"], stars=5),
 ]
 )
 
@@ -283,7 +283,7 @@ intergalacticsky = Mech('intergalacticsky',
 
 
 body_plans = [
-BodyPlanItem("ratoon:","Standard Bipedal","",{"leg": 2, "arm": 2, "power": 1}),
+BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power": 1}),
 
 ]
 
@@ -291,10 +291,10 @@ BodyPlanItem("ratoon:","Standard Bipedal","",{"leg": 2, "arm": 2, "power": 1}),
 
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
-all_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel)
+all_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky)
 # all_mechs = (bee,)
 
-# update playerdata set data='{"unlocked_mechs":["bee", "oneirocartographer", "hillexed", "styietus", "triangle", "cheshire", "loading", "metanite64", "deric", "syl", "vel"], "ratoon_pulls": 0, "mech_pulls":1000}' where name='178116262390398976';
+# update playerdata set data='{"unlocked_mechs":["bee", "oneirocartographer", "hillexed", "styietus", "triangle", "cheshire", "loading", "metanite64", "deric", "syl", "vel", "amutecrypt", "intergalacticsky"], "ratoon_pulls": 0, "mech_pulls":1000}' where name='178116262390398976';
 # update playerdata set data='{"unlocked_mechs":[], "ratoon_pulls": 1000, "mech_pulls":1000}' where name='178116262390398976';
 
 
