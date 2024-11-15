@@ -4,12 +4,12 @@ import random
 import json
 import logging
 
-from gacha_tables import all_parts_list 
+from gacha_tables import all_parts_list, starting_inventory
 
 import asyncio
 
 def add_new_player(userid):
-    inventory = []
+    inventory = starting_inventory
     db.set_inventory_data(userid, inventory)
 
     playerdata = {"unlocked_mechs": [], 'ratoon_pulls':2, 'mech_pulls': 5}

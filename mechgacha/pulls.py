@@ -1,4 +1,4 @@
-from gacha_tables import all_mechs 
+from gacha_tables import ratoon_pullable_mechs, all_mechs
 import random
 import db
 import inventory
@@ -21,7 +21,7 @@ def pull(mech, num_pulls=1):
     
 
 if __name__ == "__main__":
-    print(pull(all_mechs[0]))
+    print(pull(ratoon_pullable_mechs[0]))
 
 
 def can_pull(playerdata):
@@ -69,7 +69,11 @@ def choose_mech_by_name(all_mechs, requested_mech_name):
     return None
 
 
-def player_has_mech(mech_to_pull_from, playerdata):
+def player_can_pull_from_mech(mech_to_pull_from, playerdata):
+
+    if mech_to_pull_from.username in ("alto",):
+        return True
+
     return mech_to_pull_from.username in playerdata["unlocked_mechs"] #add .lower()?
 
 
@@ -120,7 +124,7 @@ async def pull_command(message, message_body):
     if requested_mech == "ratoon":
 
         if get_ratoon_pulls(playerdata) >= 1: # can pull
-            mechs_user_doesnt_have = [mech.username for mech in all_mechs if mech.username not in player_mechs]
+            mechs_user_doesnt_have = [mech.username for mech in ratoon_pullable_mechs if mech.username not in player_mechs]
 
             if len(mechs_user_doesnt_have) == 0:
                 return await message.channel.send("Ya already got all da mechs!")
@@ -136,6 +140,7 @@ async def pull_command(message, message_body):
 
 
     elif can_pull(playerdata):
+        # theoretically you can request any mech
         mech_to_pull_from = choose_mech_by_name(all_mechs, requested_mech)
 
         if mech_to_pull_from is None:
@@ -143,7 +148,7 @@ async def pull_command(message, message_body):
 
         player_mechs = get_user_current_mechs(playerdata)
 
-        if not player_has_mech(mech_to_pull_from, playerdata):
+        if not player_can_pull_from_mech(mech_to_pull_from, playerdata):
             await message.channel.send(f"Ya dont have that mech yet! Ya got these mechs: {','.join(player_mechs)}")
             return
 

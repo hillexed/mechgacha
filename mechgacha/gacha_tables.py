@@ -280,6 +280,18 @@ intergalacticsky = Mech("intergalacticsky",
 )
 
 
+alto = Mech("alto", 
+[
+    LegsItem("alto:unremarkable_legs","Unremarkable Legs","These hydraulic mecha legs are well maintained but otherwise unremarkable. They are ready for painting, aftermarket tinkering, or full replacement. "),
+    ArmsItem("alto:unremarkable_arms","Unremarkable Arms","These hydraulic mecha arms are well maintained but otherwise unremarkable. They are ready for painting, aftermarket tinkering, or full replacement."),
+    BodyItem("alto:unremarkable_body","Unremarkable Body","This hydraulic mecha body is well maintained but otherwise unremarkable. It is ready for painting, aftermarket tinkering, or full replacement. "),
+    BodyPlanItem("alto:light_mecha","Light Mecha","This Blueprint was given to Alto from the original Polkatdot. It seems to be plans for an ultralight mobile suit consisting of only a powersource, a weapon, and a back mounted accessory. It's almost more honest to call it power armor than a proper mecha", {"weapon": 1, "power":1, "back":1}, stars=5),
+]
+)
+
+starting_inventory = ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body"]
+
+
 
 
 body_plans = [
@@ -290,7 +302,9 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
-all_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky)
+
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky)
+all_mechs = ratoon_pullable_mechs + (alto, )
 
 
 all_parts_list = {} # a dict of item id: item
