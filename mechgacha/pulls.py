@@ -3,6 +3,7 @@ import random
 import db
 import inventory
 import json
+from data_utils import get_playerdata
 
 item_weights_by_stars = { 
 1: 10,
@@ -37,16 +38,6 @@ def deduct_ratoon_pull(username, playerdata):
 
 def get_username(message):
     return message.author.id
-
-def get_playerdata(username):
-    playerdata = db.get_player_data(username)
-
-    if playerdata is None:
-        inventory.add_new_player(username)
-        playerdata = db.get_player_data(username)
-
-    return playerdata
-    # sample playerdata = {"unlocked_mechs": ['alto'], 'ratoon_pulls':2, 'mech_pulls': 5}
 
 def get_user_current_mechs(playerdata):
     # sample playerdata = {"unlocked_mechs": ['alto'], 'ratoon_pulls':2, 'mech_pulls': 5}
