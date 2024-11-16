@@ -7,3 +7,4 @@ glolf/db_data/*
 venv
 *.sqlite*
 *.sqlite
+.vscode/settings.json
