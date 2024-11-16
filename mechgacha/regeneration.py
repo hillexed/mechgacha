@@ -4,6 +4,8 @@ import threading
 import logging
 import datetime
 
+import inventory
+
 max_ratoon_pulls = 4
 max_mech_pulls = 10
 
@@ -11,17 +13,22 @@ max_mech_pulls = 10
 def get_all_users():
     return db.get_all_users_with_any_inventory()
 
+def add_pulls(userid, mech_pulls = 1, ratoon_pulls = 0):
+    playerdata = get_playerdata(userid)
+    if playerdata["ratoon_pulls"] < max_ratoon_pulls:
+        playerdata["ratoon_pulls"] += ratoon_pulls
+
+    if playerdata["mech_pulls"] < max_mech_pulls:
+        playerdata["mech_pulls"] += mech_pulls
+
+    db.set_player_data(userid, playerdata)
+
 def regenerate_everyones_pulls(ratoon_pulls = True, mech_pulls = True):
     users = get_all_users()
-    for user in users:
-        playerdata = get_playerdata(user)
-        if playerdata["ratoon_pulls"] < max_ratoon_pulls:
-            playerdata["ratoon_pulls"] += 1/14 # this is a very silly way to make it one full pull every two weeks
-
-        if playerdata["mech_pulls"] < max_mech_pulls: # one per day
-            playerdata["mech_pulls"] += 1
-
-        db.set_player_data(user, playerdata)
+    for userid in users:
+        ratoon_pulls_per_day = 1/14 # this is a very silly way to make it one full pull every two weeks
+        mech_pulls_per_day = 1 
+        add_pulls(userid, mech_pulls_per_day, ratoon_pulls_per_day)
 
 def get_playerdata(username):
     playerdata = db.get_player_data(username)

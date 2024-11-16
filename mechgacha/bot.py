@@ -71,13 +71,14 @@ async def handle_commands(message):
         #        return
         #    return await message.channel.send("on a new line, @ someone.")
             
-        #if user_is_admin(message) and len(message_body) > 0 and "debug_gift" in message_body:
-        #    if "<@" in message_body and ">" in message_body:
-        #        atted_userID = message_body.split("<@")[1].split(">")[0]
-        #        inventory.give_random_gift(atted_userID)
-        #        return
-        #    else:
-        #        inventory.give_random_gift(userID)
+        if user_is_admin(message) and len(message_body) > 0 and "accept_bribe" in message_body:
+            print(message_body)
+            if "<@" in message_body and ">" in message_body:
+                atted_userID = message_body.split("<@")[1].split(">")[0]
+                regeneration.add_pulls(atted_userID, 1, 0.5)
+            else:
+                regeneration.add_pulls(userID, 1, 0.5)
+            return
 
         if user_is_admin(message) and len(message_body) > 0 and "regen_everyone" in message_body:
             regeneration.regenerate_everyones_pulls()
