@@ -8,11 +8,14 @@ from gacha_tables import all_parts_list, starting_inventory
 
 import asyncio
 
+from data_utils import get_playerdata
+
+
 def add_new_player(userid):
     inventory = starting_inventory
     db.set_inventory_data(userid, inventory)
 
-    playerdata = {"unlocked_mechs": [], 'ratoon_pulls':2, 'mech_pulls': 5}
+    playerdata = {"unlocked_mechs": [], 'ratoon_pulls':2, 'mech_pulls': 5, 'equipment': []}
     db.set_player_data(userid, playerdata)
 
 def compute_inventory(userid):
@@ -51,7 +54,7 @@ def give_random_gift(userid):
     logging.info(f"Gave userid {userid} a random gift")
 
 
-def represent_inventory_as_string(inventory, page=1):
+def represent_inventory_as_string(inventory, playerdata, page=1):
 
     if inventory is None or len(inventory) == 0:
         return "**You have nothing in your inventory!** \n Use m!pull ratoon to get some mechs from Ratoon's gachapon, then m!pull <mech> to pull from their list!"
@@ -70,22 +73,33 @@ def represent_inventory_as_string(inventory, page=1):
         return prefix + "Empty!"
 
 
-    return prefix + '\n'.join([format_item(item_id) for item_id in items_to_display])
+    return prefix + '\n'.join([format_item(item_id, (item_index + (8 * page)), (item_index + (8 * page)) in playerdata["equipment"]) for item_index, item_id in enumerate(items_to_display)])
 
-def format_item(item_id):
+def format_item(item_id, item_index = -1, equipped = False):
 
+    new_line = "\n"
+    sub_array = []
     item_data = all_parts_list[item_id]
-    # print(type(item_data))
-    tags_string = f' (Type: {", ".join(item_data.tags)})'
-    if len(item_data.tags) == 0:
-        tags_string = ""
 
-    return f'- {item_data.name} {"★" * item_data.stars} - {item_data.description}{tags_string}'
+    if item_index > -1:
+        sub_array.append(f"[{item_index + 1}]") 
+
+    tags_string = f'{", ".join([tag.upper() for tag in item_data.tags])}'
+    if len(item_data.tags) > 0:
+        sub_array.append(tags_string)
+    
+    if equipped:
+        sub_array.append("**EQUIPPED**")
+
+    sub_line = f'{new_line}-# **     **{" • ".join(sub_array)}'
+    return f'- {item_data.name} {"★" * item_data.stars} - {item_data.description}{sub_line if len(tags_string) > 0 or item_index > -1 else ""}'
 
 async def inventory_command(message, message_body, client):
     userid = message.author.id
 
     username = message.author.display_name.lower() # I'd love to use global_name but it doesn't work.
+
+    playerdata = get_playerdata(userid)
 
     try:
         page = int(message_body.strip())
@@ -102,7 +116,7 @@ async def inventory_command(message, message_body, client):
         add_new_player(userid)
         inventory = compute_inventory(userid)
 
-    return await message.channel.send(represent_inventory_as_string(inventory, page))
+    return await message.channel.send(represent_inventory_as_string(inventory, playerdata, page))
 
 
 def get_first_item_of_type(userid, type):
