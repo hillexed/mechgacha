@@ -121,7 +121,7 @@ styietus = Mech("St. Yietus:",
     BodyPlanItem("st_yietus:kitbash_kit_adaptor","KITBASH KIT ADAPTER","A set of tools and materials used to combine parts in all sorts of unintended ways. Adds one additional slot of any type other than a body to your mech.", {}), # todo: make work
     Item("st_yietus:novelty_mug","NOVELTY MUG", "A plastic novelty mug, obtained through great personal effort. The sense of pride one gets from owning this object gives you a minor all-around stat boost. Nifty!"),
     Item("st_yietus:crescent_companion","CRESCENT COMPANION", "The moon-headed ghost of a fictional being has made its home in either your mind or the systems of your mech. It grants you the ability to create a temporary aura of disruption around you that severely slows enemies' cooldowns and cooling and mildly slows yours. Just make sure to remember it so it doesn't fade away."),
-    Item("st_yietus:weird_lil_guy","WEIRD LIL' GUY","A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute."),
+    Item("st_yietus:weird_lil_guy","WEIRD LIL' GUY","A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.", ["cosmetic"]),
     PowerItem("st_yietus:divinity_tap","DIVINITY TAP","A bony, eerily pristine variant of the CURSEHEART ENGINE. Generates additional energy for each unique debuff affecting your mech. In addition, it has a toggled ability that massively improves all stats, but creates heat at an exponentially increasing rate and marks your mech with a halo that is visible to everyone while active. You feel tired after using it, but can't explain why.", stars=5),
 ])
 
@@ -167,10 +167,10 @@ cheshire = Mech("cheshire",
 loading = Mech("loading", 
 [
     PowerItem("loading:kinetic_recycler","Kinetic Recycler","A kinetic generator powered by the grounded movement of the mech"),
-    LegsItem("loading:xr2","Loading's XR2'","Long double jointed legs that give the mech a low crouching position while stationary, but a long stride"),
+    LegsItem("loading:xr2","Loading's XR2","Long double jointed legs that give the mech a low crouching position while stationary, but a long stride"),
     ArmsItem("loading:knuckle_draggers","Knuckle Draggers","Long and delicate arms twice as long as the torso it is attached to"),
     BodyItem("loading:elongated_segment_frame","Elongated Segment Frame","Thin segmented spine that allows for maximum flexibility and aerodynamics"),
-    CockpitItem("loading:gyrobomber","Gyrobomber","A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts"),
+    CockpitItem("loading:gyrobomber","Gyrobomber","A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts."),
     Item("loading:big_jacket","Big Jacket","A jacket that is two sizes too large. It flows in the wind, increasing evasion the more the mech moves.", ["back", "cosmetic"]),
     Item("loading:hook_lash","Hook Lash","A lash that looks not unlike the skyhook from Bioshock. it applies a random debuff on hit", ["weapon"]),
     Item("loading:big_mechs_jacket","Big Mechs Jacket","A long flowing jacket based on the Mechs bomber jacket that flows behind the mech as it moves obscuring the body. It increases evasion the more the mech moves.", ["back", "cosmetic"], stars=5),

@@ -106,6 +106,11 @@ async def inventory_command(message, message_body, client):
 
     playerdata = get_playerdata(userid)
 
+
+    if not "equipment" in playerdata:
+        playerdata["equipment"] = []
+        db.set_player_data(userid, playerdata)
+
     try:
         page = int(message_body.strip())
     except:

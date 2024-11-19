@@ -7,7 +7,9 @@ class TagType(Enum):
     arms = "arms"
     legs = "legs"
     power = "power"
+    weapon = "weapon"
     body = "body"
+    back = "back"
     cockpit = "cockpit"
     cosmetic = "cosmetic"
 

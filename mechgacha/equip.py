@@ -97,9 +97,12 @@ async def equip_command(message, message_body, client):
     if len(inventory) == 0:
         return await message.channel.send("Get some items first using m!pull !")
 
+
     if not "equipment" in playerdata:
         playerdata["equipment"] = []
         db.set_player_data(userid, playerdata)
+
+    # Items can be equipped either by number (position in inventory) or by title, which will use fuzzy string matching
 
     requested_item = message_body.strip()
     item_index = -1

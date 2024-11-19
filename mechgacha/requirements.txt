@@ -2,3 +2,4 @@ discord
 python-dotenv
 emoji
 fuzzywuzzy
+python-Levenshtein
