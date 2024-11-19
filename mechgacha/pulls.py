@@ -91,6 +91,21 @@ def add_to_inventory(new_item, username):
     db.set_inventory_data(username, inv)
 
 
+def add_to_inventory(new_item, username):
+
+    inv = db.get_inventory_data(username)
+
+    if inv is None:
+        inv = starting_inventory
+
+    inv.append(new_item.id)
+    print(inv)
+    db.set_inventory_data(username, inv)
+
+def item_already_in_inventory(new_item, inventory):
+    return new_item in inventory
+
+
 async def pull_command(message, message_body):
 
     username = get_username(message)
@@ -147,7 +162,18 @@ async def pull_command(message, message_body):
             return await message.channel.send(f"Ya dont have that mech yet! Ya got these mechs: {','.join(player_mechs)}")
             
 
-        new_item = pull(mech_to_pull_from,1)[0]
+        tries_to_get_new_item = 3
+        new_item = None
+
+        # try repeatedly to get a new item you don't already have. 
+        # If you get unlucky and get all duplicates in a row, then you deserve a duplicate
+        inventory = compute_inventory(username)
+        for i in range(tries_to_get_new_item):
+            # pull!
+            new_item = pull(mech_to_pull_from,1)[0]
+            # if the item isn't a duplicate, we're done!
+            if not item_already_in_inventory(new_item, inventory):
+                break
 
         add_to_inventory(new_item, username)
         deduct_pull(username, playerdata)
