@@ -1,4 +1,4 @@
-from gacha_tables import ratoon_pullable_mechs, all_mechs
+from gacha_tables import ratoon_pullable_mechs, all_mechs, starting_inventory
 import random
 import db
 import inventory
@@ -91,6 +91,10 @@ def add_new_mech(username, playerdata, new_mech):
 def add_to_inventory(new_item, username):
 
     inv = db.get_inventory_data(username)
+
+    if inv is None:
+        inv = starting_inventory
+
     inv.append(new_item.id)
     print(inv)
     db.set_inventory_data(username, inv)
@@ -121,7 +125,7 @@ async def pull_command(message, message_body):
             return await message.channel.send(f"\nUse m!pull <mech> to pull from their list! You can pull from: {', '.join(player_mechs)}. You have {round(get_mech_pulls(playerdata), 2)} pulls.\n You can also use `m!pull ratoon` to get some mechs from Ratoon's gachapon. You have {round(get_ratoon_pulls(playerdata),2)} pulls from Ratoon's gachapon.")
 
 
-    if requested_mech == "ratoon":
+    if requested_mech.lower() == "ratoon":
 
         if get_ratoon_pulls(playerdata) >= 1: # can pull
             mechs_user_doesnt_have = [mech.username for mech in ratoon_pullable_mechs if mech.username not in player_mechs]
@@ -144,13 +148,13 @@ async def pull_command(message, message_body):
         mech_to_pull_from = choose_mech_by_name(all_mechs, requested_mech)
 
         if mech_to_pull_from is None:
-            await message.channel.send(f"I don't know that mech. Maybe ya typoed their name")
+            return await message.channel.send(f"I don't know that mech. Maybe ya typoed their name")
 
         player_mechs = get_user_current_mechs(playerdata)
 
         if not player_can_pull_from_mech(mech_to_pull_from, playerdata):
-            await message.channel.send(f"Ya dont have that mech yet! Ya got these mechs: {','.join(player_mechs)}")
-            return
+            return await message.channel.send(f"Ya dont have that mech yet! Ya got these mechs: {','.join(player_mechs)}")
+            
 
         new_item = pull(mech_to_pull_from,1)[0]
 
