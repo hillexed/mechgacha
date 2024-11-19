@@ -93,6 +93,13 @@ async def handle_commands(message):
     elif message.content.startswith(prefix + "mech unequip"):
         await equip.unequip_command(message, get_command_body(message, "mech unequip"), client)
 
+    # shortcuts for m!mech equip and m!mech unequip
+    elif message.content.startswith(prefix + "equip"):
+        await equip.equip_command(message, get_command_body(message, "equip"), client)
+    
+    elif message.content.startswith(prefix + "unequip"):
+        await equip.unequip_command(message, get_command_body(message, "unequip"), client)
+
     elif message.content.startswith(prefix + "mech"):
         await equip.mech_command(message, get_command_body(message, "mech"), client)
 
