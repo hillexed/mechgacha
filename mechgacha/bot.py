@@ -11,6 +11,7 @@ import db
 from pulls import pull_command
 import inventory
 import regeneration
+import equip
 
 debug = False
 prefix = 'm!'
@@ -84,6 +85,16 @@ async def handle_commands(message):
             return await message.channel.send("Everyone's pulls have regenerated!")
 
         await inventory.inventory_command(message, get_command_body(message, "inventory"), client)
+   
+    elif message.content.startswith(prefix + "mech equip"):
+        await equip.equip_command(message, get_command_body(message, "mech equip"), client)
+    
+    elif message.content.startswith(prefix + "mech unequip"):
+        await equip.unequip_command(message, get_command_body(message, "mech unequip"), client)
+
+    elif message.content.startswith(prefix + "mech"):
+        await equip.mech_command(message, get_command_body(message, "mech"), client)
+
 
     elif message.content.startswith(prefix + "version"):
         await message.channel.send(str(version))
