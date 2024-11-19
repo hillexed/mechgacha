@@ -3,11 +3,12 @@ from enum import Enum
 
 partsList = {} # populated every time a new Item() is created
 
-class TagType:
-    arm = "arm"
-    leg = "leg"
+class TagType(Enum):
+    arms = "arms"
+    legs = "legs"
     power = "power"
     body = "body"
+    cockpit = "cockpit"
     cosmetic = "cosmetic"
 
 

@@ -5,6 +5,8 @@ import inventory
 import json
 from data_utils import get_playerdata
 
+from fuzzywuzzy import process
+
 item_weights_by_stars = { 
 1: 10,
 2: 7,
@@ -50,12 +52,12 @@ def get_ratoon_pulls(playerdata):
     return playerdata["ratoon_pulls"]
 
 def choose_mech_by_name(all_mechs, requested_mech_name):
-    # all_names = [mech.username for mech in all_mechs]
-
-    # todo: replace with fuzzy string matching
+    # fuzzy string matching!
+    mech_names = [mech.username for mech in all_mechs]
+    chosen_mech_name, closeness = process.extractOne(requested_mech_name, mech_names)
 
     for mech in all_mechs:
-        if mech.username.lower() == requested_mech_name.lower():
+        if mech.username.lower() == chosen_mech_name.lower():
             return mech
     return None
 
@@ -167,12 +169,12 @@ async def pull_command(message, message_body):
 
         # try repeatedly to get a new item you don't already have. 
         # If you get unlucky and get all duplicates in a row, then you deserve a duplicate
-        inventory = compute_inventory(username)
+        user_inv = inventory.compute_inventory(username)
         for i in range(tries_to_get_new_item):
             # pull!
             new_item = pull(mech_to_pull_from,1)[0]
             # if the item isn't a duplicate, we're done!
-            if not item_already_in_inventory(new_item, inventory):
+            if not item_already_in_inventory(new_item, user_inv):
                 break
 
         add_to_inventory(new_item, username)

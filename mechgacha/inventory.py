@@ -73,7 +73,12 @@ def represent_inventory_as_string(inventory, playerdata, page=1):
         return prefix + "Empty!"
 
 
-    return prefix + '\n'.join([format_item(item_id, (item_index + (8 * page)), (item_index + (8 * page)) in playerdata["equipment"]) for item_index, item_id in enumerate(items_to_display)])
+    return prefix + '\n'.join([
+    format_item(
+        item_id, 
+        (item_index + (page_size * page)), 
+        (item_index + (page_size * page)) in playerdata["equipment"])
+    for item_index, item_id in enumerate(items_to_display)])
 
 def format_item(item_id, item_index = -1, equipped = False):
 
