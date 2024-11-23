@@ -248,14 +248,14 @@ alto = Mech("alto",
 
 renne = Mech("renne", 
 [
-    PowerItem("renne:earthen_splinter","Earthen Splinter","A crystal brimming with earth-aspected arcane force. This energy regenerates gradually while the mech is dormant, but can be roused into uncontrollable bursts of magic if disturbed."),
+    PowerItem("renne:earthen_splinter","Earthen Splinter","A crystal brimming with earth-aspected arcane force. This energy regenerates gradually while the mech is dormant, but can be roused into uncontrollable bursts of magic if disturbed.", stars=2),
     LegsItem("renne:tunneling_roots","Tunneling Roots","This mech has great tendrils that can support its weight as would legs, but also dig deep into the ground to provide anchoring when necessary."),
     ArmsItem("renne:plated_growth","Plated Growth","What looks like jointed arms of stone conceals a mass of large vines beneath the exterior armor. This stone exterior can be shed for greater flexibility, but at the cost of what protection it affords."),
     BodyItem("renne:the_tower","The Tower","An imposing cylindrical column upon which rests a stately head. Simple, but iconic in the oldest sense."),
     CockpitItem("renne:mystic_union","Mystic Union","Tendrils within the main cavity meld themselves to the pilot's extremities and the back of their neck, making it so they see and feel everything the mech can—and can control it as they would their body. This means they feel damage to the mech as pain, and for any mind, perception is reality..."),
-    Item("renne:hanging_garden","Hanging Garden","This mech has a space on its back where life flourishes. Outside of battle, it may serve as a sanctuary, or a place to grow food.", ["back"]),
+    Item("renne:hanging_garden","Hanging Garden","This mech has a space on its back where life flourishes. Outside of battle, it may serve as a sanctuary, or a place to grow food.", ["back"], stars=3),
     Item("renne:hedge_clipper_turbo","Hedge Clipper Turbo","A massive pair of scissors; the individual blades can split off into dual swords, single-edged.", ["weapon"]),
-    Item("renne:time_ravaged","Time-Ravaged","This mech is made of finely-chiseled stone covered in ancient artistic engravings, and much of it has been worn down by time and the elements. Parts of it are held together by plant growth that has overtaken it.", ["cosmetic"]),
+    Item("renne:time_ravaged","Time-Ravaged","This mech is made of finely-chiseled stone covered in ancient artistic engravings, and much of it has been worn down by time and the elements. Parts of it are held together by plant growth that has overtaken it.", ["cosmetic"], stars=3),
     BodyPlanItem("renne:beastly_deva","Beastly Deva","This mech was built to be a master of both terrain and adaptability, meaning any relation to the human form is more coincidental than anything. Controlling it may be tricky.", {"legs":6,"arms":4}),
     CockpitItem("renne:spirit_of_the_earth","Spirit of the Earth","An embodiment of nature has taken residence inside this mech and communicates with the pilot. It does not speak human language, but long-term pilots claim to be able to understand it."),
     ArmsItem("renne:ancillary_vines","Ancillary Vines","Growing out of the mech's body, these prehensile growths may not have the greatest durability to slashing weapons, but excel at wrapping around things and tethering them."),
@@ -264,6 +264,39 @@ renne = Mech("renne",
     PowerItem("renne:earthen_crystal","Earthen Crystal","A full crystal brimming with earth-aspected arcane force. This energy regenerates gradually while the mech is dormant, but can be roused into uncontrollable bursts of magic if disturbed. This crystal's size means its energy wellspring is far greater and can therefore be channeled into greater or longer-lasting effects, but the magic within **will** radiate into the pilot with continued operation due to its sheer concentration. This may have adverse or otherwise unusual effects on one's health, well-being, or biological taxonomy.", stars=5),
 ]
 )
+
+moonbug = Mech("moonbug", 
+[
+    PowerItem("moonbug:glitch_engine","Glitch Engine","Two manipulator arms that move a teapot and a rubber duck in precise ways to make energy by abusing bugs in the universe, now 98% reality tear free!"),
+    LegsItem("moonbug:emergency_grippers","Emergency Grippers","This mech is able to deploy toes in order to distract the enemy, be careful however as if you stub the Mech's toe it will psychically send the pain to you.",stars=2),
+    ArmsItem("moonbug:insectoid_arm_array","Insectoid Arm Array","A set of 4 arms, each with 4 digits and claws, to save on energy and heat production. The arms aren't as strong as other sets, but has immense potential.", stars=2),
+    BodyItem("moonbug:covert_chassis","Covert Chassis","A sneaky and [REDACTED] Core made by the teamwork of a Mech and a [DATA EXPUNGED] from the Houston Spies. While the blueprints are open source they're encoded with at least [TOP SECRET] Ciphers. Despite this. many Mechs swear by the design saying it's pretty [REDACTED] good."),
+    CockpitItem("moonbug:blankets","Blankets","Piles of soft, plush blankets lay around in the cockpit. When your mech overheats some of the heat will be redirected to the cockpit and it feels amazing."),
+    Item("moonbug:phase_shifter","Phase Shifter","A back mounted piece of obtuse and cobbled together wires and breadboards. It allows the mech to temporarily enter the immaterial for a few seconds. It is highly advised to keep immaterial exposure to less than an hour a year to prevent conceptual delamination.", ["back"], stars=3),
+    Item("moonbug:a.e.i.o.u","A.E.I.O.U","The Amazingly Explosive Igniter Of Unfire. Shoots lobs of un-napalm at enemies. Un-napalm is one of the few substances Unfire actually burns.", ["weapon"], stars=3),
+    Item("moonbug:antennae","Antennae","Two feathery antennae are installed on the head of your mech. They won't be getting any signals, but they look adorable.", ["cosmetic"]),
+    WeaponItem("moonbug:delta_theta_wave_generator","Delta-Theta Wave Generator","A piece of repurposed lab equipment, it is able to create the illusive Delta-Theta waves, which has mutagenic properties for some \"people\" (It's a speaker that turns you into an animal.)", stars=4),
+    LegsItem("moonbug:legs_design_173","Design Type. 173","A pair of mech legs that seem to be crudely made of plaster and spray paint. Despite that, these legs are immensely flexible and mobile... if no one is looking at you."),
+    Item("moonbug:finarian_phase_diver","Finarian Phase Diver","A back mounted piece of generationally maintained equipment, each repair seemingly making it function better. It allows a mech to dive into the immateria, the dozens of stamped seals in Finarian tongue act as a blueprint and a ward to prevent unreality from leaking into the mech, letting it stride the depths for as long as it has power.", ["back"], stars=5),
+]
+)
+
+cheesesnack = Mech("cheesesnack", 
+[
+    PowerItem("cheesesnack:biofuel_burner","Biofuel Burner","Accepts most animal and vegetable oils. Smells strongly of french fries when in operation."),
+    LegsItem("cheesesnack:echinomotion_locomotive_system","Echinomotion Locomotive System","Inspired by starfish and urchins, hundreds of small, pneumatic feet shuffle the mech along. You won't win any races but they're capable of handling any terrain even at extreme angles. 35% of Echinomotion mech pilots develop lifelong grudges with the mechanics who have to maintain them.", stars=3),
+    ArmsItem("cheesesnack:roper_manipulators","Roper Manipulators","Originally designed for clearing minefields, each \"arm\" consists of four tentacles that can snake, coil, and swing independently. Experts with the system can snatch tools and weapons from quite a distance, though many are content learning how to make sick whipcrack noises."),
+    BodyItem("cheesesnack:recycled_vans","Recycled Vans","Some enterprising scavenger has gutted and reinforced two vans and welded them together in an intimate pose, looking like a scrapyard sculpture. Joints for the arms and legs have been installed where the wheels once sat. Only the mad or desperate would entrust themselves to this thing.", stars=3),
+    CockpitItem("cheesesnack:foldaway_kitchenette","Foldaway Kitchenette","A metal cabinet tucked away in a corner conceals a small counter that folds out for simple meal prep with a knife rack, coffee brewer, and some space for food storage. Constructed by a pilot assigned to long and uneventful duties."),
+    Item("cheesesnack:self_righting_device","Explosive Self-Righting Device","In the event that the mech falls on it's back, an explosive charge can be used to launch the mech upright. Currently subject to several lawsuits regarding back and neck injuries.", ["back"]),
+    Item("cheesesnack:pick_mattock","Pick Mattock","Warfare never really advanced beyond the need for earthworks and trenches. Pilots have discovered that the titanium pick on this tool pierces armor as easily as it does earth and stone.", ["weapon"]),
+    Item("cheesesnack:branch_camoflage","Branch Camoflage","Tree limbs have been crudely attached to the shoulders. Enemy spotters might mistake this mech for a particularly mobile tree.", ["cosmetic"]),
+    BodyPlanItem("cheesesnack:centipede_mode","Centipede Mode","An adapter system that allows the mech to crawl on many small legs", {"legs": 4}),
+    ArmsItem("cheesesnack:five_star_roper_manipulators","Roper Manipulators","Originally designed for clearing minefields, each \"arm\" consists of four tentacles that can snake, coil, and swing independently. Experts with the system can snatch tools and weapons from quite a distance, though many are content learning how to make sick whipcrack noises. This version comes equipped with an experimental upgrade that allows the tentacles to act completely independently of the mech. Pilots have used this ability to throw individual tentacles like bolases or to interlink tentacles together to form a single very long tentacle.", stars=5),
+]
+)
+
+
 
 
 
@@ -281,7 +314,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 
