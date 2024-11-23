@@ -103,11 +103,15 @@ async def handle_commands(message):
     elif message.content.startswith(prefix + "mech"):
         await equip.mech_command(message, get_command_body(message, "mech"), client)
 
+    elif message.content.startswith(prefix + "wakeup"):
+        await message.channel.send("ok ok im up")
+
 
     elif message.content.startswith(prefix + "version"):
         await message.channel.send(str(version))
 
     elif message.content.startswith(prefix + "help"):
+        await message.channel.send("Command list: \n m!pull - Get new items and mechs from the gacha\n m!inventory - Check the mecha parts you have\n m!mech - Equip or unequip items from your inventory to build a mecha!")
         pass
     #     await parse_help_command(message, get_command_body(message, "help"), client)
 
@@ -124,7 +128,7 @@ async def handle_commands(message):
         # this might hit the discord message filesize limit but it's an admin command so I don't care
         from db import _get_db_filename
         current_time_string = time.asctime(time.localtime()).lower()
-        file = discord.File(_get_db_filename(), filename=f"glolf_{current_time_string.replace(' ','_')}.sqlite")
+        file = discord.File(_get_db_filename(), filename=f"mechgacha_{current_time_string.replace(' ','_')}.sqlite")
         await message.channel.send(f"Here's a copy of the DB at {current_time_string}", file=file)
 
 # now run the bot

@@ -1,13 +1,7 @@
 from dataclasses import dataclass
 from enum import Enum
 
-from gacha_mechanics import Mech, Item, PowerItem, BodyItem, ArmsItem, LegsItem, WeaponItem, BodyPlanItem, CockpitItem
-
-class TagType:
-    arm = "arm"
-    leg = "leg"
-    power ="power"
-
+from gacha_mechanics import TagType, Mech, Item, PowerItem, BodyItem, ArmsItem, LegsItem, WeaponItem, BodyPlanItem, CockpitItem
 
 def importLinesFromSpreadsheetToCode(lines):
     cells = lines.split("\t")
@@ -53,17 +47,17 @@ f"""
 
 bee = Mech("bee", [
     PowerItem("bee:star_drive", "Star Drive","The heart of a solar system, keeping the mech together and providing it power."),
-    LegsItem("bee:dark_matter_propulsion", "Dark Matter Propulsion","The force that keeps everything apart and the universe expanding. it also makes your mech go fast!"),
+    LegsItem("bee:dark_matter_propulsion", "Dark Matter Propulsion","The force that keeps everything apart and the universe expanding. It also makes your mech go fast!"),
     ArmsItem("bee:gravity_wells", "Gravity Wells","The force that keeps things in obit, and also the force to grab things with your mech!"),
-    BodyItem("bee:rocky_armor", "Rocky Armor","Rocks float around the core to protect it and provide structure to your mech"),
-    CockpitItem("bee:orbital_cockpit","ORBital Cockpit","A transparent bubble with no gravity within it, controls floating around effortlessly where you need them to be, controlling it almost like a dance"),
+    BodyItem("bee:rocky_armor", "Rocky Armor","Rocks float around the core to protect it and provide structure to your mech."),
+    CockpitItem("bee:orbital_cockpit","ORBital Cockpit","A transparent bubble with no gravity within it, controls floating around effortlessly where you need them to be, controlling it almost like a dance."),
     Item("bee:cloak_of_stars","Cloak of stars","A field of stars that moves and adapts as an armor where you need it to, absorbing medium impacts provided you move it to the impact site before the impact happens.", ["back"]),
     Item("bee:void_slicer","Void Slicer","A glittering blade so sharp that it feels like it can tear the fabric of space if you put enough force into it. it leaves a glittering trail.", ["weapon"]),
-    Item("bee:living_satellite","Living Satellite","A small planet orbits your mech, supporting a microcosm of life", ["cosmetic"]),
+    Item("bee:living_satellite","Living Satellite","A small planet orbits your mech, supporting a microcosm of life.", ["cosmetic"]),
     BodyPlanItem("bee:comet_form","Comet Form","A long thin form, with one leg and 6 arm slots, trailing behind the cockpit and core like a comet trail.",{"leg": 1, "arm": 6}),
-    Item("bee:satellite","Gas Satellite","A small ball of swirling gasses orbits your mech", ["cosmetic"]),
-    Item("bee:gas_satellite","Rock Satellite","A tiny comet and trail orbit your mech", ["cosmetic"], stars=3),
-    Item("bee:artificial_satellite","Artificial Satellite","A small artificial space structure (a satellite, space ship, etc) orbits your mech", ["cosmetic"], stars=3),
+    Item("bee:satellite","Gas Satellite","A small ball of swirling gasses orbits your mech.", ["cosmetic"]),
+    Item("bee:gas_satellite","Rock Satellite","A tiny comet and trail orbit your mech.", ["cosmetic"], stars=3),
+    Item("bee:artificial_satellite","Artificial Satellite","A small artificial space structure (a satellite, space ship, etc) orbits your mech.", ["cosmetic"], stars=3),
     PowerItem("bee:blackhole_drive","Blackhole Drive","An infinitely deep hole in reality, the pull of the density object in the universe, contained only by the mech itself.", stars=5),
     PowerItem("bee:supernova_drive","Supernova Drive","A core of swirling energy, the captured explosion of a star, held together with the force of dark matter. Iridescent and an unstoppable force.", stars=5)
 ]
@@ -234,30 +228,30 @@ syl = Mech("syl",
 
 vel = Mech("vel", 
 [
-    PowerItem("vel:big_reactor", "Big Reactor","A big reactor thingy (prolly nuclear adjacent) that gets refueld by hoisting big cartridges in it"),
-    LegsItem("vel:sleek_legs", "Sleek Legs","Two sleek legs and high output thrusters"),
-    ArmsItem("vel:manipulators", "Manipulators", "Hand-like manipulators for big stuff, prolly some small claws on cranes for small stuff"),
-    BodyItem("vel:bipedal_frame", "Bipedal Frame","a human-like core (proportions may vary) with advanced sensors near the head or on it"),
-    CockpitItem("vel:external_cockpit", "External Cockpit","outside cockpit? it has some periscopes/small windows as a backup"),
-    Item("vel:booster_backpack", "Booster Backpack","A backpack with one or two massive boosters with added drop tanks and some light equipment to like change the fuel cell, and ammo/technical equipment/jamming equipment", ["back"]),
-    Item("vel:retractible_swords", "Retractible Swords", "a long carbine (think SVD or FRF-1), knife(ves)/retractible swords with the handle tucked in the forearms, plus countermeasures/stun launchers in the limbs", ["weapon"]),
-    Item("vel:pilot_emblem", "Pilot Emblem", "a big pilot emblem on a shoulder/skirt/side of the bust and a 2-3 colored paint scheme", ["cosmetic"]),
-    BodyItem("vel:durability_frame", "Durability Frame","This form is all about utility and durability on the ground and is therefore equipped with additionnal protection plates (from a different color), bigger fatter limbs and a backpack that takes a lot of drilling and mining and machining equipment (or mounts artillery). It still retains the sensor-heavy head/upper torso (though now with a helmet) and general equipment, just with thrusters replaced with like added hardpoints, protection and ground mobility (threads, crampons, hovercraft, etc)"),
-    Item("vel:ace_custom_frame", "Ace Custom Frame","This mech is a special personal unit of a famous ace/freedom fighter that's fighting for the betterment of humanity, it's based from a standard military/industrial unit, but was heavily modified and customized to fit a more exploration, reconaissance, sharpshooting role", stars=5),
+    PowerItem("vel:big_reactor", "Big Reactor","A big reactor thingy (prolly nuclear adjacent) that gets refueld by hoisting big cartridges in it."),
+    LegsItem("vel:sleek_legs", "Sleek Legs","Two sleek legs and high output thrusters."),
+    ArmsItem("vel:manipulators", "Manipulators", "Hand-like manipulators for big stuff, prolly some small claws on cranes for small stuff."),
+    BodyItem("vel:bipedal_frame", "Bipedal Frame","a human-like core (proportions may vary) with advanced sensors near the head or on it."),
+    CockpitItem("vel:external_cockpit", "External Cockpit","outside cockpit? it has some periscopes/small windows as a backup."),
+    Item("vel:booster_backpack", "Booster Backpack","A backpack with one or two massive boosters with added drop tanks and some light equipment to like change the fuel cell, and ammo/technical equipment/jamming equipment.", ["back"]),
+    Item("vel:retractible_swords", "Retractible Swords", "a long carbine (think SVD or FRF-1), knife(ves)/retractible swords with the handle tucked in the forearms, plus countermeasures/stun launchers in the limbs.", ["weapon"]),
+    Item("vel:pilot_emblem", "Pilot Emblem", "A big pilot emblem on a shoulder/skirt/side of the bust with a 2-3 colored paint scheme.", ["cosmetic"]),
+    BodyItem("vel:durability_frame", "Durability Frame","This form is all about utility and durability on the ground and is therefore equipped with additionnal protection plates (from a different color), bigger fatter limbs and a backpack that takes a lot of drilling and mining and machining equipment (or mounts artillery). It still retains the sensor-heavy head/upper torso (though now with a helmet) and general equipment, just with thrusters replaced with like added hardpoints, protection and ground mobility (threads, crampons, hovercraft, etc)."),
+    Item("vel:ace_custom_frame", "Ace Custom Frame","This mech is a special personal unit of a famous ace/freedom fighter that's fighting for the betterment of humanity, it's based from a standard military/industrial unit, but was heavily modified and customized to fit a more exploration, reconaissance, sharpshooting role.", stars=5),
 ]
 )
 
 amutecrypt = Mech("amutecrypt", 
 [
-    PowerItem("amutecrypt:new_killer_star","New Killer Star","A caged sun, kept behind some thick shielding"),
-    LegsItem("amutecrypt:the_awesome_foursome","The Awesome Foursome","4 heavy, industrial legs, designed for defence and redundancy"),
-    ArmsItem("amutecrypt:i_thought_about_the_army","I Thought About The Arm-y","Two industrial robotic arms"),
+    PowerItem("amutecrypt:new_killer_star","New Killer Star","A caged sun, kept behind some thick shielding."),
+    LegsItem("amutecrypt:the_awesome_foursome","The Awesome Foursome","4 heavy, industrial legs, designed for defence and redundancy."),
+    ArmsItem("amutecrypt:i_thought_about_the_army","I Thought About The Arm-y","Two industrial robotic arms."),
     BodyItem("amutecrypt:the_part_formerly_known_as","! (The Part Formerly Known As)","A stout core with the arms mounted high up, like Atlas from Portal."),
-    CockpitItem("amutecrypt:okayish_computer","Okayish Computer","An AMD CPU hanging like a pair of fluffy dice would"),
+    CockpitItem("amutecrypt:okayish_computer","Okayish Computer","An AMD CPU hanging like a pair of fluffy dice would."),
     Item("amutecrypt:thrill_the_dj","Thrill The DJ","a big set of speakers", ["back"]),
-    Item("amutecrypt:shellshot","Shellshot","A launcher capable of firing adhesive, caltrops and other traps", ["weapon"]),
-    Item("amutecrypt:thunderbirds_are_coming_out","Thunderbirds Are Coming Out","Makes the mech look like a puppet", ["cosmetic"]),
-    Item("amutecrypt:disc_changer","Disk Changer","Allows you to mount 3 power sources, but only one can be active at a time", stars=3),
+    Item("amutecrypt:shellshot","Shellshot","A launcher capable of firing adhesive, caltrops and other traps.", ["weapon"]),
+    Item("amutecrypt:thunderbirds_are_coming_out","Thunderbirds Are Coming Out","Makes the mech look like a puppet.", ["cosmetic"]),
+    Item("amutecrypt:disc_changer","Disk Changer","Allows you to mount 3 power sources, but only one can be active at a time.", stars=3),
     Item("amutecrypt:parallel_player","Parallel Player","Allows you to mount 3 power sources, **and all can be active at once**.",stars=5)
 ]
 )
@@ -287,7 +281,7 @@ alto = Mech("alto",
     LegsItem("alto:unremarkable_legs","Unremarkable Legs","These hydraulic mecha legs are well maintained but otherwise unremarkable. They are ready for painting, aftermarket tinkering, or full replacement. "),
     ArmsItem("alto:unremarkable_arms","Unremarkable Arms","These hydraulic mecha arms are well maintained but otherwise unremarkable. They are ready for painting, aftermarket tinkering, or full replacement."),
     BodyItem("alto:unremarkable_body","Unremarkable Body","This hydraulic mecha body is well maintained but otherwise unremarkable. It is ready for painting, aftermarket tinkering, or full replacement. "),
-    BodyPlanItem("alto:light_mecha","Light Mecha","This Blueprint was given to Alto from the original Polkatdot. It seems to be plans for an ultralight mobile suit consisting of only a powersource, a weapon, and a back mounted accessory. It's almost more honest to call it power armor than a proper mecha", {"weapon": 1, "power":1, "back":1}, stars=5),
+    BodyPlanItem("alto:light_mecha","Light Mecha","This Blueprint was given to Alto from the original Polkadot. It seems to be plans for an ultralight mobile suit consisting of only a powersource, a weapon, and a back mounted accessory. It's almost more honest to call it power armor than a proper mecha", {"weapon": 1, "power":1, "back":1}, stars=5),
 ]
 )
 

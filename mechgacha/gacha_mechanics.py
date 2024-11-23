@@ -1,8 +1,6 @@
 from dataclasses import dataclass
 from enum import Enum
 
-partsList = {} # populated every time a new Item() is created
-
 class TagType(Enum):
     arms = "arms"
     legs = "legs"
@@ -12,6 +10,7 @@ class TagType(Enum):
     back = "back"
     cockpit = "cockpit"
     cosmetic = "cosmetic"
+    bodyplan = "bodyplan"
 
 
 @dataclass
@@ -67,18 +66,3 @@ def BodyPlanItem(id, name, description, bodyplan, stars=1):
     item.bonusdata = bodyplan
     item.tags = ["bodyplan"]
     return item
-
-    
-
-class ItemInInventory:
-    id: str
-    item_data: Item
-    original_owner: str
-    
-    
-
-def check_gacha_table():
-    for person in all_people:
-        pass
-        
-
