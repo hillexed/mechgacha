@@ -3,45 +3,6 @@ from enum import Enum
 
 from gacha_mechanics import TagType, Mech, Item, PowerItem, BodyItem, ArmsItem, LegsItem, WeaponItem, BodyPlanItem, CockpitItem
 
-def importLinesFromSpreadsheetToCode(lines):
-    cells = lines.split("\t")
-    if len(cells) < 8:
-        raise ValueError("Found {len(lines)}  items in spreadsheet import! Was expecting >8")
-
-    namedescs = []
-    for cell in cells:
-        if '-' in cell: 
-            namedescs.append([x.strip() for x in cell.split('-')])
-        elif ':' in cell: 
-            namedescs.append([x.strip() for x in cell.split(':')])
-        elif cell == "":
-            pass
-        else:
-            print(("Need a name for {cell} - add one using a 'name: description' field"))
-            namedescs.append(("ERROR UNKNOWN NAME", cell.strip()))
-
-    def q(x):
-      return '"' + x + '"'
-
-    namedescs = [[q(str) for str in line] for line in namedescs]
-
-    print(
-f"""
-[
-    PowerItem({",".join(namedescs[0])}),
-    LegsItem({",".join(namedescs[1])}),
-    ArmsItem({",".join(namedescs[2])}),
-    BodyItem({",".join(namedescs[3])}),
-    CockpitItem({",".join(namedescs[4])}),
-    Item({",".join(namedescs[5])}, [\"back\"]),
-    Item({",".join(namedescs[6])}, [\"weapon\"]),
-    Item({",".join(namedescs[7])}, [\"cosmetic\"]),
-""")
-    for i in range(8,len(namedescs)):
-
-        if namedescs[i][1] != "":
-            print(f'    Item({",".join(namedescs[i])}{", stars=5" if i+1 == len(namedescs) else ""}),')
-    print("]")
 
 
 
@@ -101,7 +62,7 @@ hillexed = Mech("hillexed",
 
 ])
 
-styietus = Mech("St. Yietus:",
+styietus = Mech("St. Yietus",
 [
     PowerItem("st_yietus:curseheart_engine","CURSEHEART ENGINE","A grinding mass of twisted machinery, alight with horror and hope. Within its bowels, misfortune and cruelty are catalyzed into fiercest resolve. Generates additional energy for each unique debuff affecting your mech."),
     LegsItem("st_yietus:rotborn_stomper","ROTBORN STOMPER","A sturdy weatherproofed leg. Slow, but capable of brief bursts of agility. Gains charges over time which can each be spent to perform a short leap. Leaps are faster than walking and clear low obstacles and small gaps. Slightly reduces the effects of debuffs."),
@@ -285,6 +246,27 @@ alto = Mech("alto",
 ]
 )
 
+renne = Mech("renne", 
+[
+    PowerItem("renne:earthen_splinter","Earthen Splinter","A crystal brimming with earth-aspected arcane force. This energy regenerates gradually while the mech is dormant, but can be roused into uncontrollable bursts of magic if disturbed."),
+    LegsItem("renne:tunneling_roots","Tunneling Roots","This mech has great tendrils that can support its weight as would legs, but also dig deep into the ground to provide anchoring when necessary."),
+    ArmsItem("renne:plated_growth","Plated Growth","What looks like jointed arms of stone conceals a mass of large vines beneath the exterior armor. This stone exterior can be shed for greater flexibility, but at the cost of what protection it affords."),
+    BodyItem("renne:the_tower","The Tower","An imposing cylindrical column upon which rests a stately head. Simple, but iconic in the oldest sense."),
+    CockpitItem("renne:mystic_union","Mystic Union","Tendrils within the main cavity meld themselves to the pilot's extremities and the back of their neck, making it so they see and feel everything the mech can—and can control it as they would their body. This means they feel damage to the mech as pain, and for any mind, perception is reality..."),
+    Item("renne:hanging_garden","Hanging Garden","This mech has a space on its back where life flourishes. Outside of battle, it may serve as a sanctuary, or a place to grow food.", ["back"]),
+    Item("renne:hedge_clipper_turbo","Hedge Clipper Turbo","A massive pair of scissors; the individual blades can split off into dual swords, single-edged.", ["weapon"]),
+    Item("renne:time_ravaged","Time-Ravaged","This mech is made of finely-chiseled stone covered in ancient artistic engravings, and much of it has been worn down by time and the elements. Parts of it are held together by plant growth that has overtaken it.", ["cosmetic"]),
+    BodyPlanItem("renne:beastly_deva","Beastly Deva","This mech was built to be a master of both terrain and adaptability, meaning any relation to the human form is more coincidental than anything. Controlling it may be tricky.", {"legs":6,"arms":4}),
+    CockpitItem("renne:spirit_of_the_earth","Spirit of the Earth","An embodiment of nature has taken residence inside this mech and communicates with the pilot. It does not speak human language, but long-term pilots claim to be able to understand it."),
+    ArmsItem("renne:ancillary_vines","Ancillary Vines","Growing out of the mech's body, these prehensile growths may not have the greatest durability to slashing weapons, but excel at wrapping around things and tethering them."),
+    Item("renne:razor_maw","Razor Maw","This mech's face bears a large snout with which it can bite enemies. Who needs weapons when you have the ideal predator body?", ["cosmetic"]),
+    PowerItem("renne:caustic_engine","Caustic Engine","Some kind of bubbling acidic substance courses through this mech. How it doesn't eat through the thing is a small wonder."),
+    PowerItem("renne:earthen_crystal","Earthen Crystal","A full crystal brimming with earth-aspected arcane force. This energy regenerates gradually while the mech is dormant, but can be roused into uncontrollable bursts of magic if disturbed. This crystal's size means its energy wellspring is far greater and can therefore be channeled into greater or longer-lasting effects, but the magic within **will** radiate into the pilot with continued operation due to its sheer concentration. This may have adverse or otherwise unusual effects on one's health, well-being, or biological taxonomy.", stars=5),
+]
+)
+
+
+
 starting_inventory = ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body"]
 
 
@@ -299,7 +281,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 
