@@ -62,7 +62,7 @@ def BodyPlanItem(id, name, description, bodyplan, stars=1):
     #body plan is a dict of {tagName: number}
 
     # todo: expand this out
-    item = Item(id, name, description)
+    item = Item(id, name, description, stars=stars)
     item.bonusdata = bodyplan
     item.tags = ["bodyplan"]
     return item
