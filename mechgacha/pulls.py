@@ -53,7 +53,7 @@ def get_ratoon_pulls(playerdata):
 
 def choose_mech_by_name(all_mechs, requested_mech_name):
     # fuzzy string matching!
-    mech_names = [mech.username for mech in all_mechs]
+    mech_names = [mech.username.lower() for mech in all_mechs]
     chosen_mech_name, closeness = process.extractOne(requested_mech_name, mech_names)
 
     for mech in all_mechs:
@@ -180,6 +180,6 @@ async def pull_command(message, message_body):
         add_to_inventory(new_item, username)
         deduct_pull(username, playerdata)
 
-        await message.channel.send(f"You got... \n**{new_item.name} {'★' * new_item.stars}**\n{new_item.description}")
+        await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {'★' * new_item.stars}**\n{new_item.description}")
     else:
         await message.channel.send(f"You are out of pulls!")
