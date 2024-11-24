@@ -56,6 +56,9 @@ def choose_mech_by_name(all_mechs, requested_mech_name):
     mech_names = [mech.username.lower() for mech in all_mechs]
     chosen_mech_name, closeness = process.extractOne(requested_mech_name, mech_names)
 
+    if closeness < 85:
+        return None
+
     for mech in all_mechs:
         if mech.username.lower() == chosen_mech_name.lower():
             return mech
