@@ -288,13 +288,115 @@ cheesesnack = Mech("cheesesnack",
     ArmsItem("cheesesnack:roper_manipulators","Roper Manipulators","Originally designed for clearing minefields, each \"arm\" consists of four tentacles that can snake, coil, and swing independently. Experts with the system can snatch tools and weapons from quite a distance, though many are content learning how to make sick whipcrack noises."),
     BodyItem("cheesesnack:recycled_vans","Recycled Vans","Some enterprising scavenger has gutted and reinforced two vans and welded them together in an intimate pose, looking like a scrapyard sculpture. Joints for the arms and legs have been installed where the wheels once sat. Only the mad or desperate would entrust themselves to this thing.", stars=3),
     CockpitItem("cheesesnack:foldaway_kitchenette","Foldaway Kitchenette","A metal cabinet tucked away in a corner conceals a small counter that folds out for simple meal prep with a knife rack, coffee brewer, and some space for food storage. Constructed by a pilot assigned to long and uneventful duties."),
-    Item("cheesesnack:self_righting_device","Explosive Self-Righting Device","In the event that the mech falls on it's back, an explosive charge can be used to launch the mech upright. Currently subject to several lawsuits regarding back and neck injuries.", ["back"]),
-    Item("cheesesnack:pick_mattock","Pick Mattock","Warfare never really advanced beyond the need for earthworks and trenches. Pilots have discovered that the titanium pick on this tool pierces armor as easily as it does earth and stone.", ["weapon"]),
+    Item("cheesesnack:self_righting_device","Explosive Self-Righting Device","In the event that the mech falls on it's back, an explosive charge can be used to launch the mech upright. Currently subject to several lawsuits regarding back and neck injuries.", ["back"], stars=3),
+    Item("cheesesnack:pick_mattock","Pick Mattock","Warfare never really advanced beyond the need for earthworks and trenches. Pilots have discovered that the titanium pick on this tool pierces armor as easily as it does earth and stone.", ["weapon"], stars=3),
     Item("cheesesnack:branch_camoflage","Branch Camoflage","Tree limbs have been crudely attached to the shoulders. Enemy spotters might mistake this mech for a particularly mobile tree.", ["cosmetic"]),
     BodyPlanItem("cheesesnack:centipede_mode","Centipede Mode","An adapter system that allows the mech to crawl on many small legs", {"legs": 4}),
     ArmsItem("cheesesnack:five_star_roper_manipulators","Roper Manipulators","Originally designed for clearing minefields, each \"arm\" consists of four tentacles that can snake, coil, and swing independently. Experts with the system can snatch tools and weapons from quite a distance, though many are content learning how to make sick whipcrack noises. This version comes equipped with an experimental upgrade that allows the tentacles to act completely independently of the mech. Pilots have used this ability to throw individual tentacles like bolases or to interlink tentacles together to form a single very long tentacle.", stars=5),
 ]
 )
+
+warlock = Mech("warlock", 
+[
+    PowerItem("warlock:system_of_hamster_wheels","System of Hamster Wheels","They are intricately connected by a mechanism to a generator. The hamsters have a great union contract."),
+    LegsItem("warlock:digitigrade_legs","Digitigrade Legs","Strong, animal-like legs with big paws and claws that can dig into the ground for support"),
+    ArmsItem("warlock:sable_arms","Sable Arms","Extendible animal-like arms with big paws and claws for grabbing."),
+    BodyItem("warlock:forest_sable","Forest Sable","Camouflaged to blend in with dirt and forests, the slender body of this mech is perfect for hiding in plain sight."),
+    CockpitItem("warlock:library_membership_card","Library Membership Card","With this, you can download ebooks, audiobooks, music, and games! Plus, you can check out physical materials at your local library.", stars=2),
+    Item("warlock:big_backpack","Big Backpack","this comedically large backpack is actually great for storing things. It’s water-resistant, but not waterproof.", ["back"], stars=3),
+    Item("warlock:big_hammer","Big Hammer","Giant two-handed war-hammer. Fun to spin around with!", ["weapon"]),
+    Item("warlock:pride_&_pronoun_pins","Pride & Pronoun Pins","Colorful, easily legible, allows you to share your identity with the world", ["cosmetic"], stars=2),
+    BodyPlanItem("warlock:combat_animal","Combat animal","Four legs, 2 weapon slots on back.", {"legs": 4, "weapon": 2}),
+    Item("warlock:giant_beaglepuss","Giant Beaglepuss","Also known as Groucho Marx glasses, they are lensless and have a comedic fake nose and mustache attached.", ["cosmetic"], stars=3),
+    BodyItem("warlock:massive_speaker_system","Massive Speaker System","With this, you can blast music, or unleash a bestial roar that can be heard for miles. body", stars=3),
+    BodyItem("warlock:winter_marten","Winter Marten","Camouflaged to blend in with ice and snow, the slender body of this mech is perfect for hiding in cold environments.", stars=3),
+    PowerItem("warlock:the_soup_engine","The Soup Engine","Just pour some soup in there, or a smoothie, and it’ll run real good!", stars=4),
+    LegsItem("warlock:advanced_digitigrade_legs","Advanced Digitigrade Legs","Strong, animal-like legs with big paws and claws that can dig into the ground for support. These legs can be super-charged, crackling with blue electricity to give you incredible speed boosts, letting you run faster than should be reasonably possible, even up walls!", stars=5),
+]
+)
+
+bytes = Mech("bytes", 
+[
+    PowerItem("bytes:dying_star","Dying Star","The radioactivity of this source makes it very effective yet very unstable."),
+    LegsItem("bytes:hover_jets","Hover Jets","These jets allow universal transit over a variety of terrains by never making contact with the ground.", stars=2),
+    ArmsItem("bytes:magnetized_grabbers","Magnetized Grabbers","These claws are extremely effective and lifting and holding magnetic materials."),
+    BodyItem("bytes:steel_casket","Steel Casket","This durable chassis has boxy edges and thick armor."),
+    CockpitItem("bytes:climate_controller","Climate Controller","This high-tech cockpit accessory provides great comfort to the pilot regardless of the condition."),
+    Item("bytes:long_range_warp_boosters","Long Range Warp Boosters","These boosters allow for rapid yet poorly controlled mobility over distance.", ["back"], stars=4),
+    Item("bytes:harvest_claw","Harvest Claw","This massive melee weapon is comprised of several blades and is capable of inflicting devastating damage.", ["weapon"]),
+    Item("bytes:split_paintjob","Split Paintjob","This chaotic paintjob has no left-right symmetry.", ["cosmetic"], stars=2),
+
+    BodyPlanItem("bytes:cruiser_form","Cruiser Form","This vehicular form is well adapted for high speeds and endurance.", {"legs": 0}),
+    Item("bytes:short_range_teleporters","Short Range Teleporters","These devices make use of anomalous technology to teleport short distances to evade attacks.", stars=3), # don't know what type this should be. mobility?
+    BodyItem("bytes:aerogel_heat_shell","Aerogel Heat Shell","This lightweight material provides immense resistance to all but the most stellar of heat sources."), # or this
+    WeaponItem("bytes:uncertainty_mines","Uncertainty Mines","These mines latch onto mechas sabotaging their control and stability."),
+    Item("bytes:antimass_stabilizer","Antimass Stabilizer","This component allows the effects of gravity to be ignored for short period of time.", ["back"], stars=4),
+    WeaponItem("bytes:hard_light_harvest_claw","Hard Light Harvest Claw","This massive melee weapon has blades made of hard light capable of shredding any armor.", stars=5),
+]
+)
+
+thecowofeternalflame = Mech("thecowofeternalflame", 
+[
+    PowerItem("thecowofeternalflame:fusion_core","Fusion core","High energy production at the expense of high heat output and a tendency to destabilize if shot directly."),
+    LegsItem("thecowofeternalflame:spider_legs","Spider Legs", "Four spider-like legs that can be used to climb vertical surfaces"),
+    BodyItem("thecowofeternalflame:drone_body","Integrated Drone Port","A bulky body with a drone bay that opens in the middle of it."),
+    CockpitItem("thecowofeternalflame:drone_controls","Drone Controls","A drone control panel and keychain thingy hanging from the ceiling of the types of drones the mech produces", stars=2),
+    Item("thecowofeternalflame:back_mounted_radio","Back-Mounted Radio", "Large radio pack with long antennae coming up from it, for sending and receiving signals from the drones as well as for long-range communication with teammates", ["back"]),
+    Item("thecowofeternalflame:targeting_system","Long-range laser targeting system", "Helps to guide missiles to hit targets, whether from salvos, drones or allies.", ["weapon"], stars=2),
+    Item("thecowofeternalflame:lightning_decal","Lightning Decal","A lightning decal, thematically appropriate to put on a targeting system.", ["cosmetic"]),
+    BodyItem("thecowofeternalflame:swivel_pivot","Swivel Pivot","The mech's torso sits on a 360° swivel mount with a leg situated at each quarter of the base", stars=2),
+    WeaponItem("thecowofeternalflame:drone-factory","Drone Factory", "The mech has a drone bay situated in it. Within the bay is an automated drone factory wherein the mech can slowly produce new drones. This slows the mech down a lot due to the sheer bulk. There is room to hold eight drones in the drone bay at any one time.", stars=4),
+    WeaponItem("thecowofeternalflame:error_unknown_name","Long-Range Railgun","This railgun has a huge range, but is slow firing with a long reload.", stars=2),
+    Item("thecowofeternalflame:light_armor","Light Armor", "This armor weighs lighter than most to compensate for heavy weapons. It increases speed at the cost of making it vulnerable to smaller, faster flanking mechs", stars=2), # defense?
+    WeaponItem("thecowofeternalflame:drone_medium","Medium Gunner Drone","A medium-range flying gunner-drone equipped with a HMG;", stars=3),
+    WeaponItem("thecowofeternalflame:drone_long","Long Artillery Drone","A long-range artillery drone that can fire missile salvos. It moves via tank treads.", stars=3),
+    WeaponItem("thecowofeternalflame:drone_fast","Fast Spider Drone","A fast moving drone that is effectively an oversized spider mine from SC2", stars=3),
+    Item("thecowofeternalflame:drone_radar","Radar Scout Drone","A fast moving flying scout drone equipped with radar tech.", stars=3),
+    Item("thecowofeternalflame:five_star_back_radio","Multiplexed Communications Radio","Large radio pack with long antennae coming up from it, for sending and receiving signals from the drones as well as for long-range communication with teammates. This version is 5 stars as is allows all allies to loop in to eachother's camera feeds in real-time, as well as the feeds of any drones that may be fielded.", ["back"], stars=5),
+]
+)
+
+shork = Mech("shork", 
+[
+    PowerItem("shork:lithium_polymer_battery","Lithium Polymer Battery","Harnesses the incredible power of magic smoke. Don't let it escape!"),
+    LegsItem("shork:mecanum_drive","Mecanum Drive","Wheels with built-in rollers, designed for omnidirectional movement."),
+    ArmsItem("shork:srimech_arm","Srimech Arm","'Ave you got a srimech? Course you 'ave!"),
+    BodyItem("shork:billet_chassis","Billet Chassis","A solid block of aluminium carved into a chassis shape. Indestructible, but tough to repair."),
+    CockpitItem("shork:remote_control_unit","Remote Control Unit","Battle at a safe distance from the carnage."),
+    Item("shork:apd_unit","APD Unit","An array of scaffolding designed to keep dangerous foes out of reach. Also handy if you get stuck in a hole.", ["back"]),
+    Item("shork:spinnaaaaaaaaah","SPINNAAAAAAAAAH","A big hunk of metal spinning at ungodly speeds. Kinetic energy in its purest form.", ["weapon"]),
+    Item("shork:polkadot_fur","Polkadot Fur","Offers no tactical advantage whatsoever.", ["cosmetic"]),
+    BodyPlanItem("shork:snowplow","Snowplow","Low to the ground, with a solid defensive profile. Armaments are tucked behind the safety of a giant wedge.", {"arms":0}),
+    WeaponItem("shork:d2_kitbot_drone","D2 Kitbot Drone","An incredibly effective drone unit, but is it really your victory if you didn't built it yourself...?"),
+    WeaponItem("shork:pulveriser","Pulveriser","A gigantic articulated metal mallet. Surprisingly ineffective."),
+    WeaponItem("shork:massive_claw_unit","Massive Claw Unit","Nine gigatons of crushability factor!"),
+    WeaponItem("shork:flippaaaaaaaaah","FLIPPAAAAAAAAAH","A pneumatic paddle designed for pushing potential pugilists before they pounce."),
+    WeaponItem("shork:lithium_polymer_armament","Lithium Polymer Armament","Harnesses the incredible power of magic smoke. Don't let it escape! This unusual config directly weaponizes the battery unit. If this gets hit, the fight's ending one way or another.", stars=5),
+]
+)
+
+p_rker = Mech("p_rker", 
+[
+    PowerItem("p_rker:psionic_engine","Psionic engine","This device syncs with the user's brainwaves to create a potent motive force"),
+    LegsItem("p_rker:heelies","Heelies","These digitigrade-shaped piston legs have wheels or tracks on the bottom!"),
+    ArmsItem("p_rker:biomechanical_arms","Biomechanical arms","Artificial muscles made from bizzare tensile alloys"),
+    BodyItem("p_rker:crash_resistant_body","Crash-Resistant Body","A sturdy roll cage suspends its cockpit with tense metal springs"),
+    CockpitItem("p_rker:egg_pod","Egg-shaped Pod","An egg-shaped pod that encases the pilot in protective fluids"),
+    Item("p_rker:sensor_suite","Sensor suite","A number of sensors measure various atmospheric conditions, reporting to base with a giant radio antenna", ["back"]),
+    Item("p_rker:stop_sign","Stop Sign","Slow without stopping at your own peril!", ["weapon"]),
+    Item("p_rker:caution_stripes","Caution stripes","Black and yellow paint warns away from the mech's most sensitive - and dangerous - joints", ["cosmetic"]),
+    BodyPlanItem("p_rker:train_body","Train Body","we strapped arms on this train and called it a mecha", {"legs":0,"arms":2}),
+    WeaponItem("p_rker:weapon","Weapon","Steel Claws: These bestial claws menace with spikes of iron"),
+    Item("p_rker:climbing_equipment","Climbing equipment","The pitons and steel rope strapped to this mech let it scale sheer cliffs."), # legs? mobility
+    Item("p_rker:helicoper_blades","Helicoper blades","You know what helicopters are like."), # mobility
+    Item("p_rker:cosmetic","Fur","This mech appears to have fur growing on it.  Are they simply cosmetic synthetics, or has science finally gone far enough?", ["cosmetic"]),
+    PowerItem("p_rker:brainwave_projector","Brainwave projector","This device syncs with the user's brainwaves to create a potent motive force. This advanced variant of the psionic engine can be mentally overclocked to create an invisible defensive shield between itself and an attacker.", stars=5),
+]
+)
+
+
+
+
 
 
 
@@ -314,7 +416,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, warlock, bytes, thecowofeternalflame, p_rker, shork)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 
