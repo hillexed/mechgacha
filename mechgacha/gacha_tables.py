@@ -129,8 +129,9 @@ loading = Mech("loading",
     BodyItem("loading:elongated_segment_frame","Elongated Segment Frame","Thin segmented spine that allows for maximum flexibility and aerodynamics"),
     CockpitItem("loading:gyrobomber","Gyrobomber","A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts."),
     Item("loading:big_jacket","Big Jacket","A jacket that is two sizes too large. It flows in the wind, increasing evasion the more the mech moves.", ["back", "cosmetic"]),
-    Item("loading:hook_lash","Hook Lash","A lash that looks not unlike the skyhook from Bioshock. it applies a random debuff on hit", ["weapon"]),
-    Item("loading:big_mechs_jacket","Big Mechs Jacket","A long flowing jacket based on the Mechs bomber jacket that flows behind the mech as it moves obscuring the body. It increases evasion the more the mech moves.", ["back", "cosmetic"], stars=5),
+    Item("loading:hook_lash","Hook Lash","A whip that looks not unlike the skyhook from Bioshock. it applies a random debuff on hit", ["weapon"]),
+    Item("loading:lockjaw_needler","Lockjaw Needler","A low damage SMG that corrodes any surface it's projectiles make contact with", ["weapon"], stars=3),
+    Item("loading:big_mechs_jacket","Big Mechs Jacket","A long flowing jacket based on the Mechs bomber jacket that flows behind the mech as it moves obscuring the body. It increases evasion and throws off targeting systems the more the mech moves.", ["back", "cosmetic"], stars=5),
 ]
 )
 
