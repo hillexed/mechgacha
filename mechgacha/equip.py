@@ -53,9 +53,13 @@ def count_equipped_categories(player_data, inventory):
             tagCount[tag] += 1
     return tagCount
 
-async def mech_command(message, message_body, client):
+    
 
-    # Code here to catch mentions or uids and set it to peoples things
+async def mech_command(message, message_body, client):
+    return await print_mech_inventory_command(message, message_body, client)
+
+
+async def print_mech_inventory_command(message, message_body, client):
 
     userid = message.author.id
     username = message.author.display_name
@@ -127,8 +131,9 @@ async def equip_command(message, message_body, client):
     newline = "\n"
 
     if item_index < 0:
-        return await message.channel.send(f'Equipped Items:{newline}{f"{newline}".join(filter_equipment(playerdata, inventory))}')
-    
+        # no item given
+        return await print_mech_inventory_command(message, message_body, client)
+
     if (item_index < 0 or item_index >= len(inventory)):
         return await message.channel.send("That isn't an existing id!")
     
@@ -169,9 +174,9 @@ async def unequip_command(message, message_body, client):
             if all_parts_list[inventory[i]].name == chosen_item_name:
                 item_index = i
         
-    newline = "\n"
     if item_index < 0:
-        return await message.channel.send(f'Equipped Items:{newline}{f"{newline}".join(filter_equipment(playerdata, inventory))}')
+        # no item given
+        return await print_mech_inventory_command(message, message_body, client)
     
     if (item_index < 0 or item_index >= len(inventory)):
         return await message.channel.send("That isn't an existing id!")
