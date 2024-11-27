@@ -123,14 +123,14 @@ cheshire = Mech("cheshire",
 
 loading = Mech("loading", 
 [
-    PowerItem("loading:kinetic_recycler","Kinetic Recycler","A kinetic generator powered by the grounded movement of the mech"),
-    LegsItem("loading:xr2","Loading's XR2","Long double jointed legs that give the mech a low crouching position while stationary, but a long stride"),
-    ArmsItem("loading:knuckle_draggers","Knuckle Draggers","Long and delicate arms twice as long as the torso it is attached to"),
-    BodyItem("loading:elongated_segment_frame","Elongated Segment Frame","Thin segmented spine that allows for maximum flexibility and aerodynamics"),
+    PowerItem("loading:kinetic_recycler","Kinetic Recycler","A kinetic generator powered by the grounded movement of the mech", stars=2),
+    LegsItem("loading:xr2","Loading's XR2","Long double jointed legs that give the mech a low crouching position while stationary, but a long stride", stars=3),
+    ArmsItem("loading:knuckle_draggers","Knuckle Draggers","Long and delicate arms twice as long as the torso it is attached to", stars=2),
+    BodyItem("loading:elongated_segment_frame","Elongated Segment Frame","Thin segmented spine that allows for maximum flexibility and aerodynamics", stars=3),
     CockpitItem("loading:gyrobomber","Gyrobomber","A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts."),
     Item("loading:big_jacket","Big Jacket","A jacket that is two sizes too large. It flows in the wind, increasing evasion the more the mech moves.", ["back", "cosmetic"]),
-    Item("loading:hook_lash","Hook Lash","A whip with a spinning metal weight at the end that applies a random debuff on hit", ["weapon"]),
-    Item("loading:lockjaw_needler","Lockjaw Needler","A low damage SMG that corrodes any surface it's projectiles make contact with", ["weapon"], stars=3),
+    Item("loading:hook_lash","Hook Lash","A whip with a spinning metal weight at the end that applies a random debuff on hit", ["weapon"], stars=2),
+    Item("loading:lockjaw_needler","Lockjaw Needler","A low damage, hig fire rate pistol that corrodes any surface it's projectiles make contact with", ["weapon"], stars=3),
     Item("loading:big_mechs_jacket","Big Mechs Jacket","A long flowing jacket based on the Mechs bomber jacket that flows behind the mech as it moves obscuring the body. It increases evasion and throws off targeting systems the more the mech moves.", ["back", "cosmetic"], stars=5),
 ]
 )
