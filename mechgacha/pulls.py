@@ -84,32 +84,6 @@ def add_new_mech(username, playerdata, new_mech):
 
     db.set_player_data(username, playerdata)
 
-def add_to_inventory(new_item, username):
-
-    inv = db.get_inventory_data(username)
-
-    if inv is None:
-        inv = starting_inventory
-
-    inv.append(new_item.id)
-    print(inv)
-    db.set_inventory_data(username, inv)
-
-
-def add_to_inventory(new_item, username):
-
-    inv = db.get_inventory_data(username)
-
-    if inv is None:
-        inv = starting_inventory
-
-    inv.append(new_item.id)
-    print(inv)
-    db.set_inventory_data(username, inv)
-
-def item_already_in_inventory(new_item, inventory):
-    return new_item in inventory
-
 
 async def pull_command(message, message_body):
 
@@ -177,10 +151,10 @@ async def pull_command(message, message_body):
             # pull!
             new_item = pull(mech_to_pull_from,1)[0]
             # if the item isn't a duplicate, we're done!
-            if not item_already_in_inventory(new_item, user_inv):
+            if not inventory.item_already_in_inventory(new_item, user_inv):
                 break
 
-        add_to_inventory(new_item, username)
+        inventory.add_to_inventory(new_item, username)
         deduct_pull(username, playerdata)
 
         await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {'★' * new_item.stars}**\n{new_item.description}")
