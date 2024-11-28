@@ -30,20 +30,17 @@ def compute_inventory(userid):
 def item_already_in_inventory(new_item, inventory):
     return new_item in inventory
 
-def add_to_inventory(new_item, username):
-
-    inv = db.get_inventory_data(username)
+def add_id_to_inventory(new_item_id, userid):
+    inv = db.get_inventory_data(userid)
 
     if inv is None:
         inv = starting_inventory
 
-    inv.append(new_item.id)
-    print(inv)
-    db.set_inventory_data(username, inv)
+    inv.append(new_item_id)
+    db.set_inventory_data(userid, inv)
 
-def item_already_in_inventory(new_item, inventory):
-    return new_item in inventory
-
+def add_to_inventory(new_item, userid):
+    add_id_to_inventory(new_item.id, userid)
 
 def trade(userid1, item_id_to_trade1, userid2, item_id_to_trade2):
     inventory1 = db.get_inventory_data(userid1)
@@ -57,14 +54,14 @@ def trade(userid1, item_id_to_trade1, userid2, item_id_to_trade2):
     if item2.id not in inventory2:
         raise ValueError("User #2 doesn't have the item {item2.id}")
 
-    remove_from_inventory(userid1, item1.id)
-    add_to_inventory(item1, userid2)
-    remove_from_inventory(userid2, item2.id)
-    add_to_inventory(item2, userid1)
+    remove_from_inventory(item1.id, userid1)
+    add_id_to_inventory(item1.id, userid2)
+    remove_from_inventory(item2.id, userid2)
+    add_id_to_inventory(item2.id, userid1)
         
 
 
-def remove_from_inventory(userid, item_id_to_remove):
+def remove_from_inventory(item_id_to_remove, userid):
     inventory = db.get_inventory_data(userid)
     if inventory is not None:
         pass
@@ -77,7 +74,7 @@ def remove_from_inventory(userid, item_id_to_remove):
     
         # first deal with equipped items
         # unequip this item if it's equipped
-        playerdata = db.get_player_data(username)
+        playerdata = db.get_player_data(userid)
 
         if deleted_item_index in playerdata["equipment"]:
             playerdata["equipment"].remove(deleted_item_index)
@@ -87,11 +84,11 @@ def remove_from_inventory(userid, item_id_to_remove):
             item_index = playerdata["equipment"][i]
             if item_index > deleted_item_index:
                 playerdata["equipment"][i] -= 1 
-        db.set_player_data(userid, json.dumps(playerdata))
+        db.set_player_data(userid, playerdata)
 
         # now remove item from inventory
         inventory.remove(item_id_to_remove)
-        db.set_inventory_data(userid, json.dumps(inventory))
+        db.set_inventory_data(userid, inventory)
     else:
         raise ValueError("Thing not in user's inventory in DB!")
         

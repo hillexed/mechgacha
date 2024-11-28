@@ -144,6 +144,29 @@ async def equip_command(message, message_body, client):
     
     return await message.channel.send(f"Equipped {all_parts_list[inventory[item_index]].name}!")
 
+def select_item_index_by_name_or_position(requested_item, inventory):
+    # requested_item is the name of an item in your inventory, or "2" for the second item in inventory
+    # returns the index of an item in your inventory matching that name, or -1 if not found
+
+    item_index = -1
+    if requested_item.isnumeric():
+        try:
+            item_index = int(requested_item) - 1
+        except:
+            item_index = -1
+    elif len(requested_item) == 0:
+        item_index = -1
+    else:
+        # item could be a name.
+        choices = [all_parts_list[itemid].name for itemid in inventory]
+        chosen_item_name, closeness = process.extractOne(requested_item, choices)
+
+        for i in range(len(inventory)):
+            if all_parts_list[inventory[i]].name == chosen_item_name:
+                item_index = i
+
+    return item_index
+
 
 async def unequip_command(message, message_body, client):
     userid = message.author.id
@@ -157,22 +180,8 @@ async def unequip_command(message, message_body, client):
         db.set_player_data(userid, playerdata)
 
     requested_item = message_body.strip()
-    item_index = -1
-    if requested_item.isnumeric():
-        try:
-            item_index = int(message_body.strip()) - 1
-        except:
-            item_index = -1
-    elif len(requested_item) == 0:
-        item_index = -1
-    else:
-        # item could be a name.
-        choices = [all_parts_list[itemid].name for itemid in inventory]
-        chosen_item_name, closeness = process.extractOne(requested_item, choices)
 
-        for i in range(len(inventory)):
-            if all_parts_list[inventory[i]].name == chosen_item_name:
-                item_index = i
+    item_index = select_item_index_by_name_or_position(requested_item, inventory)
         
     if item_index < 0:
         # no item given

@@ -12,6 +12,7 @@ from pulls import pull_command
 import inventory
 import regeneration
 import equip
+import tradecommand
 
 debug = False
 prefix = 'm!'
@@ -102,6 +103,9 @@ async def handle_commands(message):
 
     elif message.content.startswith(prefix + "mech"):
         await equip.mech_command(message, get_command_body(message, "mech"), client)
+
+    elif message.content.startswith(prefix + "trade"):
+        await tradecommand.trade_command(message, get_command_body(message, "trade"), client)
 
     elif message.content.startswith(prefix + "wakeup"):
         await message.channel.send("ok ok im up")
