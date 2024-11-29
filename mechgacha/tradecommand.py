@@ -5,7 +5,6 @@ import asyncio
 
 open_trade_offers = [] # [(requesting_user, target_user, item1)]
 
-
 async def trade_command(message, message_body, client):
     global open_trade_offers
 
@@ -13,7 +12,7 @@ async def trade_command(message, message_body, client):
 
     # when you @ someone, the message is actually of the form <@123>
     if "<@" not in message_body or ">" not in message_body:
-        return await message.channel.send("Please @-mention the user who you would like to trade with! m!trade <user> <your item you'd like to trade>")
+        return await message.channel.send("To use this command, use `m!trade <@user> <your item you'd like to trade>`. Make sure to @-mention the user who you would like to trade with as part of the command. If you don't have a trade partner in mind, ask around!")
 
     # extract @ed user
     this_targeted_id = message_body[message_body.index("<@")+2:message_body.index(">")]
@@ -30,7 +29,7 @@ async def trade_command(message, message_body, client):
 
     if len(words) < 2:
         return await message.channel.send("To trade one of your items, use m!trade <another user> <item title>")
-    offered_item_name = words[1]
+    offered_item_name = " ".join(words[1:])
 
     your_inventory = inventory.compute_inventory(this_user_id)
   
@@ -53,7 +52,7 @@ async def trade_command(message, message_body, client):
             user_2_id = this_user_id
             item_2_id = offered_item_id
 
-            offer_msg = f"{message.author.display_name} wants to trade:\n{inventory.format_item(item_1_id)}\n for \n{inventory.format_item(item_2_id)}.\nSound good? Both parties, use :thumbsup: to trade!"
+            offer_msg = f"{message.author.display_name} wants to trade:\n{inventory.format_item(item_1_id)}\n for \n{inventory.format_item(item_2_id)}\nSound good? Both parties, use :thumbsup: to agree to the trade!"
             reactmessage = await message.channel.send(offer_msg)
             await reactmessage.add_reaction('👍')
             await reactmessage.add_reaction('👎')
@@ -98,7 +97,11 @@ async def trade_command(message, message_body, client):
     offer = (this_user_id, this_targeted_id, offered_item_id)
     open_trade_offers.append(offer)
 
-    await message.channel.send(f"You have offered to trade your {all_parts_list[offered_item_id].name} to {'this user'}!\n To complete the trade, {'this user'} must respond with a trade offer to you!")
+    traded_item = all_parts_list[offered_item_id]
+
+    other_user = await client.fetch_user(this_targeted_id)
+
+    await message.channel.send(f"You have offered to trade this item to {other_user.display_name}: \n **{traded_item.name} {'★' * traded_item.stars}**\n{traded_item.description}\n\nTo complete the trade, {other_user.display_name} must offer to trade an item to you!")
 
     # trade offer expires in 2 minutes
     await asyncio.sleep(60 * 2)
