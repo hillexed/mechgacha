@@ -44,7 +44,7 @@ async def trade_command(message, message_body, client):
     for offer in open_trade_offers:
         prev_user_id, prev_target_id, prev_offered_id = offer
         if this_user_id == prev_target_id and this_targeted_id == prev_user_id:
-            print("Match!")
+            # print("Match!")
             # we have a match!
             user_1_id = this_targeted_id
             item_1_id = prev_offered_id
@@ -83,7 +83,7 @@ async def trade_command(message, message_body, client):
                 return
 
             
-            print("Trade confirmed!")
+            # print("Trade confirmed!")
             inventory.trade(user_1_id, item_1_id, user_2_id, item_2_id)
 
             await message.channel.send("The trade is complete!")

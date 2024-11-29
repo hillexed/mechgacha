@@ -89,7 +89,13 @@ async def print_mech_inventory_command(message, message_body, client):
 
     instructions = "\n\n Equip or unequip parts from your inventory using `m!mech equip <item name>` or `m!mech unequip <item name>`!"
 
-    return await message.channel.send(f'## {username}\'s Mech:{newline}{equipped_items_report}{missing_categories_report}{instructions}')
+    mech_string = f'## {username}\'s Mech:{newline}{equipped_items_report}{missing_categories_report}{instructions}'
+
+    # Todo: replace this with an item count limit
+    if len(mech_string) >= 2000:
+        return await message.channel.send("Error: Your mech has too many items equipped! Please unequip some.")
+
+    return await message.channel.send(mech_string)
 
 async def equip_command(message, message_body, client):
     userid = message.author.id

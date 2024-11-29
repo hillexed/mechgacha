@@ -90,7 +90,7 @@ async def pull_command(message, message_body):
     username = get_username(message)
     playerdata = get_playerdata(username)
 
-    print(playerdata)
+    # print(playerdata)
 
     if playerdata is None:
         logging.info(f"Adding {username}")
