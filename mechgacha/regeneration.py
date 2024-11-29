@@ -26,7 +26,7 @@ def add_pulls(userid, mech_pulls = 1, ratoon_pulls = 0):
 def regenerate_everyones_pulls(ratoon_pulls = True, mech_pulls = True):
     users = get_all_users()
     for userid in users:
-        ratoon_pulls_per_day = 1/14 # this is a very silly way to make it one full pull every two weeks
+        ratoon_pulls_per_day = 1/14 + 0.001 # this is a very silly way to make it one full pull every two weeks. the 0.001 ensures we won't get stuck with 0.999999998
         mech_pulls_per_day = 1 
         add_pulls(userid, mech_pulls_per_day, ratoon_pulls_per_day)
 
