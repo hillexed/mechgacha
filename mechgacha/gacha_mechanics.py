@@ -29,6 +29,10 @@ class Item:
     extradata = ()
 
     def __post_init__(self):
+        if len(self.description) > 300:
+            print(f"WARNING: {self.id} has description of length {len(self.description)}")
+
+
         for (name, field_type) in self.__annotations__.items():
             if not isinstance(self.__dict__[name], field_type):
                 current_type = type(self.__dict__[name])

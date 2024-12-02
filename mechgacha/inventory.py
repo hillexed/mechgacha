@@ -105,6 +105,8 @@ def give_random_gift(userid):
     logging.info(f"Gave userid {userid} a random gift")
 
 
+page_size = 6 # max 
+
 def represent_inventory_as_string(inventory, playerdata, page=1):
 
     if inventory is None or len(inventory) == 0:
@@ -113,7 +115,6 @@ def represent_inventory_as_string(inventory, playerdata, page=1):
     prefix = "**Your inventory:**\n"
 
     # pagination for when inventory gets big
-    page_size = 8
     page -= 1 #first page should be page 1, not page 0
     items_to_display = inventory[page * page_size : (page+1) * page_size]
 
