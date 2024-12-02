@@ -11,9 +11,14 @@ def _get_db_filename():
     return os.path.join(DB_DIRECTORY,database_filename)
 
 def get_db_connection():
-    conn = sqlite3.connect(os.path.join(DB_DIRECTORY,database_filename))
-    conn.execute('pragma journal_mode=wal')
-    return conn
+    path = os.path.join(DB_DIRECTORY,database_filename)
+    try:
+        conn = sqlite3.connect(path)
+        conn.execute('pragma journal_mode=wal')
+        return conn
+    except:
+        print(f"failed to open database at {path}")
+        raise
 
 def create_table_if_not_made(tablename):
     # WARNING: TABLENAME IS SQL INJECTABLE. DON'T ALLOW USER SUBMITTED TABLE NAMES

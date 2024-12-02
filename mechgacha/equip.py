@@ -2,7 +2,7 @@ from inventory import compute_inventory, format_item
 import db
 import inventory
 from pulls import get_playerdata, get_username
-from gacha_tables import all_parts_list
+from gacha_tables import all_parts_list, all_mechs_by_part
 from gacha_mechanics import TagType
 from fuzzywuzzy import process
 
@@ -55,11 +55,11 @@ def count_equipped_categories(player_data, inventory):
 
     
 
-async def mech_command(message, message_body, client):
-    return await print_mech_inventory_command(message, message_body, client)
+async def mech_command(message, message_body, client, include_sources = False):
+    return await print_mech_inventory_command(message, message_body, client, include_sources)
 
 
-async def print_mech_inventory_command(message, message_body, client):
+async def print_mech_inventory_command(message, message_body, client, include_sources = False):
 
     userid = message.author.id
     username = message.author.display_name
@@ -71,8 +71,27 @@ async def print_mech_inventory_command(message, message_body, client):
     if not "equipment" in playerdata:
         playerdata["equipment"] = []
         db.set_player_data(userid, playerdata)
-    
+
     newline = "\n"
+
+    if include_sources:
+        mechs = {} # dict of mech username: items
+        playerdata["equipment"].sort()
+
+        for equipped_index in playerdata["equipment"]:
+            item_id = inventory[equipped_index]
+            item_data = all_parts_list[item_id]
+
+            mech = all_mechs_by_part[item_id]
+            mechs.setdefault(mech, []).append(item_data)
+
+        mechs_string = f"# {username}'s Mech has items from:"
+        for (mech, items) in sorted(mechs.items(), key=lambda t: -len(t[1])):
+            mechs_string += newline
+            items = sorted(items, key=lambda i: -i.stars)
+            mechs_string += f"## {mech}:{newline}" + newline.join(f'- {item_data.name} {"★" * item_data.stars}' for item_data in items)
+
+        return await message.channel.send(mechs_string)
 
     equipped_items_report = f"{newline}".join(filter_equipment(playerdata, inventory))
 
