@@ -47,7 +47,7 @@ hillexed = Mech("hillexed",
     PowerItem("hillexed:antimatter_tea","Antimatter tea","A transparent container of hot antibeverage! A steel handle attached to glass lets you see the powerful magnets within. Drink it to unlock the vast wellspring of energy inside your mouth!"),
     LegsItem("hillexed:teeny_mechanized_legs","Teeny mechanized legs","Someone wasn't clear about millimeters versus meters. It looks like someone turned a robotic arm upside-down, full of joints and motors. That can't possibly be a baby shoe on the end, can it?", stars=2),
     ArmsItem("hillexed:neutron_star_on_a_stick","Neutron Star on a Stick","The ultimate fishing rod. Cast the line to throw the white-hot neutron star towards something you want to grab, and once gravity sticks the two together, reel it in. If you're really good, you can set up an orbit!"),
-    BodyItem("hillexed:parabolic_block","Parabolic Block","A pancake-shaped glass cylinder, with attachment points along the edge. One side is curved into a mirrored parabolic depression, with three trusses holding up items to its focal point. The dish can reflect and concentrate energy into sensors, or lasers can bounce off the dish to make giant beams!"),
+    BodyItem("hillexed:parabolic_block","Parabolic Block","A pancake-shaped glass cylinder set on edge with attachment points for other mecha parts spaced across the outer rim. The mecha's internals are visible through the sides; made of glass, it is more window than not. Built into one side is a concave depression, a ginormous curved parabolic dish with a smooth mirror finish. Three thin trusses reach forwards from the dish to hold something steady at its focal point. The focal point concentrates light and energy recieved from the dish, so it's the perfect place for a cockpit with advanced sensors... or a weapon that can reflect energy off the dish into a giant beam!"),
     CockpitItem("hillexed:crochet_controls","Crochet Controls","Two levers with a hook at the end. Grab one in each hand and wrap them around the strings of fate and warp the universe. The strings make a nice soft place to rest tired heads."),
     Item("hillexed:charge_couple_device","Charge/couple device","A sensor array of tiny purple squares arranged in a grid, able to build pictures of energy and light. Incredibly sensitive and capable of taking pictures or video, especially if boosted by a parabolic dish, but that sensitivity can be overwhelmed by strong marriages.", ["back"], stars=2),
     Item("hillexed:info_dumper","Info Dumper","It looks like someone combined a backhoe with a cellphone. A data transmitter repurposed to overwhelm foes with information.", ["weapon"], stars=2),
@@ -58,15 +58,15 @@ hillexed = Mech("hillexed",
     Item("hillexed:telescope","Telescope","A large tube that concentrates light to unlock the universe. Attach it to a mech for long-range observations, or have the mech hold it up to your cockpit."),
     Item("hillexed:slitless_spectrograph","Slitless Spectrograph","A tangle of fiber optics that splits light and projects a rainbow of colors covered by occasional black lines into a cockpit. Those lines tell you so much information about what molecules absorbed or reflected the light you're looking at!", stars=3),
     Item("hillexed:death_bed","Death Bed","Part of your mecha is particularly soft and comfy, looking like a bed with a soft pillow. Despite the danger, the public swears it's worth climbing on your mecha to try lying on top of it. They'll die on this hill.", stars=3),
-    Item("hillexed:cassegrain_style_parabolic_block","Cassegrain-Style Parabolic Block","A drum-shaped hollow tube on its side, with attachment points along the outer edge. It focuses energy like a Cassegrain telescope into a point on the back: the perfect place to put advanced sensors... or a weapon that can send energy frontwards into a giant beam of mass destruction.", stars=5),
+    Item("hillexed:cassegrain_style_parabolic_block","Cassegrain-Style Parabolic Block"," A drum-shaped colorful hollow tube on its side, with attachment points for other mecha parts spaced across the outer rim. The front circular surface is mostly open, with three thin truss struts reaching out from the edge to support a small platform in its center. The back circular surface is sealed off, except for a small hole in the center. Almost everything in the tube's inside is reflective, bouncing light that enters back and forth until it enters the back small hole, which is the focal point. The focal point concentrates light and energy recieved from the tube, so it's the perfect place for a cockpit with advanced sensors... or a weapon that can reflect energy through the tube into a giant beam!      This parabolic block bounces light multiple times, packing a longer focal length into a smaller mecha form.  Perfect for spreading out energy weapons into incredibly zoomed-in beams of mass destruction.", stars=5),
 
 ])
 
 styietus = Mech("St. Yietus",
 [
     PowerItem("st_yietus:curseheart_engine","CURSEHEART ENGINE","A grinding mass of twisted machinery, alight with horror and hope. Within its bowels, misfortune and cruelty are catalyzed into fiercest resolve. Generates additional energy for each unique debuff affecting your mech."),
-    LegsItem("st_yietus:rotborn_stomper","ROTBORN STOMPER","A sturdy weatherproofed leg. Slow, but capable of brief bursts of agility. Gains charges over time which can each be spent to perform a short leap. Leaps are faster than walking and clear low obstacles and small gaps. Slightly reduces the effects of debuffs."),
-    ArmsItem("st_yietus:rotborn_fist","ROTBORN FIST","A simple arm, covered in pitted armor and tipped with a large, gauntlet-like hand. Paired with a small remote manipulator for more delicate work. Whenever it is not equipped with a melee weapon, even if it is equipped with a ranged weapon, its fist counts as an equipped melee weapon. Slightly reduces the effects of debuffs."),
+    LegsItem("st_yietus:rotborn_stomper","ROTBORN STOMPER","A sturdy weatherproofed leg. Slow, but capable of brief bursts of agility. Gains charges over time which can be spent to perform short leaps. Leaps are faster than walking and clear low obstacles and small gaps. Slightly reduces the effects of debuffs."),
+    ArmsItem("st_yietus:rotborn_fist","ROTBORN FIST","A simple arm, covered in pitted armor and tipped with a large, gauntlet-like hand. Paired with a small remote manipulator for more delicate work. Its fist counts as a melee weapon whenever it is not equipped with a melee weapon. Slightly reduces the effects of debuffs."),
     BodyItem("st_yietus:melancholic_visage","MELANCHOLIC VISAGE","A bulky armored torso with a masked head. Despite its battered condition it still looks ever ahead, towards a brighter future. It's tough, has good heat capacity, and reduces the effects of debuffs."),
     CockpitItem("st_yietus:psychlink_mpi","PSYCHLINK MPI","A mysterious mask that draws closer the wills of a mech and its pilot, allowing them both to be pushed past their normal limits. Activated abilities can be used before their cooldowns end, at the cost of a large amount of heat and a longer, unskippable cooldown."),
     Item("st_yietus:external_utility_pack","EXTERNAL UTILITY PACK","An armored backpack for storing extra-bulky equipment. Improves cooling and speeds up ability cooldowns. Slightly reduces the effects of debuffs.", ["back"]),
@@ -74,10 +74,10 @@ styietus = Mech("St. Yietus",
     Item("st_yietus:titanweave_cloak","TITANWEAVE CLOAK","A massive, well-worn cloak designed to shield a mech's mechanisms from severe weather. Comes in a variety of styles and patterns.", ["cosmetic"]),
     BodyPlanItem("st_yietus:tech_terror_body_plan","TECH TERROR BODY PLAN","An intricate, skeletal body plan that allows up to four arms or up to two weapons to be equipped instead of a body. Use at your own risk.", {"arms": 4}),
     BodyPlanItem("st_yietus:kitbash_kit_adaptor","KITBASH KIT ADAPTER","A set of tools and materials used to combine parts in all sorts of unintended ways. Adds one additional slot of any type other than a body to your mech.", {}), # todo: make work
-    Item("st_yietus:novelty_mug","NOVELTY MUG", "A plastic novelty mug, obtained through great personal effort. The sense of pride one gets from owning this object gives you a minor all-around stat boost. Nifty!", ["cosmetic"]),
-    Item("st_yietus:crescent_companion","CRESCENT COMPANION", "The moon-headed ghost of a fictional being has made its home in either your mind or the systems of your mech. It grants you the ability to create a temporary aura of disruption around you that severely slows enemies' cooldowns and cooling and mildly slows yours. Just make sure to remember it so it doesn't fade away."),
+    Item("st_yietus:novelty_mug","NOVELTY MUG", "A plastic novelty mug, obtained through great personal effort. The sense of pride one gets from owning this object gives you a minor all-around stat boost. Nifty!"),
+    Item("st_yietus:crescent_companion","CRESCENT COMPANION", "The moon-headed ghost of a fictional being has made its home in your mind or the systems of your mech. Can create a temporary aura around you that slows nearby enemies' cooldowns and cooling and mildly slows yours. Don't forget it or it'll fade away..."),
     Item("st_yietus:weird_lil_guy","WEIRD LIL' GUY","A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.", ["cosmetic"]),
-    PowerItem("st_yietus:divinity_tap","DIVINITY TAP","A bony, eerily pristine variant of the CURSEHEART ENGINE. Generates additional energy for each unique debuff affecting your mech. In addition, it has a toggled ability that massively improves all stats, but creates heat at an exponentially increasing rate and marks your mech with a halo that is visible to everyone while active. You feel tired after using it, but can't explain why.", stars=5),
+    PowerItem("st_yietus:divinity_tap","DIVINITY TAP","A bony, eerily pristine variant of the CURSEHEART ENGINE. Generates additional energy for each unique debuff affecting you. Gain a toggled ability that greatly improves all stats but creates exponentially increasing heat while active. You feel tired after using it.", stars=5),
 ])
 
 triangle = Mech("triangle", 
@@ -95,7 +95,7 @@ triangle = Mech("triangle",
     ArmsItem("triangle:arm_04","Arm: Prefix: Arm 04: Rocket Arms","Two seemingly straight-forward arms with quick-release couplers. There are pop-out handles in both the forearms and the biceps: the arms can detach/transform into weapons. This pair specifically feature the ability to launch wholesale, like rockets", stars=3),
     ArmsItem("triangle:arm_02","Arm: Prefix: Arm 02","A specialized set of arms, instead of featuring handles and transformations like most, these can split in two general grevious-style.", stars=3),
     WeaponItem("triangle:classic","Arm: Prefix: Classic","A sword. Every mech needs a sword."),
-    ArmsItem("triangle:arm_03","Arm: Prefix: Arm 03","Two bulky arms with specialized couplers that can clamp anywhere onto the mech's body or onto other limbs: the arms can detach/transform into weapons. These arms have their own power supplies and can be operated independently of the body.", stars=5),
+    ArmsItem("triangle:arm_03","Arm: Prefix: Arm 03","Two seemingly straight-forward arms with quick-release couplers. There are pop-out handles in both the forearms and the biceps: the arms can detach/transform into weapons. The five-star versions are bulkier and feature specialized couplers at both shoulder and elbow that can clamp anywhere onto the mech's body or onto other limbs, instead of requiring a quick release housing. These arms have their own power supplies and can be operated independently of the body.", stars=5),
 ]
 )
 
@@ -117,7 +117,7 @@ cheshire = Mech("cheshire",
     Item("cheshire:a_bunch_of_floating_spheres","A bunch of floating spheres","Some of them glow!", ["cosmetic"], stars=3),
     ArmsItem("cheshire:crystal_arms","Crystal Arms","What look like standard mech arms have been absolutely shredded by some sort of magical crystal growing out of the inside. They don't seem to have impeded the arms' functions at all", stars=4),
     PowerItem("cheshire:the_wheel","Core: The Wheel","A series of gear structures that appear to be powered by some sort of forest animal running very quickly on the center one.", stars=4),
-    PowerItem("cheshire:amber_heart_tier_2","Amber Heart", "This strange heart of carved amber beats in time with your own, and pumps a thick, dark ichor into your mech, powering it. The blood in your veins pulses euphorically when near it.", stars=5),
+    PowerItem("cheshire:amber_heart_tier_2","Amber Heart", "This strange, semi-translucent object is crafted in the rough approximation of an animal heart. despite being made from yellow resin and metal, it beats. The five Star version seems to be pumping black blood? ichor? sap? Mecha can use this too convert different kinds of ammo, mana, or energy between each other (Or maybe into health if that's a thing)", stars=5),
 ]
 )
 
@@ -193,12 +193,12 @@ vel = Mech("vel",
     PowerItem("vel:big_reactor", "Big Reactor","A big reactor thingy (prolly nuclear adjacent) that gets refueld by hoisting big cartridges in it."),
     LegsItem("vel:sleek_legs", "Sleek Legs","Two sleek legs and high output thrusters."),
     ArmsItem("vel:manipulators", "Manipulators", "Hand-like manipulators for big stuff, prolly some small claws on cranes for small stuff."),
-    BodyItem("vel:bipedal_frame", "Bipedal Frame","A human-like core (proportions may vary) with advanced sensors near the head or on it."),
+    BodyItem("vel:bipedal_frame", "Bipedal Frame","a human-like core (proportions may vary) with advanced sensors near the head or on it."),
     CockpitItem("vel:external_cockpit", "External Cockpit","outside cockpit? it has some periscopes/small windows as a backup."),
     Item("vel:booster_backpack", "Booster Backpack","A backpack with one or two massive boosters with added drop tanks and some light equipment to like change the fuel cell, and ammo/technical equipment/jamming equipment.", ["back"]),
-    Item("vel:retractible_swords", "Retractible Swords", "A long carbine (think SVD or FRF-1), knife(ves)/retractible swords with the handle tucked in the forearms, plus countermeasures/stun launchers in the limbs.", ["weapon"]),
+    Item("vel:retractible_swords", "Retractible Swords", "a long carbine (think SVD or FRF-1), knife(ves)/retractible swords with the handle tucked in the forearms, plus countermeasures/stun launchers in the limbs.", ["weapon"]),
     Item("vel:pilot_emblem", "Pilot Emblem", "A big pilot emblem on a shoulder/skirt/side of the bust with a 2-3 colored paint scheme.", ["cosmetic"]),
-    BodyItem("vel:durability_frame", "Durability Frame","For improved durability, this body has differently-colored protection plates, big fatter limbs and a rugged drilling or artillery equipment backpack. There are added hardpoints, protection and ground mobility equipment. The sensor-heavy head wears a helmet."),
+    BodyItem("vel:durability_frame", "Durability Frame","This form is all about utility and durability on the ground and is therefore equipped with additionnal protection plates (from a different color), bigger fatter limbs and a backpack that takes a lot of drilling and mining and machining equipment (or mounts artillery). It still retains the sensor-heavy head/upper torso (though now with a helmet) and general equipment, just with thrusters replaced with like added hardpoints, protection and ground mobility (threads, crampons, hovercraft, etc)."),
     Item("vel:ace_custom_frame", "Ace Custom Frame","This mech is a special personal unit of a famous ace/freedom fighter that's fighting for the betterment of humanity, it's based from a standard military/industrial unit, but was heavily modified and customized to fit a more exploration, reconaissance, sharpshooting role.", stars=5),
 ]
 )
@@ -240,10 +240,10 @@ intergalacticsky = Mech("intergalacticsky",
 
 alto = Mech("alto", 
 [
-    LegsItem("alto:unremarkable_legs","Unremarkable Legs","Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement. "),
-    ArmsItem("alto:unremarkable_arms","Unremarkable Arms","Hydraulic mecha arms, ready for painting, aftermarket tinkering, or full replacement."),
-    BodyItem("alto:unremarkable_body","Unremarkable Body","Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement. "),
-    BodyPlanItem("alto:light_mecha","Light Mecha","Plans for an ultralight mobile suit consisting of only a powersource, a weapon, and a back mounted accessory. Perhaps closer to power armor than a proper mecha. Given to Alto by the original Polkadot.", {"weapon": 1, "power":1, "back":1}, stars=5),
+    LegsItem("alto:unremarkable_legs","Unremarkable Legs","These hydraulic mecha legs are well maintained but otherwise unremarkable. They are ready for painting, aftermarket tinkering, or full replacement. "),
+    ArmsItem("alto:unremarkable_arms","Unremarkable Arms","These hydraulic mecha arms are well maintained but otherwise unremarkable. They are ready for painting, aftermarket tinkering, or full replacement."),
+    BodyItem("alto:unremarkable_body","Unremarkable Body","This hydraulic mecha body is well maintained but otherwise unremarkable. It is ready for painting, aftermarket tinkering, or full replacement. "),
+    BodyPlanItem("alto:light_mecha","Light Mecha","This Blueprint was given to Alto from the original Polkadot. It seems to be plans for an ultralight mobile suit consisting of only a powersource, a weapon, and a back mounted accessory. It's almost more honest to call it power armor than a proper mecha", {"weapon": 1, "power":1, "back":1}, stars=5),
 ]
 )
 
@@ -262,7 +262,7 @@ renne = Mech("renne",
     ArmsItem("renne:ancillary_vines","Ancillary Vines","Growing out of the mech's body, these prehensile growths may not have the greatest durability to slashing weapons, but excel at wrapping around things and tethering them."),
     Item("renne:razor_maw","Razor Maw","This mech's face bears a large snout with which it can bite enemies. Who needs weapons when you have the ideal predator body?", ["cosmetic"]),
     PowerItem("renne:caustic_engine","Caustic Engine","Some kind of bubbling acidic substance courses through this mech. How it doesn't eat through the thing is a small wonder."),
-    PowerItem("renne:earthen_crystal","Earthen Crystal","A huge crystal brimming with earth-aspected arcane force. Its size carries tremendous magic, making great or long-lasting effects possible, but its sheer concentration means magic **will** radiate into the pilot with continued operation, affecting one's health, well-being, or biological taxonomy.", stars=5),
+    PowerItem("renne:earthen_crystal","Earthen Crystal","A full crystal brimming with earth-aspected arcane force. This energy regenerates gradually while the mech is dormant, but can be roused into uncontrollable bursts of magic if disturbed. This crystal's size means its energy wellspring is far greater and can therefore be channeled into greater or longer-lasting effects, but the magic within **will** radiate into the pilot with continued operation due to its sheer concentration. This may have adverse or otherwise unusual effects on one's health, well-being, or biological taxonomy.", stars=5),
 ]
 )
 
@@ -278,7 +278,7 @@ moonbug = Mech("moonbug",
     Item("moonbug:antennae","Antennae","Two feathery antennae are installed on the head of your mech. They won't be getting any signals, but they look adorable.", ["cosmetic"]),
     WeaponItem("moonbug:delta_theta_wave_generator","Delta-Theta Wave Generator","A piece of repurposed lab equipment, it is able to create the illusive Delta-Theta waves, which has mutagenic properties for some \"people\" (It's a speaker that turns you into an animal.)", stars=4),
     LegsItem("moonbug:legs_design_173","Design Type. 173","A pair of mech legs that seem to be crudely made of plaster and spray paint. Despite that, these legs are immensely flexible and mobile... if no one is looking at you."),
-    Item("moonbug:finarian_phase_diver","Finarian Phase Diver","A back mounted piece of equipment upgraded and repaired across generations. It allows a mech to dive into the immateria. Dozens of stamped seals in Finarian tongue act as a blueprint and a ward to prevent unreality from leaking into the mech, letting it stride the depths for as long as it has power.", ["back"], stars=5),
+    Item("moonbug:finarian_phase_diver","Finarian Phase Diver","A back mounted piece of generationally maintained equipment, each repair seemingly making it function better. It allows a mech to dive into the immateria, the dozens of stamped seals in Finarian tongue act as a blueprint and a ward to prevent unreality from leaking into the mech, letting it stride the depths for as long as it has power.", ["back"], stars=5),
 ]
 )
 
@@ -293,7 +293,7 @@ cheesesnack = Mech("cheesesnack",
     Item("cheesesnack:pick_mattock","Pick Mattock","Warfare never really advanced beyond the need for earthworks and trenches. Pilots have discovered that the titanium pick on this tool pierces armor as easily as it does earth and stone.", ["weapon"], stars=3),
     Item("cheesesnack:branch_camoflage","Branch Camoflage","Tree limbs have been crudely attached to the shoulders. Enemy spotters might mistake this mech for a particularly mobile tree.", ["cosmetic"]),
     BodyPlanItem("cheesesnack:centipede_mode","Centipede Mode","An adapter system that allows the mech to crawl on many small legs", {"legs": 4}),
-    ArmsItem("cheesesnack:five_star_roper_manipulators","Roper Manipulators","Originally for clearing minefields, each \"arm\" consists of four moveable tentacles. An experimental upgrade allows them to act completely independently of the mech; pilots can snatch weapons from afar, throw individual tentacles like boluses, or interlink tentacles together into one long tentacle.", stars=5),
+    ArmsItem("cheesesnack:five_star_roper_manipulators","Roper Manipulators","Originally designed for clearing minefields, each \"arm\" consists of four tentacles that can snake, coil, and swing independently. Experts with the system can snatch tools and weapons from quite a distance, though many are content learning how to make sick whipcrack noises. This version comes equipped with an experimental upgrade that allows the tentacles to act completely independently of the mech. Pilots have used this ability to throw individual tentacles like bolases or to interlink tentacles together to form a single very long tentacle.", stars=5),
 ]
 )
 
@@ -353,25 +353,25 @@ thecowofeternalflame = Mech("thecowofeternalflame",
     WeaponItem("thecowofeternalflame:drone_long","Long Artillery Drone","A long-range artillery drone that can fire missile salvos. It moves via tank treads.", stars=3),
     WeaponItem("thecowofeternalflame:drone_fast","Fast Spider Drone","A fast moving drone that is effectively an oversized spider mine from SC2", stars=3),
     Item("thecowofeternalflame:drone_radar","Radar Scout Drone","A fast moving flying scout drone equipped with radar tech.", stars=3),
-    Item("thecowofeternalflame:five_star_back_radio","Multiplexed Communications Radio","Large radio pack with long antennae coming up from it, for sending and receiving signals from the drones as well as for long-range communication with teammates. This version allows all allies to loop in to eachother's camera feeds in real-time, as well as any drone feeds on the field.", ["back"], stars=5),
+    Item("thecowofeternalflame:five_star_back_radio","Multiplexed Communications Radio","Large radio pack with long antennae coming up from it, for sending and receiving signals from the drones as well as for long-range communication with teammates. This version is 5 stars as is allows all allies to loop in to eachother's camera feeds in real-time, as well as the feeds of any drones that may be fielded.", ["back"], stars=5),
 ]
 )
 
 shork = Mech("shork", 
 [
     PowerItem("shork:lithium_polymer_battery","Lithium Polymer Battery","Harnesses the incredible power of magic smoke. Don't let it escape!"),
-    LegsItem("shork:mecanum_drive","Mecanum Drive","Wheels with built-in rollers, designed for omnidirectional movement.", stars=4),
+    LegsItem("shork:mecanum_drive","Mecanum Drive","Wheels with built-in rollers, designed for omnidirectional movement."),
     ArmsItem("shork:srimech_arm","Srimech Arm","'Ave you got a srimech? Course you 'ave!"),
     BodyItem("shork:billet_chassis","Billet Chassis","A solid block of aluminium carved into a chassis shape. Indestructible, but tough to repair."),
     CockpitItem("shork:remote_control_unit","Remote Control Unit","Battle at a safe distance from the carnage."),
-    Item("shork:apd_unit","APD Unit","An array of scaffolding designed to keep dangerous foes out of reach. Also handy if you get stuck in a hole.", ["back"], stars=2),
-    Item("shork:spinnaaaaaaaaah","SPINNAAAAAAAAAH","A big hunk of metal spinning at ungodly speeds. Kinetic energy in its purest form.", ["weapon"], stars=3),
-    Item("shork:polkadot_fur","Polkadot Fur","Offers no tactical advantage whatsoever.", ["cosmetic"], stars=2),
+    Item("shork:apd_unit","APD Unit","An array of scaffolding designed to keep dangerous foes out of reach. Also handy if you get stuck in a hole.", ["back"]),
+    Item("shork:spinnaaaaaaaaah","SPINNAAAAAAAAAH","A big hunk of metal spinning at ungodly speeds. Kinetic energy in its purest form.", ["weapon"]),
+    Item("shork:polkadot_fur","Polkadot Fur","Offers no tactical advantage whatsoever.", ["cosmetic"]),
     BodyPlanItem("shork:snowplow","Snowplow","Low to the ground, with a solid defensive profile. Armaments are tucked behind the safety of a giant wedge.", {"arms":0}),
-    WeaponItem("shork:d2_kitbot_drone","D2 Kitbot Drone","An incredibly effective drone unit, but is it really your victory if you didn't built it yourself...?", stars=4),
+    WeaponItem("shork:d2_kitbot_drone","D2 Kitbot Drone","An incredibly effective drone unit, but is it really your victory if you didn't built it yourself...?"),
     WeaponItem("shork:pulveriser","Pulveriser","A gigantic articulated metal mallet. Surprisingly ineffective."),
-    WeaponItem("shork:massive_claw_unit","Massive Claw Unit","Nine gigatons of crushability factor!", stars=3),
-    WeaponItem("shork:flippaaaaaaaaah","FLIPPAAAAAAAAAH","A pneumatic paddle designed for pushing potential pugilists before they pounce.", stars=2),
+    WeaponItem("shork:massive_claw_unit","Massive Claw Unit","Nine gigatons of crushability factor!"),
+    WeaponItem("shork:flippaaaaaaaaah","FLIPPAAAAAAAAAH","A pneumatic paddle designed for pushing potential pugilists before they pounce."),
     WeaponItem("shork:lithium_polymer_armament","Lithium Polymer Armament","Harnesses the incredible power of magic smoke. Don't let it escape! This unusual config directly weaponizes the battery unit. If this gets hit, the fight's ending one way or another.", stars=5),
 ]
 )
@@ -442,8 +442,7 @@ for item in body_plans:
 
 def check_gacha_table():
     for mech in all_mechs:
-        #print(mech.loot)
-        pass
+        print(mech.loot)
         
 
 if __name__ == "__main__":
