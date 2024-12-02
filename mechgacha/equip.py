@@ -75,10 +75,22 @@ async def print_mech_inventory_command(message, message_body, client, include_so
     newline = "\n"
 
     if include_sources:
-        mechs = []
+        mechs = {} # dict of mech username: items
+        playerdata["equipment"].sort()
+
         for equipped_index in playerdata["equipment"]:
-            mechs.append(all_mechs_by_part[inventory[equipped_index]])
-        mechs_string = "you have items from " + ", ".join(set(mechs))
+            item_id = inventory[equipped_index]
+            item_data = all_parts_list[item_id]
+
+            mech = all_mechs_by_part[item_id]
+            mechs.setdefault(mech, []).append(item_data)
+
+        mechs_string = f"# {username}'s Mech has items from:"
+        for (mech, items) in sorted(mechs.items(), key=lambda t: -len(t[1])):
+            mechs_string += newline
+            items = sorted(items, key=lambda i: -i.stars)
+            mechs_string += f"## {mech}:{newline}" + newline.join(f'- {item_data.name} {"★" * item_data.stars}' for item_data in items)
+
         return await message.channel.send(mechs_string)
 
     equipped_items_report = f"{newline}".join(filter_equipment(playerdata, inventory))
