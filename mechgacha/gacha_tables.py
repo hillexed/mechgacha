@@ -422,6 +422,7 @@ all_mechs = ratoon_pullable_mechs + (alto, )
 
 
 all_parts_list = {} # a dict of item id: item
+all_mechs_by_part = {} # dict of item id: mech name
 
 # populate the parts list
 for mech in all_mechs:
@@ -429,6 +430,7 @@ for mech in all_mechs:
         if item.id in all_parts_list:
             raise ValueError(f"Two items have the same ID {item.id}!")
         all_parts_list[item.id] = item
+        all_mechs_by_part[item.id] = mech.username
 
 for item in body_plans:
     all_parts_list[item.id] = item
