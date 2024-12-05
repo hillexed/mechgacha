@@ -106,6 +106,7 @@ async def print_mech_inventory_command(message, message_body, client, include_so
     equipment = filter_equipment(playerdata, inventory)
     page -= 1
     pages = paginate(equipment, 1500)
+    prefix = ""
     if (len(pages) > 1):
         prefix = f"(Page {page+1}/{len(pages)})\n"
 
