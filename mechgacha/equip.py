@@ -1,6 +1,7 @@
 from inventory import compute_inventory, format_item
 import db
 import inventory
+from data_utils import paginate
 from pulls import get_playerdata, get_username
 from gacha_tables import all_parts_list, all_mechs_by_part
 from gacha_mechanics import TagType
@@ -72,6 +73,15 @@ async def print_mech_inventory_command(message, message_body, client, include_so
         playerdata["equipment"] = []
         db.set_player_data(userid, playerdata)
 
+    try:
+        page = int(message_body.strip())
+    except:
+        page = 1 # page 1 is the first page
+
+    if page <= 0:
+        return await message.channel.send("There ain't no such page of your inventory")
+
+
     newline = "\n"
 
     if include_sources:
@@ -93,7 +103,13 @@ async def print_mech_inventory_command(message, message_body, client, include_so
 
         return await message.channel.send(mechs_string)
 
-    equipped_items_report = f"{newline}".join(filter_equipment(playerdata, inventory))
+    equipment = filter_equipment(playerdata, inventory)
+    page -= 1
+    pages = paginate(equipment, 1500)
+    if (len(pages) > 1):
+        prefix = f"(Page {page+1}/{len(pages)})\n"
+
+    equipped_items_report = f"{newline}".join(pages[page])
 
     counts_by_category = count_equipped_categories(playerdata, inventory)
     missing_categories_report = ""
@@ -108,7 +124,7 @@ async def print_mech_inventory_command(message, message_body, client, include_so
 
     instructions = "\n\n Equip or unequip parts from your inventory using `m!mech equip <item name>` or `m!mech unequip <item name>`!"
 
-    mech_string = f'## {username}\'s Mech:{newline}{equipped_items_report}{missing_categories_report}{instructions}'
+    mech_string = f'## {username}\'s Mech:{newline}{prefix}{equipped_items_report}{missing_categories_report}{instructions}'
 
     # Todo: replace this with an item count limit
     if len(mech_string) >= 2000:
