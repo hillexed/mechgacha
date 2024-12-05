@@ -8,7 +8,7 @@ from gacha_tables import all_parts_list, starting_inventory
 
 import asyncio
 
-from data_utils import get_playerdata
+from data_utils import get_playerdata, paginate
 
 
 def add_new_player(userid):
@@ -116,21 +116,22 @@ def represent_inventory_as_string(inventory, playerdata, page=1):
 
     # pagination for when inventory gets big
     page -= 1 #first page should be page 1, not page 0
-    items_to_display = inventory[page * page_size : (page+1) * page_size]
+    pages = paginate(
+                [format_item(
+                    item_id, 
+                    item_index,
+                    item_index in playerdata["equipment"])
+                    for item_index, item_id in enumerate(inventory)],
+                1500)
 
     if len(inventory) > page_size:
-        prefix += f"(Page {page+1}/{ceil(len(inventory) / page_size)})\n"
+        prefix += f"(Page {page+1}/{len(pages)})\n"
 
     if len(inventory) == 0:
         return prefix + "Empty!"
 
-
-    return prefix + '\n'.join([
-    format_item(
-        item_id, 
-        (item_index + (page_size * page)), 
-        (item_index + (page_size * page)) in playerdata["equipment"])
-    for item_index, item_id in enumerate(items_to_display)])
+    
+    return prefix + '\n'.join(pages[page])
 
 def format_item(item_id, item_index = -1, equipped = False):
 
