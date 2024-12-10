@@ -110,7 +110,7 @@ cheshire = Mech("cheshire",
     Item("cheshire:glyph_thrusters","Glyph Thrusters","A series of runic circles project out from this object, framing the Mech and providing an arcane boost when needed", ["back"], stars=2),
     Item("cheshire:ceremonial_blade","Ceremonial blade","A short, wicked looking dagger. there appears to be some sort of tube from the end of it that runs back into the mech, as though hydraulics add or remove some sort of fluid from it", ["weapon"]),
     Item("cheshire:viewing_chambers","Viewing chambers","Glass that allows you to see the mechanisms inside of the machine.", ["cosmetic"]),
-    CockpitItem("cheshire:stowaway_cheshire","Stowaway Cheshire","Yeah, you can pretend I'm a copilot or if you've got a Pacific Rim thing going on we can do that, but you need to know I'm just gonna sneak onto your mecha when you aren't looking"),  
+    CockpitItem("cheshire:stowaway_cheshire","Stowaway Cheshire","They have somehow crammed themselves into your glovebox,"),  
     BodyPlanItem("cheshire:centaur","Centaur","Four legs, two arms, a power source body and a back slot.", {"legs": 4, "arms": 2}),
     BodyItem("cheshire:sigil_crusted_body","Sigil Crusted Body","What appears to be an old wooden ship or other reclaimed wood, covered in burned sigils that animate it", stars=3),
     Item("cheshire:framed_picture_of_rival","A Framed Picture of your Rival","It''s just a normal, totally platonic rival relationship. This picture is just framed to make you fight them better and not because you're repressed.", stars=2),
@@ -395,9 +395,24 @@ p_rker = Mech("p_rker",
 ]
 )
 
-
-
-
+only = Mech("only", 
+[
+    PowerItem("only:kinetic_protodrive","Kinetic Protodrive","This experimental power system generates energy when exposed to Acceleration and Deceleration", stars=2),
+    LegsItem("only:riproller_legs","Riproller Legs","Bipedal legs with wheels in the feet and knees, allowing the equipped mech to enter a high maneuver mode by kneeling", star=1),
+    ArmsItem("only:jet_booster_arms","Jet Booster Arms","for when you need to hit them before they hit you", stars=2),
+    BodyItem("only:knockout_frame","Knockout Frame","A humanoid Core with Thruster arrays to allow for last second evades. Duck, Dive, Dodge!", stars=1),
+    CockpitItem("only:remote_access","REMOTE ACCESS","Yeah, you arent actually in your mech. This remote control cuts down on weight, AND lets you take riskier moves.", stars=2),
+    Item("only:flame_wheel","Flame Wheel","A large ring of fire blazes above your mechs back.",  ["back"], stars=4),
+    WeaponItem("only:concussive_knuckles","Concussive Knuckles","Massive blocky fists that generate additional concussive force on contact, letting you amp up your impact", stars=1),
+    Item("only:energy_vein_system","Energy Vein system","A network of glowing lines cover your mech, showing how power flows through its system and flaring up when energy levels spike", ["cosmetic"], stars=1),
+    BodyPlanItem("only:asura","Asura","A blueprint from Only with a fearsome design - 2 Legs, 6 arms", stars=3),
+    BodyPlanItem("only:arbitor","Arbitor","A blueprint from Only with a powerfule design - 2 legs, 4 arms, and arms that hover separate from the body", stars=4),
+    Item("only:mirage_system","Mirage System","Allows the equipped mech to become intangible for a short period. getting hit? just dont get hit lol"), stars=3),
+    Item("only:wingblades","Wingblades","These Angular constructs hover just above your mechs back able to both generate lift for your mech and swing around for offensive maneuvers", ["back"], stars=4),
+    Item("only:sick_ass_jacket","Sick Ass Jacket","Your mech is covered by an incredibly cool jacket, the fabric of which reduces the damage of energy weaponry", ["cosmetic"], stars=1),
+    BodyItem("only:knockout_frame_plus","Knockout frame Plus","Humanoid Core with Thruster arrays to allow for last second evades. Now with Grav-Brake technology to instantly cancel momentum. Duck, JUKE, Dive and Dodge!", stars=5),
+]
+)
 
 
 
@@ -439,7 +454,7 @@ for item in body_plans:
 
 
 
-# update playerdata set data='{"unlocked_mechs":["bee", "oneirocartographer", "hillexed", "styietus", "triangle", "cheshire", "loading", "metanite64", "deric", "syl", "vel", "amutecrypt", "intergalacticsky"], "ratoon_pulls": 0, "mech_pulls":1000}' where name='178116262390398976';
+# update playerdata set data='{"unlocked_mechs":["bee", "oneirocartographer", "hillexed", "styietus", "triangle", "cheshire", "loading", "metanite64", "deric", "syl", "vel", "amutecrypt", "intergalacticsky", "only"], "ratoon_pulls": 0, "mech_pulls":1000}' where name='178116262390398976';
 # update playerdata set data='{"unlocked_mechs":[], "ratoon_pulls": 1000, "mech_pulls":1000}' where name='178116262390398976';
 
 def check_gacha_table():
