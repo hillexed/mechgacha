@@ -414,6 +414,61 @@ only = Mech("only",
 ]
 )
 
+ditto = Mech("ditto", 
+[
+    PowerItem("ditto:demon_core","Demon Core","Yeah it's not a good idea to stand anywhere near the core while the machine is running. We have a way to turn it off without you getting close to it don't worry."),
+    LegsItem("ditto:ball","Ball","The mech's core balances on top of a ball. I have a diagram but I don't know how to fit it into this description."),
+    ArmsItem("ditto:giant_gravity_gun_from_half_life_2","Giant Gravity Gun from Half Life 2","Its name is what it is."),
+    BodyItem("ditto:default_blender_cube","Default Blender Cube","It looks like a gray default blender cube with a cockpit attached."),
+    CockpitItem("ditto:air_freshener","Air freshener","This does nothing to be fair"),
+    Item("ditto:giant_wind","Giant wind","up key (Decorative version): Playing with toys.", ["back"]),
+    Item("ditto:comically_large_spoon","Comically Large Spoon","Perfect for ice cream!", ["weapon"]),
+    Item("ditto:cool_hat","Cool hat","It's a really cool hat", ["cosmetic"]),
+
+    LegsItem("ditto:hover_core","Hover core","Who needs Legs?"),
+    Item("ditto:ex_blueprint","EX Blueprint","Who needs Arms with legs like these?"),
+    LegsItem("ditto:ex_legs","EX Legs","Legs used by a certain famous robot, but scaled up for use in mechs"),
+    Item("ditto:keygen","Keygen","Listen I know it has Gen in the name but maybe it isn't such a good idea to use as a power source????", ["power"]),
+    WeaponItem("ditto:hammer_of_dawn","Hammer of Dawn","This is an orbital laser, not a hammer. Who named this????"),
+    BodyItem("ditto:advanced_blender_cube","ADVANCED Blender cube","It looks like a gray default blender cube with a cockpit attached. But it's ADVANCED.", stars=5),
+]
+)
+
+hal2000 = Mech("hal 2000", 
+[
+    PowerItem("hal2000:the_beating_hearts_of_one","The Beating Hearts of One","Thousand Worms: The heartbeats of these still-live worms are amplified and converted into electrical energy for the mech to use."),
+    LegsItem("hal2000:dimensionally","Dimensionally","Disjointed Walkers: They would look like normal mechanical legs if you could see them in their entirety, it's just that each joint is in a different dimension, whoops!"),
+    ArmsItem("hal2000:cobbled_scrap_arms","Cobbled Scrap Arms","Well, they don't move (unless you're an Ork and believe hard enough), and leave you at decent risk of tetanus, but at least they look cool!"),
+    BodyItem("hal2000:orb","ORB","SPHERE"),
+    CockpitItem("hal2000:divesystem","Full-Body Dive System","Really FEEL like you're dying to that rocket."),
+    Item("hal2000:backlift","Backlift","A pair of forks on the back for lifting cargo, only usable if you're Forklift Certified!", ["back"]),
+    Item("hal2000:guminator_3000","Guminator 3000","Immediately gums up every joint on the opposing mech if it successfully hits them, a mechanic's worst nightmare.", ["weapon"]),
+    Item("hal2000:clown_face","Clown Face","Paint: +1000 Clown Vibes, +200 Fear Induced", ["cosmetic"]),
+    BodyPlanItem("hal2000:crawler","Crawler","8 arms. No legs.", {"arms":8, "legs":0}),
+    BodyItem("hal2000:orbascended","ORB","SPHERE, ASCENDED FORM, ALL-KNOWING, ALL-SEEING, CLEAR AND PERFECT, NONE CAN ESCAPE ITS SIGHT", stars=5),
+]
+)
+
+turtlelover2244 = Mech("turtlelover2244", 
+[
+    PowerItem("turtlelover2244:hype_core","Hype Core","A Generator connected to an online video stream. The more hyped the audience, the more power the core generates."),
+    LegsItem("turtlelover2244:hover_boots","Hover Boots","A set of overly fancy legs equipped with hover technology, letting the mech deftly float a few inches off the floor."),
+    ArmsItem("turtlelover2244:puppet_hands","Puppet Hands","Hands that freely float around your mech. Excellent for offense, not so much for defense."),
+    BodyItem("turtlelover2244:subspace_generator","Subspace Generator","A Small and Sleek Body that uses pocket dimensions to store equipment when not in use."),
+    CockpitItem("turtlelover2244:streaming_setup","Streaming Setup","A Mic, Camera, and Several monitors showing your streams statistics and chat, along with mildly useful mech information."),
+    Item("turtlelover2244:holocape","Holo-Cape","A Large and permanently flowing cape made of Hard-light. Most conventional weapons cannot pierce it.", ["back"]),
+    WeaponItem("turtlelover2244:arcane_staff","Arcane Staff","A Polearm covered in glowing Runes, Although it holds no substantial magic power. The tip can fire a laser beam, if that’s any compensation."),
+    Item("turtlelover2244:gamer_leds","Gamer LEDs","Anything is improved by adding rainbow lights to it.", ["cosmetic"]),
+    BodyPlanItem("turtlelover2244:magician","Magician","4 Arms, 2 Legs, 2 Power Sources. A Blueprint Designed to use many weapons at once, Two Power cells are needed to run at full capacity.", {"arms":4,"legs":2,"power":2}),
+    Item("turtlelover2244:tophat","Top Hat","A mundane, but fancy hat.", ["cosmetic"]),
+    WeaponItem("turtlelover2244:shuffler","The Shuffler","A gun that launches steel sided player cards at a rapid pace."),
+    Item("turtlelover2244:interstitial_engine","Interstitial Engine","A mysterious device that can pierce through gaps in reality, letting you teleport a short distance.", ["back"]),
+    Item("turtlelover2244:roboduplicate","Robo-Duplicate","A robotic duplicate of yourself riding on the top of your mech.", ["cosmetic"]),
+    WeaponItem("turtlelover2244:true_arcane_staff","True Arcane Staff","A Polearm covered in glowing Runes and holds substantial magic power. It is able to fling immense amounts of magical energy with ease.", stars=5),
+]
+)
+
+
 
 
 
@@ -432,7 +487,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, warlock, bytes, thecowofeternalflame, p_rker, shork)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, warlock, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 
