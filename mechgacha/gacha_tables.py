@@ -384,10 +384,10 @@ p_rker = Mech("p_rker",
     BodyItem("p_rker:crash_resistant_body","Crash-Resistant Body","A sturdy roll cage suspends its cockpit with tense metal springs."),
     CockpitItem("p_rker:egg_pod","Egg-shaped Pod","An egg-shaped pod that encases the pilot in protective fluids.", stars=2),
     Item("p_rker:sensor_suite","Sensor suite","A number of sensors measure various atmospheric conditions, reporting to base with a giant radio antenna", ["back"]),
-    Item("p_rker:stop_sign","Stop Sign","Slow without stopping at your own peril!", ["weapon"]),
+    WeaponItem("p_rker:stop_sign","Stop Sign","Slow without stopping at your own peril!"),
     Item("p_rker:caution_stripes","Caution stripes","Black and yellow paint warns away from the mech's most sensitive - and dangerous - joints", ["cosmetic"]),
     BodyPlanItem("p_rker:train_body","Train Body","We strapped arms on this train and called it a mecha!", {"legs":0,"arms":3}, stars=3),
-    WeaponItem("p_rker:weapon","Weapon","Steel Claws: These bestial claws menace with spikes of iron."),
+    WeaponItem("p_rker:weapon","Steel Claws","These bestial claws menace with spikes of iron."),
     Item("p_rker:climbing_equipment","Climbing equipment","The pitons and steel rope strapped to this mech let it scale sheer cliffs."), # legs? mobility
     Item("p_rker:helicoper_blades","Helicoper blades","You know what helicopters are like."), # mobility (or a weapon if you get silly with it)
     Item("p_rker:cosmetic","Fur","This mech appears to have fur growing on it.  Are they simply cosmetic synthetics, or has science finally gone far enough?", stars=4, ["cosmetic"]),
