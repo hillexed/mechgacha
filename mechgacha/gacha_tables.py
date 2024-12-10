@@ -469,6 +469,72 @@ turtlelover2244 = Mech("turtlelover2244",
 )
 
 
+zweihawke = Mech("zweihawke", 
+[
+    PowerItem("zweihawke:refined_necrolite_core","Refined Necrolite Core","This refined and processed mineral cluster teems with the essence of souls. It's violet luster belies the sinister nature of it's conception, and the horrible process used to make it."),
+    LegsItem("zweihawke:gyratory_spheres","Gyratory Spheres","A single, mobile sphere affixed to a cage above. Using Gyroscopy and propulsion, it balances upon the sphere and rolls across a surface akin to a ballpoint pen upon paper."),
+    ArmsItem("zweihawke:entanglement_engine","Fixed-Point Entanglement Engine","Not \"arms\" in the traditional sense, but can lift items by entangling them to a point directly in front of the engine. Despite a visible gap of air between the object and the mech, the mech retains the weight of the object and if said object is yanked out with enough force, the core will go with it."),
+    BodyItem("zweihawke:ornate_marble_frame","Ornate Marble Frame","This decorative frame is coated in what would seem to be brittle materials, hiding it's heavy less sightly interiors. Often used in shows and ceremonial contexts, this mech frame is not suited for dangerous situations if you want to keep it's luster."),
+    CockpitItem("zweihawke:exposed_clockwork","Exposed Clockwork","While dangerous at the outset, a talented engineer could immediately identify issues in the mech's systems. Reaching inside is not advised."),
+    Item("zweihawke:necrolite_tether","Necrolite Tether","Bound to the harvest of long fractured and dead souls, this contact point drains life. A desperate pilot need only stick their hand in for a few more hours of battery...", ["back"]),
+    Item("zweihawke:quantum_box","Quantum Box","Much like what you're doing right now, whatever's inside exists in a quantum state of superposition until it is opened and observed. I hope it's circus peanuts.", ["weapon"]),
+    Item("zweihawke:electroplated_gold","Electroplated Gold","Some say divinity is only for the rich. Those people are fools.", ["cosmetic"]),
+
+    BodyPlanItem("zweihawke:modeswapper","Mode-Swapper","Has only one set of legs active at a time and can swap between them at will.", {"legs":4,"arms":2}),
+    PowerItem("zweihawke:luck_engine","Luck Engine","So long as it stays in good repair, good things happen to you. Bad things happen to those who oppose you."),
+    PowerItem("zweihawke:invocation_engine","Invocation Engine","So long as you know the right word, you can bend even reality to your will. However, you should be careful what you speak. This isn't something to be toyed with."),
+    Item("zweihawke:network_bound","Network Bound","This mech can be wirelessly powered, operated, and repaired so long as a network point of your ownership exists within the mech's listening range."),
+    CockpitItem("zweihawke:mouldy_baked_potato","Mouldy Baked Potato","This has been sitting out in the cockpit for three weeks. It has it's own micro-ecosystem at this point."),
+    PowerItem("zweihawke:living_necrolite_core","Living Necrolite Core","WHAT. AM. I. ? WILL. YOU. GUIDE. ME. ?", stars=5),
+]
+)
+
+colabot = Mech("colabot", 
+[
+    PowerItem("colabot:mysterious_gunge","Mysterious Gunge","This strange slime has a chunky texture, and emits a faint greenish-yellow glow - and somehow, a lot of power??? It’s hard to keep it contained within your mech, and it seems to get everywhere."),
+    LegsItem("colabot:massive_stompers","Massive Stompers","Hoo boy, these are some HUGE STOMPERS. Your mech is gonna be doing *giant steppies* if you equip these! Complete with a pair of Big Boots."),
+    ArmsItem("colabot:tiny_t_rex_arms","Tiny T-Rex Arms","Dude, those arms are super impractical. I mean, they look cute, but like… how are you gonna grab anything? Sorry about this pull, that kinda sucks. Better luck next time!"),
+    BodyItem("colabot:bjd","BJD","Your mech uses a system of elastic strings, sculpted ball joints, and hydraulic cables to hold its limbs. Its body has, like, three superfluous torso joints, and was carefully sculpted by an artist for maximum flexibility, posability, and aesthetic appeal."),
+    CockpitItem("colabot:tank_of_goo","Tank of Goo","One of those tanks of goo. You know, where the pilot gets submerged? It’s not weird, it's practical: since the goo is very sensitive to every movement you make, with practice you have great control over your mech. Also, the tank lights up and has cool lava lamp effects. A sensory delight."),
+    Item("colabot:cool_backpack","COOL BACKPACK","You can store anything in here! A bonus weapon or tool, maybe, but also, an extra sweater, some snacks, a spare power pack, a comfort item, some fidget toys… The possibilities are endless when you have a Cool Backpack!", ["back"]),
+    Item("colabot:yoyo","Yo-Yo","Okay, so have you seen, um, have you seen Miraculous Ladybug? No? Oh, okay. So it’s a yo-yo, but it’s a weapon, right? And you can like, swing it around, and hit things with it, and also use it to swing like Spider-Man - I’ll send you a video. It’s pretty cool!", ["weapon"]),
+    Item("colabot:holographic_stickers","Holographic Stickers","Your mech is absolutely covered in cool holographic stickers. This doesn’t help with stealth, you’re now EXTREMELY visible, but maybe you could blind your opponent in a bright sunny arena? They’ve all got different designs, and most of them came from the artist alley at a con somewhere.", ["cosmetic"]),
+    # vetoed. too hard to someday implement and way too long of a description.
+    # BodyPlanItem("colabot:split","Split","Your mech can split into up to four smaller mechs, each equipped with parts taken from your larger mech. This can be super useful for distracting or flanking your opponent! You can choose to split into two, three or even four smaller units (“mini-mechs”), but the more times you split, the fewer useful parts you have to go around. You can equip up to three extra pairs of legs that will be used by your mini-mechs, but this blueprint won’t allow you to use them on your standard large unit. You cannot equip extra arms or weapons for your mini-mechs to use, unless other attributes you have allow this.", {"legs":3}),
+    Item("colabot:jetpack!","JETPACK!","You can perform a very high jetpack-assisted leap, save yourself from a fall, or speed up your travel on the ground - unfortunately, you can’t use it to fly, though, because your mech is too heavy. Plus, the fuel is kinda hard to come by."),
+    ArmsItem("colabot:grappling_trex_arms","Teeny T-Rex Grappling Arms","Your enemy scoffs at your tiny, useless arms. Little do they know, these bad boys are GRAPPLING HOOKS!!! They can shoot out at high velocity, ready to grab and yank anything without warning - you can even use them to entangle the limbs of your opponent’s mech, disabling their movement.", stars=5),
+]
+)
+
+loftyinclination = Mech("loftyinclination", 
+[
+    PowerItem("loftyinclination:automated_wiring_harness","Automated Wiring Harness","Attaches to nearby power sources, conduits, and power consuming devices, and syphons energy for use in its own system."),
+    LegsItem("loftyinclination:outsideskates","Outside-the-line Skates","Wheels, externally mounted to featureless tapered legs. Allows for speedy travel and conservation of momentum!"),
+    ArmsItem("loftyinclination:telekinetic_sash","Tele-kinetic sash","Through the use of the 5th fundamental force, this smart-fabric can manipulate objects without direct contact.", stars=3),
+    BodyItem("loftyinclination:gardens_brush","Garden's Brush","Clear panel lines, in some places neatly aligned, while at other points, split apart to reveal fur that pokes out from inside."),
+    CockpitItem("loftyinclination:cats_eye","Cats Eye","Mirrored windows in the shape of slit eyes, with a heads up display."),
+    Item("loftyinclination:disjoint_wings","Disjoint wings","Some body panels can detach and act as wings, allowing for gliding on thermals.", ["back"]),
+    # Item("loftyinclination:error_unknown_name","ERROR UNKNOWN NAME","Oscilloscope Probes", ["weapon"]),
+    # Item("loftyinclination:error_unknown_name","ERROR UNKNOWN NAME","Inlaid Constellation Tattoos", ["cosmetic"]),
+    BodyPlanItem("loftyinclination:catform","Catform","Quadrapedal, for increased stealth and pouncing.", {"legs":4}),
+    Item("loftyinclination:fivestar_automated_wiring_harness","Automated Wiring Harness","Attaches to nearby power sources, conduits, and power consuming devices, and siphons energy for use in its own system. Can even draw power from another mechanised unit, diminishing the other mech's ability.", stars=5),
+]
+)
+
+shade = Mech("shade", 
+[
+    PowerItem("shade:chronomantic_core","Chronomantic Core","A Spherical device made of spinning 3D gears inscribed with with runes. The materials of the gears appear to be brand new when in contact with each other, and rusting to dust when not."),
+    LegsItem("shade:fractal_legs","Fractal Legs","Just SO MANY LEGS, Insectile spikes that split into infinities to grasp even the smallest protrusions.", stars=3),
+    ArmsItem("shade:hexagonal_hands","Hexagonal Hands","Metallic graspers with 6 Digits on the end, positioned in a hexagonal pattern."),
+    BodyItem("shade:crystalline_bathysphere","Crystalline Bathysphere","A Large dodecahedral cockpit made out of a clear crystal material. The pilot is visible seated inside."),
+    CockpitItem("shade:lucky_tesseracts","Lucky Tesseracts","A Pair of tesseracts suspended from the rear-view display by cosmic strings."),
+    Item("shade:jump_jet_wings","Jump Jet Wings","A Pair of large robotic wings. Instead of feathers the span is comprised of jet engines evenly spaced.", ["back"]),
+    Item("shade:harpoon_katars","Harpoon Katars","A matched pair of punching daggers capable of being \"fired\" off at range and retracted or manipulated by a length of chain.", ["weapon"]),
+    Item("shade:woad_enchantments","Woad Enchantments","Twisting spiral patterns of coruscating magical runes wrap around the mech, hovering just above every surface. They appear to shift and change over time.", ["cosmetic"]),
+    Item("shade:spheroid_transport_form","Spheroid Transport Form","This mech is capable of rolling up into a ball in order to move quicker or minimize surface area."),
+    ArmsItem("shade:5star_hexagonal_hands","Hexagonal Hands","Metallic graspers with 6 digits on the end, positioned in a hexagonal pattern. Now with built in phase cannons in the palms!", stars=5),
+])
+
 
 
 
@@ -487,7 +553,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, warlock, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, warlock, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 

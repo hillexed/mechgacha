@@ -1,11 +1,13 @@
 
-def importLinesFromSpreadsheetToCode(mechname, lines):
+def importLinesFromSpreadsheetToCode(lines):
 
-    
 
     cells = lines.split("\t")
     if len(cells) < 8:
         raise ValueError("Found {len(lines)}  items in spreadsheet import! Was expecting >8")
+
+    mechname = cells[0]
+    cells = cells[1:]
 
     namedescs = []
     for cell in cells:
@@ -58,6 +60,6 @@ f"""
 
 
 
-importLinesFromSpreadsheetToCode("P_rker","Psionic engine: this device syncs with the user's brainwaves to create a potent motive force	Heelies: these digitigrade-shaped piston legs have wheels or tracks on the bottom!	Biomechanical arms: artificial muscles made from bizzare tensile alloys	A sturdy roll cage suspends its cockpit with tense metal springs	An egg-shaped pod that encases the pilot in protective fluids	Sensor suite: a number of sensors measure various atmospheric conditions, reporting to base with a giant radio antenna	Stop Sign: slow without stopping at your own peril!	Caution stripes: black and yellow paint warns away from the mech's most sensitive - and dangerous - joints	Train Body: we strapped arms on this train and called it a mecha	Weapon: Steel Claws: These bestial claws menace with spikes of iron	Climbing equipment: the pitons and steel rope strapped to this mech let it scale sheer cliffs.	Helicoper blades: You know what helicopters are like.	Cosmetic: Fur: This mech appears to have fur growing on it.  Are they simply cosmetic synthetics, or has science finally gone far enough?	Brainwave projector: this device syncs with the user's brainwaves to create a potent motive force.  This advanced variant of the psionic engine can be mentally overclocked to create an invisible defensive shield between itself and an attacker.")
+importLinesFromSpreadsheetToCode("Shade	Chronomantic Core: A Spherical Device made of spinning 3D Gears inscribed with with runes, the materials of the gears appear to be brand new when in contact with each other, and rusting to dust when not.	Fractal Legs: Just, (Potentially) SO MANY LEGS, Insectile spikes that split into infinities to grasp even the smallest protrusions.	Hexagonal Hands: Metallic Graspers with 6 Digits on the end, positioned in a Hexagonal Pattern.	Crystalline Bathysphere: A Large Dodecahedral Cockpit/Main body made out of a clear crystal material, the pilot is visible seated inside.	Lucky Tesseracts: A Pair of Tesseracts suspended from the rear-view display by Cosmic Strings.	Jump Jet Wings: A Pair of large Robotic Wings, instead of Feathers the span is comprised of Jet Engines evenly spaced.	Harpoon Katars: A Matched pair of Punching Daggers capable of being \"Fired\" off at range and retracted or manipulated by a length of chain.	Woad Enchantments: Twisting Spiral patterns of coruscating magical runes wrap around the mech, hovering just above every surface. They appear to shift and change over time.	Spheroid Transport Form: This Mech is capable of rolling up into a Ball in order to move quicker or minimize surface area.					5-Star Hexagonal Hands: Metallic Graspers with 6 Digits on the end, positioned in a Hexagonal Pattern. Now with built in Phase Cannons in the Palms!")
 
 
