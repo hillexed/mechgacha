@@ -80,7 +80,7 @@ async def handle_commands(message):
                 regeneration.add_pulls(atted_userID, 1, 0.5)
             else:
                 regeneration.add_pulls(userID, 1, 0.5)
-            return
+            return await message.channel.send("thank you very much")
 
         if user_is_admin(message) and len(message_body) > 0 and "regen_everyone" in message_body:
             regeneration.regenerate_everyones_pulls()
