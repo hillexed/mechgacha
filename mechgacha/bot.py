@@ -13,6 +13,7 @@ import inventory
 import regeneration
 import equip
 import tradecommand
+import progress
 
 debug = False
 prefix = 'm!'
@@ -109,6 +110,9 @@ async def handle_commands(message):
 
     elif message.content.startswith(prefix + "trade"):
         await tradecommand.trade_command(message, get_command_body(message, "trade"), client)
+
+    elif message.content.startswith(prefix + "progress"):
+        await progress.progress_command(message, get_command_body(message, "progress"))
 
     elif message.content.startswith(prefix + "wakeup"):
         await message.channel.send("ok ok im up")
