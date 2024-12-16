@@ -290,10 +290,11 @@ cheesesnack = Mech("cheesesnack",
     BodyItem("cheesesnack:recycled_vans","Recycled Vans","Some enterprising scavenger has gutted and reinforced two vans and welded them together in an intimate pose, looking like a scrapyard sculpture. Joints for the arms and legs have been installed where the wheels once sat. Only the mad or desperate would entrust themselves to this thing.", stars=3),
     CockpitItem("cheesesnack:foldaway_kitchenette","Foldaway Kitchenette","A metal cabinet tucked away in a corner conceals a small counter that folds out for simple meal prep with a knife rack, coffee brewer, and some space for food storage. Constructed by a pilot assigned to long and uneventful duties."),
     Item("cheesesnack:self_righting_device","Explosive Self-Righting Device","In the event that the mech falls on it's back, an explosive charge can be used to launch the mech upright. Currently subject to several lawsuits regarding back and neck injuries.", ["back"], stars=3),
-    Item("cheesesnack:pick_mattock","Pick Mattock","Warfare never really advanced beyond the need for earthworks and trenches. Pilots have discovered that the titanium pick on this tool pierces armor as easily as it does earth and stone.", ["weapon"], stars=3),
+    Item("cheesesnack:pick_mattock","Pick Mattock","Warfare never really advanced beyond the need for earthworks and trenches. Pilots have discovered that the titanium pick on this tool pierces armor as easily as it does rock and stone.", ["weapon"], stars=3),
     Item("cheesesnack:branch_camoflage","Branch Camoflage","Tree limbs have been crudely attached to the shoulders. Enemy spotters might mistake this mech for a particularly mobile tree.", ["cosmetic"]),
     BodyPlanItem("cheesesnack:centipede_mode","Centipede Mode","An adapter system that allows the mech to crawl on many small legs", {"legs": 4}),
     ArmsItem("cheesesnack:five_star_roper_manipulators","Roper Manipulators","Originally for clearing minefields, each \"arm\" consists of four moveable tentacles. An experimental upgrade allows them to act completely independently of the mech; pilots can snatch weapons from afar, throw individual tentacles like boluses, or interlink tentacles together into one long tentacle.", stars=5),
+    Item("cheesesnack:superpositional_jacket","Superpositional Jacket","The downside of reversible jackets was that you could only wear one side at a time. This is no longer the case.", ["cosmetic"]),
 ]
 )
 
