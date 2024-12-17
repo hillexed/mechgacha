@@ -2,6 +2,7 @@ import discord, dotenv
 config = dotenv.dotenv_values(".env")
 
 import time
+from datetime import datetime
 import sys
 import logging
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
@@ -15,6 +16,7 @@ import equip
 import tradecommand
 import progress
 import scrap
+import sleepy
 
 debug = False
 prefix = 'm!'
@@ -42,6 +44,7 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
     logging.info("The bot is ready!")
+    sleepy.wakeup(client)
 
 def get_command_body(message, command_name_to_remove):
     return message.content.replace(prefix + command_name_to_remove,"")
@@ -62,6 +65,7 @@ async def handle_commands(message):
     if message.content.startswith(prefix + "pull"):
         message_body = get_command_body(message, "pull")
         await pull_command(message, message_body)
+        db.update_data("channel", message.channel.id, "stats")
 
     elif message.content.startswith(prefix + "inventory"):
 
@@ -158,6 +162,11 @@ async def handle_commands(message):
         current_time_string = time.asctime(time.localtime()).lower()
         file = discord.File(_get_db_filename(), filename=f"mechgacha_{current_time_string.replace(' ','_')}.sqlite")
         await message.channel.send(f"Here's a copy of the DB at {current_time_string}", file=file)
+
+    elif user_is_admin(message) and message.content.startswith(prefix + "time"):
+        logging.info(datetime.fromisoformat(db.get_data("time", tablename="stats")))
+
+    db.update_data("time", datetime.now().isoformat(), "stats")
 
 # now run the bot
 token = config["TOKEN"]
