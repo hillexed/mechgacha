@@ -2,6 +2,7 @@ import discord, dotenv
 config = dotenv.dotenv_values(".env")
 
 import time
+from datetime import datetime
 import sys
 import logging
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
@@ -15,6 +16,7 @@ import equip
 import tradecommand
 import progress
 import scrap
+import sleepy
 
 debug = False
 prefix = 'm!'
@@ -42,6 +44,7 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
     logging.info("The bot is ready!")
+    await sleepy.wakeup_command(client, prefix)
 
 def get_command_body(message, command_name_to_remove):
     return message.content.replace(prefix + command_name_to_remove,"")
@@ -62,6 +65,7 @@ async def handle_commands(message):
     if message.content.startswith(prefix + "pull"):
         message_body = get_command_body(message, "pull")
         await pull_command(message, message_body)
+        db.update_data("channel", message.channel.id, "stats")
 
     elif message.content.startswith(prefix + "inventory"):
 
@@ -133,6 +137,7 @@ async def handle_commands(message):
 `m!inventory` - Check the mecha parts you have.
 - If there are too many parts to display in one page, use a number to look through pages of your inventory.
 - Optional: `m!inventory legs` will only show legs parts.
+- Optional: `m!inventory unequipped` will only show items that are not equipped to your mech.
 `m!mech` - Equip or unequip items from your inventory to build a mecha!
 - `m!mech equip/unequip <part name or slot number>`
 - `m!mech sources` - see which mechs your equipped items came from
@@ -158,6 +163,11 @@ async def handle_commands(message):
         current_time_string = time.asctime(time.localtime()).lower()
         file = discord.File(_get_db_filename(), filename=f"mechgacha_{current_time_string.replace(' ','_')}.sqlite")
         await message.channel.send(f"Here's a copy of the DB at {current_time_string}", file=file)
+
+    elif user_is_admin(message) and message.content.startswith(prefix + "time"):
+        logging.info(datetime.fromisoformat(db.get_data("time", tablename="stats")))
+
+    db.update_data("time", datetime.now().isoformat(), "stats")
 
 # now run the bot
 token = config["TOKEN"]
