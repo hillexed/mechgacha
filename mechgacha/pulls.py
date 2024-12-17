@@ -51,7 +51,7 @@ def get_mech_pulls(playerdata):
 def get_ratoon_pulls(playerdata):
     return playerdata["ratoon_pulls"]
 
-def choose_mech_by_name(all_mechs, requested_mech_name):
+def choose_mech_by_name(all_mechs, requested_mech_name) -> 'gacha_mechanics.Mech':
     # fuzzy string matching!
     mech_names = [mech.username.lower() for mech in all_mechs]
     chosen_mech_name, closeness = process.extractOne(requested_mech_name, mech_names)
