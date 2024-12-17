@@ -93,5 +93,5 @@ async def scrap_command(message, message_body, client):
     if not traded_in:
         await message.channel.send(f"You scrapped your {offered_item.name} {'★' * stars} and got {stars} scrap. You now have {playerdata['scrap']} scrap.")
     else:
-        await message.channel.send(f"You scrapped your {offered_item.name} {'★' * stars} and got {stars} scrap - enough to salvage a free pull! You now have {playerdata['scrap']} scrap.")
+        await message.channel.send(f"You scrapped your {offered_item.name} {'★' * stars} and got {stars} scrap - enough to salvage a day's worth of pulls! You now have {playerdata['scrap']} scrap.")
         

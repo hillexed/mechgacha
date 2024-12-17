@@ -8,8 +8,8 @@ PROBABILITY = 0.02
 
 async def wakeup_command(client, prefix):
     db.create_table_if_not_made("stats")
-    if (last_time := db.get_data("time", "stats")) is None:
-        db.create_new_entry("time", datetime.now().isoformat(), "stats")
+    if (last_time := db.get_data("last_time", "stats")) is None:
+        db.create_new_entry("last_time", datetime.now().isoformat(), "stats")
     if (channel_id := db.get_data("last_channel", "stats")) is None:
         db.create_new_entry("last_channel", 0, "stats")
         return
