@@ -65,7 +65,8 @@ async def handle_commands(message):
     if message.content.startswith(prefix + "pull"):
         message_body = get_command_body(message, "pull")
         await pull_command(message, message_body)
-        db.update_data("channel", message.channel.id, "stats")
+        # update last used channel
+        db.update_data("last_channel", message.channel.id, "stats")
 
     elif message.content.startswith(prefix + "inventory"):
 
@@ -165,9 +166,11 @@ async def handle_commands(message):
         await message.channel.send(f"Here's a copy of the DB at {current_time_string}", file=file)
 
     elif user_is_admin(message) and message.content.startswith(prefix + "time"):
-        logging.info(datetime.fromisoformat(db.get_data("time", tablename="stats")))
+        logging.info(datetime.fromisoformat(db.get_data("last_time", tablename="stats")))
 
-    db.update_data("time", datetime.now().isoformat(), "stats")
+    # update time from last recorded message
+    db.update_data("last_time", datetime.now().isoformat(), "stats")
+    logging.info(message.channel.id)
 
 # now run the bot
 token = config["TOKEN"]

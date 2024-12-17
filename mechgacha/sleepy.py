@@ -3,15 +3,15 @@ from datetime import datetime
 import logging
 import random
 
-MIN_NUM_OF_MISSED_COMMANDS_TO_COMMENT_ON = 0 # 10
+MIN_NUM_OF_MISSED_COMMANDS_TO_COMMENT_ON = 5 # 10
 PROBABILITY = 0.02
 
 async def wakeup_command(client, prefix):
     db.create_table_if_not_made("stats")
     if (last_time := db.get_data("time", "stats")) is None:
         db.create_new_entry("time", datetime.now().isoformat(), "stats")
-    if (channel_id := db.get_data("channel", "stats")) is None:
-        db.create_new_entry("channel", 0, "stats")
+    if (channel_id := db.get_data("last_channel", "stats")) is None:
+        db.create_new_entry("last_channel", 0, "stats")
         return
 
     if (channel := client.get_channel(channel_id)) is None:
