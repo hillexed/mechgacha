@@ -14,6 +14,7 @@ import regeneration
 import equip
 import tradecommand
 import progress
+import scrap
 
 debug = False
 prefix = 'm!'
@@ -91,6 +92,10 @@ async def handle_commands(message):
    
     elif message.content.startswith(prefix + "mech equip"):
         await equip.equip_command(message, get_command_body(message, "mech equip"), client)
+
+    elif message.content.startswith(prefix + "scrap"):
+        await scrap.scrap_command(message, get_command_body(message, "scrap"), client)
+    
     
     elif message.content.startswith(prefix + "mech unequip"):
         await equip.unequip_command(message, get_command_body(message, "mech unequip"), client)
