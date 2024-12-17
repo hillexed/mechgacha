@@ -138,6 +138,7 @@ async def handle_commands(message):
 - `m!mech sources` - see which mechs your equipped items came from
 `m!trade` - Trade parts with other users
 `m!progress <mech name>` - See how many parts you have collected from a specific mech
+`m!scrap` - Get rid of unwanted items. Scrap is recycled into free pulls.
 """)
         pass
     #     await parse_help_command(message, get_command_body(message, "help"), client)

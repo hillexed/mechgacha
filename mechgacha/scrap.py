@@ -39,7 +39,7 @@ async def scrap_command(message, message_body, client):
 
     # check for how many copies of this item you have, and whether it's equipped
     num_copies = 0
-    for itemid, index in enumerate(your_inventory):
+    for index, itemid in enumerate(your_inventory):
         if itemid == offered_item_id:
             num_copies += 1
             # People probably don't want to scrap things currently equipped. 
