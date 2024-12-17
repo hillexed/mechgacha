@@ -189,7 +189,7 @@ async def inventory_command(message, message_body, client):
         add_new_player(userid)
         inventory = compute_inventory(userid)
 
-    inventory_with_index = enumerate(inventory)
+    inventory_with_index = list(enumerate(inventory))
 
     if len(tag) != 0 and not tag.isspace():
         all_users_tags = set(tag for item_id in inventory for tag in all_parts_list[item_id].tags)
