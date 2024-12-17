@@ -44,7 +44,7 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
     logging.info("The bot is ready!")
-    sleepy.wakeup(client)
+    await sleepy.wakeup_command(client, prefix)
 
 def get_command_body(message, command_name_to_remove):
     return message.content.replace(prefix + command_name_to_remove,"")

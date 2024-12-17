@@ -1,7 +1,12 @@
 import db
 from datetime import datetime
+import logging
+import random
 
-async def wakeup(client):
+MIN_NUM_OF_MISSED_COMMANDS_TO_COMMENT_ON = 0 # 10
+PROBABILITY = 0.02
+
+async def wakeup_command(client, prefix):
     db.create_table_if_not_made("stats")
     if (last_time := db.get_data("time", "stats")) is None:
         db.create_new_entry("time", datetime.now().isoformat(), "stats")
@@ -19,9 +24,9 @@ async def wakeup(client):
             number_of_messages_starting_with_prefix += 1
     if number_of_messages_starting_with_prefix == 0:
         return
-    if number_of_messages_starting_with_prefix > 1:
-        await channel.send(f"yall meowed {number_of_messages_starting_with_prefix} times while i was napping")
-
-    await channel.send(f"yawwwn. okay i'm up")
-
+    if number_of_messages_starting_with_prefix > MIN_NUM_OF_MISSED_COMMANDS_TO_COMMENT_ON:
+        rolled = random.random()
+        logging.info(f"rolled {rolled}, against probability {PROBABILITY} of saying funny message")
+        if rolled < PROBABILITY:
+            await channel.send(f"wow yall sent {number_of_messages_starting_with_prefix} messages while i was napping")
 
