@@ -1,13 +1,12 @@
 from math import ceil, floor
-import db
 import random
 import json
 import logging
-
-from gacha_tables import all_parts_list, starting_inventory
-
 import asyncio
+from fuzzywuzzy import process
 
+import db
+from gacha_tables import all_parts_list, starting_inventory
 from data_utils import get_playerdata, paginate
 
 
@@ -164,10 +163,20 @@ async def inventory_command(message, message_body, client):
         playerdata["equipment"] = []
         db.set_player_data(userid, playerdata)
 
+    # inventory legs 1
+    # inventory cockpits 3
+
+    message_body_parts = message_body.split()
+    tag = ""
+
     try:
-        page = int(message_body.strip())
+        page = int(message_body_parts[0])
     except:
-        page = 1 # page 1 is the first page
+        try:
+            tag = message_body_parts[0]
+            page = int(message_body_parts[1])
+        except:
+            page = 1 # page 1 is the first page
 
     if page <= 0:
         return await message.channel.send("There ain't no such page of your inventory")
@@ -178,6 +187,13 @@ async def inventory_command(message, message_body, client):
         # player has no inventory!
         add_new_player(userid)
         inventory = compute_inventory(userid)
+
+    if len(tag) != 0 and not tag.isspace():
+        all_users_tags = set(tag for item_id in inventory for tag in all_parts_list[item_id].tags)
+        chosen_tag, closeness = process.extractOne(tag, all_users_tags)
+        if closeness < 85:
+            return await message.channel.send(f"Couldn't find any {tag} in your inventory. Maybe you typoed? ")
+        inventory = [item_id for item_id in inventory if chosen_tag in all_parts_list[item_id].tags]
 
     return await message.channel.send(represent_inventory_as_string(inventory, playerdata, page))
 
