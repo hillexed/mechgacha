@@ -40,8 +40,10 @@ async def progress_command(message, message_body):
         if item.stars > max_stars:
            max_stars = item.stars
 
-    sub_array = [f"## {mech_to_see_progress_for.username.lower()}'s gacha\n"]
-    for star_count in range(max_stars):
+    username = message.author.display_name.lower()
+
+    sub_array = [f"## {username}'s progress on {mech_to_see_progress_for.username.lower()}'s gacha:\n"]
+    for star_count in range(max_stars+1):
         items_with_stars = stars.get(star_count)
         if items_with_stars is None:
             continue

@@ -122,7 +122,18 @@ async def handle_commands(message):
         await message.channel.send(str(version))
 
     elif message.content.startswith(prefix + "help"):
-        await message.channel.send("Command list: \n m!pull - Get new items and mechs from the gacha\n m!inventory - Check the mecha parts you have\n m!mech - Equip or unequip items from your inventory to build a mecha!")
+        await message.channel.send(
+"""Command list:
+`m!pull` - Get new items and mechs from the gacha
+`m!inventory` - Check the mecha parts you have.
+- If there are too many parts to display in one page, use a number to look through pages of your inventory.
+- Optional: `m!inventory legs` will only show legs parts.
+`m!mech` - Equip or unequip items from your inventory to build a mecha!
+- `m!mech equip/unequip <part name or slot number>`
+- `m!mech sources` - see which mechs your equipped items came from
+`m!trade` - Trade parts with other users
+`m!progress <mech name>` - See how many parts you have collected from a specific mech
+""")
         pass
     #     await parse_help_command(message, get_command_body(message, "help"), client)
 
