@@ -133,6 +133,7 @@ async def handle_commands(message):
 `m!inventory` - Check the mecha parts you have.
 - If there are too many parts to display in one page, use a number to look through pages of your inventory.
 - Optional: `m!inventory legs` will only show legs parts.
+- Optional: `m!inventory unequipped` will only show items that are not equipped to your mech.
 `m!mech` - Equip or unequip items from your inventory to build a mecha!
 - `m!mech equip/unequip <part name or slot number>`
 - `m!mech sources` - see which mechs your equipped items came from

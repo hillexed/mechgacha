@@ -181,6 +181,11 @@ async def inventory_command(message, message_body, client):
 
     message_body_parts = message_body.split()
     tag = ""
+    include_equipped = True
+
+    if "unequipped" in message_body:
+        include_equipped = False
+        message_body_parts = [p for p in message_body_parts if "unequipped" not in p]
 
     try:
         page = int(message_body_parts[0])
@@ -202,6 +207,10 @@ async def inventory_command(message, message_body, client):
         inventory = compute_inventory(userid)
 
     inventory_with_index = list(enumerate(inventory))
+
+    if not include_equipped:
+        equipment = playerdata["equipment"]
+        inventory_with_index = [(item_index, item_id) for (item_index, item_id) in inventory_with_index if item_index not in equipment]
 
     if len(tag) != 0 and not tag.isspace():
         all_users_tags = set(tag for item_id in inventory for tag in all_parts_list[item_id].tags)
