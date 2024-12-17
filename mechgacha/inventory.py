@@ -1,3 +1,4 @@
+from collections.abc import Sequence
 from math import ceil, floor
 import random
 import json
@@ -106,7 +107,7 @@ def give_random_gift(userid):
 
 page_size = 6 # max 
 
-def represent_inventory_as_string(inventory, playerdata, page=1):
+def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerdata, page=1):
 
     if inventory is None or len(inventory) == 0:
         return "**You have nothing in your inventory!** \n Use m!pull ratoon to get some mechs from Ratoon's gachapon, then m!pull <mech> to pull from their list!"
@@ -120,7 +121,7 @@ def represent_inventory_as_string(inventory, playerdata, page=1):
                     item_id, 
                     item_index,
                     item_index in playerdata["equipment"])
-                    for item_index, item_id in enumerate(inventory)],
+                    for (item_index, item_id) in inventory],
                 1500)
 
     if len(inventory) > page_size:
@@ -188,14 +189,16 @@ async def inventory_command(message, message_body, client):
         add_new_player(userid)
         inventory = compute_inventory(userid)
 
+    inventory_with_index = list(enumerate(inventory))
+
     if len(tag) != 0 and not tag.isspace():
         all_users_tags = set(tag for item_id in inventory for tag in all_parts_list[item_id].tags)
         chosen_tag, closeness = process.extractOne(tag, all_users_tags)
         if closeness < 85:
             return await message.channel.send(f"Couldn't find any {tag} in your inventory. Maybe you typoed? ")
-        inventory = [item_id for item_id in inventory if chosen_tag in all_parts_list[item_id].tags]
+        inventory_with_index = [(item_index, item_id) for (item_index, item_id) in inventory_with_index if chosen_tag in all_parts_list[item_id].tags]
 
-    return await message.channel.send(represent_inventory_as_string(inventory, playerdata, page))
+    return await message.channel.send(represent_inventory_as_string(inventory_with_index, playerdata, page))
 
 
 def get_first_item_of_type(userid, type):
