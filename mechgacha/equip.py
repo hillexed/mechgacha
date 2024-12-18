@@ -38,7 +38,7 @@ def filter_equipment(player_data, inventory, short=False):
     player_data["equipment"].sort()
     for equipped_index in player_data["equipment"]:
         # print(equipped)
-        equipment.append(format_item(inventory[equipped_index], equipped_index, True, short))
+        equipment.append(format_item(inventory[equipped_index], equipped_index, False, short))
     return equipment
 
 def count_equipped_categories(player_data, inventory):
