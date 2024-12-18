@@ -129,8 +129,7 @@ def give_random_gift(userid):
 
 page_size = 6 # max 
 
-def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerdata, page=1):
-
+def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerdata, page=1, short=False):
     if inventory is None or len(inventory) == 0:
         return "**You have nothing in your inventory!** \n Use m!pull ratoon to get some mechs from Ratoon's gachapon, then m!pull <mech> to pull from their list!"
 
@@ -142,7 +141,8 @@ def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerda
                 [format_item(
                     item_id, 
                     item_index,
-                    item_index in playerdata["equipment"])
+                    item_index in playerdata["equipment"],
+                    short)
                     for (item_index, item_id) in inventory],
                 1500)
 
@@ -161,14 +161,14 @@ def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerda
     
     return prefix + '\n'.join(pages[page])
 
-def format_item(item_id, item_index = -1, equipped = False):
+def format_item(item_id, item_index = -1, equipped = False, short = False):
 
     new_line = "\n"
     sub_array = []
     item_data = all_parts_list[item_id]
 
     if item_index > -1:
-        sub_array.append(f"[{item_index + 1}]") 
+        sub_array.append(f"`[{item_index + 1}]`") 
 
     tags_string = f'{", ".join([tag.upper() for tag in item_data.tags])}'
     if len(item_data.tags) > 0:
@@ -177,10 +177,14 @@ def format_item(item_id, item_index = -1, equipped = False):
     if equipped:
         sub_array.append("**EQUIPPED**")
 
-    sub_line = f'{new_line}-# **     **{" • ".join(sub_array)}'
-    return f'- {item_data.name} {"★" * item_data.stars} - {item_data.description}{sub_line if len(tags_string) > 0 or item_index > -1 else ""}'
+    if short:
+        sub_line = f' | {" • ".join(sub_array)}'
+        return f'- {item_data.name} {"★" * item_data.stars}{sub_line if len(tags_string) > 0 or item_index > -1 else ""}'
+    else:
+        sub_line = f'{new_line}-# **     **{" • ".join(sub_array)}'
+        return f'- {item_data.name} {"★" * item_data.stars} - {item_data.description}{sub_line if len(tags_string) > 0 or item_index > -1 else ""}'
 
-async def inventory_command(message, message_body, client):
+async def inventory_command(message, message_body, client, short=False):
     userid = message.author.id
 
     username = message.author.display_name.lower() # I'd love to use global_name but it doesn't work.
