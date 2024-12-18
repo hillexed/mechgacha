@@ -621,10 +621,6 @@ for item in body_plans:
 # done populating all_parts_list
 
 
-
-# update playerdata set data='{"unlocked_mechs":["bee", "oneirocartographer", "hillexed", "styietus", "triangle", "cheshire", "loading", "metanite64", "deric", "syl", "vel", "amutecrypt", "intergalacticsky", "only"], "ratoon_pulls": 0, "mech_pulls":1000}' where name='178116262390398976';
-# update playerdata set data='{"unlocked_mechs":[], "ratoon_pulls": 1000, "mech_pulls":1000}' where name='178116262390398976';
-
 def check_gacha_table():
     for mech in all_mechs:
         #print(mech.loot)
