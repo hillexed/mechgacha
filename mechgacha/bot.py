@@ -170,7 +170,6 @@ async def handle_commands(message):
 
     # update time from last recorded message
     db.update_data("last_time", datetime.now().isoformat(), "stats")
-    logging.info(message.channel.id)
 
 # now run the bot
 token = config["TOKEN"]

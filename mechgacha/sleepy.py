@@ -3,8 +3,8 @@ from datetime import datetime
 import logging
 import random
 
-MIN_NUM_OF_MISSED_COMMANDS_TO_COMMENT_ON = 5 # 10
-PROBABILITY = 0.02
+MIN_NUM_OF_MISSED_COMMANDS_TO_COMMENT_ON = 10
+PROBABILITY = 0.5
 
 async def wakeup_command(client, prefix):
     db.create_table_if_not_made("stats")
