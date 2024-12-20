@@ -535,6 +535,26 @@ shade = Mech("shade",
     ArmsItem("shade:5star_hexagonal_hands","Hexagonal Hands","Metallic graspers with 6 digits on the end, positioned in a hexagonal pattern. Now with built in phase cannons in the palms!", stars=5),
 ])
 
+babaloga = Mech("babaloga", 
+[
+    PowerItem("babaloga:quasiquasar","Quasi-Quasar", "We don't know what it is but it puts out a shit ton of energy and it's not a Quasar."),
+    LegsItem("babaloga:heavy_boots","Heavy Boots","Cartoonishly oversized boot-shaped feet"),
+    ArmsItem("babaloga:pterosaur_claws","Pterosaur Claws","Large folded wings that can function as front legs. Not ideal for grasping or hitting, but capable of flight."),
+    BodyItem("babaloga:shrouded","Shrouded","Layers of draped fabric, netting, and cables obscure the body underneath like a cloak."),
+    CockpitItem("babaloga:too_many_eyes","Too Many Eyes","Eyes on the ceiling, eyes on the floor, eyes covering every surface."),
+    Item("babaloga:deployable_guy","Deployable Guy™","A harness holding a featureless white capsule with a nametag floating over its head. A Guy™ is indestructible and can slide around. It is impossible to mount anything to the Guy™.", ["back"], stars=2),
+    Item("babaloga:miniglolfkit","Mini-Glolf Kit","A club and variously colored glolf balls from a local mini-glolf place that closed down. For some reason the balls are packed with explosives and can be remotely detonated?", ["weapon"]),
+    Item("babaloga:name_tag","Name Tag","Semi-transparent black rectangle that floats over your mech's head and displays its name.", ["cosmetic"]),
+    BodyPlanItem("babaloga:airship","Airship","No arms, no legs, just a giant balloon with 3 weapons mounted to it.", {"weapons": 3, "legs":0, "arms":0}),
+    Item("babaloga:beans","\"Beans\"","\"Beans\" will be launched into the general vicinity. You gotta keep picking them up to stay powered.", ["power"], stars=2),
+    Item("babaloga:polygonal_crown","Polygonal Crown","A big matte yellow crown that sits lopsided.", ["cosmetic"], stars=2),
+    Item("babaloga:double_crown","Double Crown of the Double Winner","A matte yellow crown with a matte brown crown inside it. Both sit lopsided at different angles.", ["cosmetic"], stars=4),
+    Item("babaloga:f_holes","F Holes","Openings resembling the sound holes on violin-family instruments.", ["cosmetic"]),
+    Item("babaloga:deployable_guy_with_dodgeball","Deployable Guy™ With Dodgeball","A harness holding a featureless white capsule with a nametag floating over its head. A Guy™ is indestructible and can slide around. It is impossible to mount anything to the Guy™. It's holding a dodgeball, which it can throw at stuff.", ["back"], stars=5),
+]
+)
+
+
 
 
 
@@ -553,7 +573,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, warlock, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, warlock, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 
