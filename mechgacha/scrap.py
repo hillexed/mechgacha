@@ -74,7 +74,7 @@ async def scrap_command(message, message_body, client):
 
     existing_scrap = float(playerdata["scrap"])
     added_scrap = stars
-    playerdata["scrap"] += added_scrap
+    playerdata["scrap"] = existing_scrap + added_scrap
 
     traded_in = False
     while playerdata["scrap"] >= SCRAP_TRADEIN_THRESHOLD:
