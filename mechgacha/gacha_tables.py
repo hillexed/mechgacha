@@ -20,7 +20,8 @@ bee = Mech("bee", [
     Item("bee:gas_satellite","Rock Satellite","A tiny comet and trail orbit your mech.", ["cosmetic"], stars=3),
     Item("bee:artificial_satellite","Artificial Satellite","A small artificial space structure (a satellite, space ship, etc) orbits your mech.", ["cosmetic"], stars=3),
     PowerItem("bee:blackhole_drive","Blackhole Drive","An infinitely deep hole in reality, the pull of the density object in the universe, contained only by the mech itself.", stars=5),
-    PowerItem("bee:supernova_drive","Supernova Drive","A core of swirling energy, the captured explosion of a star, held together with the force of dark matter. Iridescent and an unstoppable force.", stars=5)
+    PowerItem("bee:supernova_drive","Supernova Drive","A core of swirling energy, the captured explosion of a star, held together with the force of dark matter. Iridescent and an unstoppable force.", stars=5),
+    Item("bee:gravitational_lensing", "Gravitational Lensing", "Using gravity, you can shunt power in to a strong focal beam to stab through your enemies at range.", ["weapon"], stars=4)
 ]
 )
 
