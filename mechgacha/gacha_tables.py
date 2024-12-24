@@ -297,22 +297,22 @@ cheesesnack = Mech("cheesesnack",
 ]
 )
 
-warlock = Mech("warlock", 
+spellweaver = Mech("spellweaver", 
 [
-    PowerItem("warlock:system_of_hamster_wheels","System of Hamster Wheels","They are intricately connected by a mechanism to a generator. The hamsters have a great union contract."),
-    LegsItem("warlock:digitigrade_legs","Digitigrade Legs","Strong, animal-like legs with big paws and claws that can dig into the ground for support"),
-    ArmsItem("warlock:sable_arms","Sable Arms","Extendible animal-like arms with big paws and claws for grabbing."),
-    BodyItem("warlock:forest_sable","Forest Sable","Camouflaged to blend in with dirt and forests, the slender body of this mech is perfect for hiding in plain sight."),
-    CockpitItem("warlock:library_membership_card","Library Membership Card","With this, you can download ebooks, audiobooks, music, and games! Plus, you can check out physical materials at your local library.", stars=2),
-    Item("warlock:big_backpack","Big Backpack","this comedically large backpack is actually great for storing things. It’s water-resistant, but not waterproof.", ["back"], stars=3),
-    Item("warlock:big_hammer","Big Hammer","Giant two-handed war-hammer. Fun to spin around with!", ["weapon"]),
-    Item("warlock:pride_&_pronoun_pins","Pride & Pronoun Pins","Colorful, easily legible, allows you to share your identity with the world", ["cosmetic"], stars=2),
-    BodyPlanItem("warlock:combat_animal","Combat animal","Four legs, 2 weapon slots on back.", {"legs": 4, "weapon": 2}),
-    Item("warlock:giant_beaglepuss","Giant Beaglepuss","Also known as Groucho Marx glasses, they are lensless and have a comedic fake nose and mustache attached.", ["cosmetic"], stars=3),
-    BodyItem("warlock:massive_speaker_system","Massive Speaker System","With this, you can blast music, or unleash a bestial roar that can be heard for miles. body", stars=3),
-    BodyItem("warlock:winter_marten","Winter Marten","Camouflaged to blend in with ice and snow, the slender body of this mech is perfect for hiding in cold environments.", stars=3),
-    PowerItem("warlock:the_soup_engine","The Soup Engine","Just pour some soup in there, or a smoothie, and it’ll run real good!", stars=4),
-    LegsItem("warlock:advanced_digitigrade_legs","Advanced Digitigrade Legs","Strong, animal-like legs with big paws and claws that can dig into the ground for support. These legs can be super-charged, crackling with blue electricity to give you incredible speed boosts, letting you run faster than should be reasonably possible, even up walls!", stars=5),
+    PowerItem("spellweaver:system_of_hamster_wheels","System of Hamster Wheels","They are intricately connected by a mechanism to a generator. The hamsters have a great union contract."),
+    LegsItem("spellweaver:digitigrade_legs","Digitigrade Legs","Strong, animal-like legs with big paws and claws that can dig into the ground for support"),
+    ArmsItem("spellweaver:sable_arms","Sable Arms","Extendible animal-like arms with big paws and claws for grabbing."),
+    BodyItem("spellweaver:forest_sable","Forest Sable","Camouflaged to blend in with dirt and forests, the slender body of this mech is perfect for hiding in plain sight."),
+    CockpitItem("spellweaver:library_membership_card","Library Membership Card","With this, you can download ebooks, audiobooks, music, and games! Plus, you can check out physical materials at your local library.", stars=2),
+    Item("spellweaver:big_backpack","Big Backpack","this comedically large backpack is actually great for storing things. It’s water-resistant, but not waterproof.", ["back"], stars=3),
+    Item("spellweaver:big_hammer","Big Hammer","Giant two-handed war-hammer. Fun to spin around with!", ["weapon"]),
+    Item("spellweaver:pride_&_pronoun_pins","Pride & Pronoun Pins","Colorful, easily legible, allows you to share your identity with the world", ["cosmetic"], stars=2),
+    BodyPlanItem("spellweaver:combat_animal","Combat animal","Four legs, 2 weapon slots on back.", {"legs": 4, "weapon": 2}),
+    Item("spellweaver:giant_beaglepuss","Giant Beaglepuss","Also known as Groucho Marx glasses, they are lensless and have a comedic fake nose and mustache attached.", ["cosmetic"], stars=3),
+    BodyItem("spellweaver:massive_speaker_system","Massive Speaker System","With this, you can blast music, or unleash a bestial roar that can be heard for miles. body", stars=3),
+    BodyItem("spellweaver:winter_marten","Winter Marten","Camouflaged to blend in with ice and snow, the slender body of this mech is perfect for hiding in cold environments.", stars=3),
+    PowerItem("spellweaver:the_soup_engine","The Soup Engine","Just pour some soup in there, or a smoothie, and it’ll run real good!", stars=4),
+    LegsItem("spellweaver:advanced_digitigrade_legs","Advanced Digitigrade Legs","Strong, animal-like legs with big paws and claws that can dig into the ground for support. These legs can be super-charged, crackling with blue electricity to give you incredible speed boosts, letting you run faster than should be reasonably possible, even up walls!", stars=5),
 ]
 )
 
@@ -573,7 +573,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, warlock, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 
