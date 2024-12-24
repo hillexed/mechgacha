@@ -10,7 +10,6 @@ import db
 from gacha_tables import all_parts_list, starting_inventory
 from data_utils import get_playerdata, paginate
 
-
 def add_new_player(userid):
     inventory = starting_inventory
     db.set_inventory_data(userid, inventory)
@@ -26,6 +25,15 @@ def compute_inventory(userid):
     else: # not in DB
         add_new_player(userid)
     return inventory
+
+
+
+all_item_names = [all_parts_list[itemid].name for itemid in all_parts_list]
+name_to_id = {all_parts_list[itemid].name: itemid for itemid in all_parts_list}
+def match_item_name_to_id(name):
+    chosen_item_name, closeness = process.extractOne(name, choices=all_item_names)
+
+    return name_to_id[chosen_item_name]
 
 def item_already_in_inventory(new_item, inventory):
     return new_item in inventory
