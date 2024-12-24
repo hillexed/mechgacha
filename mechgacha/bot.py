@@ -79,6 +79,20 @@ async def handle_commands(message):
         #        await message.channel.send("Their inventory is now:"+ inventory.represent_inventory_as_string(atted_userID))
         #        return
         #    return await message.channel.send("on a new line, @ someone.")
+
+            
+        if user_is_admin(message) and len(message_body) > 0 and "debug_add" in message_body:
+            print(message_body)
+            if "<@" in message_body and ">" in message_body:
+                atted_userID = message_body.split("<@")[1].split(">")[0]
+            else:
+                return await message.channel.send("at a user to use this debug command")
+
+            item_name = message_body.replace("debug_add","").replace(f"<@{atted_userID}>","")
+
+            item_id = inventory.match_item_name_to_id(item_name)
+            inventory.add_id_to_inventory(item_id, atted_userID)
+            return await message.channel.send(f"added {item_id} to em")
             
         if user_is_admin(message) and len(message_body) > 0 and "accept_bribe" in message_body:
             print(message_body)
