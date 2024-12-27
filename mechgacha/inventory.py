@@ -1,3 +1,4 @@
+from collections import Counter
 from collections.abc import Sequence
 from dataclasses import dataclass
 from math import ceil, floor
@@ -137,14 +138,27 @@ def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerda
 
     # pagination for when inventory gets big
     page -= 1 #first page should be page 1, not page 0
-    pages = paginate(
-                [format_item(
-                    item_id, 
-                    item_index,
-                    item_index in playerdata["equipment"],
-                    short)
-                    for (item_index, item_id) in inventory],
-                1500)
+    if not short:
+        pages = paginate(
+                    [format_item(
+                        item_id, 
+                        item_index,
+                        item_index in playerdata["equipment"],
+                        short, 1)
+                        for (item_index, item_id) in inventory],
+                    1500)
+    else: 
+        items = Counter([item[1] for item in inventory])
+        count = Counter([item[1] for item in inventory]).keys()
+        pages = paginate(
+                    [format_item(
+                        item_id, 
+                        -1,
+                        False,
+                        True, count)
+                        for (item_id, count) in items.items()],
+                    1500)
+
 
     if page >= len(pages):
         # if requesting page 4 of a 3-page inventory, say
@@ -161,25 +175,26 @@ def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerda
     
     return prefix + '\n'.join(pages[page])
 
-def format_item(item_id, item_index = -1, equipped = False, short = False):
+def format_item(item_id, item_index = -1, equipped = False, short = False, count = 1):
 
     new_line = "\n"
     sub_array = []
     item_data = all_parts_list[item_id]
 
-    if item_index > -1:
+    if item_index > -1 and not short:
         sub_array.append(f"`[{item_index + 1}]`") 
 
     tags_string = f'{", ".join([tag.upper() for tag in item_data.tags])}'
     if len(item_data.tags) > 0:
         sub_array.append(tags_string)
-    
-    if equipped:
+
+    if equipped and not short:
         sub_array.append("**EQUIPPED**")
 
     if short:
-        sub_line = f' | {" • ".join(sub_array)}'
-        return f'- {item_data.name} {"★" * item_data.stars}{sub_line if len(tags_string) > 0 or item_index > -1 else ""}'
+        count_string = f' (__x{count}__)'
+        sub_line = f'{ count_string if count > 1 else ""} | `{" • ".join(sub_array)}`'
+        return f'- {item_data.name} {"★" * item_data.stars}{sub_line if len(tags_string) > 0 else ""}'
     else:
         sub_line = f'{new_line}-# **     **{" • ".join(sub_array)}'
         return f'- {item_data.name} {"★" * item_data.stars} - {item_data.description}{sub_line if len(tags_string) > 0 or item_index > -1 else ""}'
