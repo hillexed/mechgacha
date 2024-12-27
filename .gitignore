@@ -8,3 +8,4 @@ venv
 *.sqlite*
 *.sqlite
 .vscode/settings.json
+mechgacha/db_data/debug_files/*
