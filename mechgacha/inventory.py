@@ -144,11 +144,17 @@ def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerda
                     for (item_index, item_id) in inventory],
                 1500)
 
+    if page >= len(pages):
+        # if requesting page 4 of a 3-page inventory, say
+        # just show the last page
+        page = len(pages) - 1
+
     if len(inventory) > page_size:
         prefix += f"(Page {page+1}/{len(pages)})\n"
 
     if len(inventory) == 0:
         return prefix + "Empty!"
+        
 
     
     return prefix + '\n'.join(pages[page])
