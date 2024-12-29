@@ -369,7 +369,7 @@ shork = Mech("shork",
     WeaponItem("shork:spinnaaaaaaaaah","SPINNAAAAAAAAAH","A big hunk of metal spinning at ungodly speeds. Kinetic energy in its purest form.", stars=3),
     Item("shork:polkadot_fur","Polkadot Fur","Offers no tactical advantage whatsoever.", ["cosmetic"], stars=2),
     BodyPlanItem("shork:snowplow","Snowplow","Low to the ground, with a solid defensive profile. Armaments are tucked behind the safety of a giant wedge.", {"legs": 4, "arms": 0}),
-    WeaponItem("shork:d2_kitbot_drone","D2 Kitbot Drone","An incredibly effective drone unit, but is it really your victory if you didn't built it yourself...?", stars=4),
+    WeaponItem("shork:d2_kitbot_drone","D2 Kitbot Drone","An incredibly effective drone unit, but is it really your victory if you didn't build it yourself...?", stars=4),
     WeaponItem("shork:pulveriser","Pulveriser","A gigantic articulated metal mallet. Surprisingly ineffective."),
     WeaponItem("shork:massive_claw_unit","Massive Claw Unit","Nine gigatons of crushability factor!", stars=3),
     WeaponItem("shork:flippaaaaaaaaah","FLIPPAAAAAAAAAH","A pneumatic paddle designed for pushing potential pugilists before they pounce.", stars=2),
@@ -382,6 +382,12 @@ shork = Mech("shork",
     WeaponItem("shork:thwacker","Thwacker","A weighty cudgel on a flexible arm, bolted onto an extremity. Powered by your drivetrain, thrash about to strike anyone that comes close."),
     WeaponItem("shork:roborat_drones","Robo-Rat Drones","Deploy a swarm of robotic rats, armed with saws and flamethrowers. Effective at cutting through armour and torching insides, but can be disarmed by toppling them on their backs.", stars=3),
     Item("shork:full_body_spinner","Full Body Spinner","A giant blade of metal orbiting your mech at ungodly speeds, fuelled by the biggest ICE we could strap on its back. Kinetic energy in its purest form.",["back"], stars=5),
+    BodyPlanItem("shork:clusterbot","Clusterbot","Two identical, half-sized, half-power mechs, attached together magnetically. Able to split apart and recombine, but if either half is offlined, it takes the other down with it.", {"legs": 2, "arms": 2}, stars=5),
+    Item("shork:shame_cube","Shame Cube","A massive dumpster bolted to the back of your bot, capable of trapping any mech caught within it. It's positioned so a suplex will dump your target right into it!",["back"], stars=4),
+    Item("shork:meltybrain_unit","MeltyBrain Unit","A program that micro-adjusts drive motors, allowing for translational movement whilst the entire mech spins at high speed.", stars=3),
+    Item("shork:selfdestruct_button","Self-Destruct Button","When all else fails, this button can ensure you take your opponent down with you. It actually just deploys a bunch of smoke and pyrotechnics, but it's good for making threats with.", stars=2),
+    BodyItem("shork:hedgehog_armor","Hedgehog Armor","Covering your bot in nails, spikes-out, is certainly *a* defensive option."),
+    
 ]
 )
 
