@@ -1,5 +1,7 @@
 from collections.abc import Sequence
+from dataclasses import dataclass
 from math import ceil, floor
+from typing import Optional
 import random
 import json
 import logging
@@ -190,25 +192,12 @@ async def inventory_command(message, message_body, client):
         playerdata["equipment"] = []
         db.set_player_data(userid, playerdata)
 
-    # inventory legs 1
-    # inventory cockpits 3
+    parsed_message = parse_message(message_body)
 
-    message_body_parts = message_body.split()
-    tag = ""
-    include_equipped = True
-
-    if "unequipped" in message_body:
-        include_equipped = False
-        message_body_parts = [p for p in message_body_parts if "unequipped" not in p]
-
-    try:
-        page = int(message_body_parts[0])
-    except:
-        try:
-            tag = message_body_parts[0]
-            page = int(message_body_parts[1])
-        except:
-            page = 1 # page 1 is the first page
+    tag = parsed_message.tag
+    include_equipped = parsed_message.include_equipped
+    number_of_stars = parsed_message.number_of_stars
+    page = parsed_message.page
 
     if page <= 0:
         return await message.channel.send("There ain't no such page of your inventory")
@@ -226,15 +215,89 @@ async def inventory_command(message, message_body, client):
         equipment = playerdata["equipment"]
         inventory_with_index = [(item_index, item_id) for (item_index, item_id) in inventory_with_index if item_index not in equipment]
 
-    if len(tag) != 0 and not tag.isspace():
+    if tag is not None:
         all_users_tags = set(tag for item_id in inventory for tag in all_parts_list[item_id].tags)
         chosen_tag, closeness = process.extractOne(tag, all_users_tags)
         if closeness < 85:
             return await message.channel.send(f"Couldn't find any {tag} in your inventory. Maybe you typoed? ")
         inventory_with_index = [(item_index, item_id) for (item_index, item_id) in inventory_with_index if chosen_tag in all_parts_list[item_id].tags]
 
+    if number_of_stars is not None:
+        inventory_with_index = [(item_index, item_id) for (item_index, item_id) in inventory_with_index if number_of_stars == all_parts_list[item_id].stars]
+        if len(inventory_with_index) == 0:
+            return await message.channel.send(f"Nothin in your inventory with {number_of_stars} stars and also the other stuff ya mentioned")
+
     return await message.channel.send(represent_inventory_as_string(inventory_with_index, playerdata, page))
 
+@dataclass
+class ParsedMessage:
+    tag: Optional[str] = None
+    include_equipped: bool = True
+    number_of_stars: Optional[int] = None
+    page: int = 1
+
+def parse_message(message_body) -> ParsedMessage:
+    # inventory
+    # inventory 2
+    # inventory legs
+    # inventory cockpits 3
+    # inventory unequipped
+    # inventory unequipped 2
+    # inventory unequipped cockpits
+    # inventory unequipped cockpits 3
+    # inventory 2 stars
+    # inventory 2 stars 3
+    # inventory legs 2 stars
+    # inventory unequipped legs with 2 stars
+
+    result = ParsedMessage()
+    message_body_parts = message_body.split()
+    page = -1
+
+    while len(message_body_parts) > 0:
+        message_part = message_body_parts.pop(0)
+        try:
+            num = int(message_part)
+
+            if len(message_body_parts) == 0:
+                if not page < 0:
+                    raise ValueError("page was already set earlier in inventory command, but message ended with a page number as well")
+                result.page = num
+                break
+
+            message_part = message_body_parts[0]
+            if not ("star" == message_part or "stars" == message_part):
+                raise ValueError("found strange number in middle of message")
+
+            message_body_parts.pop(0)
+            result.number_of_stars = num
+        except:
+            if "unequipped" in message_part:
+                result.include_equipped = False
+                continue
+
+            if "with" in message_part:
+                continue
+
+            if ("star" == message_part or "stars" == message_part):
+                raise ValueError("found lone `stars` in inventory command; only permitted following a number, which should have already been consumed earlier in the loop")
+
+            if "page" == message_part:
+                if len(message_body_parts) == 0:
+                    return result
+                message_part = message_body_parts.pop(0)
+                # allow for this to throw, we should only ever see a number following "page"
+                page = int(message_part)
+                continue
+
+            if result.tag is not None:
+                raise ValueError("multiple tags found, please only provide one")
+
+            result.tag = message_part
+
+    if page > 0:
+        result.page = page
+    return result
 
 def get_first_item_of_type(userid, type):
     inv = compute_inventory(userid)
