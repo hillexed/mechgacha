@@ -439,12 +439,19 @@ ditto = Mech("ditto",
     Item("ditto:giant_wind","Giant wind-up key","Playing with toys.", ["back", "cosmetic"], stars=2),
     Item("ditto:comically_large_spoon","Comically Large Spoon","Perfect for ice cream!", ["weapon"], stars=3),
     Item("ditto:cool_hat","Cool hat","It's a really cool hat", ["cosmetic"], stars=4),
-    LegsItem("ditto:hover_core","Hover core","Who needs Legs?"),
+    LegsItem("ditto:hover_core","Hover core","Who needs Legs?", stars=2),
     BodyPlanItem("ditto:ex_blueprint","EX Blueprint","Who needs arms with legs like these? No, seriously, your mech doesn't need arms. If you need to hold things? ROBOT TELEKINESIS.", {"legs":1,"arms":0}, stars=2),
     LegsItem("ditto:ex_legs","EX Legs","Legs used by a certain famous robot, but scaled up for use in mechs.", stars=3),
     PowerItem("ditto:keygen","Keygen","Listen I know it has Gen in the name but maybe it isn't such a good idea to use as a power source????", stars=3),
     WeaponItem("ditto:hammer_of_dawn","Hammer of Dawn","This is an orbital laser, not a hammer. Who named this????", stars=4),
     BodyItem("ditto:advanced_blender_cube","ADVANCED Blender cube","It looks like a gray default blender cube with a cockpit attached. But it's ADVANCED!", stars=5),
+    Item("ditto:giant_ice_gun_from_half_life_2_episode_3","Giant Ice Gun from Half Life 2 Episode 3","Ever wish you were frozone from the Incredibles? Because apparently doing that was originally an idea for Half Life Two Episode Three.", ["weapon"], stars=3),
+    ArmsItem("ditto:arms_videogame_reference","ARMS","WILL WE EVER GET ARMS 2? PROBABLY NOT. EVER PLAY ARMS?", stars=2),
+    LegsItem("ditto:explosive_pogo_stick","Explosive Pogo Stick","You are rocket jumping with a pogo stick. This will probably rip your mech apart eventually. ", stars=2),
+    PowerItem("ditto:piece_of_a_dead_god","Piece of A Dead God","This is most definitely blasphemy.", stars=4),
+    CockpitItem("ditto:smalto_light_mecha","Smalto Light Mecha","If this was full size it would be a 5 star item. but its a figure, so its 1 star.", stars=1),
+    BodyItem("ditto:neo_body","NEO Body","NEO IS KNOWN FOR ITS HIGH DEFENSE!... and also Spamton. How many stars this body is actually Worth should be determined by the result of a d6 minus 1 done before every battle.", stars=5),
+
 ]
 )
 
