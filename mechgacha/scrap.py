@@ -30,7 +30,9 @@ async def scrap_command(message, message_body, client):
     if offered_item_index == -1:
         return await message.channel.send("I'm not sure what item that is. To scrap one of your items, use m!scrap <item title or position>")
 
-
+    if offered_item_index >= len(your_inventory):
+        return await message.channel.send("Ya tried to scrap an item in a position that's beyond the number of items in your inventory! Try a smaller number.")
+        
     offered_item = all_parts_list[your_inventory[offered_item_index]]
     offered_item_id = offered_item.id
 
