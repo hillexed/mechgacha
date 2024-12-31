@@ -451,17 +451,27 @@ ditto = Mech("ditto",
 )
 
 hal2000 = Mech("hal 2000", 
-[
-    PowerItem("hal2000:the_beating_hearts_of_one","The Beating Hearts of One","Thousand Worms: The heartbeats of these still-live worms are amplified and converted into electrical energy for the mech to use."),
-    LegsItem("hal2000:dimensionally","Dimensionally","Disjointed Walkers: They would look like normal mechanical legs if you could see them in their entirety, it's just that each joint is in a different dimension, whoops!"),
+[   
+    PowerItem("hal2000:the_beating_hearts_of_one","The Beating Hearts of One Thousand Worms","The heartbeats of these still-live worms are amplified and converted into electrical energy for the mech to use.", stars=4),
+    PowerItem("hal2000:cote_blue_flame","Cot3's Blue-Flame Generator","A powerful generator that uses a special blue flame to supercharge the mech, but leads to an odd kind of smoke build-up on the inside that cannot be ventilated normally.", stars=2),
+    LegsItem("hal2000:dimensionally","Dimensionally Disjointed Walkers","They would look like normal mechanical legs if you could see them in their entirety, it's just that each joint is in a different dimension, whoops!"),
+    LegsItem("hal2000:kelvin_drumset","Kelvin's Mechanical Drumset","A reproduction of Kelvin's drumset/spider leg set-up, properly sized for usage as a set of mech legs!", stars=2),
     ArmsItem("hal2000:cobbled_scrap_arms","Cobbled Scrap Arms","Well, they don't move (unless you're an Ork and believe hard enough), and leave you at decent risk of tetanus, but at least they look cool!"),
+    ArmsItem("hal2000:jaw_claws","Jaw-Claws","A pair of thick and heavy arms with giant mechanical mouths on the end. These mouths can be used to hold stuff, and can also be fired on a chain to grapple from afar!", stars=3),
     BodyItem("hal2000:orb","ORB","SPHERE"),
+    BodyItem("hal2000:house","House","It's well furnished on the inside, and moderately sized for a family of 4. It has 2 bedrooms and 2 bathrooms, and even has a porch if you like to sit outside and watch the neighborhood.", stars=2),
     CockpitItem("hal2000:divesystem","Full-Body Dive System","Really FEEL like you're dying to that rocket."),
+    CockpitItem("hal2000:ratoon_plushie","Ratoon Plushie","A life-sized plush of everyone's favorite mouse mechanic and the perfect co-pilot. They do not know when this was made, but it sure is cute!", stars=2),
     Item("hal2000:backlift","Backlift","A pair of forks on the back for lifting cargo, only usable if you're Forklift Certified!", ["back"]),
-    Item("hal2000:guminator_3000","Guminator 3000","Immediately gums up every joint on the opposing mech if it successfully hits them, a mechanic's worst nightmare.", ["weapon"]),
-    Item("hal2000:clown_face","Clown Face","Paint: +1000 Clown Vibes, +200 Fear Induced", ["cosmetic"]),
-    BodyPlanItem("hal2000:crawler","Crawler","8 arms. No legs.", {"arms":8, "legs":0}),
-    BodyItem("hal2000:orbascended","ORB","SPHERE, ASCENDED FORM, ALL-KNOWING, ALL-SEEING, CLEAR AND PERFECT, NONE CAN ESCAPE ITS SIGHT", stars=5),
+    Item("hal2000:realistic_angel_wings","Realistic Angel Wings","They look so true-to-life and work too! They're so realistic in fact, that one would think they were taken from an actual angel... hey wait a sec-", ["back"], stars=4),
+    WeaponItem("hal2000:guminator_3000","Guminator 3000","Immediately gums up every joint on the opposing mech if it successfully hits them, a mechanic's worst nightmare.", stars=3),
+    WeaponItem("hal2000:the_blattilizer","The Blattilizer","A very special baseball bat for a very special person. Swing for the fences!", stars=4),
+    Item("hal2000:blender_head","Blender Head","Your mech has an oversized blender as a head. That is all. It is very cool-looking but impractical for actual combat.", ["cosmetic"], stars=2),
+    Item("hal2000:clown_face","Clown Face Paint","+1000 Clown Vibes, +200 Fear Induced", ["cosmetic"], stars=3),
+    BodyPlanItem("hal2000:crawler","Crawler","8 arms. No legs.", {"arms":8, "legs":0}, stars=4),
+    BodyPlanItem("hal2000:apartment","Apartment","A mech? In this economy?? Just remove the arms and legs, I'd rather have a place to live.", {"arms":0, "legs":0}),
+    BodyItem("hal2000:orbascended","ORB","SPHERE, ASCENDED FORM, ALL-KNOWING, ALL-SEEING, CLEAR AND PERFECT, NONE CAN ESCAPE ITS SIGHT, GRANTS VISIONS OF THE FUTURE", stars=5),
+    PowerItem("hal2000:cote_true_blue_flame","Cot3's Blue-Flame Generator","A powerful generator that uses a special blue flame to supercharge the mech, but leads to an odd kind of smoke build-up on the inside that cannot be ventilated normally. The upgraded version of this part adds a special mechanism for rapidly expelling this smoke, making it into a smokescreen as needed.", stars=5),
 ]
 )
 
