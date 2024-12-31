@@ -2,11 +2,13 @@ version: "1"
 
 services:
   mechgacha:
-    image: "mechgacha"
-    environment:
-      - TOKEN=...
+    image: "hillexed/mechgacha"
+    # build: .
+    #environment:
+    #  - TOKEN=...
     volumes:
       - db_data:/root/mechgacha/db_data
+    env_file: ".env"
 
 volumes:
     db_data:
