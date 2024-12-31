@@ -138,7 +138,7 @@ async def pull_command(message, message_body):
         player_mechs = get_user_current_mechs(playerdata)
 
         if not player_can_pull_from_mech(mech_to_pull_from, playerdata):
-            return await message.channel.send(f"Ya dont have that mech yet! Ya got these mechs: {','.join(player_mechs)}")
+            return await message.channel.send(f"Ya dont have that mech yet! Ya got these mechs: {', '.join(player_mechs)}")
             
 
         tries_to_get_new_item = 3

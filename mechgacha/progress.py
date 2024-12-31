@@ -25,7 +25,7 @@ async def progress_command(message, message_body):
         return await message.channel.send(f"I don't know that mech. Maybe ya typoed their name")
 
     if not player_can_pull_from_mech(mech_to_see_progress_for, playerdata):
-        return await message.channel.send(f"Ya dont have that mech yet! Ya got these mechs: {','.join(player_mechs)}")
+        return await message.channel.send(f"Ya dont have that mech yet! Ya got these mechs: {', '.join(player_mechs)}")
 
     inventory = compute_inventory(userid)
 
