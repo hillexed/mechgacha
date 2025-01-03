@@ -3,7 +3,7 @@ version: "1"
 services:
   mechgacha:
     image: "hillexed/mechgacha"
-    # build: .
+    build: .
     #environment:
     #  - TOKEN=...
     volumes:
