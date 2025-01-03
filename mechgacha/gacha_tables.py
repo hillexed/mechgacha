@@ -87,7 +87,7 @@ styietus = Mech("St. Yietus",
     WeaponItem("st_yietus:torcha_lance","TORCHA LANCE","Somewhere between a beam weapon and an overgrown blowtorch, the Torcha Lance nonetheless proves effective at dispatching armored targets at medium range. Just remember your eye protection.", stars=2),
     WeaponItem("st_yietus:rattlegun","RATTLEGUN","A crude mech-grade automatic weapon, built quickly to be discarded just as fast... and yet, this one shows shows signs of care and customization.", stars=1),
     PowerItem("st_yietus:subbotin_ultradense_atom_drive","SUBBOTIN ULTRADENSE ATOM DRIVE","A bulky but reliable power source dating back to the earliest mech designs. Although widely considered obsolete due to its high weight, it remains a favorite among veteran pilots-and repair crews.", stars=1),
-    BodyPlanItem("st_yietus:supertitan_body_plan","SUPERTITAN BODY PLAN","We've all asked ourselves the question: what if, instead of adding more parts to a mech, we just made it bigger? Finally, the answer is here! Now, I ask a new question: who needs agility when you have overwhelming force?", stars=4),
+    BodyPlanItem("st_yietus:supertitan_body_plan","SUPERTITAN BODY PLAN","We've all asked ourselves the question: what if, instead of adding more parts to a mech, we just made it bigger? Finally, the answer is here! Now, I ask a new question: who needs agility when you have overwhelming force?", {"body":3}, stars=4),
     Item("st_yietus:rust_and_meat","RUST AND MEAT","Your mech looks mechanical from a distance, but peer into the cracks in its corroded frame and you will find muscles and organs entwined with the mechanics.", ["cosmetic"], stars=2),
 ])
 
