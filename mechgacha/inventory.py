@@ -138,26 +138,18 @@ def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerda
 
     # pagination for when inventory gets big
     page -= 1 #first page should be page 1, not page 0
-    if not short:
-        pages = paginate(
-                    [format_item(
-                        item_id, 
-                        item_index,
-                        item_index in playerdata["equipment"],
-                        short, 1)
-                        for (item_index, item_id) in inventory],
-                    1500)
-    else: 
-        items = Counter([item[1] for item in inventory])
-        count = Counter([item[1] for item in inventory]).keys()
-        pages = paginate(
-                    [format_item(
-                        item_id, 
-                        -1,
-                        False,
-                        True, count)
-                        for (item_id, count) in items.items()],
-                    1500)
+    items = inventory
+    if short:
+        items = [(sub[1], sub[0]) for sub in Counter([item[1] for item in inventory]).items()]
+    pages = paginate(
+                [format_item(
+                    item_id, 
+                    item_index if not short else -1,
+                    item_index in playerdata["equipment"] if not short else False,
+                    short, 
+                    1 if not short else item_index)
+                    for (item_index, item_id) in items],
+                1500)
 
 
     if page >= len(pages):

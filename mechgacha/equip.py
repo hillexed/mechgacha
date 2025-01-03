@@ -104,7 +104,6 @@ async def print_mech_inventory_command(message, message_body, client, include_so
         return await message.channel.send(mechs_string)
 
 
-    print(short)
     equipment = filter_equipment(playerdata, inventory, short)
     page -= 1
     pages = paginate(equipment, 1500)
