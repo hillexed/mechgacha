@@ -481,7 +481,7 @@ hal2000 = Mech("hal 2000",
     BodyPlanItem("hal2000:crawler","Crawler","8 arms. No legs.", {"arms":8, "legs":0}, stars=4),
     BodyPlanItem("hal2000:apartment","Apartment","A mech? In this economy?? Just remove the arms and legs, I'd rather have a place to live.", {"arms":0, "legs":0}),
     BodyItem("hal2000:orbascended","ORB","SPHERE, ASCENDED FORM, ALL-KNOWING, ALL-SEEING, CLEAR AND PERFECT, NONE CAN ESCAPE ITS SIGHT, GRANTS VISIONS OF THE FUTURE", stars=5),
-    PowerItem("hal2000:cote_true_blue_flame","Cot3's Blue-Flame Generator","A powerful generator that uses a special blue flame to supercharge the mech, but leads to an odd kind of smoke build-up on the inside that cannot be ventilated normally. The upgraded version of this part adds a special mechanism for rapidly expelling this smoke, making it into a smokescreen as needed.", stars=5),
+    PowerItem("hal2000:cote_true_blue_flame","Cot3's Blue-Flame Generator","A powerful generator that uses a special blue flame to supercharge the mech, but leads to an odd kind of smoke build-up on the inside. It has been upgraded with a special mechanism for rapidly expelling this smoke and creating a smokescreen as needed.", stars=5),
 ]
 )
 
