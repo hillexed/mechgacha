@@ -1,3 +1,4 @@
+from collections import Counter
 from collections.abc import Sequence
 from dataclasses import dataclass
 from math import ceil, floor
@@ -129,8 +130,7 @@ def give_random_gift(userid):
 
 page_size = 6 # max 
 
-def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerdata, page=1):
-
+def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerdata, page=1, short=False):
     if inventory is None or len(inventory) == 0:
         return "**You have nothing in your inventory!** \n Use m!pull ratoon to get some mechs from Ratoon's gachapon, then m!pull <mech> to pull from their list!"
 
@@ -138,13 +138,19 @@ def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerda
 
     # pagination for when inventory gets big
     page -= 1 #first page should be page 1, not page 0
+    items = inventory
+    if short:
+        items = [(sub[1], sub[0]) for sub in Counter([item[1] for item in inventory]).items()]
     pages = paginate(
                 [format_item(
                     item_id, 
-                    item_index,
-                    item_index in playerdata["equipment"])
-                    for (item_index, item_id) in inventory],
+                    item_index if not short else -1,
+                    item_index in playerdata["equipment"] if not short else False,
+                    short, 
+                    1 if not short else item_index)
+                    for (item_index, item_id) in items],
                 1500)
+
 
     if page >= len(pages):
         # if requesting page 4 of a 3-page inventory, say
@@ -161,24 +167,29 @@ def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerda
     
     return prefix + '\n'.join(pages[page])
 
-def format_item(item_id, item_index = -1, equipped = False):
+def format_item(item_id, item_index = -1, equipped = False, short = False, count = 1):
 
     new_line = "\n"
     sub_array = []
     item_data = all_parts_list[item_id]
 
-    if item_index > -1:
-        sub_array.append(f"[{item_index + 1}]") 
+    if item_index > -1 and not short:
+        sub_array.append(f"`[{item_index + 1}]`") 
 
     tags_string = f'{", ".join([tag.upper() for tag in item_data.tags])}'
     if len(item_data.tags) > 0:
         sub_array.append(tags_string)
-    
-    if equipped:
+
+    if equipped and not short:
         sub_array.append("**EQUIPPED**")
 
-    sub_line = f'{new_line}-# **     **{" • ".join(sub_array)}'
-    return f'- {item_data.name} {"★" * item_data.stars} - {item_data.description}{sub_line if len(tags_string) > 0 or item_index > -1 else ""}'
+    if short:
+        count_string = f' (__x{count}__)'
+        sub_line = f'{ count_string if count > 1 else ""} | `{" • ".join(sub_array)}`'
+        return f'- {item_data.name} {"★" * item_data.stars}{sub_line if len(tags_string) > 0 else ""}'
+    else:
+        sub_line = f'{new_line}-# **     **{" • ".join(sub_array)}'
+        return f'- {item_data.name} {"★" * item_data.stars} - {item_data.description}{sub_line if len(tags_string) > 0 or item_index > -1 else ""}'
 
 async def inventory_command(message, message_body, client):
     userid = message.author.id
@@ -198,6 +209,7 @@ async def inventory_command(message, message_body, client):
     include_equipped = parsed_message.include_equipped
     number_of_stars = parsed_message.number_of_stars
     page = parsed_message.page
+    short = parsed_message.short
 
     if page <= 0:
         return await message.channel.send("There ain't no such page of your inventory")
@@ -227,13 +239,14 @@ async def inventory_command(message, message_body, client):
         if len(inventory_with_index) == 0:
             return await message.channel.send(f"Nothin in your inventory with {number_of_stars} stars and also the other stuff ya mentioned")
 
-    return await message.channel.send(represent_inventory_as_string(inventory_with_index, playerdata, page))
+    return await message.channel.send(represent_inventory_as_string(inventory_with_index, playerdata, page, short))
 
 @dataclass
 class ParsedMessage:
     tag: Optional[str] = None
     include_equipped: bool = True
     number_of_stars: Optional[int] = None
+    short: bool = False
     page: int = 1
 
 def parse_message(message_body) -> ParsedMessage:
@@ -277,6 +290,10 @@ def parse_message(message_body) -> ParsedMessage:
                 continue
 
             if "with" in message_part:
+                continue
+
+            if "short" in message_part:
+                result.short = True
                 continue
 
             if ("star" == message_part or "stars" == message_part):
