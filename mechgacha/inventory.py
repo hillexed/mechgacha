@@ -199,7 +199,7 @@ def format_item(item_id, item_index = -1, equipped = False, short = False, count
         sub_line = f'{new_line}-# **     **{" • ".join(sub_array)}'
         return f'- {item_data.name} {"★" * item_data.stars} - {item_data.description}{sub_line if len(tags_string) > 0 or item_index > -1 else ""}'
 
-async def inventory_command(message, message_body, client, short=False):
+async def inventory_command(message, message_body, client):
     userid = message.author.id
 
     username = message.author.display_name.lower() # I'd love to use global_name but it doesn't work.
@@ -217,6 +217,7 @@ async def inventory_command(message, message_body, client, short=False):
     include_equipped = parsed_message.include_equipped
     number_of_stars = parsed_message.number_of_stars
     page = parsed_message.page
+    short = parsed_message.short
 
     if page <= 0:
         return await message.channel.send("There ain't no such page of your inventory")
@@ -246,13 +247,14 @@ async def inventory_command(message, message_body, client, short=False):
         if len(inventory_with_index) == 0:
             return await message.channel.send(f"Nothin in your inventory with {number_of_stars} stars and also the other stuff ya mentioned")
 
-    return await message.channel.send(represent_inventory_as_string(inventory_with_index, playerdata, page))
+    return await message.channel.send(represent_inventory_as_string(inventory_with_index, playerdata, page, short))
 
 @dataclass
 class ParsedMessage:
     tag: Optional[str] = None
     include_equipped: bool = True
     number_of_stars: Optional[int] = None
+    short: bool = False
     page: int = 1
 
 def parse_message(message_body) -> ParsedMessage:
@@ -296,6 +298,10 @@ def parse_message(message_body) -> ParsedMessage:
                 continue
 
             if "with" in message_part:
+                continue
+
+            if "short" in message_part:
+                result.short = True
                 continue
 
             if ("star" == message_part or "stars" == message_part):
