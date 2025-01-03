@@ -586,6 +586,12 @@ babaloga = Mech("babaloga",
     Item("babaloga:double_crown","Double Crown of the Double Winner","A matte yellow crown with a matte brown crown inside it. Both sit lopsided at different angles.", ["cosmetic"], stars=4),
     Item("babaloga:f_holes","F Holes","Openings resembling the sound holes on violin-family instruments.", ["cosmetic"]),
     Item("babaloga:deployable_guy_with_dodgeball","Deployable Guy™ With Dodgeball","A harness holding a featureless white capsule with a nametag floating over its head. A Guy™ is indestructible and can slide around. It is impossible to mount anything to the Guy™. It's holding a dodgeball, which it can throw at stuff.", ["back"], stars=5),
+    #New Items:
+    BodyItem("babaloga:apparatus","Apparatus","A formless mess of ducts, belts, tubing, and wires. Completely unshielded and unmanaged."),
+    CockpitItem("babaloga:corndog_dispenser","Corndog Dispenser","An infinite supply of corndogs from a factory somewhere deep in the mech."),
+    Item("babaloga:disciple_of_denny","Disciple of Denny","A cube-shaped robotic artist. The Disciple can be sent to deploy pancake spirals across the battlefield. You can probably mix other things into the pancake batter...", ["back"], stars=2),
+    PowerItem("babaloga:unprotected_fission_reactor","Unprotected Fission Reactor", "It's probably fine. What's the worst that could happen?"),
+    BodyItem("babaloga:towering_spire","Towering Spire","In place of a head, the mech's body is extends upward into a tower-like protrusion. The spire does not articulate like a head or neck.", stars = 3),
 ]
 )
 
