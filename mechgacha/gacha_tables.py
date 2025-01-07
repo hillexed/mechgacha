@@ -605,6 +605,22 @@ babaloga = Mech("babaloga",
 ]
 )
 
+theoddman = Mech("theoddman", 
+[
+    PowerItem("theoddman:roz_fusion_generator","ROZ Fusion Generator","Old and a little hefty for its size, this steel-cased reactor was once one of the best on the market, still is.",stars=3),
+    LegsItem("theoddman:unified_field_enhanced","Unified Field Enhanced","Two sleek legs with vents on the side and thrusters on their back, enhanced by gravity manipulation to allow them to leap and boost further.",stars=2),
+    ArmsItem("theoddman:gravity_gauntlet","Gravity Gauntlet","The hands of the mech utilize local gravity manipulation to assist in manipulation, and can activate magnets to guarantee a firm grip.",stars=1),
+    BodyItem("theoddman:crz1_n41da","CRZ1-N41DA","Features two small central point defense lasers. A reasonably armored core that protects the pilot rather well. It has strong, sleek lines when viewed from the front, the back being somewhat blocky, but a good place to mount thrusters.",stars=4),
+    CockpitItem("theoddman:crest_factory_new","Crest Factory New","Equipped with a direct neural link, the cockpit is cushioned but otherwise spartan. Sometimes you hear a mercenary on comms exclaim that they don't want to be babysitting some new guy. You don't see them anywhere and you're probably doing a lot more than them anyway.",stars=1),
+    Item("theoddman:oob_rival","Out-of-bounds Rival","They're getting to grips with the controls and are having problems turning and are getting stuck on terrain. They are being rather theatric about what's going on, but they can't seem to find the path and participate. They will probably fight you after trying to help, but you aren't sure.",["cosmetic"],stars=2),
+    WeaponItem("theoddman:16ergh_python","16ERGH-PYTHON","A lightweight, hand-held, 3 rail particle rifle. Takes a second to charge, but hits hard for its weight.",stars=4),
+    Item("theoddman:teleporting_bowmeow","Teleporting Bowmeow","A teleporting alien cat dog that you cannot get to just stay at home no matter how hard you try. They will keep themself safe but will cuddle you when they feel like it.",["cosmetic"],stars=4),
+    WeaponItem("theoddman:wpu_lamia","WPU-LAMIA","A rapid fire plasma cannon that requires some additional bracing to control. It has a circular area for accelerating its payload, though the plasma moves relatively slow.",stars=3),
+    Item("theoddman:rt05_pegasus","RT05-PEGASUS","Auxiliary back mounted thrusters that provide a lot of thrust, but are hard to control.",["back"],stars=2),
+    WeaponItem("theoddman:as_gz03","AS-GZ03","An energy shield that uses an artificial gravity field to enhance protection, and houses two laser sword emitters on its end. It looks really cool, but has a high energy drain.",stars=1),
+    PowerItem("theoddman:roz_prototype_n","ROZ Prototype N","Old and a little hefty for its size, this steel-cased reactor was once one of the best on the market and still is. This one has been given a lightened casing and been fitted with something old that no one has quite seen before; it runs hot but stably outputs an almost concerning amount of energy.",stars=5),
+])
+
 
 
 
@@ -624,7 +640,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, only)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 
