@@ -645,6 +645,12 @@ chillychilichelle = Mech("chillychilichelle",
 
 
 
+foolman = Mech("foolman", 
+[
+    PowerItem("foolman:evil","An Evil","This thing has no comma at the end.",stars=5)
+    PowerItem("foolman:good","An Good","Watch out for my evil twin above me",stars=5)
+])
+
 
 starting_inventory = ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body"]
 
