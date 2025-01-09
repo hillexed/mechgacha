@@ -33,12 +33,12 @@ def unequip_item(username, playerdata, item_index):
 def get_equipped_items(player_data, inventory):
     return [all_parts_list[inventory[equipped_index]] for item in player_data['equipment']]
 
-def filter_equipment(player_data, inventory):
+def filter_equipment(player_data, inventory, short=False):
     equipment = []
     player_data["equipment"].sort()
     for equipped_index in player_data["equipment"]:
         # print(equipped)
-        equipment.append(format_item(inventory[equipped_index], equipped_index, True))
+        equipment.append(format_item(inventory[equipped_index], equipped_index, False, short))
     return equipment
 
 def count_equipped_categories(player_data, inventory):
@@ -56,11 +56,11 @@ def count_equipped_categories(player_data, inventory):
 
     
 
-async def mech_command(message, message_body, client, include_sources = False):
-    return await print_mech_inventory_command(message, message_body, client, include_sources)
+async def mech_command(message, message_body, client, include_sources = False, short=False):
+    return await print_mech_inventory_command(message, message_body, client, include_sources, short)
 
 
-async def print_mech_inventory_command(message, message_body, client, include_sources = False):
+async def print_mech_inventory_command(message, message_body, client, include_sources = False, short = False):
 
     userid = message.author.id
     username = message.author.display_name
@@ -103,7 +103,8 @@ async def print_mech_inventory_command(message, message_body, client, include_so
 
         return await message.channel.send(mechs_string)
 
-    equipment = filter_equipment(playerdata, inventory)
+
+    equipment = filter_equipment(playerdata, inventory, short)
     page -= 1
     pages = paginate(equipment, 1500)
     prefix = ""

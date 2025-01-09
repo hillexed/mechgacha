@@ -7,16 +7,16 @@ from gacha_mechanics import TagType, Mech, Item, PowerItem, BodyItem, ArmsItem, 
 
 
 bee = Mech("bee", [
-    PowerItem("bee:star_drive", "Star Drive","The heart of a solar system, keeping the mech together and providing it power."),
-    LegsItem("bee:dark_matter_propulsion", "Dark Matter Propulsion","The force that keeps everything apart and the universe expanding. It also makes your mech go fast!"),
+    PowerItem("bee:star_drive", "Star Drive","The heart of a solar system, keeping the mech together and providing it power.", stars=2),
+    LegsItem("bee:dark_matter_propulsion", "Dark Matter Propulsion","The force that keeps everything apart and the universe expanding. It also makes your mech go fast!", stars=2),
     ArmsItem("bee:gravity_wells", "Gravity Wells","The force that keeps things in obit, and also the force to grab things with your mech!"),
     BodyItem("bee:rocky_armor", "Rocky Armor","Rocks float around the core to protect it and provide structure to your mech."),
     CockpitItem("bee:orbital_cockpit","ORBital Cockpit","A transparent bubble with no gravity within it, controls floating around effortlessly where you need them to be, controlling it almost like a dance."),
-    Item("bee:cloak_of_stars","Cloak of stars","A field of stars that moves and adapts as an armor where you need it to, absorbing medium impacts provided you move it to the impact site before the impact happens.", ["back"]),
-    Item("bee:void_slicer","Void Slicer","A glittering blade so sharp that it feels like it can tear the fabric of space if you put enough force into it. it leaves a glittering trail.", ["weapon"]),
-    Item("bee:living_satellite","Living Satellite","A small planet orbits your mech, supporting a microcosm of life.", ["cosmetic"]),
-    BodyPlanItem("bee:comet_form","Comet Form","A long thin form, with one leg and 6 arm slots, trailing behind the cockpit and core like a comet trail.",{"leg": 1, "arm": 6}),
-    Item("bee:satellite","Gas Satellite","A small ball of swirling gasses orbits your mech.", ["cosmetic"]),
+    Item("bee:cloak_of_stars","Cloak of stars","A field of stars that moves and adapts as an armor where you need it to, absorbing medium impacts provided you move it to the impact site before the impact happens.", ["back"], stars=4),
+    Item("bee:void_slicer","Void Slicer","A glittering blade so sharp that it feels like it can tear the fabric of space if you put enough force into it. it leaves a glittering trail.", ["weapon"], stars=2),
+    Item("bee:living_satellite","Living Satellite","A small planet orbits your mech, supporting a microcosm of life.", ["cosmetic"], stars=3),
+    BodyPlanItem("bee:comet_form","Comet Form","A long thin form, with one leg and 6 arm slots, trailing behind the cockpit and core like a comet trail.",{"leg": 1, "arm": 6}, stars=4),
+    Item("bee:satellite","Gas Satellite","A small ball of swirling gasses orbits your mech.", ["cosmetic"], stars=3),
     Item("bee:gas_satellite","Rock Satellite","A tiny comet and trail orbit your mech.", ["cosmetic"], stars=3),
     Item("bee:artificial_satellite","Artificial Satellite","A small artificial space structure (a satellite, space ship, etc) orbits your mech.", ["cosmetic"], stars=3),
     PowerItem("bee:blackhole_drive","Blackhole Drive","An infinitely deep hole in reality, the pull of the density object in the universe, contained only by the mech itself.", stars=5),
@@ -81,7 +81,7 @@ styietus = Mech("St. Yietus",
     PowerItem("st_yietus:divinity_tap","DIVINITY TAP","A bony, eerily pristine variant of the CURSEHEART ENGINE. Generates additional energy for each unique debuff affecting you. Gain a toggled ability that greatly improves all stats but creates massive heat while active. You feel tired after using it.", stars=5),
     WeaponItem("st_yietus:megaton_impact","MEGATON IMPACT","Your mech's forearms have been enlarged to make room for titanic piston assemblies that can imbue a punch with devastating force when properly charged.", stars=2),
     WeaponItem("st_yietus:duo_turbines","DUO TURBINES","Your mech's forearms have been replaced by colossal turbojet engines that allow it to take to the sky. Its hands have been modified to act as propellers, sacrificing manual dexterity for the awesome power of flight! (and a sick sawblade attack)", stars=3),
-    WeaponItem("st_yietus:gimmick_weapon","GIMMICK WEAPON","A specialized weapon built directly into the body of your mech. Electric bolts, beams or harpoons; arrays of rockets and cannons hide behind unassuming facades. Strike a pose, and lay waste to your enemies!", stars=2),
+    WeaponItem("st_yietus:gimmick_weapon","GIMMICK WEAPON","A specialized weapon built directly into the body of your mech. Will it fire a storm of bullets or a single mighty beam? Thunderbolts, harpoons, or a ring of pure light? Perhaps something entirely unique? Strike a pose, and lay waste to your enemies!", stars=2),
     WeaponItem("st_yietus:earthbreaker_dxl","EARTHBREAKER DXL","It's a big drill. A really big drill. So big, in fact, that even your mech struggles to wield it. A digging tool of truly cyclopean proportions. Capable of massive destruction, if you can handle the torque.", stars=3),
     WeaponItem("st_yietus:terremoto_devastation_cannon","TERREMOTO DEVASTATION CANNON","Never fire the Devastation Cannon without proper sonic, seismic, and psychic protection. Never aim the Devastation Cannon at anything you do not wish to destroy. Firing the Devastation Cannon in an inhabited area is considered an act of war.", stars=4),
     WeaponItem("st_yietus:torcha_lance","TORCHA LANCE","Somewhere between a beam weapon and an overgrown blowtorch, the Torcha Lance nonetheless proves effective at dispatching armored targets at medium range. Just remember your eye protection.", stars=2),
@@ -605,6 +605,42 @@ babaloga = Mech("babaloga",
 ]
 )
 
+theoddman = Mech("theoddman", 
+[
+    PowerItem("theoddman:roz_fusion_generator","ROZ Fusion Generator","Old and a little hefty for its size, this steel-cased reactor was once one of the best on the market, still is.",stars=3),
+    LegsItem("theoddman:unified_field_enhanced","Unified Field Enhanced","Two sleek legs with built-in thrusters, enhanced by gravity manipulation to allow them to leap and boost further.",stars=2),
+    ArmsItem("theoddman:gravity_gauntlet","Gravity Gauntlet","The hands of the mech utilize local gravity manipulation to assist in manipulation, and can activate magnets to guarantee a firm grip.",stars=1),
+    BodyItem("theoddman:crz1_n41da","CRZ1-N41DA","Features two small central point defense lasers. A reasonably armored core that protects the pilot rather well. It has strong, sleek lines when viewed from the front, the back being somewhat blocky, but a good place to mount thrusters.",stars=4),
+    CockpitItem("theoddman:crest_factory_new","Crest Factory New","Equipped with a direct neural link, the cockpit is cushioned but otherwise spartan. Sometimes you hear a mercenary on comms exclaim that they don't want to be babysitting some new guy. You don't see them anywhere and you're probably doing a lot more than them anyway.",stars=1),
+    Item("theoddman:oob_rival","Out-of-bounds Rival","They're getting to grips with the controls and are having problems turning and are getting stuck on terrain. They are being rather theatric about what's going on, but they can't seem to find the path and participate. They will probably fight you after trying to help, but you aren't sure.",["cosmetic"],stars=2),
+    WeaponItem("theoddman:16ergh_python","16ERGH-PYTHON","A lightweight, hand-held, 3 rail particle rifle. Takes a second to charge, but hits hard for its weight.",stars=4),
+    Item("theoddman:teleporting_bowmeow","Teleporting Bowmeow","A teleporting alien cat dog that you cannot get to just stay at home no matter how hard you try. They will keep themself safe but will cuddle you when they feel like it.",["cosmetic"],stars=4),
+    WeaponItem("theoddman:wpu_lamia","KWG-ORBIT","A weapon that uses gravity and powerful electromagnets to accelerate it's projectiles in a circular chamber before firing out the front. Wants good mounts to keep steady. You can set it up to fire a wide variety of things.",stars=3),
+    Item("theoddman:rt05_pegasus","RT05-PEGASUS","Auxiliary back mounted thrusters that provide a lot of thrust, but are hard to control.",["back"],stars=2),
+    WeaponItem("theoddman:as_gz03","AS-GZ03","An energy shield that uses an artificial gravity field to enhance protection, and houses two laser sword emitters on its end. It looks really cool, but has a high energy drain.",stars=1),
+    PowerItem("theoddman:roz_prototype_n","ROZ Prototype N","Old and a little hefty for its size, this steel-cased reactor was once one of the best on the market and still is. This one has been given a lightened casing and been fitted with something old that no one has quite seen before; it runs hot but stably outputs an almost concerning amount of energy.",stars=5),
+])
+
+
+chillychilichelle = Mech("chillychilichelle", 
+[
+    LegsItem("chillychilichelle:pike_walkers","Pike Walkers","A set of 4 tall, spindly, spiked manufacturing actuators that protrude from the mech body and puncture into the ground. They move 2 at a time, retracting into themselves before plunging back into the floor.",stars=1),
+    ArmsItem("chillychilichelle:talos_hands","Talos Hands","A pair of giant steel arms modeled after human anatomy. Covered in a soft fiberglass skin. Allows for precise articulation in the elbows and finger joints.",stars=1),
+    WeaponItem("chillychilichelle:telephone_pole","Telephone Pole","A utility pole seemingly ripped straight from the ground. Live wires crackle, dangling from the arms. 2 transformers are still attached, while a third appears to have been broken off. Dirt still clings to its base.",stars=1),
+    PowerItem("chillychilichelle:160000_aaa_batteries","160,000 AAA Batteries","A set of ~160,000 AAA batteries bound together with cable ties, hot glue, hope, and hubris. They are crudely affixed to a metal plate, where faded signatures and greetings are written on the back in marker.",stars=1),
+
+    BodyItem("chillychilichelle:stripped_framework","Stripped Framework","The bare skeleton of a long-defunct mech. Composed of hollow steel tubes and dangling wires. Originally the leftovers from a salvage, it reaches only the barest minimum of what is considered a mech.",stars=2),
+    CockpitItem("chillychilichelle:black_box","Black Box","A large steel cube, wrapped in a dozen layers of insulation and armor. Lacks any way to directly view the outside world. Contains up to 2 months of food, water, and oxygen. Requires the pilot to be hermetically sealed in each mission.",stars=2),
+    Item("chillychilichelle:overgrowth","Overgrowth","Countless vines and leaves that have made the mech their home. Foliage blooms in the in-betweens of joints, and moss cakes every crack. Vibrant flowers dot the highest surfaces.",["cosmetic"],stars=2),
+
+    BodyPlanItem("chillychilichelle:buddy_system","Buddy System","At the cost of a little bit of legroom, the mech has been modified to accommodate 2 cockpits, delegating responsibilities between them. However, 2 pilots are now required to properly pilot the mech.", {"cockpit": 2},stars=3),
+    Item("chillychilichelle:childhood_sweets","Childhood Sweets","A small drawer in the cockpit filled with old, discontinued candies from your youth. They don't taste as great as you remember, but they still make you feel warm and fuzzy.",["cockpit"],stars=3),
+
+    BodyPlanItem("chillychilichelle:decommissioned","Decommissioned","A machine of combat and war in a bygone era, now used for agriculture, construction, or logistics. Foregoing all weapons, the mech now sports up to 4 sets of arms and 2 sets of legs.",{"weapons": 0, "legs":2, "arms":4},stars=4),
+    Item("chillychilichelle:crumpled_letters","Crumpled Letters","Old letters exchanged between you and a rival pilot. You keep them gingerly tucked in a small folder underneath your seat.",["cockpit"],stars=4),
+
+    PowerItem("chillychilichelle:the_hole","The Hole","A small black pinprick in reality. Encased in layers of protective glass and steel, countless tubes pipe in and out of its container peppered with gauges and monitoring lights. A floating-point error in the fabric of space-time, long-forgotten by the world.",stars=5),
+])
 
 
 
@@ -624,7 +660,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 
@@ -644,10 +680,6 @@ for item in body_plans:
 
 # done populating all_parts_list
 
-
-
-# update playerdata set data='{"unlocked_mechs":["bee", "oneirocartographer", "hillexed", "styietus", "triangle", "cheshire", "loading", "metanite64", "deric", "syl", "vel", "amutecrypt", "intergalacticsky", "only"], "ratoon_pulls": 0, "mech_pulls":1000}' where name='178116262390398976';
-# update playerdata set data='{"unlocked_mechs":[], "ratoon_pulls": 1000, "mech_pulls":1000}' where name='178116262390398976';
 
 def check_gacha_table():
     for mech in all_mechs:

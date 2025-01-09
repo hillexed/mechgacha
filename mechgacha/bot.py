@@ -129,6 +129,9 @@ async def handle_commands(message):
     elif message.content.startswith(prefix + "unequip"):
         await equip.unequip_command(message, get_command_body(message, "unequip"), client)
 
+    elif message.content.startswith(prefix + "mech short"):
+        await equip.mech_command(message, get_command_body(message, "mech short"), client, short=True)
+
     elif message.content.startswith(prefix + "mech"):
         await equip.mech_command(message, get_command_body(message, "mech"), client)
 
