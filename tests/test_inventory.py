@@ -25,7 +25,7 @@ def mock_onepage_inventory(userid):
 def mock_long_inventory(userid):
     return ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body", "bee:artificial_satellite", "loading:knuckle_draggers", "st_yietus:weird_lil_guy", "st_yietus:rotborn_stomper", "loading:hook_lash", "loading:gyrobomber", "cheshire:stowaway_cheshire", "loading:elongated_segment_frame", "hillexed:findermech", "hillexed:starfish_mode_legs", "loading:big_jacket", "hillexed:findermech", "hillexed:glolf_patches", "hillexed:teeny_mechanized_legs", "loading:big_jacket", "loading:xr2", "triangle:intrinsic", "moonbug:blankets", "amutecrypt:thunderbirds_are_coming_out", "moonbug:insectoid_arm_array", "metanite64:golden_fiddle", "p_rker:helicoper_blades", "vel:retractible_swords", "moonbug:phase_shifter", "moonbug:insectoid_arm_array", "st_yietus:rotborn_stomper", "loading:lockjaw_needler", "moonbug:antennae", "moonbug:antennae", "loading:xr2", "st_yietus:rotborn_fist", "st_yietus:kitbash_kit_adaptor", "st_yietus:external_utility_pack", "hillexed:crochet_controls", "moonbug:emergency_grippers", "moonbug:legs_design_173", "moonbug:glitch_engine", "oneirocartographer:canopy_viewpoint", "hillexed:parabolic_block", "oneirocartographer:luminescent_core", "moonbug:covert_chassis", "moonbug:legs_design_173", "moonbug:emergency_grippers", "moonbug:antennae", "moonbug:glitch_engine", "moonbug:a.e.i.o.u", "moonbug:covert_chassis", "syl:sticky_fingers", "bytes:harvest_claw", "metanite64:cobras_roar", "renne:caustic_engine", "st_yietus:novelty_mug", "st_yietus:rotborn_stomper", "st_yietus:psychlink_mpi"]
 
-@pytest.mark.asyncio()
+
 async def test_inventory(monkeypatch):
 
     import db
@@ -41,27 +41,27 @@ async def test_inventory(monkeypatch):
 **Your inventory:**
 (Page 1/1)
 - Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement. 
--# **     **[1] • LEGS
+-# **     **`[1]` • LEGS
 - Unremarkable Arms ★ - Hydraulic mecha arms, ready for painting, aftermarket tinkering, or full replacement.
--# **     **[2] • ARMS • **EQUIPPED**
+-# **     **`[2]` • ARMS • **EQUIPPED**
 - Unremarkable Body ★ - Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement. 
--# **     **[3] • BODY
+-# **     **`[3]` • BODY
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
--# **     **[4] • COSMETIC
+-# **     **`[4]` • COSMETIC
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
--# **     **[5] • COSMETIC
+-# **     **`[5]` • COSMETIC
 - ROTBORN STOMPER ★★ - A sturdy weatherproofed leg. Slow, but capable of brief bursts of agility. Gains charges over time which can be spent to perform short leaps. Leaps are faster than walking and clear low obstacles and small gaps. Slightly reduces the effects of debuffs.
--# **     **[6] • LEGS
+-# **     **`[6]` • LEGS
 - Hook Lash ★★ - A whip with a spinning metal weight at the end that applies a random debuff on hit
--# **     **[7] • WEAPON
+-# **     **`[7]` • WEAPON
 - Gyrobomber ★ - A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts.
--# **     **[8] • COCKPIT'''.strip()
+-# **     **`[8]` • COCKPIT'''.strip()
 
     assert await inventory.inventory_command(message, "", MockClient()) == expected_inventory
 
 
 
-@pytest.mark.asyncio()
+
 async def test_inventory_pagination(monkeypatch):
 
     import db
@@ -91,7 +91,7 @@ async def test_inventory_pagination(monkeypatch):
 
 
 
-@pytest.mark.asyncio()
+
 async def test_inventory_filtering(monkeypatch):
 
     import db
@@ -108,21 +108,21 @@ async def test_inventory_filtering(monkeypatch):
 **Your inventory:**
 (Page 1/1)
 - Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement. 
--# **     **[1] • LEGS
+-# **     **`[1]` • LEGS
 - Unremarkable Arms ★ - Hydraulic mecha arms, ready for painting, aftermarket tinkering, or full replacement.
--# **     **[2] • ARMS • **EQUIPPED**
+-# **     **`[2]` • ARMS • **EQUIPPED**
 - Unremarkable Body ★ - Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement. 
--# **     **[3] • BODY
+-# **     **`[3]` • BODY
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
--# **     **[4] • COSMETIC
+-# **     **`[4]` • COSMETIC
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
--# **     **[5] • COSMETIC
+-# **     **`[5]` • COSMETIC
 - ROTBORN STOMPER ★★ - A sturdy weatherproofed leg. Slow, but capable of brief bursts of agility. Gains charges over time which can be spent to perform short leaps. Leaps are faster than walking and clear low obstacles and small gaps. Slightly reduces the effects of debuffs.
--# **     **[6] • LEGS
+-# **     **`[6]` • LEGS
 - Hook Lash ★★ - A whip with a spinning metal weight at the end that applies a random debuff on hit
--# **     **[7] • WEAPON
+-# **     **`[7]` • WEAPON
 - Gyrobomber ★ - A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts.
--# **     **[8] • COCKPIT'''.strip()
+-# **     **`[8]` • COCKPIT'''.strip()
 
     assert await inventory.inventory_command(message, "", MockClient()) == expected_inventory
     assert await inventory.inventory_command(message, "5", MockClient()) == expected_inventory # no such page 5
@@ -132,24 +132,24 @@ async def test_inventory_filtering(monkeypatch):
     assert await inventory.inventory_command(message, "3 stars", MockClient()) == '''
 **Your inventory:**
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
--# **     **[4] • COSMETIC
+-# **     **`[4]` • COSMETIC
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
--# **     **[5] • COSMETIC'''.strip()
+-# **     **`[5]` • COSMETIC'''.strip()
 
 
     assert await inventory.inventory_command(message, "legs", MockClient()) == '''
 **Your inventory:**
 - Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement. 
--# **     **[1] • LEGS
+-# **     **`[1]` • LEGS
 - ROTBORN STOMPER ★★ - A sturdy weatherproofed leg. Slow, but capable of brief bursts of agility. Gains charges over time which can be spent to perform short leaps. Leaps are faster than walking and clear low obstacles and small gaps. Slightly reduces the effects of debuffs.
--# **     **[6] • LEGS'''.strip()
+-# **     **`[6]` • LEGS'''.strip()
 
     assert await inventory.inventory_command(message, "unequipped cosmetic 3 stars", MockClient()) == '''
 **Your inventory:**
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
--# **     **[4] • COSMETIC
+-# **     **`[4]` • COSMETIC
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
--# **     **[5] • COSMETIC'''.strip()
+-# **     **`[5]` • COSMETIC'''.strip()
 
     assert await inventory.inventory_command(message, "unequipped arms", MockClient()) == '''
 **You have nothing in your inventory!** 

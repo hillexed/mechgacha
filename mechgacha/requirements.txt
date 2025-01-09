@@ -4,4 +4,4 @@ emoji
 fuzzywuzzy
 python-Levenshtein
 pytest
-pytest-asyncio
+pytest-aio
