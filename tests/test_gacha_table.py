@@ -14,7 +14,6 @@ def test_gacha_tables():
         assert len(mech.loot) > 1
 
         for item in mech.loot:
-            assert len(item.name) > 1
             assert type(item.name) is str
             assert ":" in item.id
             assert item.stars in (1,2,3,4,5)
@@ -28,3 +27,11 @@ def test_gacha_tables():
                 assert type(bodyparts) is dict
 
 
+def test_item_lengths():
+
+    import gacha_tables
+    for mech in gacha_tables.all_mechs:
+        for item in mech.loot:
+            assert len(item.description) <= 300
+            assert len(item.name) > 1
+            assert len(item.name) <= 50
