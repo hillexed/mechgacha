@@ -647,8 +647,8 @@ chillychilichelle = Mech("chillychilichelle",
 
 foolman = Mech("foolman", 
 [
-    PowerItem("foolman:evil","An Evil","This thing has no comma at the end.",stars=5)
-    PowerItem("foolman:good","An Good","Watch out for my evil twin above me",stars=5)
+    PowerItem("foolman:evil","An Evil","This thing has a comma at the end but is evil in a new way",stars=5),
+    PowerItem("foolman:evil","An Good","Watch out for my evil twin above me",stars=5)
 ])
 
 
@@ -666,7 +666,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, foolman)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 
