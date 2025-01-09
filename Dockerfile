@@ -3,7 +3,7 @@ WORKDIR /root/
 
 RUN ["apk", "--update-cache", "add", "python3", "python3-dev", "py3-pip", "gfortran", "musl-dev", "linux-headers", "g++"]
 
-COPY mechgacha/requirements.txt /root/requirements.txt
+COPY requirements.txt /root/requirements.txt
 RUN python3 -m pip install -r requirements.txt
 
 COPY mechgacha/ /root/mechgacha/
