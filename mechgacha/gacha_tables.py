@@ -142,6 +142,7 @@ loading = Mech("loading",
     Item("loading:big_jacket","Big Jacket","A jacket that is two sizes too large. It flows in the wind, increasing evasion the more the mech moves.", ["back", "cosmetic"]),
     Item("loading:hook_lash","Hook Lash","A whip with a spinning metal weight at the end that applies a random debuff on hit", ["weapon"], stars=2),
     Item("loading:lockjaw_needler","Lockjaw Needler","A set of low damage, hig fire rate pistols that corrode any surface their projectiles make contact with", ["weapon"], stars=3),
+    Item("Loading:Power_Vents","Core Ventilation","In exchange for a more trimmed down mech you gain the ability to explosively vent waste from your power source.", ["weapon"], stars=4),
     Item("loading:big_mechs_jacket","Big Mechs Jacket","A long flowing jacket based on the Mechs bomber jacket that flows behind the mech as it moves obscuring the body. It increases evasion and throws off targeting systems the more the mech moves.", ["back", "cosmetic"], stars=5),
 ]
 )
