@@ -685,7 +685,6 @@ def check_gacha_table():
     for mech in all_mechs:
         #print(mech.loot)
         pass
-        
 
 if __name__ == "__main__":
     check_gacha_table()
