@@ -138,13 +138,13 @@ cheshire = Mech("cheshire",
     Item("cheshire:bank_vault_shield","Bank Vault Shield","Ripped from the vault's hinges, nobody knows what happened to the rest of the bank", ["weapon"],	stars=2),	
     Item("cheshire:swarm_sheild","Swarm Shield","Six flat drones that form a shield of projected energy between them. Highly power consumptive", ["weapon"], stars=4),	
     LegsItem("cheshire:matryoshka_kneesocks","Matryoshka Kneesocks","These long heavily armored legs are designed to explode plating off after taking damage, reducing your mechs weight and increasing its speed.", stars=3),
-    ArmsItem("cheshire:castigator_arms","Castigator Arms", "Covered in hooks and barbs, critical damage to these limbs causes them to erupt with energy, ideally while grappling with an enemy", stars=4),	
+    ArmsItem("cheshire:castigator_arms", "Castigator Arms", "Covered in hooks and barbs, critical damage to these limbs causes them to erupt with energy, ideally while grappling with an enemy", stars=4),	
     ArmsItem("cheshire:socketed_slugger","Socketed Slugger","This limb is designed with a socket, allowing it to terminate in the weapon of your choice.", stars=2),
-    Item("cheshire:gorgons_grace","Gorgon's Grace","Inscribed with terrifying images, this object calcifies and embrittles those that gaze upon it, corroding armor and spirit. Ranged	",	["weapon"],	stars=5),	
-    Item("cheshire:scorpions_talent","Scorpion's Talent","A massive chitinous tail tipped with a wicked barb. Designed to inject corrosive or pressurized gas directly into the enemy's cockpit.",["back"], stars=3),	
-    Item("cheshire:back_mounted_turret","Back Mounted Turret","A platform for mounting ranged weapons on the back of your mech. Options include a railgun, laser rifle, or catapult	",["back"], stars=3),
+    Item("cheshire:gorgons_grace","Gorgon's Grace","Inscribed with terrifying images, this object calcifies and embrittles those that gaze upon it, corroding armor and spirit. Ranged", ["weapon"], stars=5),	
+    Item("cheshire:scorpions_talent","Scorpion's Talent","A massive chitinous tail tipped with a wicked barb. Designed to inject corrosive or pressurized gas directly into the enemy's cockpit.", ["back"], stars=3),	
+    Item("cheshire:back_mounted_turret","Back Mounted Turret","A platform for mounting ranged weapons on the back of your mech. Options include a railgun, laser rifle, or catapult", ["back"], stars=3),
     Item("cheshire:monologue_protector","Monologue Protector","This device provides invincible plot armor for exactly 1 monologue during a mech fight. Additional (or needlessly long) monologues are not covered by this protection.", stars=3),	
-    PowerItem("cheshire:amber_heart_tier_2","Amber Heart", "This strange heart of carved amber beats in time with your own, and pumps a thick, dark ichor into your mech, powering it. The blood in your veins pulses euphorically when near it.", stars=5),
+    PowerItem("cheshire:amber_heart_tier_2","Amber Heart","This strange heart of carved amber beats in time with your own, and pumps a thick, dark ichor into your mech, powering it. The blood in your veins pulses euphorically when near it.", stars=5),
 ]
 )
 
