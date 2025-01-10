@@ -188,11 +188,9 @@ async def handle_commands(message):
     # update time from last recorded message
     db.update_data("last_time", datetime.now().isoformat(), "stats")
 
-# now run the bot
-token = config["TOKEN"]
-if debug:
-    token = config["DEV_TOKEN"]
-
 if __name__ == "__main__":
+    token = config["TOKEN"]
+    if debug:
+        token = config["DEV_TOKEN"]
     regeneration.start_timer()
     client.run(token)
