@@ -416,7 +416,9 @@ shork = Mech("shork",
     Item("shork:meltybrain_unit","MeltyBrain Unit","A program that micro-adjusts drive motors, allowing for translational movement whilst the entire mech spins at high speed.", stars=3),
     Item("shork:selfdestruct_button","Self-Destruct Button","When all else fails, this button can ensure you take your opponent down with you. It actually just deploys a bunch of smoke and pyrotechnics, but it's good for making threats with.", stars=2),
     BodyItem("shork:hedgehog_armor","Hedgehog Armor","Covering your bot in nails, spikes-out, is certainly *a* defensive option."),
-    
+    WeaponItem("shork:kinetic_puncher","Kinetic Puncher","A compact S7 tool steel drum on a sliding rack, attached to the forearm. Passively charges with kinetic energy, before it can be deployed to add some extra kick to a strike.",stars=3),
+    BodyItem("shork:hardox","HARDOX Chassis","Military-grade steel, built to resist heat and weather kinetic and piercing blows. The best armour money can buy.",stars=4),
+    Item("shork:rival_poster","Rival Poster","A life-size poster of your opponent's mech, stolen from their merch line and pasted onto the front of your mech. Useful as a confusion tactic.",["cosmetic"],stars=1),
 ]
 )
 
@@ -659,6 +661,16 @@ chillychilichelle = Mech("chillychilichelle",
     PowerItem("chillychilichelle:the_hole","The Hole","A small black pinprick in reality. Encased in layers of protective glass and steel, countless tubes pipe in and out of its container peppered with gauges and monitoring lights. A floating-point error in the fabric of space-time, long-forgotten by the world.",stars=5),
 ])
 
+adelaide = Mech("adelaide", 
+[
+    LegsItem("adelaide:captain_legs","Captain's Legs","An athletic set of legs with built-in kinetic flywheel system, allowing a burst of energy to be applied to the joints. Perfectly built for acrobatic jump-kicks.",stars=1),
+    CockpitItem("adelaide:megazlord_cockpit","Megazlord Cockpit","Seats and controls for you and four teammates. Chromatic suits not included.",stars=2),
+    Item("adelaide:miniature_stables","Miniature Stables","A well-built barn that somehow doesn't get damaged during operation. Holds a power that can eliminate instability in dire situations.",["back"],stars=3),
+    WeaponItem("adelaide:blattlizer_kai","Blattlizer Kai Replica","A revised Blattlizer design, modified into a combination arm cannon and bat, making it an effective weapon for both pitching and batting. The idea began at the Semi-Centennial, but...",stars=4),
+    Item("adelaide:golden_feather","Golden Feather","No goodbyes.",["cosmetic"],stars=5),
+]
+)
+
 
 
 
@@ -678,7 +690,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
 ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle)
-all_mechs = ratoon_pullable_mechs + (alto, )
+all_mechs = ratoon_pullable_mechs + (alto, adelaide,)
 
 
 all_parts_list = {} # a dict of item id: item
