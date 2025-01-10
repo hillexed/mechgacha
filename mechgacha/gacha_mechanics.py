@@ -26,7 +26,7 @@ class Item:
     description: str
     tags:tuple = () # "arm", "leg", etc
     stars:int = 1
-    extradata = ()
+    extradata = None
 
     def __post_init__(self):
         if len(self.description) > 300:
@@ -67,6 +67,6 @@ def BodyPlanItem(id, name, description, bodyplan, stars=1):
 
     # todo: expand this out
     item = Item(id, name, description, stars=stars)
-    item.bonusdata = bodyplan
+    item.extradata = bodyplan
     item.tags = ["bodyplan"]
     return item

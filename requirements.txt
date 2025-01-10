@@ -3,3 +3,5 @@ python-dotenv
 emoji
 fuzzywuzzy
 python-Levenshtein
+pytest
+pytest-aio
