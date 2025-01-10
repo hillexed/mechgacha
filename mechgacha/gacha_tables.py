@@ -697,6 +697,14 @@ for item in body_plans:
 
 # done populating all_parts_list
 
+def merge_gatcha_tables(mech_names):
+    loot = []
+
+    for mech in all_mechs:
+        if mech.username.lower() in mech_names:
+            loot.extend(mech.loot)
+
+    return Mech("random", loot)
 
 def check_gacha_table():
     for mech in all_mechs:

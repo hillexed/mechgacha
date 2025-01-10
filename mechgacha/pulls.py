@@ -1,4 +1,4 @@
-from gacha_tables import ratoon_pullable_mechs, all_mechs, starting_inventory
+from gacha_tables import ratoon_pullable_mechs, all_mechs, starting_inventory, merge_gatcha_tables
 import random
 import db
 import inventory
@@ -125,8 +125,28 @@ async def pull_command(message, message_body):
             return
         else:
             await message.channel.send("Ya got no pulls from me")
-        
 
+    if requested_mech.lower() == "random" and can_pull(playerdata):
+        player_mechs = get_user_current_mechs(playerdata)
+        mech_to_pull_from = merge_gatcha_tables(player_mechs)
+
+        tries_to_get_new_item = 3
+        new_item = None
+
+        # try repeatedly to get a new item you don't already have. 
+        # If you get unlucky and get all duplicates in a row, then you deserve a duplicate
+        user_inv = inventory.compute_inventory(username)
+        for i in range(tries_to_get_new_item):
+            # pull!
+            new_item = pull(mech_to_pull_from,1)[0]
+            # if the item isn't a duplicate, we're done!
+            if not inventory.item_already_in_inventory(new_item, user_inv):
+                break
+
+        inventory.add_to_inventory(new_item, username)
+        deduct_pull(username, playerdata)
+
+        await message.channel.send(f"You pulled from all of your unlocked item pools and got... \n**{new_item.name} {'★' * new_item.stars}**\n{new_item.description}\n-# from {new_item.id.split(':')[0]}")
 
     elif can_pull(playerdata):
         # theoretically you can request any mech
