@@ -193,6 +193,6 @@ token = config["TOKEN"]
 if debug:
     token = config["DEV_TOKEN"]
 
-
-regeneration.start_timer()
-client.run(token)
+if __name__ == "__main__":
+    regeneration.start_timer()
+    client.run(token)
