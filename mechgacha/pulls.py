@@ -1,4 +1,4 @@
-from gacha_tables import ratoon_pullable_mechs, all_mechs, starting_inventory
+from gacha_tables import ratoon_pullable_mechs, all_mechs, starting_inventory, merge_gatcha_tables
 import random
 import db
 import inventory
@@ -125,19 +125,21 @@ async def pull_command(message, message_body):
             return
         else:
             await message.channel.send("Ya got no pulls from me")
-        
 
-
+ 
     elif can_pull(playerdata):
         # theoretically you can request any mech
-        mech_to_pull_from = choose_mech_by_name(all_mechs, requested_mech)
+        if requested_mech.lower() == "random":
+            mech_to_pull_from = merge_gatcha_tables(player_mechs)
+        else:
+            mech_to_pull_from = choose_mech_by_name(all_mechs, requested_mech)
 
         if mech_to_pull_from is None:
             return await message.channel.send(f"I don't know that mech. Maybe ya typoed their name")
 
         player_mechs = get_user_current_mechs(playerdata)
 
-        if not player_can_pull_from_mech(mech_to_pull_from, playerdata):
+        if not player_can_pull_from_mech(mech_to_pull_from, playerdata) and requested_mech != "random":
             return await message.channel.send(f"Ya dont have that mech yet! Ya got these mechs: {', '.join(player_mechs)}")
             
 
@@ -157,6 +159,9 @@ async def pull_command(message, message_body):
         inventory.add_to_inventory(new_item, username)
         deduct_pull(username, playerdata)
 
-        await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {'★' * new_item.stars}**\n{new_item.description}")
+        if requested_mech.lower() == "random":
+            await message.channel.send(f"You pulled from all of your unlocked item pools and got... \n**{new_item.name} {'★' * new_item.stars}**\n{new_item.description}\n-# from {new_item.id.split(':')[0]}")
+        else:
+            await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {'★' * new_item.stars}**\n{new_item.description}")
     else:
         await message.channel.send(f"You are out of pulls!")
