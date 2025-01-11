@@ -416,7 +416,9 @@ shork = Mech("shork",
     Item("shork:meltybrain_unit","MeltyBrain Unit","A program that micro-adjusts drive motors, allowing for translational movement whilst the entire mech spins at high speed.", stars=3),
     Item("shork:selfdestruct_button","Self-Destruct Button","When all else fails, this button can ensure you take your opponent down with you. It actually just deploys a bunch of smoke and pyrotechnics, but it's good for making threats with.", stars=2),
     BodyItem("shork:hedgehog_armor","Hedgehog Armor","Covering your bot in nails, spikes-out, is certainly *a* defensive option."),
-    
+    WeaponItem("shork:kinetic_puncher","Kinetic Puncher","A compact S7 tool steel drum on a sliding rack, attached to the forearm. Passively charges with kinetic energy, before it can be deployed to add some extra kick to a strike.",stars=3),
+    BodyItem("shork:hardox","HARDOX Chassis","Military-grade steel, built to resist heat and weather kinetic and piercing blows. The best armour money can buy.",stars=4),
+    Item("shork:rival_poster","Rival Poster","A life-size poster of your opponent's mech, stolen from their merch line and pasted onto the front of your mech. Useful as a confusion tactic.",["cosmetic"],stars=1),
 ]
 )
 
