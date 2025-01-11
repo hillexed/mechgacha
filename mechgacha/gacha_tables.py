@@ -661,16 +661,6 @@ chillychilichelle = Mech("chillychilichelle",
     PowerItem("chillychilichelle:the_hole","The Hole","A small black pinprick in reality. Encased in layers of protective glass and steel, countless tubes pipe in and out of its container peppered with gauges and monitoring lights. A floating-point error in the fabric of space-time, long-forgotten by the world.",stars=5),
 ])
 
-adelaide = Mech("adelaide", 
-[
-    LegsItem("adelaide:captain_legs","Captain's Legs","An athletic set of legs with built-in kinetic flywheel system, allowing a burst of energy to be applied to the joints. Perfectly built for acrobatic jump-kicks.",stars=1),
-    CockpitItem("adelaide:megazlord_cockpit","Megazlord Cockpit","Seats and controls for you and four teammates. Chromatic suits not included.",stars=2),
-    Item("adelaide:miniature_stables","Miniature Stables","A well-built barn that somehow doesn't get damaged during operation. Holds a power that can eliminate instability in dire situations.",["back"],stars=3),
-    WeaponItem("adelaide:blattlizer_kai","Blattlizer Kai Replica","A revised Blattlizer design, modified into a combination arm cannon and bat, making it an effective weapon for both pitching and batting. The idea began at the Semi-Centennial, but...",stars=4),
-    Item("adelaide:golden_feather","Golden Feather","No goodbyes.",["cosmetic"],stars=5),
-]
-)
-
 
 
 
@@ -690,7 +680,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
 ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle)
-all_mechs = ratoon_pullable_mechs + (alto, adelaide,)
+all_mechs = ratoon_pullable_mechs + (alto, )
 
 
 all_parts_list = {} # a dict of item id: item
