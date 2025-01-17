@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from enum import Enum
 
-from gacha_mechanics import TagType, Mech, Item, PowerItem, BodyItem, ArmsItem, LegsItem, WeaponItem, BodyPlanItem, CockpitItem, BackItem, TechItem
+from gacha_mechanics import TagType, Mech, Item, PowerItem, BodyItem, ArmsItem, LegsItem, WeaponItem, BodyPlanItem, CockpitItem, BackItem, CosmeticItem, TechItem
 
 
 
