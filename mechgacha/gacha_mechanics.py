@@ -11,7 +11,7 @@ class TagType(Enum):
     cockpit = "cockpit"
     cosmetic = "cosmetic"
     bodyplan = "bodyplan"
-    tech = "tech"
+    kit = "kit"
 
 
 @dataclass
@@ -63,7 +63,7 @@ BodyItem = itemHelperFunction("body")
 CockpitItem = itemHelperFunction("cockpit")
 BackItem = itemHelperFunction("back")
 CosmeticItem = itemHelperFunction("cosmetic")
-TechItem = itemHelperFunction("tech")
+KitItem = itemHelperFunction("kit")
 
 def BodyPlanItem(id, name, description, bodyplan, stars=1):
 
