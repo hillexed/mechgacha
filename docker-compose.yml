@@ -10,6 +10,23 @@ services:
       - db_data:/root/mechgacha/db_data
     env_file: ".env"
 
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: watchtower
+    environment:
+      - TZ=America/New_York
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_INCLUDE_STOPPED=true
+      - WATCHTOWER_REVIVE_STOPPED=true
+      - WATCHTOWER_SCHEDULE="*/5 * * * *"
+      # - WATCHTOWER_NOTIFICATIONS=shoutrrr
+      # - WATCHTOWER_NOTIFICATION_URL=discord://TOKEN@WEBHOOKID
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: mechgacha
+    network_mode: host
+    restart: unless-stopped
+
 volumes:
     db_data:
         external: true
