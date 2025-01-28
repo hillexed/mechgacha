@@ -662,6 +662,21 @@ chillychilichelle = Mech("chillychilichelle",
     KitItem("chillychilichelle:last_hope_protocol","Last Hope Protocol","A 2-meter tall circular steel frame at the back of the cockpit. Upon ignition, the pilot will be tethered to this reality before being shifted into an unknown plane for 365 days. Only a split second passes. When they return, they will have gained something they didn't know they needed.",stars=5),
 ])
 
+chimera = Mech("chimera",
+[
+    CockpitItem("chimera:library", "Personal Library", "A cozy space filled with your favorite books. The mech can be controlled from a comfy reading chair.", stars=2),
+    BodyItem("chimera:ancient_tablet", "Ancient Tablet", "A massive and nearly unbreakable stone tablet engraved with an ancient language of giants.", stars=2),
+    ArmsItem("chimera:floating_ink", "Antigravity Ink", "Ink generators that produce floating globules in the shape of arms.", stars=2),
+    LegsItem("chimera:rolling_ladders", "Rolling Ladders", "An unreasonable amount of ladders with little wheels for rolling around.", stars=1),
+    WeaponItem("chimera:word_changer", "Wordplay", "A fourth-dimensional cannon that can change a word it hits in the opposing mech's actions.", stars=4),
+    BackItem("chimera:endless_scroll", "Endless Scroll", "A scroll of paper that can never be fully unrolled.", stars=2),
+    KitItem("chimera:writer_drone", "Auto-Chronicler", "A small, enthusiastic drone that can observe the mech's fights and write \"slightly\" embellished descriptions of them.", stars=3),
+    CosmeticItem("chimera:onomatopoeia", "Onomatopoeia Projector", "A device that projects holograms of comic-style onomatopoeia in the air for any nearby sounds.", stars=3),
+    PowerItem("chimera:story_power", "Story Gorger", "A thin wormhole connected to a bored extradimensional entity who will supply energy in exchange for stories.", stars=4),
+    BodyPlanItem("chimera:floating_cockpit", "Floating Cockpit", "No body, arms, or legs. Just a floating cockpit with gizmos attached.", {"body": 0, "arms": 0, "legs": 0}, stars=3),
+    CockpitItem("chimera:super_library", "Memory Archive", "A cozy space extrapolated from your memory and imagination, filled with books and other media created from your experiences and favorite stories. The mech can be controlled by writing in the empty book containing the future.", stars=5),
+])
+
 
 
 
@@ -681,7 +696,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 
