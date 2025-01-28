@@ -681,7 +681,7 @@ chimera = Mech("chimera",
     KitItem("chimera:writer_drone", "Auto-Chronicler", "A small, enthusiastic drone that can observe the mech's fights and write \"slightly\" embellished descriptions of them.", stars=3),
     CosmeticItem("chimera:onomatopoeia", "Onomatopoeia Projector", "A device that projects holograms of comic-style onomatopoeia in the air for any nearby sounds.", stars=3),
     PowerItem("chimera:story_power", "Story Gorger", "A thin wormhole connected to a bored extradimensional entity who will supply energy in exchange for stories.", stars=4),
-    BodyPlanItem("chimera:floating_cockpit", "Floating Cockpit", "No body, arms, or legs. Just a floating cockpit with gizmos attached.", stars=3),
+    BodyPlanItem("chimera:floating_cockpit", "Floating Cockpit", "No body, arms, or legs. Just a floating cockpit with gizmos attached.", {"body": 0, "arms": 0, "legs": 0}, stars=3),
     CockpitItem("chimera:super_library", "Memory Archive", "A cozy space extrapolated from your memory and imagination, filled with books and other media created from your experiences and favorite stories. The mech can be controlled by writing in the empty book containing the future.", stars=5),
 ])
 
@@ -704,7 +704,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 
