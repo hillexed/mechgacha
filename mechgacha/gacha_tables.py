@@ -659,14 +659,6 @@ chillychilichelle = Mech("chillychilichelle",
     BodyPlanItem("chillychilichelle:decommissioned","Decommissioned","A machine of combat and war in a bygone era, now used for agriculture, construction, or logistics. Foregoing all weapons, the mech now sports up to 4 sets of arms and 2 sets of legs.",{"weapons": 0, "legs":2, "arms":4},stars=4),
     CockpitItem("chillychilichelle:crumpled_letters","Crumpled Letters","Old letters exchanged between you and a rival pilot. You keep them gingerly tucked in a small folder underneath your seat.",["cosmetic"],stars=4),
     CockpitItem("chillychilichelle:corner_entity","Corner Entity","A tall, lanky shadow creature has taken shelter in the eastern end of your cockpit. She seems docile and doesn't seem to be bothering anyone, so you do your best to keep the cockpit dim. Sometimes you play with her using hand shadow puppets.",["cosmetic"],stars=4),
-    CosmeticItem("chillychilichelle:overgrowth","Overgrowth","Countless vines and leaves that have made the mech their home. Foliage blooms in the in-betweens of joints, and moss cakes every crack. Vibrant flowers dot the highest surfaces.",stars=2),
-
-    BodyPlanItem("chillychilichelle:buddy_system","Buddy System","At the cost of a little bit of legroom, the mech has been modified to accommodate 2 cockpits, delegating responsibilities between them. However, 2 pilots are now required to properly pilot the mech.", {"cockpit": 2},stars=3),
-    CockpitItem("chillychilichelle:childhood_sweets","Childhood Sweets","A small drawer in the cockpit filled with old, discontinued candies from your youth. They don't taste as great as you remember, but they still make you feel warm and fuzzy.",["cosmetic"],stars=3),
-
-    BodyPlanItem("chillychilichelle:decommissioned","Decommissioned","A machine of combat and war in a bygone era, now used for agriculture, construction, or logistics. Foregoing all weapons, the mech now sports up to 4 sets of arms and 2 sets of legs.",{"weapons": 0, "legs":2, "arms":4},stars=4),
-    CockpitItem("chillychilichelle:crumpled_letters","Crumpled Letters","Old letters exchanged between you and a rival pilot. You keep them gingerly tucked in a small folder underneath your seat.",["cosmetic"],stars=4),
-    PowerItem("chillychilichelle:the_hole","The Hole","A small black pinprick in reality. Encased in layers of protective glass and steel, countless tubes pipe in and out of its container peppered with gauges and monitoring lights. A floating-point error in the fabric of space-time, long-forgotten by the world.",stars=5),
     KitItem("chillychilichelle:last_hope_protocol","Last Hope Protocol","A 2-meter tall circular steel frame at the back of the cockpit. Upon ignition, the pilot will be tethered to this reality before being shifted into an unknown plane for 365 days. Only a split second passes. When they return, they will have gained something they didn't know they needed.",stars=5),
 ])
 
