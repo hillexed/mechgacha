@@ -638,15 +638,27 @@ theoddman = Mech("theoddman",
 ])
 
 
+
 chillychilichelle = Mech("chillychilichelle", 
 [
     LegsItem("chillychilichelle:pike_walkers","Pike Walkers","A set of 4 tall, spindly, spiked manufacturing actuators that protrude from the mech body and puncture into the ground. They move 2 at a time, retracting into themselves before plunging back into the floor.",stars=1),
     ArmsItem("chillychilichelle:talos_hands","Talos Hands","A pair of giant steel arms modeled after human anatomy. Covered in a soft fiberglass skin. Allows for precise articulation in the elbows and finger joints.",stars=1),
     WeaponItem("chillychilichelle:telephone_pole","Telephone Pole","A utility pole seemingly ripped straight from the ground. Live wires crackle, dangling from the arms. 2 transformers are still attached, while a third appears to have been broken off. Dirt still clings to its base.",stars=1),
     PowerItem("chillychilichelle:160000_aaa_batteries","160,000 AAA Batteries","A set of ~160,000 AAA batteries bound together with cable ties, hot glue, hope, and hubris. They are crudely affixed to a metal plate, where faded signatures and greetings are written on the back in marker.",stars=1),
+    CockpitItem("chillychilichelle:a_rock","A Rock","A small greyish rock, roughly the size of your fist. Covered in a few brown and black specks. Totally unremarkable. You picked it up and placed it in your cockpit as a joke, but it's been 2 years and it's still here.",["cosmetic"],stars=1),
 
     BodyItem("chillychilichelle:stripped_framework","Stripped Framework","The bare skeleton of a long-defunct mech. Composed of hollow steel tubes and dangling wires. Originally the leftovers from a salvage, it reaches only the barest minimum of what is considered a mech.",stars=2),
     CockpitItem("chillychilichelle:black_box","Black Box","A large steel cube, wrapped in a dozen layers of insulation and armor. Lacks any way to directly view the outside world. Contains up to 2 months of food, water, and oxygen. Requires the pilot to be hermetically sealed in each mission.",stars=2),
+    Item("chillychilichelle:overgrowth","Overgrowth","Countless vines and leaves that have made the mech their home. Foliage blooms in the in-betweens of joints, and moss cakes every crack. Vibrant flowers dot the highest surfaces.",["cosmetic"],stars=2),
+    KitItem("chillychilichelle:mechalogue","Mechalogue","A small portable computer encased in a hardened orange plastic. Attached to the front is an orb-shaped digital camera. Connected to an unspecified database, it is able to identify and provide information on any mech or mech part. No one is quite sure how it accesses this information.",stars=2),
+
+    BodyPlanItem("chillychilichelle:buddy_system","Buddy System","At the cost of a little bit of legroom, the mech has been modified to accommodate 2 cockpits, delegating responsibilities between them. However, 2 pilots are now required to properly pilot the mech.", {"cockpit": 2},stars=3),
+    CockpitItem("chillychilichelle:childhood_sweets","Childhood Sweets","A small drawer in the cockpit filled with old, discontinued candies from your youth. They don't taste as great as you remember, but they still make you feel warm and fuzzy.",["cosmetic"],stars=3),
+    CockpitItem("chillychilichelle:unsettling_figurine","Unsettling Figurine","A grotesque bobblehead depicting some type of horned imp or devil. Its pale yellow flesh is made of a flabby rubber, where two bulbous red eyes poke out. You think it's inching closer to you when you're not looking, but you can't quite tell.",["cosmetic"],stars=3),
+
+    BodyPlanItem("chillychilichelle:decommissioned","Decommissioned","A machine of combat and war in a bygone era, now used for agriculture, construction, or logistics. Foregoing all weapons, the mech now sports up to 4 sets of arms and 2 sets of legs.",{"weapons": 0, "legs":2, "arms":4},stars=4),
+    CockpitItem("chillychilichelle:crumpled_letters","Crumpled Letters","Old letters exchanged between you and a rival pilot. You keep them gingerly tucked in a small folder underneath your seat.",["cosmetic"],stars=4),
+    CockpitItem("chillychilichelle:corner_entity","Corner Entity","A tall, lanky shadow creature has taken shelter in the eastern end of your cockpit. She seems docile and doesn't seem to be bothering anyone, so you do your best to keep the cockpit dim. Sometimes you play with her using hand shadow puppets.",["cosmetic"],stars=4),
     CosmeticItem("chillychilichelle:overgrowth","Overgrowth","Countless vines and leaves that have made the mech their home. Foliage blooms in the in-betweens of joints, and moss cakes every crack. Vibrant flowers dot the highest surfaces.",stars=2),
 
     BodyPlanItem("chillychilichelle:buddy_system","Buddy System","At the cost of a little bit of legroom, the mech has been modified to accommodate 2 cockpits, delegating responsibilities between them. However, 2 pilots are now required to properly pilot the mech.", {"cockpit": 2},stars=3),
@@ -654,9 +666,10 @@ chillychilichelle = Mech("chillychilichelle",
 
     BodyPlanItem("chillychilichelle:decommissioned","Decommissioned","A machine of combat and war in a bygone era, now used for agriculture, construction, or logistics. Foregoing all weapons, the mech now sports up to 4 sets of arms and 2 sets of legs.",{"weapons": 0, "legs":2, "arms":4},stars=4),
     CockpitItem("chillychilichelle:crumpled_letters","Crumpled Letters","Old letters exchanged between you and a rival pilot. You keep them gingerly tucked in a small folder underneath your seat.",["cosmetic"],stars=4),
-
     PowerItem("chillychilichelle:the_hole","The Hole","A small black pinprick in reality. Encased in layers of protective glass and steel, countless tubes pipe in and out of its container peppered with gauges and monitoring lights. A floating-point error in the fabric of space-time, long-forgotten by the world.",stars=5),
+    KitItem("chillychilichelle:last_hope_protocol","Last Hope Protocol","A 2-meter tall circular steel frame at the back of the cockpit. Upon ignition, the pilot will be tethered to this reality before being shifted into an unknown plane for 365 days. Only a split second passes. When they return, they will have gained something they didn't know they needed.",stars=5),
 ])
+
 
 
 
