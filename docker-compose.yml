@@ -18,7 +18,7 @@ services:
       - WATCHTOWER_CLEANUP=true
       - WATCHTOWER_INCLUDE_STOPPED=true
       - WATCHTOWER_REVIVE_STOPPED=true
-      - WATCHTOWER_SCHEDULE=*/5 * * * *
+      - WATCHTOWER_SCHEDULE=* */5 * * *
       # - WATCHTOWER_NOTIFICATIONS=shoutrrr
       # - WATCHTOWER_NOTIFICATION_URL=discord://TOKEN@WEBHOOKID
     volumes:
