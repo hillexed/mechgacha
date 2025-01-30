@@ -74,7 +74,7 @@ async def scrap_command(message, message_body, client):
 
     stars = offered_item.stars
 
-    existing_scrap = float(playerdata["scrap"])
+    existing_scrap = int(playerdata["scrap"])
     added_scrap = stars
     playerdata["scrap"] = existing_scrap + added_scrap
 
