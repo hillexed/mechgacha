@@ -5,7 +5,7 @@ import time
 from datetime import datetime
 import sys
 import logging
-logging.basicConfig(stream=sys.stdout, level=logging.INFO)
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
 import db 
 
@@ -193,4 +193,5 @@ if __name__ == "__main__":
     if debug:
         token = config["DEV_TOKEN"]
     regeneration.start_timer()
-    client.run(token)
+
+    client.run(token, log_level=logging.DEBUG)
