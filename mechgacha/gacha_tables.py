@@ -677,6 +677,10 @@ chimera = Mech("chimera",
     CockpitItem("chimera:super_library", "Memory Archive", "A cozy space extrapolated from your memory and imagination, filled with books and other media created from your experiences and favorite stories. The mech can be controlled by writing in the empty book containing the future.", stars=5),
 ])
 
+nullified = Mech("nullified",
+[
+    Item("nullified:null_pointer", "Null Pointer", "A jagged shard of unreality that, by all definitions, does not exist. Known to cause sensors and computer systems to go haywire when in its presence.", ["power","weapon","kit"], stars=5),
+])
 
 
 
@@ -710,6 +714,12 @@ for mech in all_mechs:
             raise ValueError(f"Two items have the same ID {item.id}!")
         all_parts_list[item.id] = item
         all_mechs_by_part[item.id] = mech.username
+
+for item in nullified.loot:
+    if item.id in all_parts_list:
+        raise ValueError(f"Two items have the same ID {item.id}!")
+    all_parts_list[item.id] = item
+    all_mechs_by_part[item.id] = mech.username
 
 for item in body_plans:
     all_parts_list[item.id] = item
