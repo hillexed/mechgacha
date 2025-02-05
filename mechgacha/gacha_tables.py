@@ -680,6 +680,7 @@ chimera = Mech("chimera",
 nullified = Mech("nullified",
 [
     Item("nullified:null_pointer", "Null Pointer", "A jagged shard of unreality that, by all definitions, does not exist. Known to cause sensors and computer systems to go haywire when in its presence.", ["power","weapon","kit"], stars=5),
+    CosmeticItem("nullified:null_device", "Null Device", "A mysterious bucket that devours all inputted information. Useful for waste disposal.", stars=1),
 ])
 
 
