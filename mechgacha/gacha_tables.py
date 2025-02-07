@@ -677,10 +677,24 @@ chimera = Mech("chimera",
     CockpitItem("chimera:super_library", "Memory Archive", "A cozy space extrapolated from your memory and imagination, filled with books and other media created from your experiences and favorite stories. The mech can be controlled by writing in the empty book containing the future.", stars=5),
 ])
 
-
-
-
-
+homeslice = Mech("homeslice",
+[
+    WeaponItem("homeslice:fast_food_sign", "Fast Food Sign", "The sign of a fast food joint torn from the ground and ready to be wielded as a makeshift weapon", stars=2),
+    KitItem("homeslice:kinetic_shields", "Kinetic Shields", "Absorb a portion of the kenetic energy from an opponent's attack and redirect it to empower your own strikes", stars=3),
+    CosmeticItem("homeslice:cowboy_hat", "Cowboy Hat", "Keep the sun off your mech's face with this stylish leather cowboy hat!", stars=2),
+    PowerItem("homeslice:big_money_no_wammies!", "Big money no wammies","A risky but powferful energy core devised by a partially mad mech engineer with a perchant for gambling. With a slot machine grafted into the pilot's controls that could either supercharge one's mech or blow it to pieces, there's only one question left to answer...Are ya feelin lucky punk?", stars=5),
+    LegsItem("homeslice:chicken_legs", "Chicken Legs", "Give your mech that slavic mythology flair with these baba yaga style robotic chicken legs", stars=2),
+    BodyItem("homeslice:spartan_cuirass", "Spartan Cuirass", "A bronze humanoid torso hammered to resemble a chiseled set of abs, flattering and intimidating all at once", stars=2),
+    LegsItem("homeslice:8_foot_vertical_leap", "8 foot verticle leaps" ,"A hydrologic set of legs resembling those of a rabbit or kangaroo and built to excel in Huge Leaps and Powerful Kicks", stars=4),
+    ArmsItem("homeslice:king_of_the_ring", "King of the Ring", "For those who like to get up and personal these powerful punchers are where it's at, complete with reinforced fists of steel", stars=3),
+    BodyPlanItem("homeslice:carcinization", "Carcinization", "ALL BECOMES CRAB", {"legs":6, "arms":2}, stars=4),
+    WeaponItem("homeslice:reaper_man", "Reaper Man" "a giant scythe with a razor sharp edge and a sick skull carving at the top", stars=3),
+    BackItem("homeslice:escape_pod", "Escape pod","Fight not going your way? Climb into this rocked powered ejection pod and bail outta there.", stars=2),
+    CosmeticItem("homeslice:sick_ass_demon_horns", "Sick Ass Demon Horns", "+10 Headbutt Damage", stars=3),
+    LegsItem("homeslice:rockin_rollerblades", "Rocking Rollerblades", "Give your mech an extra boost of speed with these rocket propelled rollerblades- remember to wear a helmet!", stars=4),
+    BackItem("homeslice:lashers", "Lashers" "Two thick snakelike appendages that extend from the back of the mech that can be used to restrain/grapple an opponent", stars=3),
+])
+    
 
 starting_inventory = ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body"]
 
@@ -696,7 +710,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice)
 all_mechs = ratoon_pullable_mechs + (alto, )
 
 
