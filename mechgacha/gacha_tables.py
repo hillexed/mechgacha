@@ -688,11 +688,11 @@ homeslice = Mech("homeslice",
     LegsItem("homeslice:8_foot_vertical_leap", "8 foot verticle leaps" ,"A hydrologic set of legs resembling those of a rabbit or kangaroo and built to excel in Huge Leaps and Powerful Kicks", stars=4),
     ArmsItem("homeslice:king_of_the_ring", "King of the Ring", "For those who like to get up and personal these powerful punchers are where it's at, complete with reinforced fists of steel", stars=3),
     BodyPlanItem("homeslice:carcinization", "Carcinization", "ALL BECOMES CRAB", {"legs":6, "arms":2}, stars=4),
-    WeaponItem("homeslice:reaper_man", "Reaper Man" "a giant scythe with a razor sharp edge and a sick skull carving at the top", stars=3),
+    WeaponItem("homeslice:reaper_man", "Reaper Man", "a giant scythe with a razor sharp edge and a sick skull carving at the top", stars=3),
     BackItem("homeslice:escape_pod", "Escape pod","Fight not going your way? Climb into this rocked powered ejection pod and bail outta there.", stars=2),
     CosmeticItem("homeslice:sick_ass_demon_horns", "Sick Ass Demon Horns", "+10 Headbutt Damage", stars=3),
     LegsItem("homeslice:rockin_rollerblades", "Rocking Rollerblades", "Give your mech an extra boost of speed with these rocket propelled rollerblades- remember to wear a helmet!", stars=4),
-    BackItem("homeslice:lashers", "Lashers" "Two thick snakelike appendages that extend from the back of the mech that can be used to restrain/grapple an opponent", stars=3),
+    BackItem("homeslice:lashers", "Lashers", "Two thick snakelike appendages that extend from the back of the mech that can be used to restrain/grapple an opponent", stars=3),
 ])
     
 
