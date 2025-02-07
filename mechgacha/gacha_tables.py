@@ -677,6 +677,11 @@ chimera = Mech("chimera",
     CockpitItem("chimera:super_library", "Memory Archive", "A cozy space extrapolated from your memory and imagination, filled with books and other media created from your experiences and favorite stories. The mech can be controlled by writing in the empty book containing the future.", stars=5),
 ])
 
+nullified = Mech("nullified",
+[
+    Item("nullified:null_pointer", "Null Pointer", "A jagged shard of unreality that, by all definitions, does not exist. Known to cause sensors and computer systems to go haywire when in its presence.", ["power","weapon","kit"], stars=5),
+    CosmeticItem("nullified:null_device", "Null Device", "A mysterious bucket that devours all inputted information. Useful for waste disposal.", stars=1),
+])
 
 
 
@@ -697,7 +702,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
 ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera)
-all_mechs = ratoon_pullable_mechs + (alto, )
+all_mechs = ratoon_pullable_mechs + (alto, nullified, )
 
 
 all_parts_list = {} # a dict of item id: item
