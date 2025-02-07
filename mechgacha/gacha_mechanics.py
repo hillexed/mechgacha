@@ -51,7 +51,8 @@ class Item:
 def itemHelperFunction(requiredTag):
     def makeItem(*args, **kwargs):
         item = Item(*args, **kwargs)
-        item.tags = [requiredTag]
+        if requiredTag not in item.tags:
+            item.tags = (requiredTag,) + item.tags
         return item
     return makeItem
 
