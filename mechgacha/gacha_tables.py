@@ -709,6 +709,7 @@ nullified = Mech("nullified",
 immateria = Mech("immateria",
 [
     WeaponItem("immateria:formless_blade", "Formless Blade", "A blade formed of pure immateria, given to you by some unknown force beyond understanding. This weapon exists in-between space itself, ignoring the presence of anything that isn't natural. Phase through armor and machinery alike and send their pilot Elsewhere.", stars=5),
+    KitItem("immateria:formless_shell", "Formless Shell", "Coats your armor in a layer of immateria, which can be activated to temoporarily send any projectiles or weapons that hit it Elsewhere once per fight. Has to be activated before the hit to work, and has a long cooldown.", stars=3),
 ])
 
 starting_inventory = ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body"]
