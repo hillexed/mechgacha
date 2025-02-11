@@ -370,21 +370,24 @@ bytes = Mech("bytes",
 thecowofeternalflame = Mech("thecowofeternalflame", 
 [
     PowerItem("thecowofeternalflame:fusion_core","Fusion core","High energy production at the expense of high heat output and a tendency to destabilize if shot directly."),
-    LegsItem("thecowofeternalflame:spider_legs","Spider Legs", "Four spider-like legs that can be used to climb vertical surfaces"),
-    BodyItem("thecowofeternalflame:drone_body","Integrated Drone Port","A bulky body with a drone bay that opens in the middle of it."),
-    CockpitItem("thecowofeternalflame:drone_controls","Drone Controls","A drone control panel and keychain thingy hanging from the ceiling of the types of drones the mech produces", stars=2),
+    LegsItem("thecowofeternalflame:spider_legs","Spider Legs", "Four spider-like legs that can be used to climb vertical surfaces."),
+    BodyPlanItem("thecowofeternalflame:drone_body","Integrated Drone Port","A bulky drone bay that opens in the middle of the body. Allows for an extra drone-specific weapon or kit.", {"weapon": 3, "kit":2}),
+    CockpitItem("thecowofeternalflame:drone_controls","Drone Controls","A dedicated drone control panel for finer control of deployed drones.", stars=2),
     BackItem("thecowofeternalflame:back_mounted_radio","Back-Mounted Radio", "Large radio pack with long antennae coming up from it, for sending and receiving signals from the drones as well as for long-range communication with teammates"),
-    WeaponItem("thecowofeternalflame:targeting_system","Long-range laser targeting system", "Helps to guide missiles to hit targets, whether from salvos, drones or allies.", stars=2),
+    KitItem("thecowofeternalflame:targeting_system","Long-range laser targeting system", "Helps to guide missiles to hit targets, whether from salvos, drones or allies.", stars=2),
     CosmeticItem("thecowofeternalflame:lightning_decal","Lightning Decal","A lightning decal, thematically appropriate to put on a targeting system."),
-    BodyItem("thecowofeternalflame:swivel_pivot","Swivel Pivot","The mech's torso sits on a 360° swivel mount with a leg situated at each quarter of the base", stars=2),
-    WeaponItem("thecowofeternalflame:drone-factory","Drone Factory", "The mech has a drone bay situated in it. Within the bay is an automated drone factory wherein the mech can slowly produce new drones. This slows the mech down a lot due to the sheer bulk. There is room to hold eight drones in the drone bay at any one time.", stars=4),
+    BodyItem("thecowofeternalflame:swivel_pivot","Swivel Pivot","A sturdy torso that sits on a 360° swivel mount for maximum weapon coverage."),
+    BodyPlanItem("thecowofeternalflame:drone-factory","Drone Factory", "The mech has a drone bay, within which is an automated drone factory that can slowly produce new drones. This slows the mech down due to the bulk. This allows the mech to equip four additional drone-specific weapon and/or kit parts. The bay can hold eight drones in it at any one time during battle.", {"weapon": 6, "kit":5}, stars=4),
     WeaponItem("thecowofeternalflame:error_unknown_name","Long-Range Railgun","This railgun has a huge range, but is slow firing with a long reload.", stars=2),
     KitItem("thecowofeternalflame:light_armor","Light Armor", "This armor weighs lighter than most to compensate for heavy weapons. It increases speed at the cost of making it vulnerable to smaller, faster flanking mechs", stars=2),
     WeaponItem("thecowofeternalflame:drone_medium","Medium Gunner Drone","A medium-range flying gunner-drone equipped with a HMG;", stars=3),
     WeaponItem("thecowofeternalflame:drone_long","Long Artillery Drone","A long-range artillery drone that can fire missile salvos. It moves via tank treads.", stars=3),
-    WeaponItem("thecowofeternalflame:drone_fast","Fast Spider Drone","A fast moving drone that is effectively an oversized spider mine from SC2", stars=3),
-    KitItem("thecowofeternalflame:drone_radar","Radar Scout Drone","A fast moving flying scout drone equipped with radar tech.", stars=3),
-    BackItem("thecowofeternalflame:five_star_back_radio","Multiplexed Communications Radio","Large radio pack with long antennae coming up from it, for sending and receiving signals from the drones as well as for long-range communication with teammates. This version allows all allies to loop in to eachother's camera feeds in real-time, as well as any drone feeds on the field.", stars=5),
+    WeaponItem("thecowofeternalflame:drone_fast","Fast Spider Drone","A fast moving drone that is effectively an oversized spider mine.", stars=3),
+    KitItem("thecowofeternalflame:drone_radar","Radar Scout Drone","A fast moving flying scout drone equipped with radar tech.", stars=2),
+    BackItem("thecowofeternalflame:five_star_back_radio","Multiplexed Communications Radio","Large radio pack with long antennae coming up from it, for sending and receiving signals from the drones as well as for long-range communication with teammates. This version allows all allies to loop into eachother's camera feeds in real-time, as well as any drone feeds on the field.", stars=5),
+    ArmsItem("thecowofeternalflame:cracker_jacks","Cracker Jacks","A pair of spindly arms with retractable tools in the fingertips that allows the mech to interface directly with electronics. This includes other mechs, provided you can get them to stay still long enough that is.", stars=3),
+    ArmsItem("thecowofeternalflame:trojan_arms","Trojan Arms","Like the Trojan Horse, these arms aren't all they appear to be. Each arm holds a swarm of nanodrones within that can be released through a hatch to attack and hamper your opponent independant of you.", stars=4),
+    CockpitItem("thecowofeternalflame:drone_keychains","Drone Keychains","A set of keychains hanging from the ceiling by the windshield with replicas of the types of drones the mech produces.", stars=5)
 ]
 )
 
@@ -487,14 +490,13 @@ hal2000 = Mech("hal 2000",
     PowerItem("hal2000:cote_blue_flame","Cot3's Blue-Flame Generator","A powerful generator that uses a special blue flame to supercharge the mech, but leads to an odd kind of smoke build-up on the inside that cannot be ventilated normally.", stars=2),
     LegsItem("hal2000:dimensionally","Dimensionally Disjointed Walkers","These standard-issue mech legs have been dimensionally modified so that every joint below the hip is connected but stored in an alternate dimension. Makes you hard to hit below the waist."),
     LegsItem("hal2000:kelvin_drumset","Kelvin's Mechanical Drumset","A reproduction of Kelvin's drumset/spider leg set-up, properly sized for usage as a set of mech legs!", stars=2),
-    ArmsItem("hal2000:cobbled_scrap_arms","Glistening Platinum Punchers","All the rust and grime has been scraped off of these formerly Cobbled Scrap Arms, leaving only a gleaming platinum core underneath. These thin arms are both durable and lithe, punching far above their weight class.", stars=3),
+    ArmsItem("hal2000:cobbled_scrap_arms","Glistening Scrap Arms","After some use, the outer layers of rusted steel on these Cobbled Scrap Arms has started falling away, revealing a shiny silvery core to them that seems to actually articulate... somewhat.", stars=2),
     ArmsItem("hal2000:jaw_claws","Jaw-Claws","A pair of thick and heavy arms with giant mechanical mouths on the end. These mouths can be used to hold stuff, and can also be fired on a chain to grapple from afar!", stars=3),
     BodyItem("hal2000:orb","ORB","SPHERE"),
     BodyItem("hal2000:house","House","It's well furnished on the inside, and moderately sized for a family of 4. It has 2 bedrooms and 2 bathrooms, and even has a porch if you like to sit outside and watch the neighborhood."),
     CockpitItem("hal2000:divesystem","Full-Body Dive System","Really FEEL like you're dying to that rocket."),
     CockpitItem("hal2000:ratoon_plushie","Ratoon Plushie","A life-sized plush of everyone's favorite mouse mechanic and the perfect co-pilot. They do not know when this was made, but it sure is cute!", stars=2),
     BackItem("hal2000:backlift","Backlift","A pair of forks on the back for lifting cargo, only usable if you're Forklift Certified!"),
-    BackItem("hal2000:realistic_moth_wings", "Realistic Moth Wings", "They look so true-to-life and work too! Fragile but nimble, these insectoid wings will get you where you need to go and fast!", stars=2),
     BackItem("hal2000:realistic_angel_wings","Realistic Angel Wings","They look so true-to-life and work too! They're so realistic in fact, that one would think they were taken from an actual angel... hey wait a sec-", stars=4),
     WeaponItem("hal2000:guminator_3000","Guminator 3000","Immediately gums up every joint on the opposing mech if it successfully hits them, a mechanic's worst nightmare.", stars=3),
     WeaponItem("hal2000:the_blattilizer","The Blattilizer","A very special baseball bat for a very special person. Swing for the fences!", stars=3),
@@ -505,7 +507,6 @@ hal2000 = Mech("hal 2000",
     BodyPlanItem("hal2000:apartment","Apartment","A mech? In this economy?? Just remove the arms and legs, I'd rather have a place to live.", {"arms":0, "legs":0}),
     BodyItem("hal2000:orbascended","ORB ENLIGHTENED","SPHERE, ASCENDED FORM, ALL-KNOWING, ALL-SEEING, CLEAR AND PERFECT, NONE CAN ESCAPE ITS SIGHT, GRANTS VISIONS OF THE FUTURE", stars=5),
     PowerItem("hal2000:cote_true_blue_flame","Cot3's Blue-Flame Generator","A powerful generator that uses a special blue flame to supercharge the mech, but leads to an odd kind of smoke build-up on the inside. It has been upgraded with a special mechanism for rapidly expelling this smoke and creating a smokescreen as needed.", stars=5),
-    WeaponItem("hal2000:gunis", "GunIsGunIsGunIsGunIsGunIsGun", "A cruel, warped reflection of weaponry that spits on the definition of a gun. This orb of pure violence breaks causality itself to shoot your opponent at point blank with incredible force no matter the actual range. Can only be used once per fight before collapsing in on itself.", stars=5),
 ]
 )
 
@@ -740,6 +741,10 @@ nullified = Mech("nullified",
     Item("nullified:null_pointer", "Null Pointer", "A jagged shard of unreality that, by all definitions, does not exist. Sensors and computer systems go haywire when nearby. Was something else here, before?", ["power","weapon","kit"], stars=5),
     CosmeticItem("nullified:null_device", "Null Device", "A mysterious bucket that devours all inputted information. Useful for waste disposal.", stars=1),
 ])
+
+
+
+
 
 starting_inventory = ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body"]
 
