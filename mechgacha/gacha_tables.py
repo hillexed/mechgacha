@@ -706,18 +706,6 @@ nullified = Mech("nullified",
     CosmeticItem("nullified:null_device", "Null Device", "A mysterious bucket that devours all inputted information. Useful for waste disposal.", stars=1),
 ])
 
-redacted = Mech("redacted",
-[   
-    WeaponItem("redacted:nameless_dagger", "Nameless Dagger", "A small switchblade formed of something imperceptible, given to you by a force beyond understanding. This switchblade erases knowledge of any part struck by it while embedded into it, redacting it from reality and disabling it.", stars=5),
-    KitItem("redacted:nameless_fedora", "Nameless Fedora", "A fedora formed of something imperceptible, given to you by a force beyond understanding. Can be activated to temporarily redact yourself from reality, making you impossible to percieve or hit. Also looks pretty cool with a suit.", ["cosmetic"], stars=3),
-])
-
-immaterialized = Mech("immaterialized",
-[
-    WeaponItem("immaterialized:formless_blade", "Formless Blade", "A blade formed of pure immateria, given to you by a force beyond understanding. This weapon exists in-between space itself, ignoring the presence of anything that isn't natural. Phase through armor and machinery alike and send their pilot Elsewhere.", stars=5),
-    KitItem("immaterialized:formless_shell", "Formless Shell", "A coating of immateria for your mech, given to you by a force beyond understanding. Can be activated to send any projectiles or weapons that hit it Elsewhere for a turn, with them reappearing where they were upon contact. Has a short cooldown between uses.", stars=3),
-])
-
 starting_inventory = ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body"]
 
 
@@ -734,7 +722,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 
 ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice)
-all_mechs = ratoon_pullable_mechs + (alto, nullified, immaterialized, redacted, )
+all_mechs = ratoon_pullable_mechs + (alto, nullified, )
 
 
 
