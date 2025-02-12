@@ -768,22 +768,22 @@ n217 = Mech("n217",
     LegsItem("n217:the_world","ARC021//The World","Once, an ARC140 was inscribed with strange runes found on a pair of abnormally sturdy trekking boots. ARC021 is the result: mech legs which cannot break, fail, or kneel, and which can teleport to “anywhere graced by ingenuity, curiosity, or exploration”—carrying the will to chart the world onwards.",stars=5),
 ])
 
-nevepheonix=Mech("nevepheonix",
+nevephoenix=Mech("nevephoenix",
 [
-    ArmsItem("nevepheonix:dragon_knight_arms","Dragon Knight Armor","Beautiful polished armor, built to last against dragon fire without scorching the knight inside.",stars=3),
-    ArmsItem("nevepheonix:bear_arms","Bear Arms","Strong hairy bear arms. Build to catch salmon quickly.",stars=2),
-    LegsItem("nevepheonix:cursed_red_shoes","Cursed Red Shoes","These legs come with red shoes cursed to dance until you drop. You do dance fantastic though.",stars=1),
-    LegsItem("nevepheonix:glass_slippers","Glass Slippers","Beautiful strong dragon-glass slippers on very pretty legs. Perfectly sized for your mech, and excellent to run in.",stars=4),
-    BodyItem("nevepheonix:princess_dress","Princess Dress","Beautiful and sparkly, it flows in a ballgown fashion.",stars=1),
-    BodyItem("nevepheonix:swan_princess","Swan Princess","A ballgown made of magical feathers, each glowing and fluttering in the wind.",stars=2),
-    BodyPlanItem("nevepheonix:tower","Tower","Your mech is tall. Real tall. Kicking is your strong suit", {"legs":2}, stars=1),
-    BodyPlanItem("nevepheonix:fairy","Fairy","Your mech is lightweight with an extra back slot to accomodate wings", {"back":2}, stars=1),
-    BackItem("nevepheonix:pixie_wings","Pixie Wings","Small and flight enabling,  these green dragonfly wings will help you move quickly.",stars=1),
-    BackItem("nevepheonix:dragon_wings","Dragon Wings","Large draconian Wings, allowing powerful flight causing gusts of wind when you land",stars=3),
-    WeaponItem("nevepheonix:magic_wand","Magic Wand","Use your imagination to transform one thing into another thing temporarily",stars=4),
-    WeaponItem("nevepheonix:pheonix_fire","Pheonix Fire","White-hot flame that shoots out of your mech's hands",stars=3),
-    CosmeticItem("nevepheonix:frog_prince","Frog Prince","Your mech has powerful amphibian legs, or webbed fingers and a very nice doublet or a feathered hat",stars=3),
-    PowerItem("nevepheonix:true_loves_kisses","True Love's Kisses","Feelings describe the power contained in a kiss. Words do not.",stars=5),
+    ArmsItem("nevephoenix:dragon_knight_arms","Dragon Knight Armor","Beautiful polished armor, built to last against dragon fire without scorching the knight inside.",stars=3),
+    ArmsItem("nevephoenix:bear_arms","Bear Arms","Strong hairy bear arms. Build to catch salmon quickly.",stars=2),
+    LegsItem("nevephoenix:cursed_red_shoes","Cursed Red Shoes","These legs come with red shoes cursed to dance until you drop. You do dance fantastic though.",stars=1),
+    LegsItem("nevephoenix:glass_slippers","Glass Slippers","Beautiful strong dragon-glass slippers on very pretty legs. Perfectly sized for your mech, and excellent to run in.",stars=4),
+    BodyItem("nevephoenix:princess_dress","Princess Dress","Beautiful and sparkly, it flows in a ballgown fashion.",stars=1),
+    BodyItem("nevephoenix:swan_princess","Swan Princess","A ballgown made of magical feathers, each glowing and fluttering in the wind.",stars=2),
+    BodyPlanItem("nevephoenix:tower","Tower","Your mech is tall. Real tall. Kicking is your strong suit", {"legs":2}, stars=1),
+    BodyPlanItem("nevephoenix:fairy","Fairy","Your mech is lightweight with an extra back slot to accomodate wings", {"back":2}, stars=1),
+    BackItem("nevephoenix:pixie_wings","Pixie Wings","Small and flight enabling,  these green dragonfly wings will help you move quickly.",stars=1),
+    BackItem("nevephoenix:dragon_wings","Dragon Wings","Large draconian Wings, allowing powerful flight causing gusts of wind when you land",stars=3),
+    WeaponItem("nevephoenix:magic_wand","Magic Wand","Use your imagination to transform one thing into another thing temporarily",stars=4),
+    WeaponItem("nevephoenix:pheonix_fire","Pheonix Fire","White-hot flame that shoots out of your mech's hands",stars=3),
+    CosmeticItem("nevephoenix:frog_prince","Frog Prince","Your mech has powerful amphibian legs, or webbed fingers and a very nice doublet or a feathered hat",stars=3),
+    PowerItem("nevephoenix:true_loves_kisses","True Love's Kisses","Feelings describe the power contained in a kiss. Words do not.",stars=5),
 ])
          
 nullified = Mech("nullified",
@@ -811,7 +811,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevepheonix)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix)
 all_mechs = ratoon_pullable_mechs + (alto, nullified, )
 
 
