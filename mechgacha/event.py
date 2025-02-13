@@ -15,7 +15,7 @@ def has_unclaimed_gift(playerdata):
     return playerdata["event_gifts_claimed"] < (expired_gift_count + available_gift_count)
 
 def get_item_id_pool():
-    return {item.id for item in event_gift_mech.loot}:
+    return {item.id for item in event_gift_mech.loot}
 
 def get_game_data_pool_entry_name():
     return f"{event_gift_mech.username}_pool"
