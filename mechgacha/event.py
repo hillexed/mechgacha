@@ -39,18 +39,21 @@ async def event_claim_command(message):
         gift = set()
         amount_to_pull = gift_size
         # Reload the pool if there's not enough left
+        gift_first_part = set()
         if len(pool) < gift_size:
             for item_id in pool:
-                gift.add(item_id)
+                gift_first_part.add(item_id)
             pool = get_item_id_pool()
-            amount_to_pull = gift_size - len(gift)
+            amount_to_pull = gift_size - len(gift_first_part)
+            pool -= gift_first_part # Duplicate protection
         # Pull!
         for __ in range(amount_to_pull):
             item_id = random.choice(pool)
             gift.add(item_id)
             pool.remove(item_id)
-        for item_id in gift:
+        for item_id in gift_first_part + gift:
             inventory.add_id_to_inventory(item_id, user_id)
+        pool += gift_first_part # Undo duplicate protection since pulls are done
         # Save what's left for next time
         db.set_game_data(get_game_data_pool_entry_name(), pool)
         # Don't give infinite gifts
