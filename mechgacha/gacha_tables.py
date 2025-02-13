@@ -688,6 +688,12 @@ chimera = Mech("chimera",
     PowerItem("chimera:story_power", "Story Gorger", "A thin wormhole connected to a bored extradimensional entity who will supply energy in exchange for stories.", stars=4),
     BodyPlanItem("chimera:floating_cockpit", "Floating Cockpit", "No body, arms, or legs. Just a floating cockpit with gizmos attached.", {"body": 0, "arms": 0, "legs": 0}, stars=3),
     CockpitItem("chimera:super_library", "Memory Archive", "A cozy space extrapolated from your memory and imagination, filled with books and other media created from your experiences and favorite stories. The mech can be controlled by writing in the empty book containing the future.", stars=5),
+    KitItem("chimera:martial_arts", "Martial Manual", "A reference manual detailing how to control a mech to perform various feats of martial arts.", stars=1),
+    WeaponItem("chimera:trap_runes", "Trap Runes", "A set of magical runes that can be painted on any surface and detonated at will.", stars=2),
+    CosmeticItem("chimera:rival_plushie", "Rival Plushie", "A cute plushie version of your rival's mech. It's very huggable and makes a satisfying sound when thrown at the wall.", stars=1),
+    BodyPlanItem("chimera:phase_2", "Multi-Phase Boss", "Allows the mech to equip another weapon and kit item. Both additional parts are disabled at first, but can be swapped to, disabling your original weapon and kit items permanently.", {"weapon": 2, "kit": 2}, stars=3),
+    LegsItem("chimera:teleport_legs", "Fantasy Strider", "Legs covered in swirling spells and tales of faraway places. With every step, they pierce through space and carry the mech a far distance while ignoring obstacles.", stars=4),
+    WeaponItem("chimera:papercuts", "Papercut Curse", "A failed paper talisman that causes a mech's pilot to inexplicably suffer papercuts from anything they do.", stars=1),
 ])
 
 homeslice = Mech("homeslice",
