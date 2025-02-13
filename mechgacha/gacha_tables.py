@@ -40,6 +40,7 @@ oneirocartographer = Mech("oneirocartographer",
     CockpitItem("oneirocartographer:dendritic_interface","Dendritic Interface","The cockpit has been overgrown with roots and branches, shaping themselves around the pilot's movements.", stars=3),
     ArmsItem("oneirocartographer:manipulator_assembly_tier_2","Manipulator Assembly EX","A pair of mismatched claw-grippers; one large and sturdy, the other small and meant for delicate work. Each arm unfolds into several grippers in an array of sizes and materials. A practiced pilot can use these to pick up nearly anything without damaging it.", stars=5),
     KitItem("oneirocartographer:remote_hardlight_gauntlets","Remote Hardlight Gauntlets","Allows hardlight 'echoes' of the mech's arms to be summoned at a distance, copying its movements. Pilots should note that while the Gauntlets are fully capable of manipulating objects, they will not replicate items held by the mech's physical arms.", stars=4),
+    CosmeticItem("oneirocartographer:silva_phasma","Silva Phasma","A tiny forest spirit has stowed away aboard your mech to see more of the world.", stars=3),
 ]
 )
 
