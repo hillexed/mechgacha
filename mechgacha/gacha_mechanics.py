@@ -12,6 +12,7 @@ class TagType(Enum):
     cosmetic = "cosmetic"
     bodyplan = "bodyplan"
     kit = "kit"
+    event = "event"
 
 
 @dataclass

@@ -101,7 +101,8 @@ async def trade_command(message, message_body, client):
 
     other_user = await client.fetch_user(this_targeted_id)
 
-    stars_string = "☆☆☆" if stars == 0 else "★" * traded_item.stars
+    star_character = "☆" if "event" in traded_item.tags else "★"
+    stars_string = star_character * traded_item.stars
     await message.channel.send(f"You have offered to trade this item to {other_user.display_name}: \n **{traded_item.name} {stars_string}**\n{traded_item.description}\n\nTo complete the trade, {other_user.display_name} must offer to trade an item to you!")
 
     # trade offer expires in 2 minutes

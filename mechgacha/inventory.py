@@ -183,7 +183,8 @@ def format_item(item_id, item_index = -1, equipped = False, short = False, count
     if equipped and not short:
         sub_array.append("**EQUIPPED**")
 
-    stars_string = "☆☆☆" if stars == 0 else "★" * item_data.stars
+    star_character = "☆" if "event" in item_data.tags else "★"
+    stars_string = star_character * item_data.stars
     if short:
         count_string = f' (__x{count}__)'
         sub_line = f'{ count_string if count > 1 else ""} | `{" • ".join(sub_array)}`'

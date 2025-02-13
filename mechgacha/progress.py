@@ -47,7 +47,8 @@ async def progress_command(message, message_body):
         items_with_stars = stars.get(star_count)
         if items_with_stars is None:
             continue
-        stars_string = "☆☆☆" if stars == 0 else "★" * item_data.stars
+        star_character = "☆" if "event" in item.tags else "★"
+        stars_string = star_character * star_count
         sub_array.append("## " + stars_string)
         for (item, count) in items_with_stars:
             tags_string = f' ({", ".join([tag.lower() for tag in item.tags])})' if len(item.tags) > 0 else ""
