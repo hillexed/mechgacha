@@ -40,6 +40,7 @@ oneirocartographer = Mech("oneirocartographer",
     CockpitItem("oneirocartographer:dendritic_interface","Dendritic Interface","The cockpit has been overgrown with roots and branches, shaping themselves around the pilot's movements.", stars=3),
     ArmsItem("oneirocartographer:manipulator_assembly_tier_2","Manipulator Assembly EX","A pair of mismatched claw-grippers; one large and sturdy, the other small and meant for delicate work. Each arm unfolds into several grippers in an array of sizes and materials. A practiced pilot can use these to pick up nearly anything without damaging it.", stars=5),
     KitItem("oneirocartographer:remote_hardlight_gauntlets","Remote Hardlight Gauntlets","Allows hardlight 'echoes' of the mech's arms to be summoned at a distance, copying its movements. Pilots should note that while the Gauntlets are fully capable of manipulating objects, they will not replicate items held by the mech's physical arms.", stars=4),
+    CosmeticItem("oneirocartographer:silva_phasma","Silva Phasma","A tiny forest spirit has stowed away aboard your mech to see more of the world.", stars=3),
 ]
 )
 
@@ -122,25 +123,25 @@ cheshire = Mech("cheshire",
     BackItem("cheshire:glyph_thrusters","Glyph Thrusters","A series of runic circles project out from this object, framing the Mech and providing an arcane boost when needed", stars=2),
     WeaponItem("cheshire:ceremonial_blade","Ceremonial blade","A short, wicked looking dagger. There appears to be some sort of tube from the end of it that runs back into the mech, as though hydraulics add or remove some sort of fluid from it"),
     CosmeticItem("cheshire:viewing_chambers","Viewing chambers","Specialized glass that allows you to see the mechanisms inside of the machine. Designed to make repairs nice and easy."),
-    CockpitItem("cheshire:stowaway_cheshire","Stowaway Cheshire","You've found them hidden in the left forearm of your mech, chewing on the wires like a rodent"),  
+    CockpitItem("cheshire:stowaway_cheshire","Stowaway Cheshire","You've found them hidden in the right leg of your mech, siphoning gasoline with their mouth."),  
     BodyPlanItem("cheshire:centaur","Centaur","With four legs, this bodyplan is typically fashioned into a centaur like configuration, allowing an additional back slot to be equipped as well", {"legs": 4, "arms": 2, "back": 2}),
-    BodyItem("cheshire:sigil_crusted_body","Sigil Crusted Body","What appears to be an old wooden ship or other reclaimed wood, covered in burned sigils that animate it.", stars=3),
+    BodyItem("cheshire:sigil_crusted_body","Sigil Crusted Body","What appears to be an old wooden ship or other reclaimed wood, covered in the still-burning sigils that animate it.", stars=3),
     CosmeticItem("cheshire:framed_picture_of_rival","A Framed Picture of your Rival","It's just a normal, totally platonic rival relationship. This picture is just framed to make you fight them better and not because you're repressed.", stars=2),
-    CosmeticItem("cheshire:a_bunch_of_floating_spheres","A bunch of floating spheres","Some of them glow!", stars=3),
+    CosmeticItem("cheshire:a_bunch_of_floating_spheres","A bunch of floating spheres","Strange energies have recently been detected coming off of these spheres. UP has asked you to keep a close eye on them for any changes.", stars=3),
     ArmsItem("cheshire:crystal_arms","Crystal Arms","What look like standard mech arms have been absolutely shredded by some sort of magical crystal growing out of the inside. They don't seem to have impeded the arms' functions at all", stars=4),
-    PowerItem("cheshire:the_wheel","Core: The Wheel","A series of gear structures that appear to be powered by some sort of forest animal running very quickly on the center one.", stars=4),
+    PowerItem("cheshire:the_wheel","Core: The Wheel","A series of gear structures that appear to be powered by some sort of forest animal running very quickly on the center one.", stars=2),
     ArmsItem("cheshire:guardian_gauntlets","Guardian Gauntlets","Wide and flat, these arms can extend an energy barrier to deflect projectiles and force.", stars=2),	
     ArmsItem("cheshire:matryoshka_uppercut","Matryoshka Uppercut","When damaged, these arms eject their outer layer, revealing smaller and faster arms underneath.", stars=3),	
     ArmsItem("cheshire:sun_out_guns_out","Suns Out, Guns Out","	Solar powered forearms loaded with artillery that fire when activated. Artillery is more powerful with more intense light", stars=2),	
     PowerItem("cheshire:bottled_ghost","Bottled Ghost","The result of scrapping all those stowaway Cheshires. Technically, it only haunts the mech, it doesn't possess it.", stars=2),
     PowerItem("cheshire:friendship","Friendship","We all believe in you!", stars=3),
-    BodyItem("cheshire:matryoshka_special","Matryoshka Special","When damaged, this armor violently ejects off of the mecha, revealing a smaller, faster, and more lethal mech.", stars=4),	
+    BodyItem("cheshire:matryoshka_special","Matryoshka Special","When damaged, this armor violently ejects off of the mecha, revealing a smaller, faster, and more lethal mech.", stars=2),	
     BodyItem("cheshire:crystaline_armor","Crystalline Armor","Glowing crystal rising off of this mech give it a jagged and violent shape. The gems grow brighter as it stores energy, allowing them to rip into the body of grappled mechs", stars=3),
     LegsItem("cheshire:crystalline_greaves","Crystalline Greaves", "A faint glow emminates from these vibrant gemstone legs. The razor sharp crystals seem to resonate with magical energy", stars=2),
     WeaponItem("cheshire:bank_vault_shield","Bank Vault Shield","Ripped from the vault's hinges, nobody knows what happened to the rest of the bank", stars=2),	
     WeaponItem("cheshire:swarm_sheild","Swarm Shield","Six flat drones that form a shield of projected energy between them. Highly power consumptive", stars=4),	
     LegsItem("cheshire:matryoshka_kneesocks","Matryoshka Kneesocks","These long heavily armored legs are designed to explode plating off after taking damage, reducing your mechs weight and increasing its speed.", stars=3),
-    ArmsItem("cheshire:castigator_arms", "Castigator Arms", "Covered in hooks and barbs, critical damage to these limbs causes them to erupt with energy, ideally while grappling with an enemy", stars=4),	
+    ArmsItem("cheshire:castigator_arms", "Castigator Arms", "Covered in hooks and barbs, critical damage to these limbs causes them to erupt with energy, ideally while grappling with an enemy", stars=3),	
     ArmsItem("cheshire:socketed_slugger","Socketed Slugger","This limb is designed with a socket, allowing it to terminate in the weapon of your choice.", stars=2),
     WeaponItem("cheshire:gorgons_grace","Gorgon's Grace","Inscribed with terrifying images, this object calcifies and embrittles those that gaze upon it, corroding armor and spirit. Ranged", stars=4),	
     BackItem("cheshire:scorpions_talent","Scorpion's Talent","A massive chitinous tail tipped with a wicked barb. Designed to inject corrosive or pressurized gas directly into the enemy's cockpit.", stars=3),	
@@ -497,13 +498,16 @@ hal2000 = Mech("hal 2000",
     CockpitItem("hal2000:divesystem","Full-Body Dive System","Really FEEL like you're dying to that rocket."),
     CockpitItem("hal2000:ratoon_plushie","Ratoon Plushie","A life-sized plush of everyone's favorite mouse mechanic and the perfect co-pilot. They do not know when this was made, but it sure is cute!", stars=2),
     BackItem("hal2000:backlift","Backlift","A pair of forks on the back for lifting cargo, only usable if you're Forklift Certified!"),
-    BackItem("hal2000:realistic_moth_wings", "Realistic Moth Wings", "They look so true-to-life and work too! Fragile but nimble, these insectoid wings will get you where you need to go and fast!", stars=2),
+    BackItem("hal2000:realistic_moth_wings","Realistic Moth Wings","They look so true-to-life and work too! Fragile but nimble, these insectoid wings will get you where you need to go and fast!", stars=2),
     BackItem("hal2000:realistic_angel_wings","Realistic Angel Wings","They look so true-to-life and work too! They're so realistic in fact, that one would think they were taken from an actual angel... hey wait a sec-", stars=4),
     WeaponItem("hal2000:guminator_3000","Guminator 3000","Immediately gums up every joint on the opposing mech if it successfully hits them, a mechanic's worst nightmare.", stars=3),
     WeaponItem("hal2000:the_blattilizer","The Blattilizer","A very special baseball bat for a very special person. Swing for the fences!", stars=3),
+    WeaponItem("hal2000:monologue_piercer","Monologue Piercer","A spear made of captured language, solidified into usable form. Deals extra damage to opponents who are talking, and breaks through any protections they may have.", stars=3),
     CosmeticItem("hal2000:blender_head","Blender Head","Your mech has an oversized blender as a head. That is all. It is very cool-looking but impractical for actual combat.", stars=2),
+    CosmeticItem("hal2000:bouncy_blorbo","Bouncy Blorbo","A little blorbo made from some kind of goo, potentially industrial waste. It has somehow come alive, and very much wants to be as close to you as possible.", stars=2),
     KitItem("hal2000:clown_face","Clown Face Paint","+100 Clown Vibes, +200 Fear Induced. Enemies who stare into the visage for too long may find it staring back, leaving them stunned and unable to move.", ["cosmetic"], stars=3),
-    KitItem("hal2000:the_bagel", "The Bagel", "This small ring can be thrown and then sized up, creating a miniature black hole inside of it that draws everything on the battlefield closer to it over time. Getting sucked in may lead to an existential crisis and/or death.", stars=4),
+    KitItem("hal2000:the_bagel","The Bagel", "This small ring can be thrown and then sized up, creating a miniature black hole inside of it that draws everything on the battlefield closer to it over time. Getting sucked in may lead to an existential crisis and/or death.", stars=4),
+    KitItem("hal2000:credits_roll", "Credits Roll", "Adds a button to your cockpit that, when pressed, plays an unskippable credits roll across all the screens in your opponent's cockpit detailing all the people in your life. Exceedingly annoying and only usable once per fight."),
     BodyPlanItem("hal2000:crawler","Crawler","8 arms. No legs.", {"arms":8, "legs":0}, stars=4),
     BodyPlanItem("hal2000:apartment","Apartment","A mech? In this economy?? Just remove the arms and legs, I'd rather have a place to live.", {"arms":0, "legs":0}),
     BodyItem("hal2000:orbascended","ORB ENLIGHTENED","SPHERE, ASCENDED FORM, ALL-KNOWING, ALL-SEEING, CLEAR AND PERFECT, NONE CAN ESCAPE ITS SIGHT, GRANTS VISIONS OF THE FUTURE", stars=5),
@@ -760,12 +764,30 @@ n217 = Mech("n217",
     BodyPlanItem("n217:death","ARC013//Death","Any mech part can draw blood, or feed an engine. Any hollow space can house a pilot. Torn off limbs can be replaced with those still intact, and plating around thrusters can fill gaps in armour. ARC013 is a shapeless blueprint, made to accommodate adaptation—even in the midst of combat",{"legs":2,"arms":2},stars=4),
     KitItem("n217:temperance","ARC014//Temperance","A network of tunnels within a mech, which seems to magnify the cacophony of battle and attract Unbirds. ARC014 grants a mech the ability to submerge into the ground, much like the unvians within it—with the maximum duration spent underground increasing with greater quantities of Unbirds.",stars=3),
     BodyPlanItem("n217:the_devil","ARC015//The Devil","Blades in the back, shots in the dark. ARC015 can muffle sound, hide heat signatures, and is capable of carrying upwards of 2 extra weapons—at the cost of automatically retracting and disabling all weapons when directly illuminated and observed. Keep out of sight, and keep the lights shut.",{"legs":2,"arms":2,"weapons":4},stars=3),
-    WeaponItem("n217:the_tower","ARC016//The Tower","A simple throwing spear that can be remotely detonated. Within is a microscopic mote of misfortune, which on contact with air creates a rapidly-growing improbability field—boosting the chances of unlikely events (catastrophic errors, heart attacks, etc), while dropping the chances of unlikely ones.",stars=4),
+    WeaponItem("n217:the_tower","ARC016//The Tower","A simple throwing spear that can be remotely detonated. Within is a microscopic mote of misfortune, which on contact with air creates a rapidly-growing improbability field—boosting the chances of unlikely events (catastrophic errors, heart attacks, etc), while dropping the chances of likely ones.",stars=4),
     CosmeticItem("n217:the_star","ARC017//The Star","A purely decorative constellation of lamps, too weak to properly illuminate beyond a mere few steps forward. Yet, something in your heart tells you that if you are ever lost, ever stranded, ever too far from your mech, those lights will guide you back to the cockpit—to where you belong.",stars=2),
     CosmeticItem("n217:the_moon","ARC018//The Moon","A coat of glimmering, ashy paint. ARC017 can, in theory, work as a genuine source of illumination—releasing a light which intensifies the closer the mech is to the nearest moon, to potentially blinding luminosity. However, due to the location of most mech arenas, it often only manages a dim glow.",stars=3),
     CosmeticItem("n217:the_sun","ARC019//The Sun","Days before the historic 27-day A.R.C. strike, an engineer saved a defunct Mech AI from being scrapped. It ended up playing such a key role in broadcasting the strike that, after the strike's victory, it was preserved and spread across A.R.C.—eventually becoming ARC019, your cheerful, sunny friend.",stars=3),
     CockpitItem("n217:judgement","ARC020//Judgement","A copper bird with gemstone eyes, a gift from A.R.C., whistles. Outside, traps open early, and the killzone timer beeps late, and opponent mechs are swallowed in quicksand. Your opponent is struggling against these sudden obstacles, but it’s futile. The results—the bird whispers—are already fixed.",stars=5),
     LegsItem("n217:the_world","ARC021//The World","Once, an ARC140 was inscribed with strange runes found on a pair of abnormally sturdy trekking boots. ARC021 is the result: mech legs which cannot break, fail, or kneel, and which can teleport to “anywhere graced by ingenuity, curiosity, or exploration”—carrying the will to chart the world onwards.",stars=5),
+])
+
+nevephoenix=Mech("nevephoenix",
+[
+    ArmsItem("nevephoenix:dragon_knight_arms","Dragon Knight Armor","Beautiful polished armor, built to last against dragon fire without scorching the knight inside.",stars=3),
+    ArmsItem("nevephoenix:bear_arms","Bear Arms","Strong hairy bear arms. Build to catch salmon quickly.",stars=2),
+    LegsItem("nevephoenix:cursed_red_shoes","Cursed Red Shoes","These legs come with red shoes cursed to dance until you drop. You do dance fantastic though.",stars=1),
+    LegsItem("nevephoenix:glass_slippers","Glass Slippers","Beautiful strong dragon-glass slippers on very pretty legs. Perfectly sized for your mech, and excellent to run in.",stars=4),
+    BodyItem("nevephoenix:princess_dress","Princess Dress","Beautiful and sparkly, it flows in a ballgown fashion.",stars=1),
+    BodyItem("nevephoenix:swan_princess","Swan Princess","A ballgown made of magical feathers, each glowing and fluttering in the wind.",stars=2),
+    BodyPlanItem("nevephoenix:tower","Tower","Your mech is tall. Real tall. Kicking is your strong suit", {"legs":2}, stars=1),
+    BodyPlanItem("nevephoenix:fairy","Fairy","Your mech is lightweight with an extra back slot to accomodate wings", {"back":2}, stars=1),
+    BackItem("nevephoenix:pixie_wings","Pixie Wings","Small and flight enabling,  these green dragonfly wings will help you move quickly.",stars=1),
+    BackItem("nevephoenix:dragon_wings","Dragon Wings","Large draconian Wings, allowing powerful flight causing gusts of wind when you land",stars=3),
+    WeaponItem("nevephoenix:magic_wand","Magic Wand","Use your imagination to transform one thing into another thing temporarily",stars=4),
+    WeaponItem("nevephoenix:pheonix_fire","Pheonix Fire","White-hot flame that shoots out of your mech's hands",stars=3),
+    CosmeticItem("nevephoenix:frog_prince","Frog Prince","Your mech has powerful amphibian legs, or webbed fingers and a very nice doublet or a feathered hat",stars=3),
+    PowerItem("nevephoenix:true_loves_kisses","True Love's Kisses","Feelings describe the power contained in a kiss. Words do not.",stars=5),
 ])
 
 
@@ -824,10 +846,11 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix)
 event_mechs = (event_formal, )
 event_gift_mech = event_formal
 all_mechs = ratoon_pullable_mechs + (alto, nullified, ) + event_mechs
+
 
 
 
