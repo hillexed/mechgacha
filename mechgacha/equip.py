@@ -99,7 +99,8 @@ async def print_mech_inventory_command(message, message_body, client, include_so
         for (mech, items) in sorted(mechs.items(), key=lambda t: -len(t[1])):
             mechs_string += newline
             items = sorted(items, key=lambda i: -i.stars)
-            mechs_string += f"## {mech}:{newline}" + newline.join(f'- {item_data.name} {"★" * item_data.stars}' for item_data in items)
+            stars_string = "☆☆☆" if stars == 0 else "★" * item_data.stars
+            mechs_string += f"## {mech}:{newline}" + newline.join(f'- {item_data.name} {stars_string}' for item_data in items)
 
         return await message.channel.send(mechs_string)
 

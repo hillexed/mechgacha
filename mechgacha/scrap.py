@@ -50,7 +50,7 @@ async def scrap_command(message, message_body, client):
                 offered_item_index = index
                 currently_equipped = False
 
-    offer_msg = f"Is this the item you want to scrap?\n{inventory.format_item(offered_item.id)}\n{'You have ' + str(num_copies) + ' of them.' if num_copies > 1 else ''}{'**You have this item equipped.**' if currently_equipped else ''}\nIf you're sure, react with 👍 to scrap it."
+    offer_msg = f"Is this the item you want to scrap?\n{inventory.format_item(offered_item.id)}\n{'You have ' + str(num_copies) + ' of them.' if num_copies > 1 else ''}{'**You have this item equipped.**' if currently_equipped else ''}{'\nThis is an **exlusive event item** which might be hard to obtain again.' if offered_item.stars == 0 else ''}\nIf you're sure, react with 👍 to scrap it."
     reactmessage = await message.channel.send(offer_msg)
     await reactmessage.add_reaction('👍')
     await reactmessage.add_reaction('👎')
@@ -92,8 +92,9 @@ async def scrap_command(message, message_body, client):
 
     inventory.remove_from_inventory_by_position(offered_item_index, user_id)
 
+    stars_string = "☆☆☆" if stars == 0 else "★" * stars
     if not traded_in:
-        await message.channel.send(f"You scrapped your {offered_item.name} {'★' * stars} and got {stars} scrap. You now have {playerdata['scrap']} scrap.")
+        await message.channel.send(f"You scrapped your {offered_item.name} {stars_string} and got {stars} scrap. You now have {playerdata['scrap']} scrap.")
     else:
-        await message.channel.send(f"You scrapped your {offered_item.name} {'★' * stars} and got {stars} scrap - enough to salvage a day's worth of pulls! You now have {playerdata['scrap']} scrap.")
+        await message.channel.send(f"You scrapped your {offered_item.name} {stars_string} and got {stars} scrap - enough to salvage a day's worth of pulls! You now have {playerdata['scrap']} scrap.")
         
