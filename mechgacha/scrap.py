@@ -75,7 +75,7 @@ async def scrap_command(message, message_body, client):
     stars = offered_item.stars
 
     existing_scrap = int(playerdata["scrap"])
-    added_scrap = stars
+    added_scrap = 3 if stars == 0 else stars
     playerdata["scrap"] = existing_scrap + added_scrap
 
     traded_in = False
@@ -94,7 +94,7 @@ async def scrap_command(message, message_body, client):
 
     stars_string = "☆☆☆" if stars == 0 else "★" * stars
     if not traded_in:
-        await message.channel.send(f"You scrapped your {offered_item.name} {stars_string} and got {stars} scrap. You now have {playerdata['scrap']} scrap.")
+        await message.channel.send(f"You scrapped your {offered_item.name} {stars_string} and got {added_scrap} scrap. You now have {playerdata['scrap']} scrap.")
     else:
-        await message.channel.send(f"You scrapped your {offered_item.name} {stars_string} and got {stars} scrap - enough to salvage a day's worth of pulls! You now have {playerdata['scrap']} scrap.")
+        await message.channel.send(f"You scrapped your {offered_item.name} {stars_string} and got {added_scrap} scrap - enough to salvage a day's worth of pulls! You now have {playerdata['scrap']} scrap.")
         
