@@ -23,7 +23,7 @@ def get_game_data_pool_entry_name():
 async def event_info_command(message):
     user_id = message.author.id
     playerdata = get_playerdata(user_id)
-    return await message.channel.send(f"The 48th annual Mech Formal is currently ongoing!{'\nUse `m!event claim` for your gift bag!' if has_unclaimed_gift(playerdata) else ''}")
+    return await message.channel.send(f"The 48th annual Mech Formal is currently ongoing!\n{'Use `m!event claim` for your gift bag!' if has_unclaimed_gift(playerdata) else ''}")
 
 async def event_claim_command(message):
     user_id = message.author.id
