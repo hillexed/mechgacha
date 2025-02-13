@@ -789,13 +789,44 @@ nevephoenix=Mech("nevephoenix",
     CosmeticItem("nevephoenix:frog_prince","Frog Prince","Your mech has powerful amphibian legs, or webbed fingers and a very nice doublet or a feathered hat",stars=3),
     PowerItem("nevephoenix:true_loves_kisses","True Love's Kisses","Feelings describe the power contained in a kiss. Words do not.",stars=5),
 ])
-         
+
+
+
+
 nullified = Mech("nullified",
 [
     Item("nullified:null_pointer", "Null Pointer", "A jagged shard of unreality that, by all definitions, does not exist. Sensors and computer systems go haywire when nearby. Was something else here, before?", ["power","weapon","kit"], stars=5),
     CosmeticItem("nullified:null_device", "Null Device", "A mysterious bucket that devours all inputted information. Useful for waste disposal.", stars=1),
 ])
 
+
+
+
+event_formal = Mech("event_formal",
+[
+    WeaponItem("event_formal:intergalacticsky", "F.L.P. Rippers", "Excessively long and ornately detailed nails ready to Slay your Enemies, in true industry fashion", stars=3, tags=("event",)),
+    CosmeticItem("event_formal:hillexed", "Smoochable Lips", "A large pair of realistic lips adorn the outside of the cockpit. They have limited articulation, just in case you need to pucker up.", stars=3, tags=("event",)),
+    KitItem("event_formal:loading", "Gyroscopic Stabilizer", "a bleeding edge internal part that prevents the mech from losing their balance and falling over. ideal for elaborate dances or striking truly insane poses", stars=3, tags=("event",)),
+    BackItem("event_formal:hal_2000", "Cloak and Dagger", "A large, fancy cloak paired with a small needle hidden somewhere in the hand/wrist of the mech. The needle is primarily a data collection tool that sends information about whatever is stabbed to the cloak, which is actually made of optical camouflage!", stars=3, tags=("event",)),
+    KitItem("event_formal:st_yietus", "LAST DANCE - ASTRAL WING", "A mysterious system lies sleeping within your mech. Only when your will is in perfect concert with your mech's will it awake, projecting the pure energy of your soul outward in a beautiful-and destructive-display. It is said to have the power to reshape the cosmos to your will... use it wisely.", stars=3, tags=("event",)),
+    CosmeticItem("event_formal:chillychilichelle", "Digital Bloom", "A small, 2-inch-wide metal disc mounted onto the top of the cockpit. Emitting a high pitch, the device projects a fuzzy model of an enormous flower into viewers' minds. Observers disagree on what species it is but all claim to have seen their favourite.", stars=3, tags=("event",)),
+    KitItem("event_formal:deric", "Strapless And Backless", "Through complex technology, every component of the mecha floats independently of each other, allowing ultimate control and dodging. However, the Back slot cannot be used.", stars=3, tags=("event",)),
+    PowerItem("event_formal:shork", "Yureactor", "A generator that runs off of the pilot's positive feelings towards a significant other. Romantic, platonic, any kind of love that drives you forwards.", stars=3, tags=("event",)),
+    WeaponItem("event_formal:oneirocartographer", "Razorsilk Skirt", "Your mech wears a long, flowing skirt made of an ultrafine biometallic alloy. Twirl right and you can slice an opponent in half – just be careful with it on the dance floor...", stars=3, tags=("event",)),
+    CosmeticItem("event_formal:thecowofeternalflame", "Aetherial Ball Gown", "A stunning long flowing black gown made of aetheric energy and swirling constellations. The gown has short poofy off-shoulder sleeves and the bottom trails on the ground a bit after your mech. The pattern continuously shifts and the stars glitter from every angle.", stars=3, tags=("event",)),
+    CockpitItem("event_formal:triangle", "Table for Two", "Your cockpit is a secluded table, set for two. The carpet is red. The decor is Art Deco. A system of ceiling tracks suspend two chairs and a butlerprobe with bespoke arms for every need and a snazzy bowtie. Now all it needs is your date 😳👉👈", stars=3, tags=("event",)),
+    WeaponItem("event_formal:theoddman", "Oversized tin cans", "Oversized tin cans attached to string from a mech marriage ceremony. A part of romantic(?) tradition for some reason. Can be used either as a weapon or a cosmetic.", stars=3, tags=("event",)),
+    CosmeticItem("event_formal:ditto", "Fancy Top-Hat", "The most formal of formal attire.", stars=3, tags=("event",)),
+    CosmeticItem("event_formal:p_rker", "Collar", "Indicates a mech's name and point of origin, and makes a decisive fashion statement.", stars=3, tags=("event",)),
+    PowerItem("event_formal:loftyinclination", "Wedding Band", "A band of precious metal, otherwise inert. Somehow, your mech is far more resiliant when wearing it, though there has been a notable decrease in your attack damage when facing off against your rival", stars=3, tags=("event",)),
+    CosmeticItem("event_formal:neve", "Fascinator", "A beautifully elaborate hat, slightly small for the head", stars=3, tags=("event",)),
+    CosmeticItem("event_formal:n217", "ARC138//Nine of Pentacles", "Originally created to celebrate the new millennium, ARC138 is an endless stream of golden radiance, flowing unimpeded from the hands of the mech. This obscene wealth is not real, and leaves nothing behind—merely a masterful (and highly over-indulgent) trick of the light.", stars=3, tags=("event",)),
+    WeaponItem("event_formal:cheesesnack", "Literal Chocolate Bomb", "Coat your target in sticky, searing-hot chocolate that hardens as it cools. A product of the Iron Chef Wars.", stars=3, tags=("event",)),
+    CosmeticItem("event_formal:colabot", "Fascinator", "A silly, frilly little thing perched atop the highest point of your mech. A fanciful confection of feathers, beads, frothy mesh and lace. Highly distracting to opponents.", stars=3, tags=("event",)),
+    WeaponItem("event_formal:cheshire", "Girl's Best Friend", "Usually worn as a tiara, broach, or cufflink, the beam fired from this enchanted jewel grows more powerful for each reflective or crystalline surface on your mech.", stars=3, tags=("event",)),
+    PowerItem("event_formal:bytes", "Kaiju Blood", "This mech is powered by the ancient spirit within the blood of a kaiju.", stars=3, tags=("event",)),
+    CosmeticItem("event_formal:intoamutecrypt", "Symphony In C", "It's warm and golden like an oven that's wide open.", stars=3, tags=("event",)),
+])
 
 
 
@@ -816,7 +847,10 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 
 
 ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix)
-all_mechs = ratoon_pullable_mechs + (alto, nullified, )
+event_mechs = (event_formal, )
+event_gift_mech = event_formal
+all_mechs = ratoon_pullable_mechs + (alto, nullified, ) + event_mechs
+
 
 
 

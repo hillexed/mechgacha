@@ -16,6 +16,7 @@ import equip
 import tradecommand
 import progress
 import scrap
+import event
 import sleepy
 
 debug = False
@@ -141,6 +142,12 @@ async def handle_commands(message):
     elif message.content.startswith(prefix + "progress"):
         await progress.progress_command(message, get_command_body(message, "progress"))
 
+    elif message.content.startswith(prefix + "event claim"):
+        await event.event_claim_command(message)
+
+    elif message.content.startswith(prefix + "event"):
+        await event.event_info_command(message)
+
     elif message.content.startswith(prefix + "wakeup"):
         await message.channel.send("ok ok im up")
 
@@ -162,6 +169,8 @@ async def handle_commands(message):
 `m!trade` - Trade parts with other users
 `m!progress <mech name>` - See how many parts you have collected from a specific mech
 `m!scrap` - Get rid of unwanted items. Scrap is recycled into free pulls.
+`m!event` - See info about ongoing events.
+- `m!event claim` - Claim any currently active event gifts.
 """)
         pass
     #     await parse_help_command(message, get_command_body(message, "help"), client)

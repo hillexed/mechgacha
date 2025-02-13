@@ -183,13 +183,15 @@ def format_item(item_id, item_index = -1, equipped = False, short = False, count
     if equipped and not short:
         sub_array.append("**EQUIPPED**")
 
+    star_character = "☆" if "event" in item_data.tags else "★"
+    stars_string = star_character * item_data.stars
     if short:
         count_string = f' (__x{count}__)'
         sub_line = f'{ count_string if count > 1 else ""} | `{" • ".join(sub_array)}`'
-        return f'- {item_data.name} {"★" * item_data.stars}{sub_line if len(tags_string) > 0 else ""}'
+        return f'- {item_data.name} {stars_string}{sub_line if len(tags_string) > 0 else ""}'
     else:
         sub_line = f'{new_line}-# **     **{" • ".join(sub_array)}'
-        return f'- {item_data.name} {"★" * item_data.stars} - {item_data.description}{sub_line if len(tags_string) > 0 or item_index > -1 else ""}'
+        return f'- {item_data.name} {stars_string} - {item_data.description}{sub_line if len(tags_string) > 0 or item_index > -1 else ""}'
 
 async def inventory_command(message, message_body, client):
     userid = message.author.id
