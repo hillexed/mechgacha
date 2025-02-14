@@ -145,6 +145,9 @@ async def handle_commands(message):
     elif message.content.startswith(prefix + "event claim"):
         await event.event_claim_command(message)
 
+    elif message.content.startswith(prefix + "event clam"):
+        await event.clam(message)
+
     elif message.content.startswith(prefix + "event"):
         await event.event_info_command(message)
 
