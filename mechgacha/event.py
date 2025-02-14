@@ -5,17 +5,22 @@ import inventory
 from data_utils import get_playerdata
 
 # Remember to change these when adding or expiring event gifts
-available_gift_count = 1
-expired_gift_count = 0
-gift_size = 3
+event_pulls = 1
+current_event = "event_formal"
+gift_item_count = 3
+
+# playerdata will have: event_pulls undefined
+# event_gifts set to 0 means user has already claimed
+# expired_event_pulls
 
 def has_unclaimed_gift(playerdata):
-    if "event_gifts_claimed" not in playerdata or playerdata["event_gifts_claimed"] < expired_gift_count:
-        playerdata["event_gifts_claimed"] = expired_gift_count
-    return playerdata["event_gifts_claimed"] < (expired_gift_count + available_gift_count)
+    if "event_pulls" not in playerdata or playerdata["last_event"] != current_event:
+        playerdata["event_pulls"] = event_pulls
+        playerdata["last_event"] = current_event
+    return playerdata["event_pulls"] > 0
 
 def get_item_id_pool():
-    return {item.id for item in event_gift_mech.loot}
+    return [item.id for item in event_gift_mech.loot]
 
 def get_game_data_pool_entry_name():
     return f"{event_gift_mech.username}_pool"
@@ -35,29 +40,29 @@ async def event_claim_command(message):
         if pool is None:
             pool = get_item_id_pool()
         else:
-            pool = set(pool)
-        gift = set()
-        amount_to_pull = gift_size
+            pool = list(pool)
+        gift = list()
+        amount_to_pull = gift_item_count
+
         # Reload the pool if there's not enough left
-        gift_first_part = set()
-        if len(pool) < gift_size:
-            for item_id in pool:
-                gift_first_part.add(item_id)
-            pool = get_item_id_pool()
-            amount_to_pull = gift_size - len(gift_first_part)
-            pool -= gift_first_part # Duplicate protection
+        if len(pool) < amount_to_pull:
+            gift = pool[:] # you get the leftovers
+            amount_to_pull -= len(gift)
+            pool = get_item_id_pool() # refill pool
+
+        pullable_items = [x for x in pool if x not in gift] # ensure you don't get a duplicate if you were at the end of the pool pre-refill
         # Pull!
         for __ in range(amount_to_pull):
-            item_id = random.choice(list(pool))
-            gift.add(item_id)
+            item_id = random.choice(pullable_items)
+            gift.append(item_id)
             pool.remove(item_id)
-        for item_id in gift_first_part + gift:
+        for item_id in gift:
             inventory.add_id_to_inventory(item_id, user_id)
-        pool += gift_first_part # Undo duplicate protection since pulls are done
         # Save what's left for next time
         db.set_game_data(get_game_data_pool_entry_name(), pool)
         # Don't give infinite gifts
-        playerdata["event_gifts_claimed"] += 1
+        playerdata["event_pulls"] -= 1
         db.set_player_data(user_id, playerdata)
+        return await message.channel.send(f"You got: {gift}")
     else:
         return await message.channel.send("There are no gifts for you to claim.")
