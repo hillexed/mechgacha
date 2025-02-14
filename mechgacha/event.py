@@ -5,7 +5,7 @@ import inventory
 from data_utils import get_playerdata
 
 # Remember to change these when adding or expiring event gifts
-event_pulls = 1
+event_pulls = 2
 current_event = "event_formal"
 gift_item_count = 3
 
@@ -56,6 +56,7 @@ async def event_claim_command(message):
             item_id = random.choice(pullable_items)
             gift.append(item_id)
             pool.remove(item_id)
+            pullable_items.remove(item_id)
         for item_id in gift:
             inventory.add_id_to_inventory(item_id, user_id)
         # Save what's left for next time
