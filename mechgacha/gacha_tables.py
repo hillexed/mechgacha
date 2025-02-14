@@ -808,7 +808,7 @@ nullified = Mech("nullified",
 
 
 
-event_formal = Mech("event_formal",
+event_formal = Mech("48th Annual Mech Formal",
 [
     WeaponItem("event_formal:intergalacticsky", "F.L.P. Rippers", "Excessively long and ornately detailed nails ready to Slay your Enemies, in true industry fashion", stars=3, tags=("event",)),
     CosmeticItem("event_formal:hillexed", "Smoochable Lips", "A large pair of realistic lips adorn the outside of the cockpit. They have limited articulation, just in case you need to pucker up.", stars=3, tags=("event",)),
