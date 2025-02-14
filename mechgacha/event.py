@@ -5,7 +5,7 @@ import inventory
 from data_utils import get_playerdata
 
 # Remember to change these when adding or expiring event gifts
-event_pulls = 2
+starting_event_pulls = 2
 current_event = "event_formal"
 gift_item_count = 3
 
@@ -15,7 +15,7 @@ gift_item_count = 3
 
 def has_unclaimed_gift(playerdata):
     if "event_pulls" not in playerdata or playerdata["last_event"] != current_event:
-        playerdata["event_pulls"] = event_pulls
+        playerdata["event_pulls"] = starting_event_pulls
         playerdata["last_event"] = current_event
     return playerdata["event_pulls"] > 0
 
@@ -62,6 +62,10 @@ async def event_claim_command(message):
         # Save what's left for next time
         db.set_game_data(get_game_data_pool_entry_name(), pool)
         # Don't give infinite gifts
+
+        if "event_pulls" not in playerdata:
+            playerdata["event_pulls"] = starting_event_pulls
+
         playerdata["event_pulls"] -= 1
         db.set_player_data(user_id, playerdata)
         
