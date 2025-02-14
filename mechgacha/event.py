@@ -48,7 +48,7 @@ async def event_claim_command(message):
             pool -= gift_first_part # Duplicate protection
         # Pull!
         for __ in range(amount_to_pull):
-            item_id = random.choice(pool)
+            item_id = random.choice(list(pool))
             gift.add(item_id)
             pool.remove(item_id)
         for item_id in gift_first_part + gift:
