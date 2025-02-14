@@ -63,8 +63,14 @@ async def on_message(message):
             raise e
 
 async def handle_commands(message):
-    if message.content.startswith(prefix + "pull") or message.content.startswith(prefix + "shuck"):
+    if message.content.startswith(prefix + "pull"):
         message_body = get_command_body(message, "pull")
+        await pull_command(message, message_body)
+        # update last used channel
+        db.update_data("last_channel", message.channel.id, "stats")
+        
+    elif message.content.startswith(prefix + "shuck"):
+        message_body = get_command_body(message, "shuck")
         await pull_command(message, message_body)
         # update last used channel
         db.update_data("last_channel", message.channel.id, "stats")
