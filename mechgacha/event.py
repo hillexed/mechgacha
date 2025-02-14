@@ -63,6 +63,9 @@ async def event_claim_command(message):
         # Don't give infinite gifts
         playerdata["event_pulls"] -= 1
         db.set_player_data(user_id, playerdata)
-        return await message.channel.send(f"You got: {'\n'.join([inventory.format_item(x) for x in gift])}")
+        
+        item_string = "\n" + '\n'.join([inventory.format_item(x) for x in gift])
+
+        return await message.channel.send(f"You got: {item_string}")
     else:
         return await message.channel.send("There are no gifts for you to claim.")
