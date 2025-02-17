@@ -203,4 +203,9 @@ if __name__ == "__main__":
         token = config["DEV_TOKEN"]
     regeneration.start_timer()
 
-    client.run(token, log_level=logging.DEBUG)
+    try:
+        client.run(token, log_level=logging.INFO)
+    except Exception as e:
+        logging.error("Received exception: ")
+        logging.exception(e)
+    logging.info("Shutting down")
