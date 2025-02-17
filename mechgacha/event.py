@@ -74,3 +74,10 @@ async def event_claim_command(message):
         return await message.channel.send(f"You got: {item_string}")
     else:
         return await message.channel.send("There are no gifts for you to claim.")
+
+async def clam(message):
+    user_id = message.author.id
+    playerdata = get_playerdata(user_id)
+    playerdata["clammed"] = 1
+    db.set_player_data(user_id, playerdata)
+    return await message.channel.send("How'd you find out I'm a bivalve?! I was pretending to be Ratoon so well... If you keep quiet, maybe I'll consider giving you something extra in the next event.")

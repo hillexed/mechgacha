@@ -50,7 +50,7 @@ async def scrap_command(message, message_body, client):
                 offered_item_index = index
                 currently_equipped = False
 
-    offer_msg = f"Is this the item you want to scrap?\n{inventory.format_item(offered_item.id)}\n{'You have ' + str(num_copies) + ' of them.' if num_copies > 1 else ''}{'**You have this item equipped.**' if currently_equipped else ''}\n{'This is an **exlusive event item** which might be hard to obtain again.' if 'event' in offered_item.tags else ''}\nIf you're sure, react with 👍 to scrap it."
+    offer_msg = f"Is this the item you want to scrap?\n{inventory.format_item(offered_item.id)}\n{'You have ' + str(num_copies) + ' of them.' if num_copies > 1 else ''}{'**You have this item equipped.**' if currently_equipped else ''}\n{'This is an **exclusive event item** which might be hard to obtain again.' if 'event' in offered_item.tags else ''}\nIf you're sure, react with 👍 to scrap it."
     reactmessage = await message.channel.send(offer_msg)
     await reactmessage.add_reaction('👍')
     await reactmessage.add_reaction('👎')
