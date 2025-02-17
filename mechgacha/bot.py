@@ -69,6 +69,12 @@ async def handle_commands(message):
         # update last used channel
         db.update_data("last_channel", message.channel.id, "stats")
 
+    elif message.content.startswith(prefix + "shuck"):
+        message_body = get_command_body(message, "shuck")
+        await pull_command(message, message_body)
+        # update last used channel
+        db.update_data("last_channel", message.channel.id, "stats")
+
     elif message.content.startswith(prefix + "inventory"):
 
         message_body = get_command_body(message, "inventory")
@@ -144,6 +150,9 @@ async def handle_commands(message):
 
     elif message.content.startswith(prefix + "event claim"):
         await event.event_claim_command(message)
+
+    elif message.content.startswith(prefix + "event clam"):
+        await event.clam(message)
 
     elif message.content.startswith(prefix + "event"):
         await event.event_info_command(message)
