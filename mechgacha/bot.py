@@ -75,8 +75,10 @@ async def handle_commands(message):
         # update last used channel
         db.update_data("last_channel", message.channel.id, "stats")
 
-    elif message.content.startswith(prefix + "inventory"):
+    elif message.content.startswith(prefix + "inv"):
+        message_body = get_command_body(message, "inv")
 
+    elif message.content.startswith(prefix + "inventory"):
         message_body = get_command_body(message, "inventory")
 
         #if user_is_admin(message) and len(message_body) > 0 and "regenerate" in message_body:
@@ -122,6 +124,8 @@ async def handle_commands(message):
     elif message.content.startswith(prefix + "scrap"):
         await scrap.scrap_command(message, get_command_body(message, "scrap"), client)
     
+    elif message.content.startswith(prefix + "recycle"):
+        await scrap.scrap_command(message, get_command_body(message, "recycle"), client)
     
     elif message.content.startswith(prefix + "mech unequip"):
         await equip.unequip_command(message, get_command_body(message, "mech unequip"), client)

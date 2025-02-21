@@ -169,6 +169,10 @@ def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerda
 
 def format_item(item_id, item_index = -1, equipped = False, short = False, count = 1):
 
+    if item_id not in all_parts_list:
+        print(f'WARN: "{item_id}" is an invalid ID')
+        return f'**⚠️ ERROR: PART `{item_id}` DOES NOT EXIST**'
+
     new_line = "\n"
     sub_array = []
     item_data = all_parts_list[item_id]
