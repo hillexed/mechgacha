@@ -77,9 +77,9 @@ async def handle_commands(message):
 
     elif message.content.startswith(prefix + "inv"):
 
-        command_body = get_command_body(message, "inv")
-        if message.content.startswith("inventory"):
-            command_body = get_command_body(message, "inventory")
+        message_body = get_command_body(message, "inv")
+        if message.content.startswith(prefix + "inventory"):
+            message_body = get_command_body(message, "inventory")
         
 
         #if user_is_admin(message) and len(message_body) > 0 and "regenerate" in message_body:
@@ -117,7 +117,7 @@ async def handle_commands(message):
             regeneration.regenerate_everyones_pulls()
             return await message.channel.send("Everyone's pulls have regenerated!")
 
-        await inventory.inventory_command(message, command_body, client)
+        await inventory.inventory_command(message, message_body, client)
    
     elif message.content.startswith(prefix + "mech equip"):
         await equip.equip_command(message, get_command_body(message, "mech equip"), client)
