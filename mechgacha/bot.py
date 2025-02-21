@@ -76,10 +76,11 @@ async def handle_commands(message):
         db.update_data("last_channel", message.channel.id, "stats")
 
     elif message.content.startswith(prefix + "inv"):
-        message_body = get_command_body(message, "inv")
 
-    elif message.content.startswith(prefix + "inventory"):
-        message_body = get_command_body(message, "inventory")
+        command_body = get_command_body(message, "inv")
+        if message.content.startswith("inventory"):
+            command_body = get_command_body(message, "inventory")
+        
 
         #if user_is_admin(message) and len(message_body) > 0 and "regenerate" in message_body:
         #    if "<@" in message_body and ">" in message_body:
@@ -116,7 +117,7 @@ async def handle_commands(message):
             regeneration.regenerate_everyones_pulls()
             return await message.channel.send("Everyone's pulls have regenerated!")
 
-        await inventory.inventory_command(message, get_command_body(message, "inventory"), client)
+        await inventory.inventory_command(message, command_body, client)
    
     elif message.content.startswith(prefix + "mech equip"):
         await equip.equip_command(message, get_command_body(message, "mech equip"), client)
@@ -124,7 +125,7 @@ async def handle_commands(message):
     elif message.content.startswith(prefix + "scrap"):
         await scrap.scrap_command(message, get_command_body(message, "scrap"), client)
     
-    elif message.content.startswith(prefix + "recycle"):
+    elif message.content.startswith(prefix + "recycle"): # alias
         await scrap.scrap_command(message, get_command_body(message, "recycle"), client)
     
     elif message.content.startswith(prefix + "mech unequip"):
