@@ -240,7 +240,7 @@ async def unequip_command(message, message_body, client):
     
     # print(item_index, playerdata["equipment"])
     if item_index not in playerdata["equipment"]:
-        return await message.channel.send("That item is not equipped!")
+        return await message.channel.send(f"Do you mean your {all_parts_list[inventory[item_index]].name}? That item is not equipped!")
 
     unequip_item(userid, playerdata, item_index)
 
