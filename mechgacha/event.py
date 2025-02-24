@@ -13,10 +13,26 @@ gift_item_count = 3
 # event_gifts set to 0 means user has already claimed
 # expired_event_pulls
 
-def has_unclaimed_gift(playerdata):
+async def debug_add_gift(message, user_id):
+    playerdata = get_playerdata(user_id)
+    setup_playerdata_if_needed(playerdata)
+
+    if playerdata["event_pulls"] == starting_event_pulls:
+        return await message.channel.send("That user has the maximum number of event pulls!")
+
+    playerdata["event_pulls"] += 1
+    db.set_player_data(user_id, playerdata)
+    return await message.channel.send(f'That user has recieved another gift, bringing the total to {playerdata["event_pulls"]}.')
+
+def setup_playerdata_if_needed(playerdata):
+    # set up variables in case this is the first time the player has used an event command
+    # make sure to save the playerdata afterwards in the DB!
     if "event_pulls" not in playerdata or playerdata["last_event"] != current_event:
         playerdata["event_pulls"] = starting_event_pulls
         playerdata["last_event"] = current_event
+
+def has_unclaimed_gift(playerdata):
+    setup_playerdata_if_needed(playerdata)
     return playerdata["event_pulls"] > 0
 
 def get_item_id_pool():
@@ -28,7 +44,7 @@ def get_game_data_pool_entry_name():
 async def event_info_command(message):
     user_id = message.author.id
     playerdata = get_playerdata(user_id)
-    return await message.channel.send(f"The 48th annual Mech Formal is currently ongoing!\n{'Use `m!event claim` for your gift bag!' if has_unclaimed_gift(playerdata) else ''}")
+    return await message.channel.send(f"The 48th annual Mech Formal is currently ongoing!\n{'Use `m!event claim` for your gift bag!' if has_unclaimed_gift(playerdata) else 'You have received your gift bags!'}")
 
 async def event_claim_command(message):
     user_id = message.author.id

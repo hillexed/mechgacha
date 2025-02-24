@@ -160,7 +160,16 @@ async def handle_commands(message):
         await event.clam(message)
 
     elif message.content.startswith(prefix + "event"):
-        await event.event_info_command(message)
+        message_body = get_command_body(message, "event")
+        if user_is_admin(message) and "debug_add" in message_body:
+            if "<@" in message_body and ">" in message_body:
+                atted_userID = message_body.split("<@")[1].split(">")[0]
+                return await event.debug_add_gift(message, atted_userID)
+            else:
+                return await message.channel.send("@ a user to use!")
+
+        else:
+            await event.event_info_command(message)
 
     elif message.content.startswith(prefix + "wakeup"):
         await message.channel.send("ok ok im up")
