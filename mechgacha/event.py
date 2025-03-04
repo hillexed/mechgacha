@@ -45,7 +45,8 @@ async def event_info_command(message):
     user_id = message.author.id
     playerdata = get_playerdata(user_id)
     #return await message.channel.send(f"The 48th annual Mech Formal is currently ongoing!\n{'Use `m!event claim` for your gift bag!' if has_unclaimed_gift(playerdata) else 'You have received your gift bags!'}")
-    return await message.channel.send("No events are currently ongoing.")
+    #return await message.channel.send("No events are currently ongoing.")
+    return await message.channel.send("A new event is currently being developed! Participate here: https://discord.com/channels/817075626431217665/1337801453904986163/1346526720294912000")
 
 async def event_claim_command(message):
     user_id = message.author.id
