@@ -18,8 +18,18 @@ def add_pulls(userid, mech_pulls = 1, ratoon_pulls = 0):
     if playerdata["ratoon_pulls"] < max_ratoon_pulls:
         playerdata["ratoon_pulls"] += ratoon_pulls
 
+        # Round 0.99 to 1
+        remainder = playerdata["ratoon_pulls"] % 1
+        if (remainder >= 0.99):
+            playerdata["ratoon_pulls"] += (1-remainder)
+
     if playerdata["mech_pulls"] < max_mech_pulls:
         playerdata["mech_pulls"] += mech_pulls
+
+        # Round 0.99 to 1
+        remainder = playerdata["mech_pulls"] % 1
+        if (remainder >= 0.99):
+            playerdata["mech_pulls"] += (1-remainder)
 
     db.set_player_data(userid, playerdata)
 
