@@ -310,6 +310,14 @@ moonbug = Mech("moonbug",
     WeaponItem("moonbug:delta_theta_wave_generator","Delta-Theta Wave Generator","A piece of repurposed lab equipment, it is able to create the illusive Delta-Theta waves, which has mutagenic properties for some \"people\" (It's a speaker that turns you into an animal.)", stars=4),
     LegsItem("moonbug:legs_design_173","Design Type. 173","A pair of mech legs that seem to be crudely made of plaster and spray paint. Despite that, these legs are immensely flexible and mobile... if no one is looking at you."),
     BackItem("moonbug:finarian_phase_diver","Finarian Phase Diver","A back mounted piece of equipment upgraded and repaired across generations. It allows a mech to dive into the immateria. Dozens of stamped seals in Finarian tongue act as a blueprint and a ward to prevent unreality from leaking into the mech, letting it stride the depths for as long as it has power.", stars=5),
+    LegsItem("moonbug:jpeg_leg","JPEG Leg","One leg is perfectly fine, the other is a crusty artifact ridden .JPG of a pegleg propping your mech up. ",stars=1),
+    CosmeticItem("moonbug:tamagacha_toy","Tamagacha Toy","A mecha-sized digital pet held somewhere on your mech, make sure to keep it fed!",stars=2),
+    KitItem("moonbug:l0ki_cyberwarfare_suite","L0KI Cyberwarfare Suite","A suite of automated scripts and exploits made by Core based cracking group Team L0KI allowing you to hack anything your mech can connect to, including other mechs. Wireless by default, it can use wired connections for more hardened targets.",stars=3),
+    WeaponItem("moonbug:datablade","Datablade","An intricate blade embedded in the wrist of your mech that allows anything stabbed by it to connect to your mech. A locking mechanism allows the pilot to “unlatch” the blade inside the target and still wirelessly connect to it. ",stars=3),
+    KitItem("moonbug:merriment_blockwall","Merriment Blockwall","Somehow, this B.A.C.K Archivist has found her way onto your mech. Her hair is grey, and her body isn't what it used to be... But she is glad for the adventure once again.",stars=4),
+    CockpitItem("moonbug:neural_sync_array","Neural Sync Array","An array of connectors and hardware to allow 2 pilots to sync their thoughts with both the mech and eachother. While improvements in mech design has made copilots unnecessary, you can't beat that two heads are better than one.",stars=2),
+    WeaponItem("moonbug:replica_glolf_club","Replica Glolf Club","A mech sized replica of a Glolf Club, an artifact of the forbidden splort. Does not come with a surfer pen.",stars=1),
+    WeaponItem("moonbug:monarchs_club","Monarch's Club","An extradimensional instrument of the Forbidden Splort. No matter what, the cold metal of the club feels as it's in your own hands, and with it... The power to rend reality asunder. Engraved in the handle is RM <3 FM",stars=5),
 ]
 )
 
@@ -796,7 +804,24 @@ nevephoenix=Mech("nevephoenix",
     PowerItem("nevephoenix:true_loves_kisses","True Love's Kisses","Feelings describe the power contained in a kiss. Words do not.",stars=5),
 ])
 
-
+zapterra=Mech("Zapterra",
+[
+    KitItem("zapterra:standard_shoes","Standard Shoes","Shiny, black. One inch heels, thin suede soles, and laces. Driving steps, quick rotation, movement with a partner.",stars=1),
+    KitItem("zapterra:latin_shoes","Latin Shoes","Matte, black. Four inch heels, thin suede soles, and laces. Hip action, quick redirections, push and pull connection with a partner.",stars=1),
+    PowerItem("zapterra:paso_doble","Style: Paso Doble","Your eyes never leave your opponent. Confidence, showmanship, strength, domination. Complete control of the battle's pace. Flamenco styling in the arms.",stars=2),
+    PowerItem("zapterra:foxtrot","Style: Foxtrot","Beautiful, streamlined motion with powerful posture that never wavers. Getting in the way of your path of motion is a bad idea.",stars=2),
+    PowerItem("zapterra:waltz","Style: Waltz","Beautiful, streamlined motion and rotation. Aggressive possession and control of space with strong, extended, mobile posture.",stars=2),
+    PowerItem("zapterra:quickstep","Style: Quickstep","Impossibly fast, to the detriment of technique. Breakneck steps, hops, kicks and redirection. Impossible to predict, with distances closed in a fraction of an instant.",stars=2),
+    PowerItem("zapterra:jive","Style: Jive","Your every energy and optimization is placed into the strength, speed and length of blazing fast kicks, leg movement, and footwork. Flashy, without the need for a partner.",stars=4),
+    PowerItem("zapterra:rumba","Style: Rumba","Slow and intentional movement with extensive hip action, legwork, and tension between partners. Spot rotations so fast you can't see them happen.",stars=2),
+    BodyPlanItem("zapterra:standard_frame","Standard Frame","Two sets of facing bipedal legs that shift in and out of line. Upper body locks in place, redistributing impacts to the system. Forgoes weapons, favoring momentum and rotation with occasional kicks. 4 legs, 2 bodies, 2 power sources, 2 cockpits, 1 back.",{"legs":4,"weapons":0,"body":2,"cockpit":2,"power":2},stars=4),
+    CosmeticItem("zapterra:competition_number","Competition Number","How else will the judges call you back?",stars=1),
+    CosmeticItem("zapterra:spray_tan","Spray Tan","Helps you look more natural when you're under bright lighting. Helps you look more scary when you're not.",stars=1),
+    CosmeticItem("zapterra:competition_dress","Competition Dress","A flowing dress in beautiful colors. Decorated with two bajillion rhinestones.",stars=2),
+    CosmeticItem("zapterra:tailsuit","Tailsuit","Handsome. Stylish. Classy. Sweaty.",stars=2),
+    PowerItem("zapterra:ten_dance_champion","Ten-Dance Champion","Relentless endurance. Unmatched aggression and intentionality. You know exactly where you are, how you're about to move, and where your opponent's balance could use some improvement.",stars=5),
+    KitItem("zapterra:kinetic_anchorage","Kinetic Anchorage","A nanite field that allows you to to push, pull, and redirect momentum from points in midair. Almost as good as a partner.",stars=3),             
+])
 
 
 nullified = Mech("nullified",
@@ -852,9 +877,9 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra)
 event_mechs = (event_formal, )
-event_gift_mech = event_formal
+event_gift_mech = None
 all_mechs = ratoon_pullable_mechs + (alto, nullified, ) + event_mechs
 
 

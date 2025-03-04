@@ -5,8 +5,8 @@ import inventory
 from data_utils import get_playerdata
 
 # Remember to change these when adding or expiring event gifts
-starting_event_pulls = 2
-current_event = "event_formal"
+starting_event_pulls = 0
+current_event = "none"
 gift_item_count = 3
 
 # playerdata will have: event_pulls undefined
@@ -44,7 +44,8 @@ def get_game_data_pool_entry_name():
 async def event_info_command(message):
     user_id = message.author.id
     playerdata = get_playerdata(user_id)
-    return await message.channel.send(f"The 48th annual Mech Formal is currently ongoing!\n{'Use `m!event claim` for your gift bag!' if has_unclaimed_gift(playerdata) else 'You have received your gift bags!'}")
+    #return await message.channel.send(f"The 48th annual Mech Formal is currently ongoing!\n{'Use `m!event claim` for your gift bag!' if has_unclaimed_gift(playerdata) else 'You have received your gift bags!'}")
+    return await message.channel.send("No events are currently ongoing.")
 
 async def event_claim_command(message):
     user_id = message.author.id
