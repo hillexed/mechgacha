@@ -21,7 +21,8 @@ bee = Mech("bee", [
     CosmeticItem("bee:artificial_satellite","Artificial Satellite","A small artificial space structure (a satellite, space ship, etc) orbits your mech.", stars=3),
     PowerItem("bee:blackhole_drive","Blackhole Drive","An infinitely deep hole in reality, the pull of the density object in the universe, contained only by the mech itself.", stars=5),
     PowerItem("bee:supernova_drive","Supernova Drive","A core of swirling energy, the captured explosion of a star, held together with the force of dark matter. Iridescent and an unstoppable force.", stars=5),
-    WeaponItem("bee:gravitational_lensing", "Gravitational Lensing", "Using gravity, you can shunt power in to a strong focal beam to stab through your enemies at range.", stars=4)
+    WeaponItem("bee:gravitational_lensing", "Gravitational Lensing", "Using gravity, you can shunt power in to a strong focal beam to stab through your enemies at range.", stars=4),
+    WeaponItem("bee:gravity_mines", "Gravity Mines", "These mines stick to surfaces and change gravity in their radius, both strength and direction can be changed upon, but not after, throwing. ", stars=4)
 ]
 )
 
