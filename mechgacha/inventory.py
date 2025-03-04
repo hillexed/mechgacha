@@ -39,7 +39,7 @@ def match_item_name_to_id(name):
     return name_to_id[chosen_item_name]
 
 def item_already_in_inventory(new_item, inventory):
-    return new_item in inventory
+    return new_item.id in inventory
 
 def add_id_to_inventory(new_item_id, userid):
     inv = db.get_inventory_data(userid)
