@@ -143,7 +143,7 @@ def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerda
         items = [(sub[1], sub[0]) for sub in Counter([item[1] for item in inventory]).items()]
         if dupe:
             items = [(sub[0], sub[1]) for sub in items if sub[0] > 1]
-    print(items)
+
     pages = paginate(
                 [format_item(
                     item_id, 
