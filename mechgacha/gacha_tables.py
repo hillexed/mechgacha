@@ -826,6 +826,27 @@ zapterra=Mech("Zapterra",
 ])
 
 
+
+urirles=Mech("Urirles",
+[
+	PowerItem("urirles:fusion_cell","Fusion Cell","Stable, efficient, small, boring. Slotted in a standard power mount, it will power a mecha under a normal load and a bit beyond. Just don't expect anything fancy as it was designed with reliability in mind. And cost-cutting, admittedly.",stars=1),
+	KitItem("urirles:last_century_embedded_electronics","Last Century Embedded Electronics","Listen, if it was good enough for working on the Lantern III Scrapyards fifty years ago, it's still good enough now. Old and clunky, yet also hardened and missing some of the wireless stuff that make modern mechs remotely hackable.",stars=1),
+	BodyItem("urirles:scrapyard_field_upgrade","Scrapyard Field Upgrade","A bunch of steel plates haphazardly welded around the body of your mech, adding quite a bit of improvised spaced armor.",stars=1),
+	LegsItem("urirles:heavy_duty_pneumatic_legs","Heavy Duty Pneumatic Legs","Two big steel legs, powered by massive pistons. Rugged and reliable, those won't get you anywhere fast, but they will get you there eventually. And noisily.",stars=1),
+	WeaponItem("urirles:foam_cannon","Foam Cannon","Used to put out fire and seal hull breach, the rapid hardening foam can be retasked to impair your opponent's movements.",stars=1),
+	CockpitItem("urirles:extreme_environment_cockpit","Extreme Environment Cockpit","This cockpit will keep you safe in the most hostile of work environment, from temperature control to radiation shielding. It will also give you an accurate reading of all that fun stuff it's working hard to keep outside.",stars=2),
+	CosmeticItem("urirles:days_since_last_incident","_ Days Since Last Incident","A whiteboard that allows you to keep track of the last time you ripped another mech in half.",stars=2),
+	PowerItem("urirles:fusion_cell_hotwired","Fusion Cell (Hotwired)","You went and did it. This cell had most of its safeties shunted to allow for a much higher and spiker power profile. This also made it sensitive to direct impact, overheating and runaway reaction. And worst of all, it voided the warranty.",stars=2),
+	ArmsItem("urirles:hydraulic_clamps","Hydraulic Clamps","Heavy arms that ends in massive clamps. Can grab and lift some hefty weights, but do not expect to pick up eggs.",stars=2),
+	CosmeticItem("urirles:white_noise_backing_signal","White Noise Backing Signal (Loud)","Normally used for workplace safety, this speaker has been hot-wired to announce your approach with a wave of white noise.",stars=3),
+	WeaponItem("urirles:steel_cutting_beam","Steel Cutting Beam","Short-ranged, but able to punch through most conventional armour. Can't help you against shield or reflective material. Most often put on a shoulder mount, leaving the hands free to hold the target.",stars=3),
+	BackItem("urirles:onboard_forge","Onboard Forge","This portable (if cumbersome) factory allows you to build spare parts or field fortifications. It churns a good amount of smoke while in use.",stars=3),
+	KitItem("urirles:structural_analyser","Structural Analyser","Initially used in demolition work, this sensor suit gives you an internal 3D representation of whatever you scan, helping to pinpoint weak spots.",stars=4),
+	BodyPlanItem("urirles:modular_fittings_points","Modular Fitting Points","By optimising space usage and adding universal internal and external mounting points, you can plug another Kit and another Back item. It also makes repairing easier by just switching damaged parts.",{"back":2,"kit":2},stars=4),
+	BackItem("urirles:onboard_nanoforge","Onboard Nanoforge","Cutting edge nanomachine powered forge in a sleek design, it can produce most small parts almost instantly, or build structure remotely by dropping nano-goo. And no smoke!",stars=5),
+])
+
+
 nullified = Mech("nullified",
 [
     Item("nullified:null_pointer", "Null Pointer", "A jagged shard of unreality that, by all definitions, does not exist. Sensors and computer systems go haywire when nearby. Was something else here, before?", ["power","weapon","kit"], stars=5),
@@ -879,7 +900,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"legs": 2, "arms": 2, "powe
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, urirles)
 event_mechs = (event_formal, )
 event_gift_mech = None
 all_mechs = ratoon_pullable_mechs + (alto, nullified, ) + event_mechs
