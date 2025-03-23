@@ -130,7 +130,7 @@ def give_random_gift(userid):
 
 page_size = 6 # max 
 
-def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerdata, page=1, short=False):
+def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerdata, page=1, short=False, dupe=False):
     if inventory is None or len(inventory) == 0:
         return "**You have nothing in your inventory!** \n Use m!pull ratoon to get some mechs from Ratoon's gachapon, then m!pull <mech> to pull from their list!"
 
@@ -141,13 +141,16 @@ def represent_inventory_as_string(inventory: Sequence[tuple[int, int]], playerda
     items = inventory
     if short:
         items = [(sub[1], sub[0]) for sub in Counter([item[1] for item in inventory]).items()]
+        if dupe:
+            items = [(sub[0], sub[1]) for sub in items if sub[0] > 1]
+
     pages = paginate(
                 [format_item(
                     item_id, 
-                    item_index if not short else -1,
-                    item_index in playerdata["equipment"] if not short else False,
-                    short, 
-                    1 if not short else item_index)
+                    item_index= item_index if not short else -1,
+                    equipped= item_index in playerdata["equipment"] if not short else False,
+                    short= short, 
+                    count= 1 if not short else item_index)
                     for (item_index, item_id) in items],
                 1500)
 
@@ -216,6 +219,7 @@ async def inventory_command(message, message_body, client):
     number_of_stars = parsed_message.number_of_stars
     page = parsed_message.page
     short = parsed_message.short
+    dupe = parsed_message.dupe
 
     if page <= 0:
         return await message.channel.send("There ain't no such page of your inventory")
@@ -245,7 +249,7 @@ async def inventory_command(message, message_body, client):
         if len(inventory_with_index) == 0:
             return await message.channel.send(f"Nothin in your inventory with {number_of_stars} stars and also the other stuff ya mentioned")
 
-    return await message.channel.send(represent_inventory_as_string(inventory_with_index, playerdata, page, short))
+    return await message.channel.send(represent_inventory_as_string(inventory_with_index, playerdata, page, short, dupe))
 
 @dataclass
 class ParsedMessage:
@@ -253,6 +257,7 @@ class ParsedMessage:
     include_equipped: bool = True
     number_of_stars: Optional[int] = None
     short: bool = False
+    dupe: bool = False
     page: int = 1
 
 def parse_message(message_body) -> ParsedMessage:
@@ -300,6 +305,11 @@ def parse_message(message_body) -> ParsedMessage:
 
             if "short" in message_part:
                 result.short = True
+                continue
+
+            if "dupe" in message_part:
+                result.short = True
+                result.dupe = True
                 continue
 
             if ("star" == message_part or "stars" == message_part):

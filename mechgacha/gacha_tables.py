@@ -671,18 +671,26 @@ chillychilichelle = Mech("chillychilichelle",
     WeaponItem("chillychilichelle:telephone_pole","Telephone Pole","A utility pole seemingly ripped straight from the ground. Live wires crackle, dangling from the arms. 2 transformers are still attached, while a third appears to have been broken off. Dirt still clings to its base.",stars=1),
     PowerItem("chillychilichelle:160000_aaa_batteries","160,000 AAA Batteries","A set of ~160,000 AAA batteries bound together with cable ties, hot glue, hope, and hubris. They are crudely affixed to a metal plate, where faded signatures and greetings are written on the back in marker.",stars=1),
     CockpitItem("chillychilichelle:a_rock","A Rock","A small greyish rock, roughly the size of your fist. Covered in a few brown and black specks. Totally unremarkable. You picked it up and placed it in your cockpit as a joke, but it's been 2 years and it's still here.",["cosmetic"],stars=1),
+    CockpitItem("chillychilichelle:glass_closet","Glass Closet","A tall, plexiglass closet fixed to the ground. Everyone seems to be able to see through it just fine except you. The perfect place to store copious amounts of memorabilia of your rival.",["cosmetic"],stars=1),
+    
     BodyItem("chillychilichelle:stripped_framework","Stripped Framework","The bare skeleton of a long-defunct mech. Composed of hollow steel tubes and dangling wires. Originally the leftovers from a salvage, it reaches only the barest minimum of what is considered a mech.",stars=2),
     CockpitItem("chillychilichelle:black_box","Black Box","A large steel cube, wrapped in a dozen layers of insulation and armor. Lacks any way to directly view the outside world. Contains up to 2 months of food, water, and oxygen. Requires the pilot to be hermetically sealed in each mission.",stars=2),
     Item("chillychilichelle:overgrowth","Overgrowth","Countless vines and leaves that have made the mech their home. Foliage blooms in the in-betweens of joints, and moss cakes every crack. Vibrant flowers dot the highest surfaces.",["cosmetic"],stars=2),
     KitItem("chillychilichelle:mechalogue","Mechalogue","A small portable computer encased in a hardened orange plastic. Attached to the front is an orb-shaped digital camera. Connected to an unspecified database, it is able to identify and provide information on any mech or mech part. No one is quite sure how it accesses this information.",stars=2),
+    KitItem("chillychilichelle:boggart_boarding_system","Boggart Boarding System","A long, pointed cannon on a swivel loaded with boarding pods intended for the various creatures popular among mech pilots, weaponizing them as effective disruptors for burrowing into cockpits, jamming weapons, or simply being a general nuisance.",stars=2),
+    
     BodyPlanItem("chillychilichelle:buddy_system","Buddy System","At the cost of a little bit of legroom, the mech has been modified to accommodate 2 cockpits, delegating responsibilities between them. However, 2 pilots are now required to properly pilot the mech.", {"cockpit": 2},stars=3),
     CockpitItem("chillychilichelle:childhood_sweets","Childhood Sweets","A small drawer in the cockpit filled with old, discontinued candies from your youth. They don't taste as great as you remember, but they still make you feel warm and fuzzy.",["cosmetic"],stars=3),
     CockpitItem("chillychilichelle:unsettling_figurine","Unsettling Figurine","A grotesque bobblehead depicting some type of horned imp or devil. Its pale yellow flesh is made of a flabby rubber, where two bulbous red eyes poke out. You think it's inching closer to you when you're not looking, but you can't quite tell.",["cosmetic"],stars=3),
-    PowerItem("chillychilichelle:the_hole","The Hole","A small black pinprick in reality. Encased in layers of protective glass and steel, countless tubes pipe in and out of its container peppered with gauges and monitoring lights. A floating-point error in the fabric of space-time, long-forgotten by the world.",stars=5),
-    BodyPlanItem("chillychilichelle:decommissioned","Decommissioned","A machine of combat and war in a bygone era, now used for agriculture, construction, or logistics. Foregoing all weapons, the mech now sports up to 4 sets of arms and 2 sets of legs.",{"weapon": 0, "legs":2, "arms":4},stars=4),
+    KitItem("chillychilichelle:shared_history","Shared History","You know your opponent better than the back of your hand. Whether as former friends, rivals, or nemeses, you understand what makes them tick. With that knowledge, you can make a risky, precarious maneuver to predict their next move to counteract it - the more specific, the more effective.",stars=3),
+    
+    BodyPlanItem("chillychilichelle:decommissioned","Decommissioned","A machine of combat and war from a bygone era, now used for agriculture, construction, or logistics. Foregoing all weapons, the mech now sports up to 5 kits to maximize utility.",{"kit": 5},stars=4),
     CockpitItem("chillychilichelle:crumpled_letters","Crumpled Letters","Old letters exchanged between you and a rival pilot. You keep them gingerly tucked in a small folder underneath your seat.",["cosmetic"],stars=4),
     CockpitItem("chillychilichelle:corner_entity","Corner Entity","A tall, lanky shadow creature has taken shelter in the eastern end of your cockpit. She seems docile and doesn't seem to be bothering anyone, so you do your best to keep the cockpit dim. Sometimes you play with her using hand shadow puppets.",["cosmetic"],stars=4),
-    KitItem("chillychilichelle:last_hope_protocol","Last Hope Protocol","A 2-meter tall circular steel frame at the back of the cockpit. Upon ignition, the pilot will be tethered to this reality before being shifted into an unknown plane for 365 days. Only a split second passes. When they return, they will have gained something they didn't know they needed.",stars=5),
+    BodyPlanItem("chillychilichelle:mobius","Mobius","Something is deeply wrong with your mech. From everything you can gather, you have to conclude that it simply has no back - a flat, depthless image always facing toward any observer trying to perceive it. It feels like it's watching you as much as you it.",{"back": 0},stars=4),
+    
+    PowerItem("chillychilichelle:the_hole","The Hole","A floating-point error in the fabric of space-time, long-forgotten by the world. A small black pinprick in reality is suspended in layers of protective glass and steel. Whenever you try to look at it, you find yourself looking somewhere else - and the world looks a bit different.",stars=5),
+    KitItem("chillychilichelle:last_hope_protocol","Last Hope Protocol","A 2-meter tall circular steel frame at the back of the cockpit. Upon ignition, the pilot will be tethered to this reality before being shifted into an unknown plane for 365 days, while only a split second passes. When they return, they will have gained something they didn't know they needed.",stars=5),
 ])
 
 chimera = Mech("chimera",
@@ -825,6 +833,27 @@ zapterra=Mech("Zapterra",
     KitItem("zapterra:kinetic_anchorage","Kinetic Anchorage","A nanite field that allows you to to push, pull, and redirect momentum from points in midair. Almost as good as a partner.",stars=3),             
 ])
 
+jcterran=Mech("jcterran",
+[
+    WeaponItem("jcterran:km1_autocannon","KM-1 Autocannon","A sturdy, high-caliber autocannon, belt-fed and suited for a variety of ammunition types.",stars=1),
+    BackItem("jcterran:ammunition_pack","Ammunition Pack","A series of boxes, pouches, and mag-locks hold all the ammunition your mech could need. Could store magazines, shells, capacitors, or more exotic ordnance...",stars=1),
+    WeaponItem("jcterran:deca1_burst_laser","DECA-1 Burst Laser","This bulky energy weapon fires a high-powered laser over short ranges. Because of its significant power draw, it is usually run off a set of manually reloaded capacitor banks, though it can be reconfigured to draw directly from exceptionally powerful reactors.",stars=1),
+    CosmeticItem("jcterran:stylish_graffiti","Stylish Graffiti","A colorful selection of personal icons, fantastical images, and barely readable text applied to your mech via spray paint. Ideal for self-expression and chaotic flair.",stars=1),
+    BodyItem("jcterran:boxy_frame","Boxy Frame","A bulky, hard-edged frame for your mech, making it loom over the battlefield. Presents a large target profile, but bristles with hardpoints. A body fit for the dispassionate, the utilitarian, or those who want to make an impression.",stars=1),
+    ArmsItem("jcterran:branched_arms","Branched Arms","These dull metal arms split at the elbow joint. One branch ends in a heavy claw, fit for wielding weaponry, while the other ends in a set of light manipulator tendrils.",stars=2),
+    ArmsItem("jcterran:plated_arms","Plated Arms","These up-armored arms have been covered in heavy, overlapping metal plates. The armor may impede flexibility, but it will make the arms harder to destroy.",stars=1),
+    LegsItem("jcterran:plated_legs","Plated Legs","These up-armored legs feature powerful hydraulic joints covered in layered metal plates. They might not the fastest legs around, but they will be difficult to destroy with weaker weaponry.",stars=1),
+    WeaponItem("jcterran:kca1_defense_rockets","KCA-1 Defense Rockets","A cluster of four dumbfire rockets, mounted on an external rack. Their HEAT payloads can do serious damage, but they lack accuracy, and the system comes with no spares. Don't spend them all in one place...",stars=2),
+    WeaponItem("jcterran:kl2_antimaterial_rifle","KL-2 Anti-Material Rifle","A heavy rifle, loaded with hyperdense metal slugs that can punch straight through armor. The weapon's onboard optics are synced directly with your mech. According to TPGA superstition, models with serial numbers ending in 13 are considered lucky. This one isn't, though.",stars=3),
+    CockpitItem("jcterran:sensor_cockpit","Sensor Cockpit","This sloped cockpit is set into your mech's body, covered in sensor arrays, radar dishes, and cameras. The sensors' vision is projected onto a wraparound display in the cockpit. Good for finding your enemy's weaknesses but could be blinded if the sensors were disabled. ",stars=3),
+    KitItem("jcterran:cryocoolant_system","Cryo-Coolant System","This extensive cooling system cycles hypercooled liquids through your mech's systems. Curiously, it appears to have been assembled from long-haul cryopod components. This could keep your mech stable when using high-energy systems.",stars=3),
+    WeaponItem("jcterran:km3_grenade_launcher","KM-3 Grenade Launcher","A heavy rotary grenade launcher, capable of being mounted both internally and externally. This design has the unusual ability to fire adhesive-coated \"sticky\" rounds, which can be detonated by remote, in addition to standard payloads.",stars=2),
+    KitItem("jcterran:capacitor_banks","Capacitor Banks","A set of externally-mounted supercapacitors, arranged in vertical banks. They can be charged by your mech's reactor from spare power, then expended for extraordinary bursts of energy. However, they take a long time to recharge after each use.",stars=2),
+    WeaponItem("jcterran:kl2_antimaterial_rifle_lucky","KL-2 Anti-Material Rifle (Lucky)","A heavy rifle, loaded with hyperdense metal slugs that can punch straight through armor. The weapon's onboard optics are synced directly with your mech. According to TPGA superstition, models with serial numbers ending in 13 are considered lucky, and this one is!",stars=4),
+    WeaponItem("jcterran:fusion_glaive","Fusion Glaive","Channels power down a maglocked, variable-length haft into a jet of pure energy. Linked directly to your mech's reactor, the blade's theoretical output is near limitless: given sufficient power, it can kill anything.",stars=5),
+    WeaponItem("jcterran:aurora_point_defense_system","AURORA Point Defense System","A networked array of lasers built into the frame of your mech. Can intercept physical projectiles, blind enemy sensors, and attack soft targets at close range. On low power, they can also project a spectacular lightshow.",["cosmetic"],stars=4),
+])
+
 
 
 urirles=Mech("Urirles",
@@ -900,7 +929,8 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"legs": 2, "arms": 2, "powe
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, urirles)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, urirles, jcterran)
+
 event_mechs = (event_formal, )
 event_gift_mech = None
 all_mechs = ratoon_pullable_mechs + (alto, nullified, ) + event_mechs
