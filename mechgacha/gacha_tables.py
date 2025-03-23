@@ -217,6 +217,18 @@ syl = Mech("syl",
     CockpitItem("syl:single_tape_boombox", "Single-Tape Boombox","This mech has a retro boombox in the cockpit, and the tape that is unremovably stuck in it is “Greatest Hits Volume 1” by the Eagles."),
     BackItem("syl:redbox_machine", "Redbox Machine", "Tied to the back of the mech, possibly as a counterweight, is a battered old Redbox machine, but the movies it dispenses are ones no one has ever seen before. Recently, you rented Goncharov (1973) by Martin Scorsese.", ["cosmetic"], stars=5),
     BackItem("syl:guavapon","Guavapon","Dispenses guavas of varying rarities, from Common to Legendary.",stars=2),
+    CosmeticItem("syl:horse_head","Horse Head","Found in the bed of some mafioso, it drips blood constantly and occasionally eats oats.",stars=2),
+    BackItem("syl:ponytail","Ponytail","Hair put up in a style associated with young girls and butch lesbians. It goes all the way down your back.",stars=2),
+    WeaponItem("syl:horse_gun","Horse Gun","Fires a Clydesdale horse at relativistic speeds.",stars=5),
+    WeaponItem("syl:horse_summoning_staff","Horse Summoning Staff","Summons normal but very angry horses to fight alongside you.",stars=3),
+    KitItem("syl:bag_of_oats","Bag of Oats","It’s a bag of oats. ",stars=2),
+    WeaponItem("syl:curry_comb","Curry Comb","You can brush a horse with it, or throw it at someone in a pinch.",stars=1),
+    LegsItem("syl:pony_express","Pony Express","Gives your mech the speed and stamina of a cross-country horseback mail courier.",stars=4),
+    CosmeticItem("syl:horse_joker","Horse Joker","+1 Mult for every horse-themed part equipped.",stars=3),
+    CockpitItem("syl:saddle","Saddle","Found in village chests and underground mine shafts. ",stars=1),
+    BodyItem("syl:epona","Epona","This iconic horse familiar has blocky N64-era graphics but a pure heart.",stars=3),
+    WeaponItem("syl:glue_factory","Glue Factory","Sprays Elmer’s glue at opponents. Don’t worry about what it was made out of.",stars=2),
+    KitItem("syl:horse_girl_hypnosis","Horse Girl Hypnosis","Upon viewing this battered VHS tape, you become filled with the urge to put your hair in a ponytail and buy plastic horse models.",["cosmetic"],stars=5),
 ]
 )
 
