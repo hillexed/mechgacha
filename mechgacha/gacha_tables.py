@@ -833,6 +833,27 @@ zapterra=Mech("Zapterra",
     KitItem("zapterra:kinetic_anchorage","Kinetic Anchorage","A nanite field that allows you to to push, pull, and redirect momentum from points in midair. Almost as good as a partner.",stars=3),             
 ])
 
+jcterran=Mech("jcterran",
+[
+    WeaponItem("jcterran:km1_autocannon","KM-1 Autocannon","A sturdy, high-caliber autocannon, belt-fed and suited for a variety of ammunition types.",stars=1),
+    BackItem("jcterran:ammunition_pack","Ammunition Pack","A series of boxes, pouches, and mag-locks hold all the ammunition your mech could need. Could store magazines, shells, capacitors, or more exotic ordnance...",stars=1),
+    WeaponItem("jcterran:deca1_burst_laser","DECA-1 Burst Laser","This bulky energy weapon fires a high-powered laser over short ranges. Because of its significant power draw, it is usually run off a set of manually reloaded capacitor banks, though it can be reconfigured to draw directly from exceptionally powerful reactors.",stars=1),
+    CosmeticItem("jcterran:stylish_graffiti","Stylish Graffiti","A colorful selection of personal icons, fantastical images, and barely readable text applied to your mech via spray paint. Ideal for self-expression and chaotic flair.",stars=1),
+    BodyItem("jcterran:boxy_frame","Boxy Frame","A bulky, hard-edged frame for your mech, making it loom over the battlefield. Presents a large target profile, but bristles with hardpoints. A body fit for the dispassionate, the utilitarian, or those who want to make an impression.",stars=1),
+    ArmsItem("jcterran:branched_arms","Branched Arms","These dull metal arms split at the elbow joint. One branch ends in a heavy claw, fit for wielding weaponry, while the other ends in a set of light manipulator tendrils.",stars=2),
+    ArmsItem("jcterran:plated_arms","Plated Arms","These up-armored arms have been covered in heavy, overlapping metal plates. The armor may impede flexibility, but it will make the arms harder to destroy.",stars=1),
+    LegsItem("jcterran:plated_legs","Plated Legs","These up-armored legs feature powerful hydraulic joints covered in layered metal plates. They might not the fastest legs around, but they will be difficult to destroy with weaker weaponry.",stars=1),
+    WeaponItem("jcterran:kca1_defense_rockets","KCA-1 Defense Rockets","A cluster of four dumbfire rockets, mounted on an external rack. Their HEAT payloads can do serious damage, but they lack accuracy, and the system comes with no spares. Don't spend them all in one place...",stars=2),
+    WeaponItem("jcterran:kl2_antimaterial_rifle","KL-2 Anti-Material Rifle","A heavy rifle, loaded with hyperdense metal slugs that can punch straight through armor. The weapon's onboard optics are synced directly with your mech. According to TPGA superstition, models with serial numbers ending in 13 are considered lucky. This one isn't, though.",stars=3),
+    CockpitItem("jcterran:sensor_cockpit","Sensor Cockpit","This sloped cockpit is set into your mech's body, covered in sensor arrays, radar dishes, and cameras. The sensors' vision is projected onto a wraparound display in the cockpit. Good for finding your enemy's weaknesses but could be blinded if the sensors were disabled. ",stars=3),
+    KitItem("jcterran:cryocoolant_system","Cryo-Coolant System","This extensive cooling system cycles hypercooled liquids through your mech's systems. Curiously, it appears to have been assembled from long-haul cryopod components. This could keep your mech stable when using high-energy systems.",stars=3),
+    WeaponItem("jcterran:km3_grenade_launcher","KM-3 Grenade Launcher","A heavy rotary grenade launcher, capable of being mounted both internally and externally. This design has the unusual ability to fire adhesive-coated \"sticky\" rounds, which can be detonated by remote, in addition to standard payloads.",stars=2),
+    KitItem("jcterran:capacitor_banks","Capacitor Banks","A set of externally-mounted supercapacitors, arranged in vertical banks. They can be charged by your mech's reactor from spare power, then expended for extraordinary bursts of energy. However, they take a long time to recharge after each use.",stars=2),
+    WeaponItem("jcterran:kl2_antimaterial_rifle_lucky","KL-2 Anti-Material Rifle (Lucky)","A heavy rifle, loaded with hyperdense metal slugs that can punch straight through armor. The weapon's onboard optics are synced directly with your mech. According to TPGA superstition, models with serial numbers ending in 13 are considered lucky, and this one is!",stars=4),
+    WeaponItem("jcterran:fusion_glaive","Fusion Glaive","Channels power down a maglocked, variable-length haft into a jet of pure energy. Linked directly to your mech's reactor, the blade's theoretical output is near limitless: given sufficient power, it can kill anything.",stars=5),
+    WeaponItem("jcterran:aurora_point_defense_system","AURORA Point Defense System","A networked array of lasers built into the frame of your mech. Can intercept physical projectiles, blind enemy sensors, and attack soft targets at close range. On low power, they can also project a spectacular lightshow.",["cosmetic"],stars=4),
+])
+
 
 nullified = Mech("nullified",
 [
@@ -887,7 +908,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"legs": 2, "arms": 2, "powe
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, jcterran)
 event_mechs = (event_formal, )
 event_gift_mech = None
 all_mechs = ratoon_pullable_mechs + (alto, nullified, ) + event_mechs
