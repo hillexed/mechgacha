@@ -72,6 +72,22 @@ def player_can_pull_from_mech(mech_to_pull_from, playerdata):
 
     return mech_to_pull_from.username in playerdata["unlocked_mechs"] #add .lower()?
 
+comparative_adjectives = ["angrier","more beautiful","bigger","more boring","cheaper","cleaner","cleverer","closer","colder","cooler","crazier","crispier","cuter","darker","deeper","dirtier","drier","earlier","easier","more expensive","faster","fatter","fewer","fitter","freakier","flatter","fresher","funnier","greater","hairier","happier","healthier","heavier","higher","hotter","hungrier","more interesting","kinder","larger","later","lighter","littler","longer","louder","lower","more modern","more retro"," nearer","newer","nicer","older","older","older","older","poorer","more popular","quicker","richer","sadder","saltier","scarier","shorter","skinnier","slower","smaller","smarter","softer","stronger","taller","thicker","more tired","uglier","warmer","weaker","wetter","wider","younger","better","worse"]
+
+
+def create_aprilfools_item():
+    from gacha_mechanics import Item
+
+    num = random.randrange(1, len(comparative_adjectives))
+
+    adj = comparative_adjectives[num]
+    item = Item("the steady march of time:"+adj, f"{adj.title()}.", "", stars=(0))
+
+    # funnytag = random.choice(["your inventory is unaffected","Not your mecha. You.","Not your mecha. You.","Not your mecha. You.","Not your mecha. You.","Are you still the same?","How have you changed?","You are different now.","What would your mom think?","You have changed as a person.","oh no","your body","your body","your body","your body","your body","your body","your body","your body","your body"])
+
+    item.tags = [" "]
+    return item
+
 
 def add_new_mech(username, playerdata, new_mech):
     # sample playerdata = {"unlocked_mechs": ['alto'], 'ratoon_pulls':2, 'mech_pulls': 5}
@@ -156,16 +172,22 @@ async def pull_command(message, message_body):
             if not inventory.item_already_in_inventory(new_item, user_inv):
                 break
 
-        inventory.add_to_inventory(new_item, username)
-        deduct_pull(username, playerdata)
-        tags_string = f'{", ".join([tag.upper() for tag in new_item.tags])}'
+        # april fool's!
+        tags_string = f'-# {", ".join([tag.upper() for tag in new_item.tags])}'
+        if random.random() < 0.5:
+            new_item = create_aprilfools_item()
+            # not added to inventory, just announced
+            tags_string = ""
+        else:
+            inventory.add_to_inventory(new_item, username)
+            deduct_pull(username, playerdata)
 
 
         star_character = "☆" if "event" in new_item.tags else "★"
         stars_string = star_character * new_item.stars
         if requested_mech.lower() == "random":
-            await message.channel.send(f"You pulled from all of your unlocked item pools and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n-# {tags_string}\n-# from {new_item.id.split(':')[0]}")
+            await message.channel.send(f"You pulled from all of your unlocked item pools and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}\n-# from {new_item.id.split(':')[0]}")
         else:
-            await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n-# {tags_string}")
+            await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}")
     else:
         await message.channel.send(f"You are out of pulls!")
