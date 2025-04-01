@@ -6,23 +6,20 @@ from data_utils import get_playerdata
 
 # Remember to change these when adding or expiring event gifts
 starting_event_pulls = 0
+max_event_pulls = 1
 current_event = "none"
 gift_item_count = 3
-
-# playerdata will have: event_pulls undefined
-# event_gifts set to 0 means user has already claimed
-# expired_event_pulls
 
 async def debug_add_gift(message, user_id):
     playerdata = get_playerdata(user_id)
     setup_playerdata_if_needed(playerdata)
 
     if playerdata["event_pulls"] == starting_event_pulls:
-        return await message.channel.send("That user has the maximum number of event pulls!")
+        return await message.channel.send("That user has all their gifts available to claim!")
 
-    playerdata["event_pulls"] += 1
+    playerdata["event_pulls"] -= 1
     db.set_player_data(user_id, playerdata)
-    return await message.channel.send(f'That user has recieved another gift, bringing the total to {playerdata["event_pulls"]}.')
+    return await message.channel.send(f'That user has recieved a free gift. Now they have claimed {playerdata["event_pulls"]}.')
 
 def setup_playerdata_if_needed(playerdata):
     # set up variables in case this is the first time the player has used an event command
@@ -33,7 +30,7 @@ def setup_playerdata_if_needed(playerdata):
 
 def has_unclaimed_gift(playerdata):
     setup_playerdata_if_needed(playerdata)
-    return playerdata["event_pulls"] > 0
+    return playerdata["event_pulls"] < max_event_pulls
 
 def get_item_id_pool():
     return [item.id for item in event_gift_mech.loot]
@@ -84,7 +81,7 @@ async def event_claim_command(message):
         if "event_pulls" not in playerdata:
             playerdata["event_pulls"] = starting_event_pulls
 
-        playerdata["event_pulls"] -= 1
+        playerdata["event_pulls"] += 1
         db.set_player_data(user_id, playerdata)
         
         item_string = "\n" + '\n'.join([inventory.format_item(x) for x in gift])
