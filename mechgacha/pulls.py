@@ -173,16 +173,10 @@ async def pull_command(message, message_body):
                 break
 
         # april fool's!
-        tags_string = f'-# {", ".join([tag.upper() for tag in new_item.tags])}'
-        if random.random() < 0.5:
-            new_item = create_aprilfools_item()
-            # not added to inventory, just announced
-            tags_string = ""
-        else:
-            inventory.add_to_inventory(new_item, username)
-            deduct_pull(username, playerdata)
+        inventory.add_to_inventory(new_item, username)
+        deduct_pull(username, playerdata)
 
-
+        tags_string = f'{"-# " if len(new_item.tags) > 0 else ""}{", ".join([tag.upper() for tag in new_item.tags])}'
         star_character = "☆" if "event" in new_item.tags else "★"
         stars_string = star_character * new_item.stars
         if requested_mech.lower() == "random":
