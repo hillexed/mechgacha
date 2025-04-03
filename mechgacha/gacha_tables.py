@@ -911,6 +911,33 @@ event_formal = Mech("48th Annual Mech Formal",
     CosmeticItem("event_formal:intoamutecrypt", "Symphony In C", "It's warm and golden like an oven that's wide open.", stars=3, tags=("event",)),
 ])
 
+event_fauna = Mech("FRONT's FAUNA Invitational",
+[
+    LegsItem("event_fauna:bytes","NewtTech Legs","Lose a limb? Regrow it!",stars=3,tags=("event",)),
+    BodyPlanItem("event_fauna:triangle","Metamorphosis","Your mech is still developing. It begins an encounter as a highly armored low mobility crawler: 2 weapons, 0 limbs. Upon maturity the carapace cracks, allowing what has developed to burst forth, a new shape rapidly hardening as it exits: 3 sets legs, 0 arms, can fly. No item is shared between forms.",{"weapon":4,"arms":0,"legs":3,"kit":2,"back":2,"power":2,"body":2},stars=3,tags=("event",)),
+    WeaponItem("event_fauna:ditto","Volt Beetle Horn","This horn seems to be inspired by the Volt Beetles that live in the Core, slowly generating a static charge that can be released to stun opponents.",stars=3,tags=("cockpit", "event",)),
+    BackItem("event_fauna:shork","Mucus Barrier","A free-floating mucus cocoon surrounds your mech. This shield disrupts sensors attempting to identify or locate your mech, and destroys parasitic attachments. Although the shield can tank attacks relatively well, doing so will cause it to lose integrity.",stars=3,tags=("event",)),
+    WeaponItem("event_fauna:hal_2000","Mach Bullet Punchers","Adds another pair of arms to your mech. These arms are mounted with a pair of hanging spring-loaded metal clubs that can launch at a speed exceeding the speed of sound. Enemies in melee range not hit may suffer deafness or be stunned by the firing of a club. Stronger underwater.",stars=3,tags=("event",)),
+    BackItem("event_fauna:syl","Horse Back","It’s a horse, tied to your back. It whinnies occasionally and you can feed it oats.",stars=3,tags=("event",)),
+    BackItem("event_fauna:loading","Photaxis Phlare","A back mounted phase drive that plunges you into the immateria. While submerged in this way you may only move towards sources of strong UV radiation. Luckily this system is also equipped with a strong UV flare gun to provide valid lights, but other lights are also valid.",stars=3,tags=("weapon", "event",)),
+    PowerItem("event_fauna:moonbug","Electric Eel Tank","A large aquarium holding a happy group of electric eels that help power your mech.",stars=3,tags=("event",)),
+    KitItem("event_fauna:thecowofeternalflame","Blood Vents","These vents are connected to whatever fluid the mech uses to keep itself functioning. Like the Horned lizard this is designed after, this allows the mech to fire a short-range blast of it's own \"blood\" as a defense mechanism.",stars=3,tags=("event",)),
+    KitItem("event_fauna:bee","Adaptive Skin","The skin of this mech can change colour and texture in order to communicate, look cool, and camouflage itself. It does not perfectly replicate what is behind it, but instead it can achieve the general vibes of the surface the mech is on.",stars=3,tags=("event",)),
+    BodyPlanItem("event_fauna:hill","Planarian Power","This flatworm bodyplan has zero legs and must wriggle on the ground. However, the first time your mecha is cleanly cut in half, each half can regenerate into a full mecha!",{"legs":0},stars=3,tags=("event",)),
+    KitItem("event_fauna:st_yietus","HAGSKIN DISSUASION SYSTEM","Inspired by the humble hagfish, this system emits voluminous slime from your mech's skin to engulf your foes. The slime expands exponentially in liquid, clogs up enemy intakes, and thanks to a special blend of exotic polymers it also weakens incoming attacks of all kinds! It's the perfect defense.",stars=3,tags=("event",)),
+    KitItem("event_fauna:intergalacticsky ","Vibrissae","Sensory arrays are placed on key parts of the mech, allowing for increased detection of movement, wind, and other disturbances. Extremely sensitive and easy to max out.",stars=3,tags=("event",)),
+    ArmsItem("event_fauna:chimera","Featherful","Fluffy and colorful feathered wings that enable flight.",stars=3,tags=("event",)),
+    KitItem("event_fauna:cheshire","Exuvian Mimic","Shed your skin. This fragile simulacra is already dead, but your doomed twin will do as you ask. Without power, it cannot sustain itself or it's weapons for long, and without you, its poor carapace will not endure the wounds of the world. Do not begrudge your past self for its limitations.",stars=3,tags=("event",)),
+    BackItem("event_fauna:ava_shinedrake","Starbreak Anemone","Your mech has formed a symbiotic relationship with a minor eldritch entity, now anchored to its back. Midnight tendrils flow eerily around your mech, inflicting anything they touch with data hallucinogens that corrupt computers and mesmerize AI. Luckily, repeated exposure has made your mech immune.",stars=3,tags=("weapon", "event",)),
+    BackItem("event_fauna:chillychilichelle","Suriname Birthing Pods","A perforated metal husk inspired by the common Suriname toad. On the surface are a dozen honeycomb-like depressions, each overflowing with a viscous, translucent slime - each housing a miniature biomechanical replica of your mech, ready to burst out on command as drones.",stars=3,tags=("event",)),
+    CosmeticItem("event_fauna:colabot","Deer Dappling","Delicate spotting is painted on your mech’s hindquarters (or… thorax? Your mech’s caboose, alright?). It’s pretty, like the pattern of sunshine through leaves. In a very specific environment, it might help you camouflage yourself, but it most looks nice.",stars=3,tags=("event",)),
+    LegsItem("event_fauna:renne","Snikt Kickers","Spindly metal legs with a lining of waterproof padding. In combat, the endoskeleton's toe parts can be severed on inbuilt faultlines to pierce this padding and provide an additional weapon at a cost to durability.",stars=3,tags=("event",)),
+    BackItem("event_fauna:deric","Arctic-Blast Scales","Your mech's back is covered with massive metal scales. When activated, the edges glow ice blue, they lift up, and a frozen wind gushes out. With condensation, you can release a hail of ice shards. You can also curl up in a spiny frostball.",stars=3,tags=("event",)),
+    LegsItem("event_fauna:blueberry","Poisonous Barbs","While poison may not be much use on an opponent's mech, they still are a very fashionable accessory for everyone who likes platypi.",stars=3,tags=("event",)),
+    BackItem("event_fauna:bogle","Rickety Roost","A rickety tower anchored to the back of your mech ripe with antennae and caked in guano. Once an array of scientific instruments, it's now home to your pigeons.",stars=3,tags=("event",)),
+    BodyItem("event_fauna:zapterra","Extremophile","Extreme resistance to temperature (.05K-150C), pressure (40,000 kPa), sudden impacts (1.14 GPa), and radiation. Capable of making automatic repairs to wiring with access to water, able to survive in a dehydrated state for 30+ years. Can copy opponent resistances if it gets a taste.",stars=3,tags=("event",)),
+])
+
 
 
 
@@ -931,8 +958,8 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"legs": 2, "arms": 2, "powe
 
 ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, urirles, jcterran)
 
-event_mechs = (event_formal, )
-event_gift_mech = None
+event_mechs = (event_formal, event_fauna, )
+event_gift_mech = event_fauna
 all_mechs = ratoon_pullable_mechs + (alto, nullified, ) + event_mechs
 
 
