@@ -298,15 +298,15 @@ renne = Mech("renne",
     LegsItem("renne:tunneling_roots","Tunneling Roots","This mech has great tendrils that can support its weight as would legs, but also dig deep into the ground to provide anchoring when necessary."),
     ArmsItem("renne:plated_growth","Plated Growth","What looks like jointed arms of stone conceals a mass of large vines beneath the exterior armor. This stone exterior can be shed for greater flexibility, but at the cost of what protection it affords."),
     BodyItem("renne:the_tower","The Tower","An imposing cylindrical column upon which rests a stately head. Simple, but iconic in the oldest sense."),
-    CockpitItem("renne:mystic_union","Mystic Union","Tendrils within the main cavity meld themselves to the pilot's extremities and the back of their neck, making it so they see and feel everything the mech can—and can control it as they would their body. This means they feel damage to the mech as pain, and for any mind, perception is reality..."),
+    CockpitItem("renne:mystic_union","Mystic Union","Tendrils within the main cavity meld themselves to the pilot's extremities and the back of their neck, making it so they see and feel everything the mech can—and can control it as they would their body. This means they feel damage to the mech as pain, and for any mind, perception is reality...", stars=3),
     BackItem("renne:hanging_garden","Hanging Garden","This mech has a space on its back where life flourishes. Outside of battle, it may serve as a sanctuary, or a place to grow food.", stars=3),
     WeaponItem("renne:hedge_clipper_turbo","Hedge Clipper Turbo","A massive pair of scissors; the individual blades can split off into dual swords, single-edged."),
     CosmeticItem("renne:time_ravaged","Time-Ravaged","This mech is made of finely-chiseled stone covered in ancient artistic engravings, and much of it has been worn down by time and the elements. Parts of it are held together by plant growth that has overtaken it.", stars=3),
-    BodyPlanItem("renne:beastly_deva","Beastly Deva","This mech was built to be a master of both terrain and adaptability, meaning any relation to the human form is more coincidental than anything. Controlling it may be tricky.", {"legs":6,"arms":4}),
-    CockpitItem("renne:spirit_of_the_earth","Spirit of the Earth","An embodiment of nature has taken residence inside this mech and communicates with the pilot. It does not speak human language, but long-term pilots claim to be able to understand it."),
-    ArmsItem("renne:ancillary_vines","Ancillary Vines","Growing out of the mech's body, these prehensile growths may not have the greatest durability to slashing weapons, but excel at wrapping around things and tethering them."),
-    CosmeticItem("renne:razor_maw","Razor Maw","This mech's face bears a large snout with which it can bite enemies. Who needs weapons when you have the ideal predator body?"),
-    PowerItem("renne:caustic_engine","Caustic Engine","Some kind of bubbling acidic substance courses through this mech. How it doesn't eat through the thing is a small wonder."),
+    BodyPlanItem("renne:beastly_deva","Beastly Deva","This mech was built to be a master of both terrain and adaptability, meaning any relation to the human form is more coincidental than anything. Controlling it may be tricky.", {"legs":6,"arms":4}, stars=4),
+    CockpitItem("renne:spirit_of_the_earth","Spirit of the Earth","An embodiment of nature has taken residence inside this mech and communicates with the pilot. It does not speak human language, but long-term pilots claim to be able to understand it.", stars=2),
+    ArmsItem("renne:ancillary_vines","Ancillary Vines","Growing out of the mech's body, these prehensile growths may not have the greatest durability to slashing weapons, but excel at wrapping around things and tethering them.", stars=2),
+    CosmeticItem("renne:razor_maw","Razor Maw","This mech's face bears a large snout with which it can bite enemies. Who needs weapons when you have the ideal predator body?", stars=4),
+    PowerItem("renne:caustic_engine","Caustic Engine","Some kind of bubbling acidic substance courses through this mech. How it doesn't eat through the thing is a small wonder.", stars=2),
     PowerItem("renne:earthen_crystal","Earthen Crystal","A huge crystal brimming with earth-aspected arcane force. Its size carries tremendous magic, making great or long-lasting effects possible, but its sheer concentration means magic **will** radiate into the pilot with continued operation, affecting one's health, well-being, or biological taxonomy.", stars=5),
 ]
 )
@@ -744,7 +744,7 @@ homeslice = Mech("homeslice",
     BackItem("homeslice:lashers", "Lashers", "Two thick snakelike appendages that extend from the back of the mech that can be used to restrain/grapple an opponent", stars=3),
 ])
 
-shieldcaptain = Mech("Shield Captain",
+shieldcaptain = Mech("shield captain",
 [
     ArmsItem("shieldcaptain:fightin_forks","Fightin' Forks","Standard issue power loader arms rigged with freight forks at the forearm. Great for committing OSHA violations and getting work done.",stars=2),
     ArmsItem("shieldcaptain:linemans_longarms","Lineman's Longarms","Hydraulic cherry picker armatures fitted with hands for all the fun stuff uncertified people never got to touch.",stars=2),
@@ -826,7 +826,7 @@ nevephoenix=Mech("nevephoenix",
     PowerItem("nevephoenix:true_loves_kisses","True Love's Kisses","Feelings describe the power contained in a kiss. Words do not.",stars=5),
 ])
 
-zapterra=Mech("Zapterra",
+zapterra=Mech("zapterra",
 [
     KitItem("zapterra:standard_shoes","Standard Shoes","Shiny, black. One inch heels, thin suede soles, and laces. Driving steps, quick rotation, movement with a partner.",stars=1),
     KitItem("zapterra:latin_shoes","Latin Shoes","Matte, black. Four inch heels, thin suede soles, and laces. Hip action, quick redirections, push and pull connection with a partner.",stars=1),
@@ -868,7 +868,7 @@ jcterran=Mech("jcterran",
 
 
 
-urirles=Mech("Urirles",
+urirles=Mech("urirles",
 [
 	PowerItem("urirles:fusion_cell","Fusion Cell","Stable, efficient, small, boring. Slotted in a standard power mount, it will power a mecha under a normal load and a bit beyond. Just don't expect anything fancy as it was designed with reliability in mind. And cost-cutting, admittedly.",stars=1),
 	KitItem("urirles:last_century_embedded_electronics","Last Century Embedded Electronics","Listen, if it was good enough for working on the Lantern III Scrapyards fifty years ago, it's still good enough now. Old and clunky, yet also hardened and missing some of the wireless stuff that make modern mechs remotely hackable.",stars=1),
