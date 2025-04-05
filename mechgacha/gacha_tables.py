@@ -235,15 +235,15 @@ syl = Mech("syl",
 
 vel = Mech("vel", 
 [
-    PowerItem("vel:big_reactor", "Big Reactor","A big reactor thingy (prolly nuclear adjacent) that gets refueld by hoisting big cartridges in it."),
-    LegsItem("vel:sleek_legs", "Sleek Legs","Two sleek legs and high output thrusters."),
+    PowerItem("vel:big_reactor", "Big Reactor","A big reactor thingy (prolly nuclear adjacent) that gets refueled by hoisting big cartridges in it.", stars=3),
+    LegsItem("vel:sleek_legs", "Sleek Legs","Two sleek legs and high output thrusters.", stars=2),
     ArmsItem("vel:manipulators", "Manipulators", "Hand-like manipulators for big stuff, prolly some small claws on cranes for small stuff."),
     BodyItem("vel:bipedal_frame", "Bipedal Frame","A human-like core (proportions may vary) with advanced sensors near the head or on it."),
     CockpitItem("vel:external_cockpit", "External Cockpit","outside cockpit? it has some periscopes/small windows as a backup."),
-    BackItem("vel:booster_backpack", "Booster Backpack","A backpack with one or two massive boosters with added drop tanks and some light equipment to like change the fuel cell, and ammo/technical equipment/jamming equipment."),
-    WeaponItem("vel:retractible_swords", "Retractible Swords", "A long carbine (think SVD or FRF-1), knife(ves)/retractible swords with the handle tucked in the forearms, plus countermeasures/stun launchers in the limbs."),
-    CosmeticItem("vel:pilot_emblem", "Pilot Emblem", "A big pilot emblem on a shoulder/skirt/side of the bust with a 2-3 colored paint scheme."),
-    BodyItem("vel:durability_frame", "Durability Frame","For improved durability, this body has differently-colored protection plates, big fatter limbs and a rugged drilling or artillery equipment backpack. There are added hardpoints, protection and ground mobility equipment. The sensor-heavy head wears a helmet."),
+    BackItem("vel:booster_backpack", "Booster Backpack","A backpack with one or two massive boosters with added drop tanks and some light equipment to like change the fuel cell, and ammo/technical equipment/jamming equipment.", stars=4),
+    WeaponItem("vel:retractible_swords", "Retractible Swords", "A long carbine (think SVD or FRF-1), knife(ves)/retractible swords with the handle tucked in the forearms, plus countermeasures/stun launchers in the limbs.", stars=3),
+    CosmeticItem("vel:pilot_emblem", "Pilot Emblem", "A big pilot emblem on a shoulder/skirt/side of the bust with a 2-3 colored paint scheme.", stars=2),
+    BodyItem("vel:durability_frame", "Durability Frame","For improved durability, this body has differently-colored protection plates, big fatter limbs and a rugged drilling or artillery equipment backpack. There are added hardpoints, protection and ground mobility equipment. The sensor-heavy head wears a helmet.", stars=3),
     BodyItem("vel:ace_custom_frame", "Ace Custom Frame","This mech is a special personal unit of a famous ace/freedom fighter that's fighting for the betterment of humanity, it's based from a standard military/industrial unit, but was heavily modified and customized to fit a more exploration, reconaissance, sharpshooting role.", stars=5),
 ]
 )
