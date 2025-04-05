@@ -588,6 +588,8 @@ colabot = Mech("colabot",
     BodyPlanItem("colabot:tail_prehensile","Prehensile Tail","Your mech has a highly flexible tail that can be used to improve mobility or to equip one extra short range weapon.", {"weapon":2}),
     BodyPlanItem("colabot:tall","Tall","Your mech is very tall, but all the height comes from its torso - you can equip an extra back slot item. It can be hard to keep track of your legs though… they’re an awfully long way down.", {"back":2}, stars=2),
     LegsItem("colabot:paaaaaws","Paaaaaws","You got some freakin paaaws, dude! They got cute liddle toe beans, and retractible claws!", stars=2),
+    PowerItem("colabot:spell","**The Spell**","The deepest, most secret chamber of your mech is suffused with a sickening octarine glow. **The Spell** is etched into the very fabric of existence. It is unspeakably ancient; your mech was constructed around it in a desperate attempt to channel its energy into something less hazardous to life.",stars=4),
+    WeaponItem("colabot:spellbook","The Spellbook","A hazardous spellbook containing multivarious methods of arcane combat. FIREBALL! Be careful, pilot; the overeager caster can lose themselves to the rush of power, and some spells backfire...", ["cockpit"], stars=4),
 ]
 )
 
