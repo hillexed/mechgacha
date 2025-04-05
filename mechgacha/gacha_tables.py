@@ -588,6 +588,8 @@ colabot = Mech("colabot",
     BodyPlanItem("colabot:tail_prehensile","Prehensile Tail","Your mech has a highly flexible tail that can be used to improve mobility or to equip one extra short range weapon.", {"weapon":2}),
     BodyPlanItem("colabot:tall","Tall","Your mech is very tall, but all the height comes from its torso - you can equip an extra back slot item. It can be hard to keep track of your legs though… they’re an awfully long way down.", {"back":2}, stars=2),
     LegsItem("colabot:paaaaaws","Paaaaaws","You got some freakin paaaws, dude! They got cute liddle toe beans, and retractible claws!", stars=2),
+    PowerItem("colabot:spell","**The Spell**","The deepest, most secret chamber of your mech is suffused with a sickening octarine glow. **The Spell** is etched into the very fabric of existence. It is unspeakably ancient; your mech was constructed around it in a desperate attempt to channel its energy into something less hazardous to life.",stars=4),
+    WeaponItem("colabot:spellbook","The Spellbook","A hazardous spellbook containing multivarious methods of arcane combat. FIREBALL! Be careful, pilot; the overeager caster can lose themselves to the rush of power, and some spells backfire...", ["cockpit"], stars=4),
 ]
 )
 
@@ -599,11 +601,16 @@ loftyinclination = Mech("loftyinclination",
     BodyItem("loftyinclination:gardens_brush","Garden's Brush","Though the underlying form of this body has smooth panel lines, at some points the panels are misaligned, allowing soft fur to poke out from inside."),
     CockpitItem("loftyinclination:cats_eye","Cats Eye","The front surface of the pilot cockpit contains mirrored windows, in the shape of slit eyes. Combined with the internal heads up display, allows for better detection of movement."),
     BackItem("loftyinclination:disjoint_wings","Disjoint wings","Some body panels can detach and act as wings, allowing for gliding on thermals."),
-    KitItem("loftyinclination:oscilloscope_probes","Oscilloscope Probes","These long staff-like tools trail low-impedence cables, hooked into your mech's sensor suite, and divine the potential weaknesses"),
+    KitItem("loftyinclination:oscilloscope_probes","Oscilloscope Probes","These long staff-like tools trail low-impedence cables, hooked into your mech's sensor suite, able to divine the potential weaknesses of your opponent's form"),
     WeaponItem("loftyinclination:modified_oscilloscope_probes","Modified Oscilloscope Probes","The OEM listing for these identifies them as \"sensor accessories\". That's clearly not true any more -- modifications by a previous owner mean that anyone jabbed with the sharpened tip of these spears receives an extreme electric pulse.", stars=4),
     CosmeticItem("loftyinclination:constellation_tattoos","Inlaid Constellation Tattoos","Traced out on your mech's shell in softly glowing silver are the constellations of a planet far away, unknown to you, but that somehow fill you with a great sadness."),
     BodyPlanItem("loftyinclination:catform","Catform","Quadrapedal, for increased stealth and pouncing.", {"legs":4}),
     PowerItem("loftyinclination:fivestar_automated_wiring_harness","Automated Wiring Harness","Attaches to nearby power sources, conduits, and power consuming devices, and siphons energy for use in its own system. Can even draw power from another mechanised unit, impacting the other mech's capabilities.", stars=5),
+    WeaponItem("loftyinclination:ble_spec","Bluetooth Core Specification, v6","This hefty spellbook contains detailed instructions and guidelines for remote communication, which may give you a leg up in electronic warfare. It's also over three thousand pages, so you could also just hit people with it", stars=2),
+    CockpitItem("loftyinclination:workbench","Lorentz Workspace","Stored in a pocket dimension, this workspace allows for on the fly reconfiguration, reverse engineering, or just hanging out and relaxing", stars=3),
+    KitItem("loftyinclination:ladder","Ladder","After countless hours toiling away, scientists have finally unlocked deep enough into the tech tree to invent ladders! Surprisingly difficult to get right, even after they'd already mastered dimensional engineering and stellar manipulation...", stars=4),
+    PowerItem("loftyinclination:ancillary","Ancillary System: Seaglass","If ever your pilot were to be rendered a non-functional part of the mech, this unit ensures that your mech would be able to continue the soiree; a backup of an earlier pilot lives inside your mech, tuning the systems, and sometimes able to operate them", stars=3),
+    ArmsItem("loftyinclination:gantry","Polar Gantry","Two gantries span your mech, capable of accellerating at up to 180000m/s, perfectly suited to speedily maneouvering the sensor suite and manipulators of your mech around your form. However, they don't have much reach...", ["weapon"], stars=2),
 ]
 )
 
