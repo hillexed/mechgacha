@@ -67,12 +67,12 @@ BackItem = itemHelperFunction("back")
 CosmeticItem = itemHelperFunction("cosmetic")
 KitItem = itemHelperFunction("kit")
 
-def BodyPlanItem(id, name, description, bodyplan, stars=1):
+def BodyPlanItem(id, name, description, bodyplan, stars=1, tags=()):
 
     #body plan is a dict of {tagName: number}
 
     # todo: expand this out
     item = Item(id, name, description, stars=stars)
     item.extradata = bodyplan
-    item.tags = ["bodyplan"]
+    item.tags = ("bodyplan",) + tags
     return item

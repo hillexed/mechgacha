@@ -4,10 +4,15 @@ import db
 import inventory
 from data_utils import get_playerdata
 
+event_active = True
+event_name = "FRONT's FAUNA Invitational"
+event_submission_active = False
+event_submission_link = "https://discord.com/channels/817075626431217665/1337801453904986163/1346526720294912000"
+
 # Remember to change these when adding or expiring event gifts
-starting_event_pulls = 0
+starting_event_pulls = 0 # This counts up to max_event_pulls (I think)
 max_event_pulls = 1
-current_event = "none"
+current_event = "fauna"
 gift_item_count = 3
 
 async def debug_add_gift(message, user_id):
@@ -32,6 +37,10 @@ def has_unclaimed_gift(playerdata):
     setup_playerdata_if_needed(playerdata)
     return playerdata["event_pulls"] < max_event_pulls
 
+def get_gift_count(playerdata):
+    setup_playerdata_if_needed(playerdata)
+    return max_event_pulls - playerdata["event_pulls"]
+
 def get_item_id_pool():
     return [item.id for item in event_gift_mech.loot]
 
@@ -41,9 +50,14 @@ def get_game_data_pool_entry_name():
 async def event_info_command(message):
     user_id = message.author.id
     playerdata = get_playerdata(user_id)
-    #return await message.channel.send(f"The 48th annual Mech Formal is currently ongoing!\n{'Use `m!event claim` for your gift bag!' if has_unclaimed_gift(playerdata) else 'You have received your gift bags!'}")
-    #return await message.channel.send("No events are currently ongoing.")
-    return await message.channel.send("A new event is currently being developed! Participate here: https://discord.com/channels/817075626431217665/1337801453904986163/1346526720294912000")
+    if event_active:
+        gift_count = get_gift_count(playerdata)
+        gift_text = f"You can open {gift_count} more gift bag{'s' if gift_count > 1 else ''}. Use `m!event claim` to open one!" if has_unclaimed_gift(playerdata) else "You have no gift bags available to claim!"
+        return await message.channel.send(f"{event_name} is currently ongoing!\n{gift_text}")
+    elif event_submission_active:
+        return await message.channel.send(f"{event_name} is currently being developed! Participate here: {event_submission_link}")
+    else:
+        return await message.channel.send("No events are currently ongoing.")
 
 async def event_claim_command(message):
     user_id = message.author.id
@@ -90,9 +104,9 @@ async def event_claim_command(message):
     else:
         return await message.channel.send("There are no gifts for you to claim.")
 
-async def clam(message):
-    user_id = message.author.id
-    playerdata = get_playerdata(user_id)
-    playerdata["clammed"] = 1
-    db.set_player_data(user_id, playerdata)
-    return await message.channel.send("How'd you find out I'm a bivalve?! I was pretending to be Ratoon so well... If you keep quiet, maybe I'll consider giving you something extra in the next event.")
+#async def clam(message):
+#    user_id = message.author.id
+#    playerdata = get_playerdata(user_id)
+#    playerdata["clammed"] = 1
+#    db.set_player_data(user_id, playerdata)
+#    return await message.channel.send("How'd you find out I'm a bivalve?! I was pretending to be Ratoon so well... If you keep quiet, maybe I'll consider giving you something extra in the next event.")
