@@ -156,8 +156,8 @@ async def handle_commands(message):
     elif message.content.startswith(prefix + "event claim"):
         await event.event_claim_command(message)
 
-    elif message.content.startswith(prefix + "event clam"):
-        await event.clam(message)
+    # elif message.content.startswith(prefix + "event clam"):
+    #    await event.clam(message)
 
     elif message.content.startswith(prefix + "event"):
         message_body = get_command_body(message, "event")
