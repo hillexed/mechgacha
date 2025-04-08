@@ -71,7 +71,7 @@ def player_can_pull_from_mech(mech_to_pull_from, playerdata):
     if mech_to_pull_from.username in ("alto",):
         return True
 
-    return mech_to_pull_from.username in playerdata["unlocked_mechs"] #add .lower()?
+    return mech_to_pull_from.username.lower() in [m.lower() for m in playerdata["unlocked_mechs"]] # deal with any accidental caps
 
 comparative_adjectives = ["angrier","more beautiful","bigger","more boring","cheaper","cleaner","cleverer","closer","colder","cooler","crazier","crispier","cuter","darker","deeper","dirtier","drier","earlier","easier","more expensive","faster","fatter","fewer","fitter","freakier","flatter","fresher","funnier","greater","hairier","happier","healthier","heavier","higher","hotter","hungrier","more interesting","kinder","larger","later","lighter","littler","longer","louder","lower","more modern","more retro"," nearer","newer","nicer","older","older","older","older","poorer","more popular","quicker","richer","sadder","saltier","scarier","shorter","skinnier","slower","smaller","smarter","softer","stronger","taller","thicker","more tired","uglier","warmer","weaker","wetter","wider","younger","better","worse"]
 
