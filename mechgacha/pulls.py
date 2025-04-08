@@ -180,8 +180,8 @@ async def pull_command(message, message_body):
         star_character = "☆" if "event" in new_item.tags else "★"
         stars_string = star_character * new_item.stars
         if requested_mech.lower() == "random":
-            await message.channel.send(f"You pulled from all of your unlocked item pools and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}\n-# from {new_item.id.split(':')[0]}")
+            await message.channel.send(f"You pulled from all of your unlocked item pools and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}\n-# from {new_item.id.split(':')[0]}\nYou have {round(get_mech_pulls(playerdata), 2)} pull{'s' if get_mech_pulls(playerdata) > 1 else ''} remaining.")
         else:
-            await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}")
+            await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}\nYou have {round(get_mech_pulls(playerdata), 2)} pull{'s' if get_mech_pulls(playerdata) > 1 else ''} remaining.")
     else:
         await message.channel.send(f"You are out of pulls!")
