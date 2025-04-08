@@ -21,6 +21,9 @@ class Mech:
     username:str = ""
     loot:set = ()
 
+    def __post_init__(self):
+        self.username = self.username.lower()
+
 @dataclass
 class Item:
     id: str
