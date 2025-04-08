@@ -137,7 +137,7 @@ async def pull_command(message, message_body):
             new_mech = random.choice(mechs_user_doesnt_have)
             add_new_mech(username, playerdata, new_mech)
             deduct_ratoon_pull(username, playerdata)
-            await message.channel.send(f"You got... \n**{new_mech}**!\nNow you can use `m!pull {new_mech}` to get their parts!")
+            await message.channel.send(f"You got... \n**{new_mech}**!\nNow you can use `m!pull {new_mech}` to get their parts!\nOh and ya gots {round(get_ratoon_pulls(playerdata), 2)} pull{'s' if round(get_ratoon_pulls(playerdata), 2) != 1  else ''} left from me.")
             return
         else:
             await message.channel.send("Ya got no pulls from me")
