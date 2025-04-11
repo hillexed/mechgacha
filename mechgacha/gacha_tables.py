@@ -894,6 +894,26 @@ urirles=Mech("urirles",
 	BackItem("urirles:onboard_nanoforge","Onboard Nanoforge","Cutting edge nanomachine powered forge in a sleek design, it can produce most small parts almost instantly, or build structure remotely by dropping nano-goo. And no smoke!",stars=5),
 ])
 
+bogle=Mech("bogle",
+[
+	BodyItem("bogle:red_herring","Red Herring","A sleek aquadynamic body plan with a splash of red. Lauded for its unrivaled formula of balancing speed and evasion in deep water environments, but criticized for sluggish performance in terrestrial arenas.",stars=1),
+	CockpitItem("bogle:rival's_hoodie","Rival's Hoodie","You wear a hoodie your rival gave you to help you recover when you showed up beaten, battered, and shivering cold. You definitely aren’t still wearing it because it carries any special meaning or anything, it’s just comfortable, alright??",["cosmetic"],stars=3),
+	BodyPlanItem("bogle:skillet","Skillet","It’s not about what’s above, but what’s below. While it might not seem much of a threat out in the open, this pancake of a body plan is ideal for rapidly burrowing into sediments. It sacrifices a kit slot for an additional mount for earth breaking weapons.",stars=1),
+	LegsItem("bogle:red_heron","Red Heron","A set of digitigrade legs that can move as swiftly through shallow waters as they can dish out kicks.",stars=1),
+	ArmsItem("bogle:bubblers","Bubblers","These caged propellers attach to the joints of your mech allowing for swift– but obvious– movement underwater. An especially clever pilot can use these bubbles to their advantage.",["legs"],stars=1),
+	CosmeticItem("bogle:mentor's_mark","Mentor's Mark","Your mech features a marking, dent or piece of equipment salvaged off your mentor’s mech.",stars=1),
+	BodyItem("bogle:hatchet","Hatchet","Anyone packing a heavy arsenal knows that the hatchet is the very best, what it lacks in speed it more than makes up for in control. Able to easily reposition for heavy melee strikes, but beware this buoyant armor is highly flammable! Round and bulky in spite of its name.",stars=2),
+	CosmeticItem("bogle:mentor's_mask","Mentor's Mask","A time comes when an Ace must pass on their reputation, this Transforming Mask bears a visage crafted by your mentor and conceals your own. When you open it, describe it briefly, then the commentator is obliged to tell the audience a fact about your mentor. (These facts can be lies.)",stars=2),
+	BodyPlanItem("bogle:kiwi","Kiwi","A haphazard and patently offensive interpretation of a kiwi. It has a single arm as a neck allowing you to attack from above even without high ground.",stars=2),
+	WeaponItem("bogle:limpet_lance","Limpet Lance","It's a lance for jousting, the dimples in the surface look like limpets.",stars=3),
+	KitItem("bogle:adipose_anarchy","Adipose Anarchy","These adaptable fins deploy from the limbs of your mech in water and rotate to accommodate movement.",stars=3),
+	BackItem("bogle:dorsal_duo","Dorsal Duo","Dart through the depths with this pair of fins that protrude from the back of your mech!",stars=3),
+	CockpitItem("bogle:mecha_mollusk","Mecha Mollusk","Whatever it came from has long since returned to the place from whence it came, but it left this chrome shell behind. The shell serves as a semi-spacious cockpit and grants an additional weapon slot that can be used when it's opened.",stars=4),
+	WeaponItem("bogle:mano'war","Man-O'War","Barbed industrial power cables dangle over one of your mech's limbs like a cape. Catch an opposing mech with these and you can directly hook your power source up to the attached part's power circuit, overloading them. More effective the stronger your power output is compared to your target's.",stars=4),
+	KitItem("bogle:weather_transmogrifier","Weather Transmogrifier","It's already bad enough that you can't predict your rival's next move, but dealing with the forecast on top of that? No way! You've rigged up a little satellite dish to your mech that sparks and spins when turned on. It can be used once to trigger arena specific weather or a thunderstorm.",stars=5),
+	PowerItem("bogle:bivalve_engine","Bivalve Engine","Unsuited for terrestrial arenas and prone to overheating, this engine comes standard with a powerful pump to keep it cool. While it provides more than ample power, no amount of clandestine tech can hide your heat signature. Maybe you want someone to notice you?",stars=4),
+])
+
 
 nullified = Mech("nullified",
 [
@@ -975,7 +995,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"legs": 2, "arms": 2, "powe
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, urirles, jcterran)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, urirles, jcterran, bogle)
 
 event_mechs = (event_formal, event_fauna, )
 event_gift_mech = event_fauna
