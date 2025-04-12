@@ -11,7 +11,7 @@ event_submission_link = "https://discord.com/channels/817075626431217665/1337801
 
 # Remember to change these when adding or expiring event gifts
 starting_event_pulls = 0 # This counts up to max_event_pulls (I think)
-max_event_pulls = 1
+max_event_pulls = 2
 current_event = "fauna"
 gift_item_count = 3
 
