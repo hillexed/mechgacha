@@ -918,6 +918,25 @@ bogle=Mech("bogle",
 	PowerItem("bogle:bivalve_engine","Bivalve Engine","Unsuited for terrestrial arenas and prone to overheating, this engine comes standard with a powerful pump to keep it cool. While it provides more than ample power, no amount of clandestine tech can hide your heat signature. Maybe you want someone to notice you?",stars=4),
 ])
 
+avashinedrake=Mech("ava shinedrake",
+[
+	KitItem("avashinedrake:burrower_adaptations","Burrower Adaptations","In one way or another, your mech is adapted for underground movement. Dirt and sand are quick and easy to move through, stone is a bit of a project, and metal isn’t happening.",stars=1),
+	CosmeticItem("avashinedrake:draconic_horns","Draconic Horns","A fearsome crown of horns adorns your mech’s head. Conveys the majesty of dragonkind upon all who bear it.",stars=1),
+	WeaponItem("avashinedrake:pyrocannon","DR4-M \“Dragonflame\” Pyrocannon","An experimental weapon that fires jagged red energy blasts. It’s quite powerful and burns through metal with ease, but it tends to overheat its own internal components, so it damages itself every time it’s fired.",stars=1),
+	KitItem("avashinedrake:duct_tape_dream","Duct Tape and a Dream","You can make it work, you swear. If you have a free moment in battle, you can rig together a broken part of your mech with whatever’s lying around, restoring some of its functionality.",stars=1),
+	CockpitItem("avashinedrake:strange_tome","Tome of Something Stranger","A heavy leatherbound book, clearly ancient but well maintained. It contains nonsensical poems, cryptic images, and impossibly, diagrams of your opponent’s mech and its weak points. Your attacks deal extra damage when they hit a part that your opponent fired or activated this turn.",stars=1),
+	BackItem("avashinedrake:armored_wings","Armored Wings","Heavy metal wings equipped with a powerful grav repulsor array. They’re quite tough and can carry a lot of weight, but offer substantially slower flight than most alternatives. While grounded, they can be wrapped around your mech, creating a cumbersome but effective shield.",stars=2),
+	CockpitItem("avashinedrake:glittering_hoard","Glittering Hoard","Your cockpit is stuffed with treasure, be it collectables, trading cards, gold and jewels, stuffed animals, books, or whatever else. It’s your hoard, take pride in it!",["cosmetic"],stars=2),
+	WeaponItem("avashinedrake:tearing_claws","Tearing Claws","Hardsteel claws covered in serrations and sharpened to terrifying points. Designed to gouge into metal and tear mechs apart, these claws will reduce anything to scrap if you can just get close enough.",stars=2),
+	PowerItem("avashinedrake:wyvern_core","TLX-60 Wyvern Core","Ferocious orange fire powers this battered but solid reactor, bursting from vents and jets on your mech in dramatic flares. It’s optimized to power flight systems, and seems itching to get into the heat of battle. Your mech moves significantly faster when flying directly towards your opponent.",stars=2),
+	WeaponItem("avashinedrake:darinithrax_coils","Amplified Darinithrax Coils","An arcane engine that replicates the breath weapon of a legendary lightning dragon. Launches a massive, unfocused blast of electricity at your opponent. Arcs towards metal, fries computer systems and melts internal components on hit.",stars=3),
+	KitItem("avashinedrake:dracoguard_familiar","Dracoguard Familiar Submech","A small reptilian mech follows yours into battle. Technically classified as a drone, it’s grounded and has no weapons systems, but it’s robust enough to tank moderate firepower and strong enough to break and manipulate terrain efficiently.",stars=3),
+	BodyPlanItem("avashinedrake:draconic_form","Draconic Form","Your mech takes the form of a quadrupedal dragon. Two pairs of legs, but no arms, and an extra weapon slot mounted in the jaws. Wings not required, but highly recommended!",{"legs":4,"arms":0,"weapon":3},stars=3),
+	ArmsItem("avashinedrake:sorcerous_manipulators","Sorcerous Manipulators","Small, precise arms useless for most purposes, but perfectly suited to casting spells. Can fire magical blasts of various elements. In addition, once per battle you can invoke one of your Cosmetic items to cast a spell that thematically resonates with it (subject to referee approval).",["weapon"],stars=4),
+	LegsItem("avashinedrake:striker_class_raptor","Striker-class Raptor AX-80s","These sleek metal legs are top of the line, offering excellent speed and solid durability. However, they’re primarily used as offensive tools, being designed for stomping and kicking. Equipped with auto-balancing arrays and talons designed for puncturing, the Raptor AX-80s hit fast and hit hard.",stars=4),
+	CockpitItem("avashinedrake:sureness_of_being","Sureness of Being","Your sense of self shines bright in your mind’s eye, untarnished by the wounds of the world. Once per fight, you can Remember Who You Are, replacing damaged or destroyed parts of your mech with hardlight replicas for a turn. Damage taken during this turn doesn’t affect you until the turn ends.",stars=5),
+])
+
 
 nullified = Mech("nullified",
 [
@@ -999,7 +1018,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"legs": 2, "arms": 2, "powe
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, urirles, jcterran, bogle)
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, urirles, jcterran, bogle, avashinedrake)
 
 event_mechs = (event_formal, event_fauna, )
 event_gift_mech = event_fauna
