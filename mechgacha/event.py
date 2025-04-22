@@ -4,15 +4,15 @@ import db
 import inventory
 from data_utils import get_playerdata
 
-event_active = True
-event_name = "FRONT's FAUNA Invitational"
-event_submission_active = False
-event_submission_link = "https://discord.com/channels/817075626431217665/1337801453904986163/1346526720294912000"
+event_active = False
+event_name = "The Core's 46,753rd Quadrimestral Labour Day Celebration"
+event_submission_active = True
+event_submission_link = "https://forms.gle/d5A4YeZ6kQw7yeYg7"
 
 # Remember to change these when adding or expiring event gifts
 starting_event_pulls = 0 # This counts up to max_event_pulls (I think)
-max_event_pulls = 2
-current_event = "fauna"
+max_event_pulls = 0
+current_event = "none"
 gift_item_count = 3
 
 async def debug_add_gift(message, user_id):
