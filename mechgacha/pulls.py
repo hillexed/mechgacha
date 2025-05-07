@@ -127,6 +127,34 @@ async def pull_command(message, message_body):
             return await message.channel.send(f"\nUse m!pull <mech> to pull from their list! You can pull from: {', '.join(player_mechs)}. You have {round(get_mech_pulls(playerdata), 2)} pulls.\n You can also use `m!pull ratoon` to get some mechs from Ratoon's gachapon. You have {round(get_ratoon_pulls(playerdata),2)} pulls from Ratoon's gachapon.")
 
 
+    # return any invalid mechs to ratoon pulls (or convert to the equivalent valid one)
+    invalid_mechs = []
+    for i in range(len(playerdata["unlocked_mechs"])):
+        mech_name = playerdata["unlocked_mechs"][i]
+        invalid = True
+        for mech in ratoon_pullable_mechs:
+            # convert malformed valid mech if dont have it already
+            if mech_name != mech.username:
+                normalized_mech_name = mech_name.lower().replace(" ", "").replace(".", "_")
+                if normalized_mech_name == mech.username and mech.username not in playerdata["unlocked_mechs"]:
+                    mech_name = mech.username
+                    playerdata["unlocked_mechs"][i] = mech_name
+                    db.set_player_data(username, playerdata)
+            # valid
+            if mech_name == mech.username:
+                invalid = False
+                break
+        if invalid:
+            invalid_mechs.append(mech_name)
+    if invalid_mechs:
+        # refund leftover invalid
+        for mech_name in invalid_mechs:
+            playerdata["unlocked_mechs"].remove(mech_name)
+            playerdata["ratoon_pulls"] += 1
+        db.set_player_data(username, playerdata)
+        return await message.channel.send("Pull interrupted to refund invalid mechs: "+", ".join(invalid_mechs)+". "+str(len(invalid_mechs))+" ratoon pulls gained.")
+
+
     if requested_mech.lower() == "ratoon":
 
         if get_ratoon_pulls(playerdata) >= 1: # can pull
