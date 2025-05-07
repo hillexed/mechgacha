@@ -4,20 +4,42 @@ import db
 import inventory
 from data_utils import get_playerdata
 
+event_active = False
+event_name = "The Core's 46,753rd Quadrimestral Labour Day Celebration"
+event_submission_active = True
+event_submission_link = "https://forms.gle/d5A4YeZ6kQw7yeYg7"
+
 # Remember to change these when adding or expiring event gifts
-starting_event_pulls = 2
-current_event = "event_formal"
+starting_event_pulls = 0 # This counts up to max_event_pulls (I think)
+max_event_pulls = 0
+current_event = "none"
 gift_item_count = 3
 
-# playerdata will have: event_pulls undefined
-# event_gifts set to 0 means user has already claimed
-# expired_event_pulls
+async def debug_add_gift(message, user_id):
+    playerdata = get_playerdata(user_id)
+    setup_playerdata_if_needed(playerdata)
 
-def has_unclaimed_gift(playerdata):
+    if playerdata["event_pulls"] == starting_event_pulls:
+        return await message.channel.send("That user has all their gifts available to claim!")
+
+    playerdata["event_pulls"] -= 1
+    db.set_player_data(user_id, playerdata)
+    return await message.channel.send(f'That user has recieved a free gift. Now they have claimed {playerdata["event_pulls"]}.')
+
+def setup_playerdata_if_needed(playerdata):
+    # set up variables in case this is the first time the player has used an event command
+    # make sure to save the playerdata afterwards in the DB!
     if "event_pulls" not in playerdata or playerdata["last_event"] != current_event:
         playerdata["event_pulls"] = starting_event_pulls
         playerdata["last_event"] = current_event
-    return playerdata["event_pulls"] > 0
+
+def has_unclaimed_gift(playerdata):
+    setup_playerdata_if_needed(playerdata)
+    return playerdata["event_pulls"] < max_event_pulls
+
+def get_gift_count(playerdata):
+    setup_playerdata_if_needed(playerdata)
+    return max_event_pulls - playerdata["event_pulls"]
 
 def get_item_id_pool():
     return [item.id for item in event_gift_mech.loot]
@@ -28,7 +50,14 @@ def get_game_data_pool_entry_name():
 async def event_info_command(message):
     user_id = message.author.id
     playerdata = get_playerdata(user_id)
-    return await message.channel.send(f"The 48th annual Mech Formal is currently ongoing!\n{'Use `m!event claim` for your gift bag!' if has_unclaimed_gift(playerdata) else ''}")
+    if event_active:
+        gift_count = get_gift_count(playerdata)
+        gift_text = f"You can open {gift_count} more gift bag{'s' if gift_count > 1 else ''}. Use `m!event claim` to open one!" if has_unclaimed_gift(playerdata) else "You have no gift bags available to claim!"
+        return await message.channel.send(f"{event_name} is currently ongoing!\n{gift_text}")
+    elif event_submission_active:
+        return await message.channel.send(f"{event_name} is currently being developed! Participate here: {event_submission_link}")
+    else:
+        return await message.channel.send("No events are currently ongoing.")
 
 async def event_claim_command(message):
     user_id = message.author.id
@@ -66,7 +95,7 @@ async def event_claim_command(message):
         if "event_pulls" not in playerdata:
             playerdata["event_pulls"] = starting_event_pulls
 
-        playerdata["event_pulls"] -= 1
+        playerdata["event_pulls"] += 1
         db.set_player_data(user_id, playerdata)
         
         item_string = "\n" + '\n'.join([inventory.format_item(x) for x in gift])
@@ -75,9 +104,9 @@ async def event_claim_command(message):
     else:
         return await message.channel.send("There are no gifts for you to claim.")
 
-async def clam(message):
-    user_id = message.author.id
-    playerdata = get_playerdata(user_id)
-    playerdata["clammed"] = 1
-    db.set_player_data(user_id, playerdata)
-    return await message.channel.send("How'd you find out I'm a bivalve?! I was pretending to be Ratoon so well... If you keep quiet, maybe I'll consider giving you something extra in the next event.")
+#async def clam(message):
+#    user_id = message.author.id
+#    playerdata = get_playerdata(user_id)
+#    playerdata["clammed"] = 1
+#    db.set_player_data(user_id, playerdata)
+#    return await message.channel.send("How'd you find out I'm a bivalve?! I was pretending to be Ratoon so well... If you keep quiet, maybe I'll consider giving you something extra in the next event.")

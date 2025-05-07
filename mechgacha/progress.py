@@ -53,7 +53,9 @@ async def progress_command(message, message_body):
         for (item, count) in items_with_stars:
             tags_string = f' ({", ".join([tag.lower() for tag in item.tags])})' if len(item.tags) > 0 else ""
             if count == 0:
-                sub_array.append(f"- ???{tags_string}")
+                # "secret" tag means item doesn't show up in item list until you have it
+                if "secret" not in item.tags: 
+                    sub_array.append(f"- ???{tags_string}")
             else:
                 item_string = f"- {item.name}{tags_string}"
                 if count > 1:

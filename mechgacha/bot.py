@@ -75,9 +75,12 @@ async def handle_commands(message):
         # update last used channel
         db.update_data("last_channel", message.channel.id, "stats")
 
-    elif message.content.startswith(prefix + "inventory"):
+    elif message.content.startswith(prefix + "inv"):
 
-        message_body = get_command_body(message, "inventory")
+        message_body = get_command_body(message, "inv")
+        if message.content.startswith(prefix + "inventory"):
+            message_body = get_command_body(message, "inventory")
+        
 
         #if user_is_admin(message) and len(message_body) > 0 and "regenerate" in message_body:
         #    if "<@" in message_body and ">" in message_body:
@@ -114,7 +117,7 @@ async def handle_commands(message):
             regeneration.regenerate_everyones_pulls()
             return await message.channel.send("Everyone's pulls have regenerated!")
 
-        await inventory.inventory_command(message, get_command_body(message, "inventory"), client)
+        await inventory.inventory_command(message, message_body, client)
    
     elif message.content.startswith(prefix + "mech equip"):
         await equip.equip_command(message, get_command_body(message, "mech equip"), client)
@@ -122,6 +125,8 @@ async def handle_commands(message):
     elif message.content.startswith(prefix + "scrap"):
         await scrap.scrap_command(message, get_command_body(message, "scrap"), client)
     
+    elif message.content.startswith(prefix + "recycle"): # alias
+        await scrap.scrap_command(message, get_command_body(message, "recycle"), client)
     
     elif message.content.startswith(prefix + "mech unequip"):
         await equip.unequip_command(message, get_command_body(message, "mech unequip"), client)
@@ -151,11 +156,20 @@ async def handle_commands(message):
     elif message.content.startswith(prefix + "event claim"):
         await event.event_claim_command(message)
 
-    elif message.content.startswith(prefix + "event clam"):
-        await event.clam(message)
+    # elif message.content.startswith(prefix + "event clam"):
+    #    await event.clam(message)
 
     elif message.content.startswith(prefix + "event"):
-        await event.event_info_command(message)
+        message_body = get_command_body(message, "event")
+        if user_is_admin(message) and "debug_add" in message_body:
+            if "<@" in message_body and ">" in message_body:
+                atted_userID = message_body.split("<@")[1].split(">")[0]
+                return await event.debug_add_gift(message, atted_userID)
+            else:
+                return await message.channel.send("@ a user to use!")
+
+        else:
+            await event.event_info_command(message)
 
     elif message.content.startswith(prefix + "wakeup"):
         await message.channel.send("ok ok im up")
@@ -212,4 +226,9 @@ if __name__ == "__main__":
         token = config["DEV_TOKEN"]
     regeneration.start_timer()
 
-    client.run(token, log_level=logging.DEBUG)
+    try:
+        client.run(token, log_level=logging.INFO)
+    except Exception as e:
+        logging.error("Received exception: ")
+        logging.exception(e)
+    logging.info("Shutting down")

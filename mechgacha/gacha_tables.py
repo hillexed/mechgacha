@@ -15,13 +15,14 @@ bee = Mech("bee", [
     BackItem("bee:cloak_of_stars","Cloak of stars","A field of stars that moves and adapts as an armor where you need it to, absorbing medium impacts provided you move it to the impact site before the impact happens.", stars=4),
     WeaponItem("bee:void_slicer","Void Slicer","A glittering blade so sharp that it feels like it can tear the fabric of space if you put enough force into it. it leaves a glittering trail.", stars=2),
     CosmeticItem("bee:living_satellite","Living Satellite","A small planet orbits your mech, supporting a microcosm of life.", stars=3),
-    BodyPlanItem("bee:comet_form","Comet Form","A long thin form, with one leg and 6 arm slots, trailing behind the cockpit and core like a comet trail.",{"leg": 1, "arm": 6}, stars=4),
+    BodyPlanItem("bee:comet_form","Comet Form","A long thin form, with one leg and 6 arm slots, trailing behind the cockpit and core like a comet trail.",{"legs": 1, "arms": 6}, stars=4),
     CosmeticItem("bee:satellite","Gas Satellite","A small ball of swirling gasses orbits your mech.", stars=3),
     CosmeticItem("bee:gas_satellite","Rock Satellite","A tiny comet and trail orbit your mech.", stars=3),
     CosmeticItem("bee:artificial_satellite","Artificial Satellite","A small artificial space structure (a satellite, space ship, etc) orbits your mech.", stars=3),
     PowerItem("bee:blackhole_drive","Blackhole Drive","An infinitely deep hole in reality, the pull of the density object in the universe, contained only by the mech itself.", stars=5),
     PowerItem("bee:supernova_drive","Supernova Drive","A core of swirling energy, the captured explosion of a star, held together with the force of dark matter. Iridescent and an unstoppable force.", stars=5),
-    WeaponItem("bee:gravitational_lensing", "Gravitational Lensing", "Using gravity, you can shunt power in to a strong focal beam to stab through your enemies at range.", stars=4)
+    WeaponItem("bee:gravitational_lensing", "Gravitational Lensing", "Using gravity, you can shunt power in to a strong focal beam to stab through your enemies at range.", stars=4),
+    WeaponItem("bee:gravity_mines", "Gravity Mines", "These mines stick to surfaces and change gravity in their radius, both strength and direction can be changed upon, but not after, throwing. ", stars=4)
 ]
 )
 
@@ -173,14 +174,14 @@ metanite64 = Mech("metanite64",
     LegsItem("metanite64:pumped_up", "Pumped Up","The feet appear to be dance pads from an ancient dancing-based rhythm arcade game. The legs are boxy yet streamlined, agile enough for some dancing of its own."),
     ArmsItem("metanite64:sylish_circut", "Stylish Circuit","A copper plate resides within the left forearm, etched to resemble a keyboard. With the metallic tips of the right hand's fingers, one may close the giant circuit and produce the purest sound."),
     BodyItem("metanite64:soundbox_5_1", "SOUNDBOX 5.1","A solid cube covered in a fine mesh material. The power source hovers in the center."),
-    CockpitItem("metanite64:gba_cartridge_collection", "GBA Cartridge Collection","a GBA and a number of custom cartridges. One of them is the Nanoloop 2, while the rest each play a different looping musical work."),
-    BackItem("metanite64:roaring_wind", "Roaring Wind","Giant speakers. Bystanders may experience sudden deafness and strong winds.", ["weapon"]),
-    WeaponItem("metanite64:hathors_blade", "Hathor's Blade","A gift from the goddess of music, modified beyond recognition into both a keytar and a giant sword."),
+    CockpitItem("metanite64:gba_cartridge_collection", "GBA Cartridge Collection","a GBA and a number of custom cartridges. One of them is the Nanoloop 2, while the rest each play a different looping musical work.", stars=2),
+    BackItem("metanite64:roaring_wind", "Roaring Wind","Giant speakers. Bystanders may experience sudden deafness and strong winds.", ["weapon"], stars=3),
+    WeaponItem("metanite64:hathors_blade", "Hathor's Blade","A gift from the goddess of music, modified beyond recognition into both a keytar and a giant sword.", stars=4),
     CosmeticItem("metanite64:waveform", "Waveform","A neon purple visual representation of the audio that the mech is currently playing. When the mech is silent, the waveform gradually shapeshifts between one of a few basic waves (sine, sawtooth, triangle, square).", stars=3),
-    BackItem("metanite64:sheath_pockets", "Sheath Pockets","up to two extra weapons/tools can be stored alongside the mech's back accessory, fitting neatly into long pockets that criss-cross the mech's back."),
-    WeaponItem("metanite64:batonatone", "Batonatone","That Otamatone looks pretty mad. Even looking at it wrong would probably get you whacked on the head."),
-    WeaponItem("metanite64:don_and_ka", "Don and Ka","Two ancient ritual drumsticks, one orange and one blue. Taiko not included."),
-    CosmeticItem("metanite64:golden_fiddle", "Golden Fiddle","It's said that a mere boy won this fiddle after besting the Devil in a duel of music. Some say that they've heard the fiddle playing itself."),
+    BackItem("metanite64:sheath_pockets", "Sheath Pockets","up to two extra weapons/tools can be stored alongside the mech's back accessory, fitting neatly into long pockets that criss-cross the mech's back.", stars=2),
+    WeaponItem("metanite64:batonatone", "Batonatone","That Otamatone looks pretty mad. Even looking at it wrong would probably get you whacked on the head.", stars=2),
+    WeaponItem("metanite64:don_and_ka", "Don and Ka","Two ancient ritual drumsticks, one orange and one blue. Taiko not included.", stars=2),
+    CosmeticItem("metanite64:golden_fiddle", "Golden Fiddle","It's said that a mere boy won this fiddle after besting the Devil in a duel of music. Some say that they've heard the fiddle playing itself.", stars=3),
     BackItem("metanite64:cobras_roar", "Cobra's Roar","5 star of the Roaring Wind. Even giant-er speakers. Either through deafness or death, the roar of the cobra is the last thing you'll get to hear.", ["weapon"], stars=5),
 ]
 )
@@ -210,26 +211,39 @@ syl = Mech("syl",
     BackItem("syl:vending_machine", "Vending Machine","Tied to the back of the mech, possibly as a counterweight, is a battered old vending machine. The chips and cookies inside are somehow still intact despite years of mech battling.", ["cosmetic"]),
     WeaponItem("syl:plain_palms", "Plain Palms","This mech has no primary weapon, but prefers hand-to-hand combat. Specifically, it slaps people."),
     CosmeticItem("syl:fallen_leaves", "Fallen Leaves","Old leaves from aspen trees are stuck to the sides and roof of this mech, as if it had just walked through a forest."),
-    BodyPlanItem("syl:dual_cockpits", "Dual Cockpits", "In this alternate body plan, the mech has a secondary cockpit for drift control-a quad bike balanced on top of the main cockpit for a second pilot.", {"cockpit": 2}),
+    BodyPlanItem("syl:dual_cockpits", "Dual Cockpits", "This mech has two seats for two pilots to sit alongside, if they are Drift Compatible. (A second player joins your mech in battle to split the task of operating it.)", {"cockpit": 2}, stars=5),
     CosmeticItem("syl:tied_up_horse", "Tied-Up Horse","This mech has a horse tied up to one of its legs. Not sure how it stays there in combat."),
     CosmeticItem("syl:space_pinup", "Space Pinup","On the side of this mech, painted in bright neon colors, is a pinup of a shirtless Jar Jar Binks.", stars=3),
     CockpitItem("syl:single_tape_boombox", "Single-Tape Boombox","This mech has a retro boombox in the cockpit, and the tape that is unremovably stuck in it is “Greatest Hits Volume 1” by the Eagles."),
     BackItem("syl:redbox_machine", "Redbox Machine", "Tied to the back of the mech, possibly as a counterweight, is a battered old Redbox machine, but the movies it dispenses are ones no one has ever seen before. Recently, you rented Goncharov (1973) by Martin Scorsese.", ["cosmetic"], stars=5),
+    BackItem("syl:guavapon","Guavapon","Dispenses guavas of varying rarities, from Common to Legendary.",stars=2),
+    CosmeticItem("syl:horse_head","Horse Head","Found in the bed of some mafioso, it drips blood constantly and occasionally eats oats.",stars=2),
+    BackItem("syl:ponytail","Ponytail","Hair put up in a style associated with young girls and butch lesbians. Goes all the way down your mech’s back.",stars=2),
+    WeaponItem("syl:horse_gun","Horse Gun","Fires a Clydesdale horse at relativistic speeds.",stars=5),
+    WeaponItem("syl:horse_summoning_staff","Horse Summoning Staff","Summons normal but very angry horses to fight alongside you.",stars=3),
+    KitItem("syl:bag_of_oats","Bag of Oats","It’s a bag of oats. ",stars=2),
+    WeaponItem("syl:curry_comb","Curry Comb","You can brush a horse with it, or throw it at someone in a pinch.",stars=1),
+    LegsItem("syl:pony_express","Pony Express","Gives your mech the speed and stamina of a cross-country horseback mail courier.",stars=4),
+    CosmeticItem("syl:horse_joker","Horse Joker","A paper playing card with a horse in clown makeup on it. +1 Mult for every horse-themed part equipped.",stars=3),
+    CockpitItem("syl:saddle","Saddle","Found in village chests and underground mine shafts. ",stars=1),
+    CockpitItem("syl:epona","Epona","This iconic horse has blocky N64-era graphics but a pure heart. Pilots your mech for you and is “equipped” as a second cockpit.",stars=3),
+    WeaponItem("syl:glue_factory","Glue Factory","Sprays Elmer’s glue at opponents. Don’t worry about what it was made out of.",stars=2),
+    KitItem("syl:horse_girl_hypnosis","Horse Girl Hypnosis","Upon viewing this battered VHS tape, you become filled with the urge to put your hair in a ponytail and buy plastic horse models.",["cosmetic"],stars=5),
 ]
 )
 
 
 vel = Mech("vel", 
 [
-    PowerItem("vel:big_reactor", "Big Reactor","A big reactor thingy (prolly nuclear adjacent) that gets refueld by hoisting big cartridges in it."),
-    LegsItem("vel:sleek_legs", "Sleek Legs","Two sleek legs and high output thrusters."),
+    PowerItem("vel:big_reactor", "Big Reactor","A big reactor thingy (prolly nuclear adjacent) that gets refueled by hoisting big cartridges in it.", stars=3),
+    LegsItem("vel:sleek_legs", "Sleek Legs","Two sleek legs and high output thrusters.", stars=2),
     ArmsItem("vel:manipulators", "Manipulators", "Hand-like manipulators for big stuff, prolly some small claws on cranes for small stuff."),
     BodyItem("vel:bipedal_frame", "Bipedal Frame","A human-like core (proportions may vary) with advanced sensors near the head or on it."),
     CockpitItem("vel:external_cockpit", "External Cockpit","outside cockpit? it has some periscopes/small windows as a backup."),
-    BackItem("vel:booster_backpack", "Booster Backpack","A backpack with one or two massive boosters with added drop tanks and some light equipment to like change the fuel cell, and ammo/technical equipment/jamming equipment."),
-    WeaponItem("vel:retractible_swords", "Retractible Swords", "A long carbine (think SVD or FRF-1), knife(ves)/retractible swords with the handle tucked in the forearms, plus countermeasures/stun launchers in the limbs."),
-    CosmeticItem("vel:pilot_emblem", "Pilot Emblem", "A big pilot emblem on a shoulder/skirt/side of the bust with a 2-3 colored paint scheme."),
-    BodyItem("vel:durability_frame", "Durability Frame","For improved durability, this body has differently-colored protection plates, big fatter limbs and a rugged drilling or artillery equipment backpack. There are added hardpoints, protection and ground mobility equipment. The sensor-heavy head wears a helmet."),
+    BackItem("vel:booster_backpack", "Booster Backpack","A backpack with one or two massive boosters with added drop tanks and some light equipment to like change the fuel cell, and ammo/technical equipment/jamming equipment.", stars=4),
+    WeaponItem("vel:retractible_swords", "Battle-Tested Loadout", "A long carbine (think SVD or FRF-1), knife(ves)/retractible swords with the handle tucked in the forearms, plus countermeasures/stun launchers in the limbs.", stars=3),
+    CosmeticItem("vel:pilot_emblem", "Pilot Emblem", "A big pilot emblem on a shoulder/skirt/side of the bust with a 2-3 colored paint scheme.", stars=2),
+    BodyItem("vel:durability_frame", "Durability Frame","For improved durability, this body has differently-colored protection plates, big fatter limbs and a rugged drilling or artillery equipment backpack. There are added hardpoints, protection and ground mobility equipment. The sensor-heavy head wears a helmet.", stars=3),
     BodyItem("vel:ace_custom_frame", "Ace Custom Frame","This mech is a special personal unit of a famous ace/freedom fighter that's fighting for the betterment of humanity, it's based from a standard military/industrial unit, but was heavily modified and customized to fit a more exploration, reconaissance, sharpshooting role.", stars=5),
 ]
 )
@@ -284,15 +298,15 @@ renne = Mech("renne",
     LegsItem("renne:tunneling_roots","Tunneling Roots","This mech has great tendrils that can support its weight as would legs, but also dig deep into the ground to provide anchoring when necessary."),
     ArmsItem("renne:plated_growth","Plated Growth","What looks like jointed arms of stone conceals a mass of large vines beneath the exterior armor. This stone exterior can be shed for greater flexibility, but at the cost of what protection it affords."),
     BodyItem("renne:the_tower","The Tower","An imposing cylindrical column upon which rests a stately head. Simple, but iconic in the oldest sense."),
-    CockpitItem("renne:mystic_union","Mystic Union","Tendrils within the main cavity meld themselves to the pilot's extremities and the back of their neck, making it so they see and feel everything the mech can—and can control it as they would their body. This means they feel damage to the mech as pain, and for any mind, perception is reality..."),
+    CockpitItem("renne:mystic_union","Mystic Union","Tendrils within the main cavity meld themselves to the pilot's extremities and the back of their neck, making it so they see and feel everything the mech can—and can control it as they would their body. This means they feel damage to the mech as pain, and for any mind, perception is reality...", stars=3),
     BackItem("renne:hanging_garden","Hanging Garden","This mech has a space on its back where life flourishes. Outside of battle, it may serve as a sanctuary, or a place to grow food.", stars=3),
     WeaponItem("renne:hedge_clipper_turbo","Hedge Clipper Turbo","A massive pair of scissors; the individual blades can split off into dual swords, single-edged."),
     CosmeticItem("renne:time_ravaged","Time-Ravaged","This mech is made of finely-chiseled stone covered in ancient artistic engravings, and much of it has been worn down by time and the elements. Parts of it are held together by plant growth that has overtaken it.", stars=3),
-    BodyPlanItem("renne:beastly_deva","Beastly Deva","This mech was built to be a master of both terrain and adaptability, meaning any relation to the human form is more coincidental than anything. Controlling it may be tricky.", {"legs":6,"arms":4}),
-    CockpitItem("renne:spirit_of_the_earth","Spirit of the Earth","An embodiment of nature has taken residence inside this mech and communicates with the pilot. It does not speak human language, but long-term pilots claim to be able to understand it."),
-    ArmsItem("renne:ancillary_vines","Ancillary Vines","Growing out of the mech's body, these prehensile growths may not have the greatest durability to slashing weapons, but excel at wrapping around things and tethering them."),
-    CosmeticItem("renne:razor_maw","Razor Maw","This mech's face bears a large snout with which it can bite enemies. Who needs weapons when you have the ideal predator body?"),
-    PowerItem("renne:caustic_engine","Caustic Engine","Some kind of bubbling acidic substance courses through this mech. How it doesn't eat through the thing is a small wonder."),
+    BodyPlanItem("renne:beastly_deva","Beastly Deva","This mech was built to be a master of both terrain and adaptability, meaning any relation to the human form is more coincidental than anything. Controlling it may be tricky.", {"legs":6,"arms":4}, stars=4),
+    CockpitItem("renne:spirit_of_the_earth","Spirit of the Earth","An embodiment of nature has taken residence inside this mech and communicates with the pilot. It does not speak human language, but long-term pilots claim to be able to understand it.", stars=2),
+    ArmsItem("renne:ancillary_vines","Ancillary Vines","Growing out of the mech's body, these prehensile growths may not have the greatest durability to slashing weapons, but excel at wrapping around things and tethering them.", stars=2),
+    CosmeticItem("renne:razor_maw","Razor Maw","This mech's face bears a large snout with which it can bite enemies. Who needs weapons when you have the ideal predator body?", stars=4),
+    PowerItem("renne:caustic_engine","Caustic Engine","Some kind of bubbling acidic substance courses through this mech. How it doesn't eat through the thing is a small wonder.", stars=2),
     PowerItem("renne:earthen_crystal","Earthen Crystal","A huge crystal brimming with earth-aspected arcane force. Its size carries tremendous magic, making great or long-lasting effects possible, but its sheer concentration means magic **will** radiate into the pilot with continued operation, affecting one's health, well-being, or biological taxonomy.", stars=5),
 ]
 )
@@ -310,6 +324,14 @@ moonbug = Mech("moonbug",
     WeaponItem("moonbug:delta_theta_wave_generator","Delta-Theta Wave Generator","A piece of repurposed lab equipment, it is able to create the illusive Delta-Theta waves, which has mutagenic properties for some \"people\" (It's a speaker that turns you into an animal.)", stars=4),
     LegsItem("moonbug:legs_design_173","Design Type. 173","A pair of mech legs that seem to be crudely made of plaster and spray paint. Despite that, these legs are immensely flexible and mobile... if no one is looking at you."),
     BackItem("moonbug:finarian_phase_diver","Finarian Phase Diver","A back mounted piece of equipment upgraded and repaired across generations. It allows a mech to dive into the immateria. Dozens of stamped seals in Finarian tongue act as a blueprint and a ward to prevent unreality from leaking into the mech, letting it stride the depths for as long as it has power.", stars=5),
+    LegsItem("moonbug:jpeg_leg","JPEG Leg","One leg is perfectly fine, the other is a crusty artifact ridden .JPG of a pegleg propping your mech up. ",stars=1),
+    CosmeticItem("moonbug:tamagacha_toy","Tamagacha Toy","A mecha-sized digital pet held somewhere on your mech, make sure to keep it fed!",stars=2),
+    KitItem("moonbug:l0ki_cyberwarfare_suite","L0KI Cyberwarfare Suite","A suite of automated scripts and exploits made by Core based cracking group Team L0KI allowing you to hack anything your mech can connect to, including other mechs. Wireless by default, it can use wired connections for more hardened targets.",stars=3),
+    WeaponItem("moonbug:datablade","Datablade","An intricate blade embedded in the wrist of your mech that allows anything stabbed by it to connect to your mech. A locking mechanism allows the pilot to “unlatch” the blade inside the target and still wirelessly connect to it. ",stars=3),
+    KitItem("moonbug:merriment_blockwall","Merriment Blockwall","Somehow, this B.A.C.K Archivist has found her way onto your mech. Her hair is grey, and her body isn't what it used to be... But she is glad for the adventure once again.",stars=4),
+    CockpitItem("moonbug:neural_sync_array","Neural Sync Array","An array of connectors and hardware to allow 2 pilots to sync their thoughts with both the mech and eachother. While improvements in mech design has made copilots unnecessary, you can't beat that two heads are better than one.",stars=2),
+    WeaponItem("moonbug:replica_glolf_club","Replica Glolf Club","A mech sized replica of a Glolf Club, an artifact of the forbidden splort. Does not come with a surfer pen.",stars=1),
+    WeaponItem("moonbug:monarchs_club","Monarch's Club","An extradimensional instrument of the Forbidden Splort. No matter what, the cold metal of the club feels as it's in your own hands, and with it... The power to rend reality asunder. Engraved in the handle is RM <3 FM",stars=5),
 ]
 )
 
@@ -419,11 +441,11 @@ shork = Mech("shork",
     WeaponItem("shork:lithium_polymer_armament","Lithium Polymer Armament","Harnesses the incredible power of magic smoke. Don't let it escape! This unusual config directly weaponizes the battery unit. If this gets hit, the fight's ending one way or another.",["power"], stars=5),
     BodyPlanItem("shork:snowplow","Snowplow","A defensive profile that's low to the ground, with four legs, no arms, and a tanky, ground-scraping wedge protecting your weaponry. Nothing's getting under you any time soon, if you're using the right sort of locomotion.", {"legs": 4, "arms": 0}, stars=1),
     BodyPlanItem("shork:ring","Ring","A defensive, invertible design, with weapons built into a ring orbiting around your chassis. The best defense is a perfect offense.", {"legs": 4, "arms": 2}, stars=3),
-    BodyPlanItem("shork:clusterbot","Clusterbot","Two identical, half-sized, half-power mechs, attached together magnetically. Able to split apart and recombine, but if either half is offlined, it takes the other down with it.", {"legs": 2, "arms": 2}, stars=5),
+    BodyPlanItem("shork:clusterbot","Clusterbot","Two matching, half-sized, half-power chassis, attached together magnetically. Able to split apart and recombine, but if either half is offlined, it takes the other down with it. The body, limbs and power source are duplicated for each half, but all other parts must be assigned to one or the other.", {"legs": 2, "arms": 2}, stars=5),
     KitItem("shork:selfdestruct_button","Self-Destruct Button","When all else fails, this button can ensure you take your opponent down with you. It actually just deploys a bunch of smoke and pyrotechnics, but it's good for making threats with.", stars=2),
     KitItem("shork:meltybrain_unit","MeltyBrain Unit","A program that micro-adjusts drive motors, allowing for translational movement whilst the entire mech spins at high speed. This lets you put the entire mech's weight and speed behind a spin attack whilst remaining aggressive.", stars=3),
     CosmeticItem("shork:rival_poster","Rival Poster","A life-size poster of your opponent's mech, stolen from their merch line and pasted onto the front of your mech. Useful as a confusion tactic.",stars=1),
-    CosmeticItem("shork:polkadot_fur","Polkadot Fur","Incredibly flammable. Offers no tactical advantage whatsoever. Mechs that fight against one equipped with the fur seem to end up with some fur of their own, strangely.", stars=2),
+    CosmeticItem("shork:polkadot_fur","Polkadot Fur","Incredibly flammable. Offers no tactical advantage whatsoever. Mechs that fight against one equipped with the fur seem to end up with some fur of their own in future fights, strangely.", stars=2),
     
 ]
 )
@@ -487,31 +509,35 @@ ditto = Mech("ditto",
 
 hal2000 = Mech("hal 2000", 
 [   
-    PowerItem("hal2000:the_beating_hearts_of_one","The Beating Hearts of One Thousand Worms","The heartbeats of these still-live worms are amplified and converted into electrical energy for the mech to use.", stars=4),
+    PowerItem("hal2000:the_beating_hearts_of_one","The Beating Hearts of One Thousand Worms","The heartbeats of these still-live worms are amplified and converted into electrical energy for the mech to use. They yearn for the sweet taste of the earth, and will give your mech a power boost to its weapon systems relative to how close your mech is to dirt.", stars=4),
     PowerItem("hal2000:cote_blue_flame","Cot3's Blue-Flame Generator","A powerful generator that uses a special blue flame to supercharge the mech, but leads to an odd kind of smoke build-up on the inside that cannot be ventilated normally.", stars=2),
     LegsItem("hal2000:dimensionally","Dimensionally Disjointed Walkers","These standard-issue mech legs have been dimensionally modified so that every joint below the hip is connected but stored in an alternate dimension. Makes you hard to hit below the waist."),
     LegsItem("hal2000:kelvin_drumset","Kelvin's Mechanical Drumset","A reproduction of Kelvin's drumset/spider leg set-up, properly sized for usage as a set of mech legs!", stars=2),
-    ArmsItem("hal2000:cobbled_scrap_arms","Glistening Platinum Punchers","All the rust and grime has been scraped off of these formerly Cobbled Scrap Arms, leaving only a gleaming platinum core underneath. These thin arms are both durable and lithe, punching far above their weight class.", stars=3),
+    ArmsItem("hal2000:cobbled_scrap_arms","Glistening Ichor Infectors","After much use, an odd oil is dripping out of these Glistening Platinum Punchers. They’re still durable and lithe, but any enemy mech that touches the ichor will find their computer systems slowly corrupted and the mech’s operating fluid infected by ichor. Maybe these were scrapped for a reason...", stars=4),
     ArmsItem("hal2000:jaw_claws","Jaw-Claws","A pair of thick and heavy arms with giant mechanical mouths on the end. These mouths can be used to hold stuff, and can also be fired on a chain to grapple from afar!", stars=3),
-    BodyItem("hal2000:orb","ORB","SPHERE"),
+    BodyItem("hal2000:orb","ORB","SPHERE SPHERE SPHERE SPHERE SPHERE, ALL PRAISE."),
     BodyItem("hal2000:house","House","It's well furnished on the inside, and moderately sized for a family of 4. It has 2 bedrooms and 2 bathrooms, and even has a porch if you like to sit outside and watch the neighborhood."),
-    CockpitItem("hal2000:divesystem","Full-Body Dive System","Really FEEL like you're dying to that rocket."),
+    CockpitItem("hal2000:divesystem","Full-Body Dive System","Really FEEL like you're dying to that rocket. This system makes controlling your mech fluid and effortless, allowing you to pull off stylish moves with ease... but you also feel all the damage the mech takes."),
+    CockpitItem("hal2000:early_alert_system","Early Alert System", "Equips your mech with a series of external sensors that are wired up to the cockpit. Whenever these sensors detect offensive action, they’ll send that information over, and if you’re watching for the warning you'll gain you more time to dodge.", stars=2),
     CockpitItem("hal2000:ratoon_plushie","Ratoon Plushie","A life-sized plush of everyone's favorite mouse mechanic and the perfect co-pilot. They do not know when this was made, but it sure is cute!", stars=2),
     BackItem("hal2000:backlift","Backlift","A pair of forks on the back for lifting cargo, only usable if you're Forklift Certified!"),
     BackItem("hal2000:realistic_moth_wings","Realistic Moth Wings","They look so true-to-life and work too! Fragile but nimble, these insectoid wings will get you where you need to go and fast!", stars=2),
     BackItem("hal2000:realistic_angel_wings","Realistic Angel Wings","They look so true-to-life and work too! They're so realistic in fact, that one would think they were taken from an actual angel... hey wait a sec-", stars=4),
-    WeaponItem("hal2000:guminator_3000","Guminator 3000","Immediately gums up every joint on the opposing mech if it successfully hits them, a mechanic's worst nightmare.", stars=3),
+    WeaponItem("hal2000:guminator_3000","Etheric Condenser","A pistol that shoots a special kind of etheric matter. In addition to doing damage, strange crystal growths will appear where the enemy mech is hit, gumming up joints and corrupting electrical systems they come in contact with.", stars=3),
     WeaponItem("hal2000:the_blattilizer","The Blattilizer","A very special baseball bat for a very special person. Swing for the fences!", stars=3),
     WeaponItem("hal2000:monologue_piercer","Monologue Piercer","A spear made of captured language, solidified into usable form. Deals extra damage to opponents who are talking, and breaks through any protections they may have.", stars=3),
     CosmeticItem("hal2000:blender_head","Blender Head","Your mech has an oversized blender as a head. That is all. It is very cool-looking but impractical for actual combat.", stars=2),
     CosmeticItem("hal2000:bouncy_blorbo","Bouncy Blorbo","A little blorbo made from some kind of goo, potentially industrial waste. It has somehow come alive, and very much wants to be as close to you as possible.", stars=2),
-    KitItem("hal2000:clown_face","Clown Face Paint","+100 Clown Vibes, +200 Fear Induced. Enemies who stare into the visage for too long may find it staring back, leaving them stunned and unable to move.", ["cosmetic"], stars=3),
+    KitItem("hal2000:clown_face","Clown Face Paint","A crude imitation of joy, warped beyond recognition into a face that can only terrify. Enemies who stare into the visage for too long may find it staring back, leaving them stunned and unable to move. Honk.", ["cosmetic"], stars=3),
+    KitItem("hal2000:zirconium_pants","Zirconium Pants","These fancy pants are actually an alien information blocking tool, and once per fight you can use them to replace all nouns with \"pants\" and all adjectives with \"zirconium\" in the next turn post as reality is obfuscated. Actions will take place normally, but neither fighter will know the outcome.", ["cosmetic"], stars=3),
     KitItem("hal2000:the_bagel","The Bagel", "This small ring can be thrown and then sized up, creating a miniature black hole inside of it that draws everything on the battlefield closer to it over time. Getting sucked in may lead to an existential crisis and/or death.", stars=4),
+    KitItem("hal2000:glutton","Glutton","They say you are what you eat, and that's true! Gives your mech a giant mouth and working system of stomachs. Your mech can additionally gain any part it eats off the enemy mech, congealing a replica of flesh and bone as it finishes digesting the part.", stars=4),
     KitItem("hal2000:credits_roll", "Credits Roll", "Adds a button to your cockpit that, when pressed, plays an unskippable credits roll across all the screens in your opponent's cockpit detailing all the people in your life. Exceedingly annoying and only usable once per fight."),
-    BodyPlanItem("hal2000:crawler","Crawler","8 arms. No legs.", {"arms":8, "legs":0}, stars=4),
+    BodyPlanItem("hal2000:crawler","Crawler","8 arms. No legs. Become a monstrosity of mechanical engineering.", {"arms":8, "legs":0}, stars=4),
     BodyPlanItem("hal2000:apartment","Apartment","A mech? In this economy?? Just remove the arms and legs, I'd rather have a place to live.", {"arms":0, "legs":0}),
-    BodyItem("hal2000:orbascended","ORB ENLIGHTENED","SPHERE, ASCENDED FORM, ALL-KNOWING, ALL-SEEING, CLEAR AND PERFECT, NONE CAN ESCAPE ITS SIGHT, GRANTS VISIONS OF THE FUTURE", stars=5),
+    BodyItem("hal2000:orbascended","ORB ENLIGHTENED","SPHERE, ASCENDED FORM, ALL-KNOWING, ALL-SEEING, CLEAR AND PERFECT, NONE CAN ESCAPE ITS SIGHT, GRANTS VISIONS OF THE FUTURE.", stars=5),
     PowerItem("hal2000:cote_true_blue_flame","Cot3's Blue-Flame Generator","A powerful generator that uses a special blue flame to supercharge the mech, but leads to an odd kind of smoke build-up on the inside. It has been upgraded with a special mechanism for rapidly expelling this smoke and creating a smokescreen as needed.", stars=5),
+    PowerItem("hal2000:limit_breaker","Limit Breaker","This dense metal core serves as your mech’s power source, pumping raw energy through its systems. As your mech takes damage, a gauge on it fills, and once full it will break your limits, sending a shock that refreshes all items on cooldown and grants an additional use to all one-time use items.", stars=5),
     WeaponItem("hal2000:gunis", "GunIsGunIsGunIsGunIsGunIsGun", "A cruel, warped reflection of weaponry that spits on the definition of a gun. This orb of pure violence breaks causality itself to shoot your opponent at point blank with incredible force no matter the actual range. Can only be used once per fight before collapsing in on itself.", stars=5),
 ]
 )
@@ -575,9 +601,11 @@ colabot = Mech("colabot",
     CosmeticItem("colabot:sailor_suit","Little Guy Sailor Suit","A full outfit for your mech, which includes a shirt with a sailor collar and bow tie, a little sailor hat, and a pair of shorts with shiny brass buttons. It comes in a fetching sky-blue colour."),
     WeaponItem("colabot:thagomizer","Thagomizer","A long, powerful, heavily armoured tail ending in an arrangement of spikes that can cause significant damage to enemy mecha. This weapon conveniently leaves the mech’s hands free to grapple or hold other items.", stars=3),
     CosmeticItem("colabot:lolita","OTT Sweet Lolita Coordinate","A full outfit for your mech, including an extreme amount of frills, layered petticoats, and accessories - this particular outfit is strawberry themed! Your mech is wearing cute bracelets and frilly lace wrist cuffs, an oversized bow or bonnet, and carrying a cute strawberry shaped bag.", stars=4),
-    BodyPlanItem("colabot:tail_prehensile","Prehensile Tail","Your mech has a highly flexible tail that can be used to improve mobility or to equip one extra short range weapon.", {"weapons":2}),
+    BodyPlanItem("colabot:tail_prehensile","Prehensile Tail","Your mech has a highly flexible tail that can be used to improve mobility or to equip one extra short range weapon.", {"weapon":2}),
     BodyPlanItem("colabot:tall","Tall","Your mech is very tall, but all the height comes from its torso - you can equip an extra back slot item. It can be hard to keep track of your legs though… they’re an awfully long way down.", {"back":2}, stars=2),
     LegsItem("colabot:paaaaaws","Paaaaaws","You got some freakin paaaws, dude! They got cute liddle toe beans, and retractible claws!", stars=2),
+    PowerItem("colabot:spell","The Spell","The deepest, most secret chamber of your mech is suffused with a sickening octarine glow. **The Spell** is etched into the very fabric of existence. It is unspeakably ancient; your mech was constructed around it in a desperate attempt to channel its energy into something less hazardous to life.",stars=4),
+    WeaponItem("colabot:spellbook","The Spellbook","A hazardous spellbook containing multivarious methods of arcane combat. FIREBALL! Be careful, pilot; the overeager caster can lose themselves to the rush of power, and some spells backfire...", ["cockpit"], stars=4),
 ]
 )
 
@@ -589,11 +617,16 @@ loftyinclination = Mech("loftyinclination",
     BodyItem("loftyinclination:gardens_brush","Garden's Brush","Though the underlying form of this body has smooth panel lines, at some points the panels are misaligned, allowing soft fur to poke out from inside."),
     CockpitItem("loftyinclination:cats_eye","Cats Eye","The front surface of the pilot cockpit contains mirrored windows, in the shape of slit eyes. Combined with the internal heads up display, allows for better detection of movement."),
     BackItem("loftyinclination:disjoint_wings","Disjoint wings","Some body panels can detach and act as wings, allowing for gliding on thermals."),
-    KitItem("loftyinclination:oscilloscope_probes","Oscilloscope Probes","These long staff-like tools trail low-impedence cables, hooked into your mech's sensor suite, and divine the potential weaknesses"),
+    KitItem("loftyinclination:oscilloscope_probes","Oscilloscope Probes","These long staff-like tools trail low-impedence cables, hooked into your mech's sensor suite, able to divine the potential weaknesses of your opponent's form"),
     WeaponItem("loftyinclination:modified_oscilloscope_probes","Modified Oscilloscope Probes","The OEM listing for these identifies them as \"sensor accessories\". That's clearly not true any more -- modifications by a previous owner mean that anyone jabbed with the sharpened tip of these spears receives an extreme electric pulse.", stars=4),
     CosmeticItem("loftyinclination:constellation_tattoos","Inlaid Constellation Tattoos","Traced out on your mech's shell in softly glowing silver are the constellations of a planet far away, unknown to you, but that somehow fill you with a great sadness."),
     BodyPlanItem("loftyinclination:catform","Catform","Quadrapedal, for increased stealth and pouncing.", {"legs":4}),
     PowerItem("loftyinclination:fivestar_automated_wiring_harness","Automated Wiring Harness","Attaches to nearby power sources, conduits, and power consuming devices, and siphons energy for use in its own system. Can even draw power from another mechanised unit, impacting the other mech's capabilities.", stars=5),
+    WeaponItem("loftyinclination:ble_spec","Bluetooth Core Specification, v6","This hefty spellbook contains detailed instructions and guidelines for remote communication, which may give you a leg up in electronic warfare. It's also over three thousand pages, so you could also just hit people with it", stars=2),
+    CockpitItem("loftyinclination:workbench","Lorentz Workspace","Stored in a pocket dimension, this workspace allows for on the fly reconfiguration, reverse engineering, or just hanging out and relaxing", stars=3),
+    KitItem("loftyinclination:ladder","Ladder","After countless hours toiling away, scientists have finally unlocked deep enough into the tech tree to invent ladders! Surprisingly difficult to get right, even after they'd already mastered dimensional engineering and stellar manipulation...", stars=4),
+    PowerItem("loftyinclination:ancillary","Ancillary System: Seaglass","If ever your pilot were to be rendered a non-functional part of the mech, this unit ensures that your mech would be able to continue the soiree; a backup of an earlier pilot lives inside your mech, tuning the systems, and sometimes able to operate them", stars=3),
+    ArmsItem("loftyinclination:gantry","Polar Gantry","Two gantries span your mech, capable of accellerating at up to 180000m/s, perfectly suited to speedily maneouvering the sensor suite and manipulators of your mech around your form. However, they don't have much reach...", ["weapon"], stars=2),
 ]
 )
 
@@ -621,7 +654,7 @@ babaloga = Mech("babaloga",
     BackItem("babaloga:deployable_guy","Deployable Guy™","A harness holding a featureless white capsule with a nametag floating over its head. A Guy™ is indestructible and can slide around. It is impossible to mount anything to the Guy™.", stars=2),
     WeaponItem("babaloga:miniglolfkit","Mini-Glolf Kit","A club and variously colored glolf balls from a local mini-glolf place that closed down. For some reason the balls are packed with explosives and can be remotely detonated?"),
     CosmeticItem("babaloga:name_tag","Name Tag","Semi-transparent black rectangle that floats over your mech's head and displays its name."),
-    BodyPlanItem("babaloga:airship","Airship","No arms, no legs, just a giant balloon with 3 weapons mounted to it.", {"weapons": 3, "legs":0, "arms":0}),
+    BodyPlanItem("babaloga:airship","Airship","No arms, no legs, just a giant balloon with 3 weapons mounted to it.", {"weapon": 3, "legs":0, "arms":0}),
     PowerItem("babaloga:beans","\"Beans\"","\"Beans\" will be launched into the general vicinity. You gotta keep picking them up to stay powered.", stars=2),
     CosmeticItem("babaloga:polygonal_crown","Polygonal Crown","A big matte yellow crown that sits lopsided.", stars=2),
     CosmeticItem("babaloga:double_crown","Double Crown of the Double Winner","A matte yellow crown with a matte brown crown inside it. Both sit lopsided at different angles.", stars=4),
@@ -661,18 +694,26 @@ chillychilichelle = Mech("chillychilichelle",
     WeaponItem("chillychilichelle:telephone_pole","Telephone Pole","A utility pole seemingly ripped straight from the ground. Live wires crackle, dangling from the arms. 2 transformers are still attached, while a third appears to have been broken off. Dirt still clings to its base.",stars=1),
     PowerItem("chillychilichelle:160000_aaa_batteries","160,000 AAA Batteries","A set of ~160,000 AAA batteries bound together with cable ties, hot glue, hope, and hubris. They are crudely affixed to a metal plate, where faded signatures and greetings are written on the back in marker.",stars=1),
     CockpitItem("chillychilichelle:a_rock","A Rock","A small greyish rock, roughly the size of your fist. Covered in a few brown and black specks. Totally unremarkable. You picked it up and placed it in your cockpit as a joke, but it's been 2 years and it's still here.",["cosmetic"],stars=1),
+    CockpitItem("chillychilichelle:glass_closet","Glass Closet","A tall, plexiglass closet fixed to the ground. Everyone seems to be able to see through it just fine except you. The perfect place to store copious amounts of memorabilia of your rival.",["cosmetic"],stars=1),
+    
     BodyItem("chillychilichelle:stripped_framework","Stripped Framework","The bare skeleton of a long-defunct mech. Composed of hollow steel tubes and dangling wires. Originally the leftovers from a salvage, it reaches only the barest minimum of what is considered a mech.",stars=2),
     CockpitItem("chillychilichelle:black_box","Black Box","A large steel cube, wrapped in a dozen layers of insulation and armor. Lacks any way to directly view the outside world. Contains up to 2 months of food, water, and oxygen. Requires the pilot to be hermetically sealed in each mission.",stars=2),
     Item("chillychilichelle:overgrowth","Overgrowth","Countless vines and leaves that have made the mech their home. Foliage blooms in the in-betweens of joints, and moss cakes every crack. Vibrant flowers dot the highest surfaces.",["cosmetic"],stars=2),
     KitItem("chillychilichelle:mechalogue","Mechalogue","A small portable computer encased in a hardened orange plastic. Attached to the front is an orb-shaped digital camera. Connected to an unspecified database, it is able to identify and provide information on any mech or mech part. No one is quite sure how it accesses this information.",stars=2),
+    KitItem("chillychilichelle:boggart_boarding_system","Boggart Boarding System","A long, pointed cannon on a swivel loaded with boarding pods intended for the various creatures popular among mech pilots, weaponizing them as effective disruptors for burrowing into cockpits, jamming weapons, or simply being a general nuisance.",stars=2),
+    
     BodyPlanItem("chillychilichelle:buddy_system","Buddy System","At the cost of a little bit of legroom, the mech has been modified to accommodate 2 cockpits, delegating responsibilities between them. However, 2 pilots are now required to properly pilot the mech.", {"cockpit": 2},stars=3),
     CockpitItem("chillychilichelle:childhood_sweets","Childhood Sweets","A small drawer in the cockpit filled with old, discontinued candies from your youth. They don't taste as great as you remember, but they still make you feel warm and fuzzy.",["cosmetic"],stars=3),
     CockpitItem("chillychilichelle:unsettling_figurine","Unsettling Figurine","A grotesque bobblehead depicting some type of horned imp or devil. Its pale yellow flesh is made of a flabby rubber, where two bulbous red eyes poke out. You think it's inching closer to you when you're not looking, but you can't quite tell.",["cosmetic"],stars=3),
-    PowerItem("chillychilichelle:the_hole","The Hole","A small black pinprick in reality. Encased in layers of protective glass and steel, countless tubes pipe in and out of its container peppered with gauges and monitoring lights. A floating-point error in the fabric of space-time, long-forgotten by the world.",stars=5),
-    BodyPlanItem("chillychilichelle:decommissioned","Decommissioned","A machine of combat and war in a bygone era, now used for agriculture, construction, or logistics. Foregoing all weapons, the mech now sports up to 4 sets of arms and 2 sets of legs.",{"weapons": 0, "legs":2, "arms":4},stars=4),
+    KitItem("chillychilichelle:shared_history","Shared History","You know your opponent better than the back of your hand. Whether as former friends, rivals, or nemeses, you understand what makes them tick. With that knowledge, you can make a risky, precarious maneuver to predict their next move to counteract it - the more specific, the more effective.",stars=3),
+    
+    BodyPlanItem("chillychilichelle:decommissioned","Decommissioned","A machine of combat and war from a bygone era, now used for agriculture, construction, or logistics. Foregoing all weapons, the mech now sports up to 5 kits to maximize utility.",{"kit": 5},stars=4),
     CockpitItem("chillychilichelle:crumpled_letters","Crumpled Letters","Old letters exchanged between you and a rival pilot. You keep them gingerly tucked in a small folder underneath your seat.",["cosmetic"],stars=4),
     CockpitItem("chillychilichelle:corner_entity","Corner Entity","A tall, lanky shadow creature has taken shelter in the eastern end of your cockpit. She seems docile and doesn't seem to be bothering anyone, so you do your best to keep the cockpit dim. Sometimes you play with her using hand shadow puppets.",["cosmetic"],stars=4),
-    KitItem("chillychilichelle:last_hope_protocol","Last Hope Protocol","A 2-meter tall circular steel frame at the back of the cockpit. Upon ignition, the pilot will be tethered to this reality before being shifted into an unknown plane for 365 days. Only a split second passes. When they return, they will have gained something they didn't know they needed.",stars=5),
+    BodyPlanItem("chillychilichelle:mobius","Mobius","Something is deeply wrong with your mech. From everything you can gather, you have to conclude that it simply has no back - a flat, depthless image always facing toward any observer trying to perceive it. It feels like it's watching you as much as you it.",{"back": 0},stars=4),
+    
+    PowerItem("chillychilichelle:the_hole","The Hole","A floating-point error in the fabric of space-time, long-forgotten by the world. A small black pinprick in reality is suspended in layers of protective glass and steel. Whenever you try to look at it, you find yourself looking somewhere else - and the world looks a bit different.",stars=5),
+    KitItem("chillychilichelle:last_hope_protocol","Last Hope Protocol","A 2-meter tall circular steel frame at the back of the cockpit. Upon ignition, the pilot will be tethered to this reality before being shifted into an unknown plane for 365 days, while only a split second passes. When they return, they will have gained something they didn't know they needed.",stars=5),
 ])
 
 chimera = Mech("chimera",
@@ -714,7 +755,7 @@ homeslice = Mech("homeslice",
     BackItem("homeslice:lashers", "Lashers", "Two thick snakelike appendages that extend from the back of the mech that can be used to restrain/grapple an opponent", stars=3),
 ])
 
-shieldcaptain = Mech("Shield Captain",
+shieldcaptain = Mech("shield captain",
 [
     ArmsItem("shieldcaptain:fightin_forks","Fightin' Forks","Standard issue power loader arms rigged with freight forks at the forearm. Great for committing OSHA violations and getting work done.",stars=2),
     ArmsItem("shieldcaptain:linemans_longarms","Lineman's Longarms","Hydraulic cherry picker armatures fitted with hands for all the fun stuff uncertified people never got to touch.",stars=2),
@@ -769,7 +810,7 @@ n217 = Mech("n217",
     ArmsItem("n217:the_hanged_man","ARC012//The Hanged Man","Lightly-rusted mechanical arms, made from interlocking copper plates and gears. A technology inherited from A.R.C.’s predecessor grants ARC012 the ability to “steal time” with every direct melee attack—slowing down an opponent a few seconds at a time, whilst speeding the mech in return.",["weapon"],stars=3),
     BodyPlanItem("n217:death","ARC013//Death","Any mech part can draw blood, or feed an engine. Any hollow space can house a pilot. Torn off limbs can be replaced with those still intact, and plating around thrusters can fill gaps in armour. ARC013 is a shapeless blueprint, made to accommodate adaptation—even in the midst of combat",{"legs":2,"arms":2},stars=4),
     KitItem("n217:temperance","ARC014//Temperance","A network of tunnels within a mech, which seems to magnify the cacophony of battle and attract Unbirds. ARC014 grants a mech the ability to submerge into the ground, much like the unvians within it—with the maximum duration spent underground increasing with greater quantities of Unbirds.",stars=3),
-    BodyPlanItem("n217:the_devil","ARC015//The Devil","Blades in the back, shots in the dark. ARC015 can muffle sound, hide heat signatures, and is capable of carrying upwards of 2 extra weapons—at the cost of automatically retracting and disabling all weapons when directly illuminated and observed. Keep out of sight, and keep the lights shut.",{"legs":2,"arms":2,"weapons":4},stars=3),
+    BodyPlanItem("n217:the_devil","ARC015//The Devil","Blades in the back, shots in the dark. ARC015 can muffle sound, hide heat signatures, and is capable of carrying upwards of 2 extra weapons—at the cost of automatically retracting and disabling all weapons when directly illuminated and observed. Keep out of sight, and keep the lights shut.",{"legs":2,"arms":2,"weapon":4},stars=3),
     WeaponItem("n217:the_tower","ARC016//The Tower","A simple throwing spear that can be remotely detonated. Within is a microscopic mote of misfortune, which on contact with air creates a rapidly-growing improbability field—boosting the chances of unlikely events (catastrophic errors, heart attacks, etc), while dropping the chances of likely ones.",stars=4),
     CosmeticItem("n217:the_star","ARC017//The Star","A purely decorative constellation of lamps, too weak to properly illuminate beyond a mere few steps forward. Yet, something in your heart tells you that if you are ever lost, ever stranded, ever too far from your mech, those lights will guide you back to the cockpit—to where you belong.",stars=2),
     CosmeticItem("n217:the_moon","ARC018//The Moon","A coat of glimmering, ashy paint. ARC017 can, in theory, work as a genuine source of illumination—releasing a light which intensifies the closer the mech is to the nearest moon, to potentially blinding luminosity. However, due to the location of most mech arenas, it often only manages a dim glow.",stars=3),
@@ -796,7 +837,105 @@ nevephoenix=Mech("nevephoenix",
     PowerItem("nevephoenix:true_loves_kisses","True Love's Kisses","Feelings describe the power contained in a kiss. Words do not.",stars=5),
 ])
 
+zapterra=Mech("zapterra",
+[
+    KitItem("zapterra:standard_shoes","Standard Shoes","Shiny, black. One inch heels, thin suede soles, and laces. Driving steps, quick rotation, movement with a partner.",stars=1),
+    KitItem("zapterra:latin_shoes","Latin Shoes","Matte, black. Four inch heels, thin suede soles, and laces. Hip action, quick redirections, push and pull connection with a partner.",stars=1),
+    PowerItem("zapterra:paso_doble","Style: Paso Doble","Your eyes never leave your opponent. Confidence, showmanship, strength, domination. Complete control of the battle's pace. Flamenco styling in the arms.",stars=2),
+    PowerItem("zapterra:foxtrot","Style: Foxtrot","Beautiful, streamlined motion with powerful posture that never wavers. Getting in the way of your path of motion is a bad idea.",stars=2),
+    PowerItem("zapterra:waltz","Style: Waltz","Beautiful, streamlined motion and rotation. Aggressive possession and control of space with strong, extended, mobile posture.",stars=2),
+    PowerItem("zapterra:quickstep","Style: Quickstep","Impossibly fast, to the detriment of technique. Breakneck steps, hops, kicks and redirection. Impossible to predict, with distances closed in a fraction of an instant.",stars=2),
+    PowerItem("zapterra:jive","Style: Jive","Your every energy and optimization is placed into the strength, speed and length of blazing fast kicks, leg movement, and footwork. Flashy, without the need for a partner.",stars=4),
+    PowerItem("zapterra:rumba","Style: Rumba","Slow and intentional movement with extensive hip action, legwork, and tension between partners. Spot rotations so fast you can't see them happen.",stars=2),
+    BodyPlanItem("zapterra:standard_frame","Standard Frame","Two sets of facing bipedal legs that shift in and out of line. Upper body locks in place, redistributing impacts to the system. Forgoes weapons, favoring momentum and rotation with occasional kicks. 4 legs, 2 bodies, 2 power sources, 2 cockpits, 1 back.",{"legs":4,"weapon":0,"body":2,"cockpit":2,"power":2},stars=4),
+    CosmeticItem("zapterra:competition_number","Competition Number","How else will the judges call you back?",stars=1),
+    CosmeticItem("zapterra:spray_tan","Spray Tan","Helps you look more natural when you're under bright lighting. Helps you look more scary when you're not.",stars=1),
+    CosmeticItem("zapterra:competition_dress","Competition Dress","A flowing dress in beautiful colors. Decorated with two bajillion rhinestones.",stars=2),
+    CosmeticItem("zapterra:tailsuit","Tailsuit","Handsome. Stylish. Classy. Sweaty.",stars=2),
+    PowerItem("zapterra:ten_dance_champion","Ten-Dance Champion","Relentless endurance. Unmatched aggression and intentionality. You know exactly where you are, how you're about to move, and where your opponent's balance could use some improvement.",stars=5),
+    KitItem("zapterra:kinetic_anchorage","Kinetic Anchorage","A nanite field that allows you to to push, pull, and redirect momentum from points in midair. Almost as good as a partner.",stars=3),             
+])
 
+jcterran=Mech("jcterran",
+[
+    WeaponItem("jcterran:km1_autocannon","KM-1 Autocannon","A sturdy, high-caliber autocannon, belt-fed and suited for a variety of ammunition types.",stars=1),
+    BackItem("jcterran:ammunition_pack","Ammunition Pack","A series of boxes, pouches, and mag-locks hold all the ammunition your mech could need. Could store magazines, shells, capacitors, or more exotic ordnance...",stars=1),
+    WeaponItem("jcterran:deca1_burst_laser","DECA-1 Burst Laser","This bulky energy weapon fires a high-powered laser over short ranges. Because of its significant power draw, it is usually run off a set of manually reloaded capacitor banks, though it can be reconfigured to draw directly from exceptionally powerful reactors.",stars=1),
+    CosmeticItem("jcterran:stylish_graffiti","Stylish Graffiti","A colorful selection of personal icons, fantastical images, and barely readable text applied to your mech via spray paint. Ideal for self-expression and chaotic flair.",stars=1),
+    BodyItem("jcterran:boxy_frame","Boxy Frame","A bulky, hard-edged frame for your mech, making it loom over the battlefield. Presents a large target profile, but bristles with hardpoints. A body fit for the dispassionate, the utilitarian, or those who want to make an impression.",stars=1),
+    ArmsItem("jcterran:branched_arms","Branched Arms","These dull metal arms split at the elbow joint. One branch ends in a heavy claw, fit for wielding weaponry, while the other ends in a set of light manipulator tendrils.",stars=2),
+    ArmsItem("jcterran:plated_arms","Plated Arms","These up-armored arms have been covered in heavy, overlapping metal plates. The armor may impede flexibility, but it will make the arms harder to destroy.",stars=1),
+    LegsItem("jcterran:plated_legs","Plated Legs","These up-armored legs feature powerful hydraulic joints covered in layered metal plates. They might not the fastest legs around, but they will be difficult to destroy with weaker weaponry.",stars=1),
+    WeaponItem("jcterran:kca1_defense_rockets","KCA-1 Defense Rockets","A cluster of four dumbfire rockets, mounted on an external rack. Their HEAT payloads can do serious damage, but they lack accuracy, and the system comes with no spares. Don't spend them all in one place...",stars=2),
+    WeaponItem("jcterran:kl2_antimaterial_rifle","KL-2 Anti-Material Rifle","A heavy rifle, loaded with hyperdense metal slugs that can punch straight through armor. The weapon's onboard optics are synced directly with your mech. According to TPGA superstition, models with serial numbers ending in 13 are considered lucky. This one isn't, though.",stars=3),
+    CockpitItem("jcterran:sensor_cockpit","Sensor Cockpit","This sloped cockpit is set into your mech's body, covered in sensor arrays, radar dishes, and cameras. The sensors' vision is projected onto a wraparound display in the cockpit. Good for finding your enemy's weaknesses but could be blinded if the sensors were disabled. ",stars=3),
+    KitItem("jcterran:cryocoolant_system","Cryo-Coolant System","This extensive cooling system cycles hypercooled liquids through your mech's systems. Curiously, it appears to have been assembled from long-haul cryopod components. This could keep your mech stable when using high-energy systems.",stars=3),
+    WeaponItem("jcterran:km3_grenade_launcher","KM-3 Grenade Launcher","A heavy rotary grenade launcher, capable of being mounted both internally and externally. This design has the unusual ability to fire adhesive-coated \"sticky\" rounds, which can be detonated by remote, in addition to standard payloads.",stars=2),
+    KitItem("jcterran:capacitor_banks","Capacitor Banks","A set of externally-mounted supercapacitors, arranged in vertical banks. They can be charged by your mech's reactor from spare power, then expended for extraordinary bursts of energy. However, they take a long time to recharge after each use.",stars=2),
+    WeaponItem("jcterran:kl2_antimaterial_rifle_lucky","KL-2 Anti-Material Rifle (Lucky)","A heavy rifle, loaded with hyperdense metal slugs that can punch straight through armor. The weapon's onboard optics are synced directly with your mech. According to TPGA superstition, models with serial numbers ending in 13 are considered lucky, and this one is!",stars=4),
+    WeaponItem("jcterran:fusion_glaive","Fusion Glaive","Channels power down a maglocked, variable-length haft into a jet of pure energy. Linked directly to your mech's reactor, the blade's theoretical output is near limitless: given sufficient power, it can kill anything.",stars=5),
+    WeaponItem("jcterran:aurora_point_defense_system","AURORA Point Defense System","A networked array of lasers built into the frame of your mech. Can intercept physical projectiles, blind enemy sensors, and attack soft targets at close range. On low power, they can also project a spectacular lightshow.",["cosmetic"],stars=4),
+])
+
+
+
+urirles=Mech("urirles",
+[
+	PowerItem("urirles:fusion_cell","Fusion Cell","Stable, efficient, small, boring. Slotted in a standard power mount, it will power a mecha under a normal load and a bit beyond. Just don't expect anything fancy as it was designed with reliability in mind. And cost-cutting, admittedly.",stars=1),
+	KitItem("urirles:last_century_embedded_electronics","Last Century Embedded Electronics","Listen, if it was good enough for working on the Lantern III Scrapyards fifty years ago, it's still good enough now. Old and clunky, yet also hardened and missing some of the wireless stuff that make modern mechs remotely hackable.",stars=1),
+	BodyItem("urirles:scrapyard_field_upgrade","Scrapyard Field Upgrade","A bunch of steel plates haphazardly welded around the body of your mech, adding quite a bit of improvised spaced armor.",stars=1),
+	LegsItem("urirles:heavy_duty_pneumatic_legs","Heavy Duty Pneumatic Legs","Two big steel legs, powered by massive pistons. Rugged and reliable, those won't get you anywhere fast, but they will get you there eventually. And noisily.",stars=1),
+	WeaponItem("urirles:foam_cannon","Foam Cannon","Used to put out fire and seal hull breach, the rapid hardening foam can be retasked to impair your opponent's movements.",stars=1),
+	CockpitItem("urirles:extreme_environment_cockpit","Extreme Environment Cockpit","This cockpit will keep you safe in the most hostile of work environment, from temperature control to radiation shielding. It will also give you an accurate reading of all that fun stuff it's working hard to keep outside.",stars=2),
+	CosmeticItem("urirles:days_since_last_incident","_ Days Since Last Incident","A whiteboard that allows you to keep track of the last time you ripped another mech in half.",stars=2),
+	PowerItem("urirles:fusion_cell_hotwired","Fusion Cell (Hotwired)","You went and did it. This cell had most of its safeties shunted to allow for a much higher and spiker power profile. This also made it sensitive to direct impact, overheating and runaway reaction. And worst of all, it voided the warranty.",stars=2),
+	ArmsItem("urirles:hydraulic_clamps","Hydraulic Clamps","Heavy arms that ends in massive clamps. Can grab and lift some hefty weights, but do not expect to pick up eggs.",stars=2),
+	CosmeticItem("urirles:white_noise_backing_signal","White Noise Backing Signal (Loud)","Normally used for workplace safety, this speaker has been hot-wired to announce your approach with a wave of white noise.",stars=3),
+	WeaponItem("urirles:steel_cutting_beam","Steel Cutting Beam","Short-ranged, but able to punch through most conventional armour. Can't help you against shield or reflective material. Most often put on a shoulder mount, leaving the hands free to hold the target.",stars=3),
+	BackItem("urirles:onboard_forge","Onboard Forge","This portable (if cumbersome) factory allows you to build spare parts or field fortifications. It churns a good amount of smoke while in use.",stars=3),
+	KitItem("urirles:structural_analyser","Structural Analyser","Initially used in demolition work, this sensor suit gives you an internal 3D representation of whatever you scan, helping to pinpoint weak spots.",stars=4),
+	BodyPlanItem("urirles:modular_fittings_points","Modular Fitting Points","By optimising space usage and adding universal internal and external mounting points, you can plug another Kit and another Back item. It also makes repairing easier by just switching damaged parts.",{"back":2,"kit":2},stars=4),
+	BackItem("urirles:onboard_nanoforge","Onboard Nanoforge","Cutting edge nanomachine powered forge in a sleek design, it can produce most small parts almost instantly, or build structure remotely by dropping nano-goo. And no smoke!",stars=5),
+])
+
+bogle=Mech("bogle",
+[
+	BodyItem("bogle:red_herring","Red Herring","A sleek aquadynamic body plan with a splash of red. Lauded for its unrivaled formula of balancing speed and evasion in deep water environments, but criticized for sluggish performance in terrestrial arenas.",stars=1),
+	CockpitItem("bogle:rival's_hoodie","Rival's Hoodie","You wear a hoodie your rival gave you to help you recover when you showed up beaten, battered, and shivering cold. You definitely aren’t still wearing it because it carries any special meaning or anything, it’s just comfortable, alright??",["cosmetic"],stars=3),
+	BodyPlanItem("bogle:skillet","Skillet","It’s not about what’s above, but what’s below. While it might not seem much of a threat out in the open, this pancake of a body plan is ideal for rapidly burrowing into sediments. It sacrifices a kit slot for an additional mount for earth breaking weapons.",{"legs":2,"arms":2,"weapon":3,"kit":0,},stars=1),
+	LegsItem("bogle:red_heron","Red Heron","A set of digitigrade legs that can move as swiftly through shallow waters as they can dish out kicks.",stars=1),
+	ArmsItem("bogle:bubblers","Bubblers","These caged propellers attach to the joints of your mech allowing for swift– but obvious– movement underwater. An especially clever pilot can use these bubbles to their advantage.",["legs"],stars=1),
+	CosmeticItem("bogle:mentor's_mark","Mentor's Mark","Your mech features a marking, dent or piece of equipment salvaged off your mentor’s mech.",stars=1),
+	BodyItem("bogle:hatchet","Hatchet","Anyone packing a heavy arsenal knows that the hatchet is the very best, what it lacks in speed it more than makes up for in control. Able to easily reposition for heavy melee strikes, but beware this buoyant armor is highly flammable! Round and bulky in spite of its name.",stars=2),
+	CosmeticItem("bogle:mentor's_mask","Mentor's Mask","A time comes when an Ace must pass on their reputation, this Transforming Mask bears a visage crafted by your mentor and conceals your own. When you open it, describe it briefly, then the commentator is obliged to tell the audience a fact about your mentor. (These facts can be lies.)",stars=2),
+	BodyPlanItem("bogle:kiwi","Kiwi","A haphazard and patently offensive interpretation of a kiwi. It has a single arm as a neck allowing you to attack from above even without high ground.",{"legs":2,"arms":1,},stars=2),
+	WeaponItem("bogle:limpet_lance","Limpet Lance","It's a lance for jousting, the dimples in the surface look like limpets.",stars=3),
+	KitItem("bogle:adipose_anarchy","Adipose Anarchy","These adaptable fins deploy from the limbs of your mech in water and rotate to accommodate movement.",stars=3),
+	BackItem("bogle:dorsal_duo","Dorsal Duo","Dart through the depths with this pair of fins that protrude from the back of your mech!",stars=3),
+	CockpitItem("bogle:mecha_mollusk","Mecha Mollusk","Whatever it came from has long since returned to the place from whence it came, but it left this chrome shell behind. The shell serves as a semi-spacious cockpit and grants an additional weapon slot that can be used when it's opened.",stars=4),
+	WeaponItem("bogle:mano'war","Man-O'War","Barbed industrial power cables dangle over one of your mech's limbs like a cape. Catch an opposing mech with these and you can directly hook your power source up to the attached part's power circuit, overloading them. More effective the stronger your power output is compared to your target's.",stars=4),
+	KitItem("bogle:weather_transmogrifier","Weather Transmogrifier","It's already bad enough that you can't predict your rival's next move, but dealing with the forecast on top of that? No way! You've rigged up a little satellite dish to your mech that sparks and spins when turned on. It can be used once to trigger arena specific weather or a thunderstorm.",stars=5),
+	PowerItem("bogle:bivalve_engine","Bivalve Engine","Unsuited for terrestrial arenas and prone to overheating, this engine comes standard with a powerful pump to keep it cool. While it provides more than ample power, no amount of clandestine tech can hide your heat signature. Maybe you want someone to notice you?",stars=4),
+])
+
+avashinedrake=Mech("ava shinedrake",
+[
+	KitItem("avashinedrake:burrower_adaptations","Burrower Adaptations","In one way or another, your mech is adapted for underground movement. Dirt and sand are quick and easy to move through, stone is a bit of a project, and metal isn’t happening.",stars=1),
+	CosmeticItem("avashinedrake:draconic_horns","Draconic Horns","A fearsome crown of horns adorns your mech’s head. Conveys the majesty of dragonkind upon all who bear it.",stars=1),
+	WeaponItem("avashinedrake:pyrocannon","DR4-M \“Dragonflame\” Pyrocannon","An experimental weapon that fires jagged red energy blasts. It’s quite powerful and burns through metal with ease, but it tends to overheat its own internal components, so it damages itself every time it’s fired.",stars=1),
+	KitItem("avashinedrake:duct_tape_dream","Duct Tape and a Dream","You can make it work, you swear. If you have a free moment in battle, you can rig together a broken part of your mech with whatever’s lying around, restoring some of its functionality.",stars=1),
+	CockpitItem("avashinedrake:strange_tome","Tome of Something Stranger","A heavy leatherbound book, clearly ancient but well maintained. It contains nonsensical poems, cryptic images, and impossibly, diagrams of your opponent’s mech and its weak points. Your attacks deal extra damage when they hit a part that your opponent fired or activated this turn.",stars=1),
+	BackItem("avashinedrake:armored_wings","Armored Wings","Heavy metal wings equipped with a powerful grav repulsor array. They’re quite tough and can carry a lot of weight, but offer substantially slower flight than most alternatives. While grounded, they can be wrapped around your mech, creating a cumbersome but effective shield.",stars=2),
+	CockpitItem("avashinedrake:glittering_hoard","Glittering Hoard","Your cockpit is stuffed with treasure, be it collectables, trading cards, gold and jewels, stuffed animals, books, or whatever else. It’s your hoard, take pride in it!",["cosmetic"],stars=2),
+	WeaponItem("avashinedrake:tearing_claws","Tearing Claws","Hardsteel claws covered in serrations and sharpened to terrifying points. Designed to gouge into metal and tear mechs apart, these claws will reduce anything to scrap if you can just get close enough.",stars=2),
+	PowerItem("avashinedrake:wyvern_core","TLX-60 Wyvern Core","Ferocious orange fire powers this battered but solid reactor, bursting from vents and jets on your mech in dramatic flares. It’s optimized to power flight systems, and seems itching to get into the heat of battle. Your mech moves significantly faster when flying directly towards your opponent.",stars=2),
+	WeaponItem("avashinedrake:darinithrax_coils","Amplified Darinithrax Coils","An arcane engine that replicates the breath weapon of a legendary lightning dragon. Launches a massive, unfocused blast of electricity at your opponent. Arcs towards metal, fries computer systems and melts internal components on hit.",stars=3),
+	KitItem("avashinedrake:dracoguard_familiar","Dracoguard Familiar Submech","A small reptilian mech follows yours into battle. Technically classified as a drone, it’s grounded and has no weapons systems, but it’s robust enough to tank moderate firepower and strong enough to break and manipulate terrain efficiently.",stars=3),
+	BodyPlanItem("avashinedrake:draconic_form","Draconic Form","Your mech takes the form of a quadrupedal dragon. Two pairs of legs, but no arms, and an extra weapon slot mounted in the jaws. Wings not required, but highly recommended!",{"legs":4,"arms":0,"weapon":3},stars=3),
+	ArmsItem("avashinedrake:sorcerous_manipulators","Sorcerous Manipulators","Small, precise arms useless for most purposes, but perfectly suited to casting spells. Can fire magical blasts of various elements. In addition, once per battle you can invoke one of your Cosmetic items to cast a spell that thematically resonates with it (subject to referee approval).",["weapon"],stars=4),
+	LegsItem("avashinedrake:striker_class_raptor","Striker-class Raptor AX-80s","These sleek metal legs are top of the line, offering excellent speed and solid durability. However, they’re primarily used as offensive tools, being designed for stomping and kicking. Equipped with auto-balancing arrays and talons designed for puncturing, the Raptor AX-80s hit fast and hit hard.",stars=4),
+	CockpitItem("avashinedrake:sureness_of_being","Sureness of Being","Your sense of self shines bright in your mind’s eye, untarnished by the wounds of the world. Once per fight, you can Remember Who You Are, replacing damaged or destroyed parts of your mech with hardlight replicas for a turn. Damage taken during this turn doesn’t affect you until the turn ends.",stars=5),
+])
 
 
 nullified = Mech("nullified",
@@ -815,7 +954,7 @@ event_formal = Mech("48th Annual Mech Formal",
     KitItem("event_formal:loading", "Gyroscopic Stabilizer", "a bleeding edge internal part that prevents the mech from losing their balance and falling over. ideal for elaborate dances or striking truly insane poses", stars=3, tags=("event",)),
     BackItem("event_formal:hal_2000", "Cloak and Dagger", "A large, fancy cloak paired with a small needle hidden somewhere in the hand/wrist of the mech. The needle is primarily a data collection tool that sends information about whatever is stabbed to the cloak, which is actually made of optical camouflage!", stars=3, tags=("event",)),
     KitItem("event_formal:st_yietus", "LAST DANCE - ASTRAL WING", "A mysterious system lies sleeping within your mech. Only when your will is in perfect concert with your mech's will it awake, projecting the pure energy of your soul outward in a beautiful-and destructive-display. It is said to have the power to reshape the cosmos to your will... use it wisely.", stars=3, tags=("event",)),
-    CosmeticItem("event_formal:chillychilichelle", "Digital Bloom", "A small, 2-inch-wide metal disc mounted onto the top of the cockpit. Emitting a high pitch, the device projects a fuzzy model of an enormous flower into viewers' minds. Observers disagree on what species it is but all claim to have seen their favourite.", stars=3, tags=("event",)),
+    CosmeticItem("event_formal:chillychilichelle", "Cognitive Bloom", "A small, 2-inch-wide metal disc mounted onto the top of the cockpit. Emitting a high pitch, the device projects a fuzzy model of an enormous flower into viewers' minds. Observers disagree on what species it is but all claim to have seen their favourite.", stars=3, tags=("event",)),
     KitItem("event_formal:deric", "Strapless And Backless", "Through complex technology, every component of the mecha floats independently of each other, allowing ultimate control and dodging. However, the Back slot cannot be used.", stars=3, tags=("event",)),
     PowerItem("event_formal:shork", "Yureactor", "A generator that runs off of the pilot's positive feelings towards a significant other. Romantic, platonic, any kind of love that drives you forwards.", stars=3, tags=("event",)),
     WeaponItem("event_formal:oneirocartographer", "Razorsilk Skirt", "Your mech wears a long, flowing skirt made of an ultrafine biometallic alloy. Twirl right and you can slice an opponent in half – just be careful with it on the dance floor...", stars=3, tags=("event",)),
@@ -828,10 +967,37 @@ event_formal = Mech("48th Annual Mech Formal",
     CosmeticItem("event_formal:neve", "Fascinator", "A beautifully elaborate hat, slightly small for the head.", stars=3, tags=("event",)),
     CosmeticItem("event_formal:n217", "ARC138//Nine of Pentacles", "Originally created to celebrate the new millennium, ARC138 is an endless stream of golden radiance, flowing unimpeded from the hands of the mech. This obscene wealth is not real, and leaves nothing behind—merely a masterful (and highly over-indulgent) trick of the light.", stars=3, tags=("event",)),
     WeaponItem("event_formal:cheesesnack", "Literal Chocolate Bomb", "Coat your target in sticky, searing-hot chocolate that hardens as it cools. A product of the Iron Chef Wars.", stars=3, tags=("event",)),
-    CosmeticItem("event_formal:colabot", "Fascinator", "A silly, frilly little thing perched atop the highest point of your mech. A fanciful confection of feathers, beads, frothy mesh and lace. Highly distracting to opponents.", stars=3, tags=("event",)),
+    BodyItem("event_formal:colabot", "Ghostly Garments", "An ethereal, semi-transparent body dressed in fancy cocktail attire. Despite its intangible nature, it seems to be able to attach to the other components of your mech just fine. Impervious to physical damage - attacks just phase through. Can’t kill what’s already (drop) dead (gorgeous)!", stars=3, tags=("event",)),
     WeaponItem("event_formal:cheshire", "Girl's Best Friend", "Usually worn as a tiara, broach, or cufflink, the beam fired from this enchanted jewel grows more powerful for each reflective or crystalline surface on your mech.", stars=3, tags=("event",)),
     PowerItem("event_formal:bytes", "Kaiju Blood", "This mech is powered by the ancient spirit within the blood of a kaiju.", stars=3, tags=("event",)),
     CosmeticItem("event_formal:intoamutecrypt", "Symphony In C", "It's warm and golden like an oven that's wide open.", stars=3, tags=("event",)),
+])
+
+event_fauna = Mech("FRONT's FAUNA Invitational",
+[
+    LegsItem("event_fauna:bytes","NewtTech Legs","Lose a limb? Regrow it!",stars=3,tags=("event",)),
+    BodyPlanItem("event_fauna:triangle","Metamorphosis","Your mech is still developing. It begins an encounter as a highly armored low mobility crawler: 2 weapons, 0 limbs. Upon maturity the carapace cracks, allowing what has developed to burst forth, a new shape rapidly hardening as it exits: 3 sets legs, 0 arms, can fly. No item is shared between forms.",{"weapon":4,"arms":0,"legs":3,"kit":2,"back":2,"power":2,"body":2},stars=3,tags=("event",)),
+    WeaponItem("event_fauna:ditto","Volt Beetle Horn","This horn seems to be inspired by the Volt Beetles that live in the Core, slowly generating a static charge that can be released to stun opponents.",stars=3,tags=("cockpit", "event",)),
+    BackItem("event_fauna:shork","Mucus Barrier","A free-floating mucus cocoon surrounds your mech. This shield disrupts sensors attempting to identify or locate your mech, and destroys parasitic attachments. Although the shield can tank attacks relatively well, doing so will cause it to lose integrity.",stars=3,tags=("event",)),
+    WeaponItem("event_fauna:hal_2000","Mach Bullet Punchers","Adds another pair of arms to your mech. These arms are mounted with a pair of hanging spring-loaded metal clubs that can launch at a speed exceeding the speed of sound. Enemies in melee range not hit may suffer deafness or be stunned by the firing of a club. Stronger underwater.",stars=3,tags=("event",)),
+    BackItem("event_fauna:syl","Horse Back","It’s a horse, tied to your back. It whinnies occasionally and you can feed it oats.",stars=3,tags=("event",)),
+    BackItem("event_fauna:loading","Photaxis Phlare","A back mounted phase drive that plunges you into the immateria. While submerged in this way you may only move towards sources of strong UV radiation. Luckily this system is also equipped with a strong UV flare gun to provide valid lights, but other lights are also valid.",stars=3,tags=("weapon", "event",)),
+    PowerItem("event_fauna:moonbug","Electric Eel Tank","A large aquarium holding a happy group of electric eels that help power your mech.",stars=3,tags=("event",)),
+    KitItem("event_fauna:thecowofeternalflame","Blood Vents","These vents are connected to whatever fluid the mech uses to keep itself functioning. Like the Horned lizard this is designed after, this allows the mech to fire a short-range blast of it's own \"blood\" as a defense mechanism.",stars=3,tags=("event",)),
+    KitItem("event_fauna:bee","Adaptive Skin","The skin of this mech can change colour and texture in order to communicate, look cool, and camouflage itself. It does not perfectly replicate what is behind it, but instead it can achieve the general vibes of the surface the mech is on.",stars=3,tags=("event",)),
+    BodyPlanItem("event_fauna:hill","Planarian Power","This flatworm bodyplan has zero legs and must wriggle on the ground. However, the first time your mecha is cleanly cut in half, each half can regenerate into a full mecha!",{"legs":0},stars=3,tags=("event",)),
+    KitItem("event_fauna:st_yietus","HAGSKIN DISSUASION SYSTEM","Inspired by the humble hagfish, this system emits voluminous slime from your mech's skin to engulf your foes. The slime expands exponentially in liquid, clogs up enemy intakes, and thanks to a special blend of exotic polymers it also weakens incoming attacks of all kinds! It's the perfect defense.",stars=3,tags=("event",)),
+    KitItem("event_fauna:intergalacticsky ","Vibrissae","Sensory arrays are placed on key parts of the mech, allowing for increased detection of movement, wind, and other disturbances. Extremely sensitive and easy to max out.",stars=3,tags=("event",)),
+    ArmsItem("event_fauna:chimera","Featherful","Fluffy and colorful feathered wings that enable flight.",stars=3,tags=("event",)),
+    KitItem("event_fauna:cheshire","Exuvian Mimic","Shed your skin. This fragile simulacra is already dead, but your doomed twin will do as you ask. Without power, it cannot sustain itself or it's weapons for long, and without you, its poor carapace will not endure the wounds of the world. Do not begrudge your past self for its limitations.",stars=3,tags=("event",)),
+    BackItem("event_fauna:ava_shinedrake","Starbreak Anemone","Your mech has formed a symbiotic relationship with a minor eldritch entity, now anchored to its back. Midnight tendrils flow eerily around your mech, inflicting anything they touch with data hallucinogens that corrupt computers and mesmerize AI. Luckily, repeated exposure has made your mech immune.",stars=3,tags=("weapon", "event",)),
+    BackItem("event_fauna:chillychilichelle","Suriname Birthing Pods","A perforated metal husk inspired by the common Suriname toad. On the surface are a dozen honeycomb-like depressions, each overflowing with a viscous, translucent slime - each housing a miniature biomechanical replica of your mech, ready to burst out on command as drones.",stars=3,tags=("event",)),
+    CosmeticItem("event_fauna:colabot","Deer Dappling","Delicate spotting is painted on your mech’s hindquarters (or… thorax? Your mech’s caboose, alright?). It’s pretty, like the pattern of sunshine through leaves. In a very specific environment, it might help you camouflage yourself, but it most looks nice.",stars=3,tags=("event",)),
+    LegsItem("event_fauna:renne","Snikt Kickers","Spindly metal legs with a lining of waterproof padding. In combat, the endoskeleton's toe parts can be severed on inbuilt faultlines to pierce this padding and provide an additional weapon at a cost to durability.",stars=3,tags=("event",)),
+    BackItem("event_fauna:deric","Arctic-Blast Scales","Your mech's back is covered with massive metal scales. When activated, the edges glow ice blue, they lift up, and a frozen wind gushes out. With condensation, you can release a hail of ice shards. You can also curl up in a spiny frostball.",stars=3,tags=("event",)),
+    LegsItem("event_fauna:blueberry","Poisonous Barbs","While poison may not be much use on an opponent's mech, they still are a very fashionable accessory for everyone who likes platypi.",stars=3,tags=("event",)),
+    BackItem("event_fauna:bogle","Rickety Roost","A rickety tower anchored to the back of your mech ripe with antennae and caked in guano. Once an array of scientific instruments, it's now home to your pigeons.",stars=3,tags=("event",)),
+    BodyItem("event_fauna:zapterra","Extremophile","Extreme resistance to temperature (.05K-150C), pressure (40,000 kPa), sudden impacts (1.14 GPa), and radiation. Capable of making automatic repairs to wiring with access to water, able to survive in a dehydrated state for 30+ years. Can copy opponent resistances if it gets a taste.",stars=3,tags=("event",)),
 ])
 
 
@@ -843,7 +1009,7 @@ starting_inventory = ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:
 
 
 body_plans = [
-BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power": 1}),
+BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"legs": 2, "arms": 2, "power": 1}),
 ]
 
 
@@ -852,9 +1018,10 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"leg": 2, "arm": 2, "power"
 # all_mechs = (syl, intoamutecrypt, metanite64, bee, oneirocartographer, triangle, cadence, vel, hillexed, cheshire, loading, styietus, deric)
 
 
-ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix)
-event_mechs = (event_formal, )
-event_gift_mech = event_formal
+ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, styietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, urirles, jcterran, bogle, avashinedrake)
+
+event_mechs = (event_formal, event_fauna, )
+event_gift_mech = event_fauna
 all_mechs = ratoon_pullable_mechs + (alto, nullified, ) + event_mechs
 
 

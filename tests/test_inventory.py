@@ -3,9 +3,13 @@ import pytest
 class MockClient:
     pass
 
+last_bot_message = None
+
 class MockChannel:
     @staticmethod
     async def send(msg):
+        global last_bot_message
+        last_bot_message = msg
         return msg
 
 class MockAuthor:
@@ -15,6 +19,8 @@ class MockAuthor:
 class MockMessage:
     channel = MockChannel
     author = MockAuthor
+    def __init__(self, message):
+        self.content = message
 
 def mock_playerdata(userid):
     return {"unlocked_mechs": ["loading","st_yietus"], 'ratoon_pulls':2, 'mech_pulls': 5, 'equipment': [1], "scrap": 0}
@@ -34,8 +40,6 @@ async def test_inventory(monkeypatch):
     
     import inventory
     assert inventory.compute_inventory("testuser") == mock_onepage_inventory("testuser")
-
-    message = MockMessage()
 
     expected_inventory = '''
 **Your inventory:**
@@ -57,10 +61,7 @@ async def test_inventory(monkeypatch):
 - Gyrobomber ★ - A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts.
 -# **     **`[8]` • COCKPIT'''.strip()
 
-    assert await inventory.inventory_command(message, "", MockClient()) == expected_inventory
-
-
-
+    assert await inventory.inventory_command(MockMessage("m!inventory"), "", MockClient())  == expected_inventory
 
 async def test_inventory_pagination(monkeypatch):
 
@@ -70,7 +71,7 @@ async def test_inventory_pagination(monkeypatch):
     
     import inventory
 
-    message = MockMessage()
+    message = MockMessage("m!inventory")
 
     output = await inventory.inventory_command(message, "", MockClient()) 
     assert len(output) < 2000
@@ -102,7 +103,7 @@ async def test_inventory_filtering(monkeypatch):
     import inventory
     assert inventory.compute_inventory("testuser") == mock_onepage_inventory("testuser")
 
-    message = MockMessage()
+    message = MockMessage("m!inventory")
 
     expected_inventory = '''
 **Your inventory:**
