@@ -129,7 +129,7 @@ async def pull_command(message, message_body):
 
     # return any invalid mechs to ratoon pulls (or convert to the equivalent valid one)
     invalid_mechs = []
-    for i in len(playerdata["unlocked_mechs"]):
+    for i in range(len(playerdata["unlocked_mechs"])):
         mech_name = playerdata["unlocked_mechs"][i]
         invalid = True
         for mech in ratoon_pullable_mechs:
