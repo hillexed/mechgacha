@@ -24,13 +24,13 @@ class MockMessage:
         self.content = message
 
 def mock_playerdata(userid, mech_pulls=5):
-    return {"unlocked_mechs": ["loading","st. yietus"], 'ratoon_pulls':2, 'mech_pulls': mech_pulls, 'equipment': [1], "scrap": 0}
+    return {"unlocked_mechs": ["loading","st_yietus"], 'ratoon_pulls':2, 'mech_pulls': mech_pulls, 'equipment': [1], "scrap": 0}
 
 def mock_onepage_inventory(userid):
-    return ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body", "bee:artificial_satellite", "st. yietus:weird_lil_guy", "st. yietus:rotborn_stomper", "loading:hook_lash", "loading:gyrobomber"]
+    return ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body", "bee:artificial_satellite", "st_yietus:weird_lil_guy", "st_yietus:rotborn_stomper", "loading:hook_lash", "loading:gyrobomber"]
 
 def mock_long_inventory(userid):
-    return ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body", "bee:artificial_satellite", "loading:knuckle_draggers", "st. yietus:weird_lil_guy", "st. yietus:rotborn_stomper", "loading:hook_lash", "loading:gyrobomber", "cheshire:stowaway_cheshire", "loading:elongated_segment_frame", "hillexed:findermech", "hillexed:starfish_mode_legs", "loading:big_jacket", "hillexed:findermech", "hillexed:glolf_patches", "hillexed:teeny_mechanized_legs", "loading:big_jacket", "loading:xr2", "triangle:intrinsic", "moonbug:blankets", "amutecrypt:thunderbirds_are_coming_out", "moonbug:insectoid_arm_array", "metanite64:golden_fiddle", "p_rker:helicoper_blades", "vel:retractible_swords", "moonbug:phase_shifter", "moonbug:insectoid_arm_array", "st. yietus:rotborn_stomper", "loading:lockjaw_needler", "moonbug:antennae", "moonbug:antennae", "loading:xr2", "st. yietus:rotborn_fist", "st. yietus:kitbash_kit_adaptor", "st. yietus:external_utility_pack", "hillexed:crochet_controls", "moonbug:emergency_grippers", "moonbug:legs_design_173", "moonbug:glitch_engine", "oneirocartographer:canopy_viewpoint", "hillexed:parabolic_block", "oneirocartographer:luminescent_core", "moonbug:covert_chassis", "moonbug:legs_design_173", "moonbug:emergency_grippers", "moonbug:antennae", "moonbug:glitch_engine", "moonbug:a.e.i.o.u", "moonbug:covert_chassis", "syl:sticky_fingers", "bytes:harvest_claw", "metanite64:cobras_roar", "renne:caustic_engine", "st. yietus:novelty_mug", "st. yietus:rotborn_stomper", "st. yietus:psychlink_mpi"]
+    return ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body", "bee:artificial_satellite", "loading:knuckle_draggers", "st_yietus:weird_lil_guy", "st_yietus:rotborn_stomper", "loading:hook_lash", "loading:gyrobomber", "cheshire:stowaway_cheshire", "loading:elongated_segment_frame", "hillexed:findermech", "hillexed:starfish_mode_legs", "loading:big_jacket", "hillexed:findermech", "hillexed:glolf_patches", "hillexed:teeny_mechanized_legs", "loading:big_jacket", "loading:xr2", "triangle:intrinsic", "moonbug:blankets", "amutecrypt:thunderbirds_are_coming_out", "moonbug:insectoid_arm_array", "metanite64:golden_fiddle", "p_rker:helicoper_blades", "vel:retractible_swords", "moonbug:phase_shifter", "moonbug:insectoid_arm_array", "st_yietus:rotborn_stomper", "loading:lockjaw_needler", "moonbug:antennae", "moonbug:antennae", "loading:xr2", "st_yietus:rotborn_fist", "st_yietus:kitbash_kit_adaptor", "st_yietus:external_utility_pack", "hillexed:crochet_controls", "moonbug:emergency_grippers", "moonbug:legs_design_173", "moonbug:glitch_engine", "oneirocartographer:canopy_viewpoint", "hillexed:parabolic_block", "oneirocartographer:luminescent_core", "moonbug:covert_chassis", "moonbug:legs_design_173", "moonbug:emergency_grippers", "moonbug:antennae", "moonbug:glitch_engine", "moonbug:a.e.i.o.u", "moonbug:covert_chassis", "syl:sticky_fingers", "bytes:harvest_claw", "metanite64:cobras_roar", "renne:caustic_engine", "st_yietus:novelty_mug", "st_yietus:rotborn_stomper", "st_yietus:psychlink_mpi"]
 
 
 async def test_inventory_message(monkeypatch):
@@ -98,7 +98,7 @@ async def test_pull_message(monkeypatch, starting_pulls=5):
 
     await bot.handle_commands(MockMessage("m!pull"))
     assert last_bot_message == f"""
-Use m!pull <mech> to pull from their list! You can pull from: loading, st. yietus. You have {num_pulls} pulls.
+Use m!pull <mech> to pull from their list! You can pull from: loading, st_yietus. You have {num_pulls} pulls.
  You can also use `m!pull ratoon` to get some mechs from Ratoon's gachapon. You have 2 pulls from Ratoon's gachapon."""
 
     await bot.handle_commands(MockMessage("m!pull loading"))
@@ -119,7 +119,7 @@ async def test_out_of_pulls_message(monkeypatch):
     import bot
     await bot.handle_commands(MockMessage("m!pull"))
     assert last_bot_message == f"""
-Use m!pull <mech> to pull from their list! You can pull from: loading, st. yietus. You have 0 pulls.
+Use m!pull <mech> to pull from their list! You can pull from: loading, st_yietus. You have 0 pulls.
  You can also use `m!pull ratoon` to get some mechs from Ratoon's gachapon. You have 2 pulls from Ratoon's gachapon."""
 
     # test pulling with 0 pulls

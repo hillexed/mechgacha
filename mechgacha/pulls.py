@@ -133,11 +133,13 @@ async def pull_command(message, message_body):
         mech_name = playerdata["unlocked_mechs"][i]
         invalid = True
         for mech in ratoon_pullable_mechs:
-            # convert valid uppercase to lowercase if dont have both already
-            if mech_name != mech.username and mech_name.lower() == mech.username and mech.username not in playerdata["unlocked_mechs"]:
-                mech_name = mech.username
-                playerdata["unlocked_mechs"][i] = mech_name
-                db.set_player_data(username, playerdata)
+            # convert malformed valid mech if dont have it already
+            if mech_name != mech.username:
+                normalized_mech_name = mech_name.lower().replace(" ", "").replace(".", "_")
+                if normalized_mech_name == mech.username and mech.username not in playerdata["unlocked_mechs"]:
+                    mech_name = mech.username
+                    playerdata["unlocked_mechs"][i] = mech_name
+                    db.set_player_data(username, playerdata)
             # valid
             if mech_name == mech.username:
                 invalid = False

@@ -66,7 +66,7 @@ hillexed = Mech("hillexed",
 
 ])
 
-styietus = Mech("st. yietus",
+styietus = Mech("st_yietus",
 [
     PowerItem("st_yietus:curseheart_engine","CURSEHEART ENGINE","A grinding mass of twisted machinery, alight with horror and hope. Within its bowels, misfortune and cruelty are catalyzed into fiercest resolve. Generates additional energy for each unique debuff affecting your mech.", stars=3),
     LegsItem("st_yietus:rotborn_stomper","ROTBORN STOMPER","A sturdy weatherproofed leg. Slow, but capable of brief bursts of agility. Gains charges over time which can be spent to perform short leaps. Leaps are faster than walking and clear low obstacles and small gaps. Slightly reduces the effects of debuffs.", stars=2),
@@ -507,7 +507,7 @@ ditto = Mech("ditto",
 ]
 )
 
-hal2000 = Mech("hal 2000", 
+hal2000 = Mech("hal2000", 
 [   
     PowerItem("hal2000:the_beating_hearts_of_one","The Beating Hearts of One Thousand Worms","The heartbeats of these still-live worms are amplified and converted into electrical energy for the mech to use. They yearn for the sweet taste of the earth, and will give your mech a power boost to its weapon systems relative to how close your mech is to dirt.", stars=4),
     PowerItem("hal2000:cote_blue_flame","Cot3's Blue-Flame Generator","A powerful generator that uses a special blue flame to supercharge the mech, but leads to an odd kind of smoke build-up on the inside that cannot be ventilated normally.", stars=2),
@@ -755,7 +755,7 @@ homeslice = Mech("homeslice",
     BackItem("homeslice:lashers", "Lashers", "Two thick snakelike appendages that extend from the back of the mech that can be used to restrain/grapple an opponent", stars=3),
 ])
 
-shieldcaptain = Mech("shield captain",
+shieldcaptain = Mech("shieldcaptain",
 [
     ArmsItem("shieldcaptain:fightin_forks","Fightin' Forks","Standard issue power loader arms rigged with freight forks at the forearm. Great for committing OSHA violations and getting work done.",stars=2),
     ArmsItem("shieldcaptain:linemans_longarms","Lineman's Longarms","Hydraulic cherry picker armatures fitted with hands for all the fun stuff uncertified people never got to touch.",stars=2),
@@ -918,7 +918,7 @@ bogle=Mech("bogle",
 	PowerItem("bogle:bivalve_engine","Bivalve Engine","Unsuited for terrestrial arenas and prone to overheating, this engine comes standard with a powerful pump to keep it cool. While it provides more than ample power, no amount of clandestine tech can hide your heat signature. Maybe you want someone to notice you?",stars=4),
 ])
 
-avashinedrake=Mech("ava shinedrake",
+avashinedrake=Mech("avashinedrake",
 [
 	KitItem("avashinedrake:burrower_adaptations","Burrower Adaptations","In one way or another, your mech is adapted for underground movement. Dirt and sand are quick and easy to move through, stone is a bit of a project, and metal isn’t happening.",stars=1),
 	CosmeticItem("avashinedrake:draconic_horns","Draconic Horns","A fearsome crown of horns adorns your mech’s head. Conveys the majesty of dragonkind upon all who bear it.",stars=1),
