@@ -1000,6 +1000,27 @@ event_fauna = Mech("FRONT's FAUNA Invitational",
     BodyItem("event_fauna:zapterra","Extremophile","Extreme resistance to temperature (.05K-150C), pressure (40,000 kPa), sudden impacts (1.14 GPa), and radiation. Capable of making automatic repairs to wiring with access to water, able to survive in a dehydrated state for 30+ years. Can copy opponent resistances if it gets a taste.",stars=3,tags=("event",)),
 ])
 
+event_labour = Mech("The Core's 46,753rd Quadrimestral Labour Day Celebration",
+[
+	BackItem("event_labour:bytes","Safety Rigging","Is it dangerous to stand where you are? With proper anchoring, keep yourself and those around you on secure footing with this hook and cable array.",["event"],stars=3),
+	CosmeticItem("event_labour:ditto","Forklift Certification","You are too late.",["event"],stars=3),
+	KitItem("event_labour:loading","Utility Scouter","A handy piece of UI tech that tells you the location of every utility line in the area from electric, to shrimp, to water and more!",["event"],stars=3),
+	BackItem("event_labour:shieldcaptain ","Wool-Wardens Distaff","Bolts of fabric bound en-mass on banner poles. Intended for display, this weapon of tapestry makes for a unique training boffer in mech combat, able to tangle an opponent if used more inventively. But let's be real, These are the banners that should be going up in the promenade!",["weapon","event"],stars=3),
+	ArmsItem("event_labour:shork","Screwjob","Double-ended arms that can flip between articulated gripper and pneumatic screwdriver ends. Well-aimed strikes with the screwdriver end can allow you to remove the connectors holding parts onto your opponent's mech... and take the part for your own use! Includes swappable tips for any type of screw.",["event"],stars=3),
+	LegsItem("event_labour:styietus","RAILRIDERS","A set of agile reverse-jointed legs, equipped with rail wheels and current collectors, that allows mechs to travel blindingly fast along the Core's many rail lines. RAILRIDERS are primarily used for repair and SAR work, but are also used by mech racers for an unmatched-if situational-speed boost.",["event"],stars=3),
+	KitItem("event_labour:p_rker","Automated Fire/Unfire Deployment System","An automated system designed to create small, targeted quantities of both Fire and Unfire to limit the spread and destruction of both.  Usually used to preserve the mech carrying it, it can be hacked to function as a weapon, but low range means limited damage potential.",["event"],stars=3),
+	BodyItem("event_labour:triangle","Messenger's Framework mk II","A mobile information disbursment tool, this body is an entire printing press, including binding functions. An intricate assembly with everything exposed, you can watch the entire process--watch your fingers! Spread the word, be it tome, newspaper, zine, wheatpaste, bulletin, or tearaway tab poster",["event"],stars=3),
+	WeaponItem("event_labour:hal2000","Integrated Pistonhammers","Adds a long metal piston into each of your mech’s arms with a diamond embedded tip at the end for extra punching power. When the palm of one of your mech’s hands makes contact with an enemy, you can activate the Pistonhammer to create a massive amount of force localized at that point.",["event"],stars=3),
+	KitItem("event_labour:babaloga","Poorly Designed Hazard Lighting","Flashing and rotating warning lights that are FAR too bright and numerous. They actually make any situation much more dangerous.",["cosmetic","event"],stars=3),
+	KitItem("event_labour:blueberry","Window Cleaner Fluid","in a pinch you can use it make your mech squeaky clean which removes all debuffs. sadly   the tank only has enough to do it once per match though.",["event"],stars=3),
+	BodyItem("event_labour:avashinedrake","Library Walker","Your mech is covered in countless bookshelves, allowing it to carry books to dangerous or remote areas that would otherwise lack them. A friendly dragon spirit works with you, guarding the books from hostile weather and mech fights alike, and her wards make your mech immune to environmental damage.",["event"],stars=3),
+	ArmsItem("event_labour:thecowofeternalflame","The All-Purpose Construction Multi-tool™","Introducing The APC Multi-tool™ for all your construction (and destruction ;) ) needs! With anything from a hammer to an excavator scoop, if it's a construction tool it's in here! These arms can even swap tool modes independently! `Koval Industrial Co. not liable for damages from improper tool use`",["weapon","event"],stars=3),
+	KitItem("event_labour:cheshire","Maintenance Juice","The Department of Worker Non-injury authorized non-combat use of this unfire derived anti-entropy device for the near instant repair of collapsed or destroyed terrain, materials, and infrastructure. OFFENSIVE USE DURING ROBOT FIGHTS IS PROHIBITED BY DOWN. ",["event"],stars=3),
+	KitItem("event_labour:chillychilichelle","R.E.M.N.A.N.T. Salvage Unit","An electromagnetic pad formed from tessellated steel hexagons at alternating heights. Utilised by scrapyards and repair droids to collect valuable detritus at range. Wires, tubes, pipes, and a dozen other connective tissues flow out at the seams, allowing the mech to interface with functional scrap.",["event"],stars=3),
+	CockpitItem("event_labour:bogle","Big Yellow","A wild world out there, but folks can rely on you to bus them from A to B. A spacious interior with a comfy pilot's seat with easy to reach forwards facing door controls. Ideal for your lil guys.",["event"],stars=3),
+	WeaponItem("event_labour:intergalacticsky","Dessicator","This hose of liquid-wicking gel sucks the soup out of any opposing mech, to contribute to your own oozability!",["event"],stars=3),
+	BackItem("event_labour:amiafox","The Stella Siphon","A giant energy-processor built into the back of your mech. The Stella Siphon is outfitted to space-faring courier and exploration mechs. Designed to withstand energy from stars, the Siphon can absorb, contain, and discharge various energies through your mech's torso.",["event"],stars=3),
+])
 
 
 
@@ -1020,8 +1041,8 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"legs": 2, "arms": 2, "powe
 
 ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, st_yietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, urirles, jcterran, bogle, avashinedrake)
 
-event_mechs = (event_formal, event_fauna, )
-event_gift_mech = event_fauna
+event_mechs = (event_formal, event_fauna, event_labour, )
+event_gift_mech = event_labour
 all_mechs = ratoon_pullable_mechs + (alto, nullified, ) + event_mechs
 
 
