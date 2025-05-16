@@ -161,7 +161,7 @@ async def pull_command(message, message_body):
             mechs_user_doesnt_have = [mech.username for mech in ratoon_pullable_mechs if mech.username not in player_mechs]
 
             if len(mechs_user_doesnt_have) == 0:
-                return await message.channel.send("*A hollow clunk resounds from the Gacha(Gacha)...* \n ...Ah. Looks like ya already got all da mechs. \n Here's a lil' something for da trouble tho... 3 more pulls!")
+                return await message.channel.send("*A hollow clunk resounds from the Mech Gacha...* \n ...Ah. Looks like ya already got all da mechs. \n Here's a lil' something for da trouble tho... 3 more pulls!")
                 playerdata["mech_pulls"] += 3
                 playerdata["ratoon_pulls"] -= 1
                 db.set_player_data(username, playerdata)
