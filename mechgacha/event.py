@@ -4,14 +4,14 @@ import db
 import inventory
 from data_utils import get_playerdata
 
-event_active = True
+event_active = False
 event_name = "The Core's 46,753rd Quadrimestral Labour Day Celebration"
 event_submission_active = False
 event_submission_link = "https://forms.gle/d5A4YeZ6kQw7yeYg7"
 
 # Remember to change these when adding or expiring event gifts
 starting_event_pulls = 0 # This counts up to max_event_pulls (I think)
-max_event_pulls = 2
+max_event_pulls = 0
 current_event = "labour"
 gift_item_count = 3
 
