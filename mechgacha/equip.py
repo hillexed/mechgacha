@@ -51,6 +51,11 @@ def count_equipped_categories(player_data, inventory):
         item = all_parts_list[equipped_item_index]
 
         for tag in item.tags:
+
+            if tag not in tagCount:
+                # oops, tag not yet added to TagType
+                tagCount[tag] = 0
+                
             tagCount[tag] += 1
     return tagCount
 
