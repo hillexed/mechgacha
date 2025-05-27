@@ -5,14 +5,14 @@ import inventory
 from data_utils import get_playerdata
 
 event_active = False
-event_name = "The Core's 46,753rd Quadrimestral Labour Day Celebration"
-event_submission_active = False
-event_submission_link = "https://forms.gle/d5A4YeZ6kQw7yeYg7"
+event_name = "Bizarre! The Forbidden Cryptid Gacha"
+event_submission_active = True
+event_submission_link = "https://forms.gle/D62utoaukAJBXmG1A"
 
 # Remember to change these when adding or expiring event gifts
 starting_event_pulls = 0 # This counts up to max_event_pulls (I think)
 max_event_pulls = 0
-current_event = "labour"
+current_event = "cryptid"
 gift_item_count = 3
 
 async def debug_add_gift(message, user_id):
@@ -109,4 +109,4 @@ async def clam(message):
     playerdata = get_playerdata(user_id)
     playerdata["clammed"] = 1
     db.set_player_data(user_id, playerdata)
-    return await message.channel.send("*clamps you*")
+    return await message.channel.send("*clamps you... mysteriously!*")
