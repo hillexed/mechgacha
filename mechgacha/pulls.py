@@ -199,7 +199,13 @@ async def pull_command(message, message_body):
             return await message.channel.send(f"Ya dont have that mech yet! Ya got these mechs: {', '.join(player_mechs)}")
             
 
-        tries_to_get_new_item = 3
+        mechs_user_doesnt_have = [mech.username for mech in ratoon_pullable_mechs if mech.username not in player_mechs]
+        if len(mechs_user_doesnt_have) == 0:
+            tries_to_get_new_item = 9
+        else:
+            tries_to_get_new_item = 3
+        # increases number of rerolls if user has all gachas
+            
         new_item = None
 
         # try repeatedly to get a new item you don't already have. 
