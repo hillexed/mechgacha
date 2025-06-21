@@ -763,6 +763,11 @@ homeslice = Mech("homeslice",
     CosmeticItem("homeslice:sick_ass_demon_horns", "Sick Ass Demon Horns", "+10 Headbutt Damage", stars=3),
     LegsItem("homeslice:rockin_rollerblades", "Rocking Rollerblades", "Give your mech an extra boost of speed with these rocket propelled rollerblades- remember to wear a helmet!", stars=4),
     BackItem("homeslice:lashers", "Lashers", "Two thick snakelike appendages that extend from the back of the mech that can be used to restrain/grapple an opponent", stars=3),
+    WeaponItem("homeslice:weeb_ass_sword","Weeb Ass Sword","This sword is impractically large even when being wielded by a Mech, but it's fine, because you're, like, the chosen one or whatever.",stars=3),
+    CosmeticItem("homeslice:fanservice","Fan Service","Your mech is now the sexiest character in the show. Comedic underwear shots may be in your future and you've grown a fantastic set of mechamountains.",stars=1),
+	CosmeticItem("homeslice:cherry_blossoms","Cherry Blossoms","Your mech is covered in a dusting of pale pink cherry blossom petals at all times, that flutter about dramatically during a fight (or heartfelt confession).",stars=1),
+	CosmeticItem("homeslice:mega_mech_cosplay","Mega Mech Cosplay","Giant cosplay of a character of your choosing custom fitted to your mech. Don't ask how they got the measurements, that's a secret.",stars=1),
+	KitItem("homeslice:emergency_powerup","Emergency Powerup","The power was in you all along! You've unlocked a secret strength/magic blood/power of friendship for a last bid power up. Can only be activated in dire times, when the battle seems nearly lost.",stars=5),
 ])
 
 shieldcaptain = Mech("shieldcaptain",
