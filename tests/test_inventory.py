@@ -54,7 +54,7 @@ async def test_inventory(monkeypatch):
 -# **     **`[4]` • COSMETIC
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
 -# **     **`[5]` • COSMETIC
-- ROTBORN STOMPER ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
+- ROTBORN STOMPERS ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
 -# **     **`[6]` • LEGS
 - Hook Lash ★★ - A whip with a spinning metal weight at the end that applies a random debuff on hit
 -# **     **`[7]` • WEAPON
@@ -118,7 +118,7 @@ async def test_inventory_filtering(monkeypatch):
 -# **     **`[4]` • COSMETIC
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
 -# **     **`[5]` • COSMETIC
-- ROTBORN STOMPER ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
+- ROTBORN STOMPERS ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
 -# **     **`[6]` • LEGS
 - Hook Lash ★★ - A whip with a spinning metal weight at the end that applies a random debuff on hit
 -# **     **`[7]` • WEAPON
@@ -142,7 +142,7 @@ async def test_inventory_filtering(monkeypatch):
 **Your inventory:**
 - Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement. 
 -# **     **`[1]` • LEGS
-- ROTBORN STOMPER ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
+- ROTBORN STOMPERS ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
 -# **     **`[6]` • LEGS'''.strip()
 
     assert await inventory.inventory_command(message, "unequipped cosmetic 3 stars", MockClient()) == '''
