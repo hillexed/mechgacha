@@ -959,6 +959,15 @@ nullified = Mech("nullified",
     CosmeticItem("nullified:null_device", "Null Device", "A mysterious bucket that devours all inputted information. Useful for waste disposal.", stars=1),
 ])
 
+boss = Mech("boss",
+[
+	WeaponItem("boss:biggest_iron","Biggest Iron","A comically large, comically powerful six-shooter that fires armour-piercing slugs that can carve bullet holes clean through anything. Charging the shot for a turn makes it get much larger, ideal for deleting entire mech parts with, but overheats the gun in the process.",["Kinetic","event"],stars=5),
+	WeaponItem("boss:solar_apocalypse","Solar Apocalypse","A massive control rod imbued with the mark of Yatagarasu. Manipulate the powers of fission and fusion to unleash a bullet hell of miniature suns on your enemies. Requires an incredible amount of nuclear or stellar power to use it for more than one attack, however.",["Energy","Mythical","event"],stars=5),
+	KitItem("boss:quantum_phantom_generator","Quantum Phantom Generator","A secret defense system built for dogfighting, which allows your mech to spawn phantom decoys of itself that mirror your movements, causing computer systems to prioritize the decoys. To pilots, however, decoys will have a telltale holographic sheen under bright lights.",["Luminous","Sensory","event"],stars=5),
+	KitItem("boss:ethical_consumption","Ethical Consumption","An anarcho-capitalistic nanite swarm infests your weapon systems. Whenever you damage your opponent with a non-energy weapon, the swarm latches onto the damaged part, converting the broken pieces into coins of equal value, rendering it irreparable.",["Drone","event"],stars=5),
+	KitItem("boss:pulsation","Pulsation","An endless heart beats. A dream continues interminably. Once per turn, you may destroy 2 of your equipped parts to completely restore a damaged or destroyed part. If you wish, you may immediately connect the restored part to your main body.",["Anomalous","event"],stars=5),
+])
+
 
 
 
@@ -1084,7 +1093,7 @@ ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, st_yietus, triangle,
 
 event_mechs = (event_formal, event_fauna, event_labour, event_cryptid)
 event_gift_mech = event_cryptid
-all_mechs = ratoon_pullable_mechs + (alto, nullified, ) + event_mechs
+all_mechs = ratoon_pullable_mechs + (alto, nullified, boss) + event_mechs
 
 
 
