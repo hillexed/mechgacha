@@ -974,7 +974,7 @@ jkbenbot=Mech("jkbenbot",
 	BodyPlanItem("jkbenbot:proletariat’s_robot_swarm","Proletariat’s Robot Swarm","Select 1 part of every other non-cosmetic type and form them each into their own separate vaguely supervillain-sized robot that can act independently. Be wary that opponents can break down problematic bots individually to shut them down.",{"arms":2,"legs":2,"weapon":1},stars=5,tags=("Drone",)),
 	WeaponItem("jkbenbot:regression_darts","Regression Darts","A mean weapon, firing large syringe-like darts. Although the armor-piercing of the darts is weak, the serum contained inside can guck up any mythical, arcane or anomalous parts.",["Gooey","Kinetic"],stars=2),
 	CockpitItem("jkbenbot:used_pink_dart","Used Pink Dart","You try to forget why you have this. You've succeeded, but find some strange part of you can't bear to remove it from your cockpit.",["cosmetic","Relationship","Gooey"],stars=4),
-	KitItem("jkbenbot:flip_device","Flip Device","A strange machine capable of firing a beam that can conceptually invert any part, the machine seems to only work once, and only when it would find the result after in some way comedic.",["Whimsy"],stars=4),
+	KitItem("jkbenbot:flip_device","Flip Device","A strange machine capable of firing a beam that can conceptually invert any part. Usable once per fight, the results are always comedic.",["Whimsy"],stars=4),
 ])
 
 
