@@ -92,6 +92,7 @@ async def handle_commands(message):
 
             
         if user_is_admin(message) and len(message_body) > 0 and "debug_add" in message_body:
+            from gacha_tables import all_parts_list
             print(message_body)
             if "<@" in message_body and ">" in message_body:
                 atted_userID = message_body.split("<@")[1].split(">")[0]
