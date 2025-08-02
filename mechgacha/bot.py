@@ -98,9 +98,12 @@ async def handle_commands(message):
             else:
                 return await message.channel.send("at a user to use this debug command")
 
-            item_name = message_body.replace("debug_add","").replace(f"<@{atted_userID}>","")
-
-            item_id = inventory.match_item_name_to_id(item_name)
+            item_name = message_body.replace("debug_add","").replace(f"<@{atted_userID}>","").strip()
+            item_id = None
+            if item_name in all_parts_list: # check to see if user requested a valid item ID
+                item_id = item_name
+            else:
+                item_id = inventory.match_item_name_to_id(item_name)
             inventory.add_id_to_inventory(item_id, atted_userID)
             return await message.channel.send(f"added {item_id} to em")
             
