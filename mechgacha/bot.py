@@ -21,7 +21,7 @@ import sleepy
 
 debug = False
 prefix = 'm!'
-version = '2.1'
+version = '3'
 
 if len(sys.argv) > 1:
     if sys.argv[1] == "debug":

@@ -1,5 +1,3 @@
-version: "1"
-
 services:
   mechgacha:
     image: "hillexed/mechgacha"
