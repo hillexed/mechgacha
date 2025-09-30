@@ -4,10 +4,10 @@ import db
 import inventory
 from data_utils import get_playerdata
 
-event_active = True
-event_name = "Bizarre! The Forbidden Cryptid Gacha"
-event_submission_active = False
-event_submission_link = "https://forms.gle/D62utoaukAJBXmG1A"
+event_active = False
+event_name = "Discovery Day"
+event_submission_active = True
+event_submission_link = "https://forms.gle/SpKogNFCy5TyTxno9"
 
 # Remember to change these when adding or expiring event gifts
 starting_event_pulls = 0 # This counts up to max_event_pulls (I think)
