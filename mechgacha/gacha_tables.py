@@ -28,20 +28,20 @@ bee = Mech("bee", [
 
 oneirocartographer = Mech("oneirocartographer", 
     [
-    PowerItem("oneirocartographer:luminescent_core","Luminescent Core","A tarnished brass octahedron, a glow from within visible through the colored-glass apertures on its faces.", stars=2),
-    LegsItem("oneirocartographer:rangers_arachnopoda","Ranger's Arachnopoda","Ceramic-plated insectoid legs, designed to climb giant trees and negotiate dense plant growth without losing stability.", stars=3),
-    ArmsItem("oneirocartographer:manipulator_assembly","Manipulator Assembly","A pair of mismatched claw-grippers; one large and sturdy, the other small and meant for delicate work."),
+    PowerItem("oneirocartographer:luminescent_core","Luminescent Core","A tarnished brass octahedron, a glow from within visible through the colored-glass apertures on its faces.", ["Luminous","Arcane"], stars=2),
+    LegsItem("oneirocartographer:rangers_arachnopoda","Ranger's Arachnopoda","Ceramic-plated insectoid legs, designed to climb giant trees and negotiate dense plant growth without losing stability.", ["Beast"], stars=3),
+    ArmsItem("oneirocartographer:manipulator_assembly","Manipulator Assembly","A pair of mismatched claw-grippers; one large and sturdy, the other small and meant for delicate work.",["Classic"]),
     BodyItem("oneirocartographer:canopy_viewpoint","Canopy Viewpoint","A small, brass-and-ceramic chassis, built for visibility from the cockpit first and foremost."),
-    CockpitItem("oneirocartographer:gyroscopic_suspension","Gyroscopic Suspension","This cockpit rotates within the mech's chassis, keeping the pilot upright, in order to prevent physical stress when at odd angles to the ground."),
-    BackItem("oneirocartographer:container_lockpoint","Container Lockpoint","Grippers with which a container can be securely attached to the mech's body. Usually used to carry extra supplies on long expeditions."),
-    WeaponItem("oneirocartographer:sling_blade","Sling Blade","For cutting a path when the canopy or the undergrowth is too thick to traverse."),
-    CosmeticItem("oneirocartographer:phalerae_bryophyta","Phalerae Bryophyta","Verdant moss splotches the body of this mech, almost resembling a patchwork quilt.", stars=2),
-    BodyPlanItem("oneirocartographer:arachnopod","Arachnopod","Eight legs, two \"arms\" (in more the position of chelicerae).", {"arms": 2, "legs": 8}, stars=4),
-    KitItem("oneirocartographer:diffractive_heliograpb","Diffractive Heliograph","A reflective lattice of metal used for long-range visual signaling."),
-    CockpitItem("oneirocartographer:dendritic_interface","Dendritic Interface","The cockpit has been overgrown with roots and branches, shaping themselves around the pilot's movements.", stars=3),
-    ArmsItem("oneirocartographer:manipulator_assembly_tier_2","Manipulator Assembly EX","A pair of mismatched claw-grippers; one large and sturdy, the other small and meant for delicate work. Each arm unfolds into several grippers in an array of sizes and materials. A practiced pilot can use these to pick up nearly anything without damaging it.", stars=5),
-    KitItem("oneirocartographer:remote_hardlight_gauntlets","Remote Hardlight Gauntlets","Allows hardlight 'echoes' of the mech's arms to be summoned at a distance, copying its movements. Pilots should note that while the Gauntlets are fully capable of manipulating objects, they will not replicate items held by the mech's physical arms.", stars=4),
-    CosmeticItem("oneirocartographer:silva_phasma","Silva Phasma","A tiny forest spirit has stowed away aboard your mech to see more of the world.", stars=3),
+    CockpitItem("oneirocartographer:gyroscopic_suspension","Gyroscopic Suspension","This cockpit rotates within the mech's chassis, keeping the pilot upright, in order to prevent physical stress when at odd angles to the ground.",["Classic"]),
+    BackItem("oneirocartographer:container_lockpoint","Container Lockpoint","Grippers with which a container can be securely attached to the mech's body. Usually used to carry extra supplies on long expeditions.",["Classic"]),
+    WeaponItem("oneirocartographer:sling_blade","Sling Blade","For cutting a path when the canopy or the undergrowth is too thick to traverse.",["Kinetic"]),
+    CosmeticItem("oneirocartographer:phalerae_bryophyta","Phalerae Bryophyta","Verdant moss splotches the body of this mech, almost resembling a patchwork quilt.",["Terra"], stars=2),
+    BodyPlanItem("oneirocartographer:arachnopod","Arachnopod","Eight legs, two \"arms\" (in more the position of chelicerae).", {"arms": 2, "legs": 8}, stars=4,tags=("Beast",)),
+    KitItem("oneirocartographer:diffractive_heliograpb","Diffractive Heliograph","A reflective lattice of metal used for long-range visual signaling.",["Luminous"]),
+    CockpitItem("oneirocartographer:dendritic_interface","Dendritic Interface","The cockpit has been overgrown with roots and branches, shaping themselves around the pilot's movements.",["Terra","Relationship"], stars=3),
+    ArmsItem("oneirocartographer:manipulator_assembly_tier_2","Manipulator Assembly EX","A pair of mismatched claw-grippers; one large and sturdy, the other small and meant for delicate work. Each arm unfolds into several grippers in an array of sizes and materials. A practiced pilot can use these to pick up nearly anything without damaging it.",["Classic"], stars=5),
+    KitItem("oneirocartographer:remote_hardlight_gauntlets","Remote Hardlight Gauntlets","Allows hardlight 'echoes' of the mech's arms to be summoned at a distance, copying its movements. Pilots should note that while the Gauntlets are fully capable of manipulating objects, they will not replicate items held by the mech's physical arms.",["Energy","Luminous","Drone"], stars=4),
+    CosmeticItem("oneirocartographer:silva_phasma","Silva Phasma","A tiny forest spirit has stowed away aboard your mech to see more of the world.",["Mythical","Relationship"], stars=3),
 ]
 )
 
