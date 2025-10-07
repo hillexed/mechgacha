@@ -75,20 +75,20 @@ async def test_inventory_pagination(monkeypatch):
 
     output = await inventory.inventory_command(message, "", MockClient()) 
     assert len(output) < 2000
-    assert "(Page 1/8)" in output
+    assert "(Page 1/9)" in output
 
     output = await inventory.inventory_command(message, "2", MockClient()) 
     assert len(output) < 2000
-    assert "(Page 2/8)" in output
+    assert "(Page 2/9)" in output
 
-    output = await inventory.inventory_command(message, "8", MockClient()) 
+    output = await inventory.inventory_command(message, "9", MockClient()) 
     assert len(output) < 2000
-    assert "(Page 8/8)" in output
+    assert "(Page 9/9)" in output
 
     # pages beyond current one
     output = await inventory.inventory_command(message, "100000", MockClient()) 
     assert len(output) < 2000
-    assert "(Page 8/8)" in output
+    assert "(Page 9/9)" in output
 
 
 
