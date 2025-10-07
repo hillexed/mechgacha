@@ -53,9 +53,9 @@ async def test_inventory(monkeypatch):
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
 -# **     **`[4]` • COSMETIC
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
--# **     **`[5]` • COSMETIC
+-# **     **`[5]` • COSMETIC, MYTHICAL, WHIMSY
 - ROTBORN STOMPERS ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
--# **     **`[6]` • LEGS
+-# **     **`[6]` • LEGS, CLASSIC, MYTHICAL
 - Hook Lash ★★ - A whip with a spinning metal weight at the end that applies a random debuff on hit
 -# **     **`[7]` • WEAPON
 - Gyrobomber ★ - A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts.
@@ -117,9 +117,9 @@ async def test_inventory_filtering(monkeypatch):
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
 -# **     **`[4]` • COSMETIC
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
--# **     **`[5]` • COSMETIC
+-# **     **`[5]` • COSMETIC, MYTHICAL, WHIMSY
 - ROTBORN STOMPERS ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
--# **     **`[6]` • LEGS
+-# **     **`[6]` • LEGS, CLASSIC, MYTHICAL
 - Hook Lash ★★ - A whip with a spinning metal weight at the end that applies a random debuff on hit
 -# **     **`[7]` • WEAPON
 - Gyrobomber ★ - A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts.
@@ -135,7 +135,7 @@ async def test_inventory_filtering(monkeypatch):
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
 -# **     **`[4]` • COSMETIC
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
--# **     **`[5]` • COSMETIC'''.strip()
+-# **     **`[5]` • COSMETIC, MYTHICAL, WHIMSY'''.strip()
 
 
     assert await inventory.inventory_command(message, "legs", MockClient()) == '''
@@ -143,14 +143,14 @@ async def test_inventory_filtering(monkeypatch):
 - Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement. 
 -# **     **`[1]` • LEGS
 - ROTBORN STOMPERS ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
--# **     **`[6]` • LEGS'''.strip()
+-# **     **`[6]` • LEGS, CLASSIC, MYTHICAL'''.strip()
 
     assert await inventory.inventory_command(message, "unequipped cosmetic 3 stars", MockClient()) == '''
 **Your inventory:**
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
 -# **     **`[4]` • COSMETIC
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
--# **     **`[5]` • COSMETIC'''.strip()
+-# **     **`[5]` • COSMETIC, MYTHICAL, WHIMSY'''.strip()
 
     assert await inventory.inventory_command(message, "unequipped arms", MockClient()) == '''
 **You have nothing in your inventory!** 
