@@ -1137,6 +1137,8 @@ all_mechs = ratoon_pullable_mechs + (alto, nullified, boss) + event_mechs
 all_parts_list = {} # a dict of item id: item
 all_mechs_by_part = {} # dict of item id: mech name
 
+all_tags = set()
+
 # populate the parts list
 for mech in all_mechs:
     for item in mech.loot:
@@ -1145,8 +1147,11 @@ for mech in all_mechs:
         all_parts_list[item.id] = item
         all_mechs_by_part[item.id] = mech.username
 
+        all_tags = all_tags.union(item.tags)
+
 for item in body_plans:
     all_parts_list[item.id] = item
+    all_tags = all_tags.union(item.tags)
 
 # done populating all_parts_list
 
