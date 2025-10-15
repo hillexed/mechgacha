@@ -1112,6 +1112,7 @@ event_cryptid = Mech("Bizarre! The Forbidden Cryptid Gacha!",
 ])
 
 event_discovery = Mech("Discovery Day",
+[
 	CosmeticItem("event_discovery:ditto","2.5 metric tons of Ryegrass","Boosts Horse Part effectiveness by 2.5x.",["Horse", "Organic", "event"],stars=3),
 	KitItem("event_discovery:hal","Pulsating Bud","A small pulsating flower bud stuck to your mech. The mere presence of this bud causes plant life to react violently, creating large thorns on any plants on Terra parts on your mech. These thorns are laced with a strong dissolving agent that causes internal damage to any parts punctured by them.",["Terra", "event"],stars=3),
 	WeaponItem("event_discovery:styietus","GRUNT SUIT GUARD","A seemingly simple shield, attached reassuringly to one of your mech's arms. It resonates with Classic and Unremarkable parts, becoming sturdier the more you have equipped. It's rumored that a shield like this once survived the destruction of an entire universe, but surely that couldn't be true...",["Classic", "event"],stars=3),
