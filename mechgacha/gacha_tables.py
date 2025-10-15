@@ -122,8 +122,8 @@ cheshire = Mech("cheshire",
     BodyItem("cheshire:lithoform","Lithoform","The core of this body appears to be smooth stone, resembling polished cement. small inlays of metal have been hammered into it, or perhaps melted and poured into it. It is not spherical, but has many curves in its shape language.", stars=2),
     CockpitItem("cheshire:synaptic_pool","Synaptic Pool","One of those big old glass tubes or spheres full of goo. Most of the time pilots stand in front of it, touching the outside to make their Mech do cool things, But weirdos like to be completely submerged inside of it. You know, a classic goo chamber.", stars=2),
     BackItem("cheshire:glyph_thrusters","Glyph Thrusters","A series of runic circles project out from this object, framing the Mech and providing an arcane boost when needed", stars=2),
-    WeaponItem("cheshire:ceremonial_blade","Ceremonial blade","A short, wicked looking dagger. There appears to be some sort of tube from the end of it that runs back into the mech, as though hydraulics add or remove some sort of fluid from it"),
-    CosmeticItem("cheshire:viewing_chambers","Viewing chambers","Specialized glass that allows you to see the mechanisms inside of the machine. Designed to make repairs nice and easy."), 
+    WeaponItem("cheshire:ceremonial_blade","Ceremonial Blade","A short, wicked looking dagger. There appears to be some sort of tube from the end of it that runs back into the mech, as though hydraulics add or remove some sort of fluid from it"),
+    CosmeticItem("cheshire:viewing_chambers","Viewing Chambers","Specialized glass that allows you to see the mechanisms inside of the machine. Designed to make repairs nice and easy."), 
     CockpitItem("cheshire:stowaway_cheshire","Stowaway Cheshire","You've found them hidden in the right leg of your mech, siphoning gasoline with their mouth."),  
     BodyPlanItem("cheshire:centaur","Centaur","With four legs, this bodyplan is typically fashioned into a centaur like configuration, allowing an additional back slot to be equipped as well", {"legs": 4, "arms": 2, "back": 2}),
     BodyItem("cheshire:sigil_crusted_body","Sigil Crusted Body","What appears to be an old wooden ship or other reclaimed wood, covered in the still-burning sigils that animate it.", stars=3),
@@ -1111,7 +1111,24 @@ event_cryptid = Mech("Bizarre! The Forbidden Cryptid Gacha!",
 	WeaponItem("event_cryptid:theoddman","Strange Alien Ray Gun","This appears to be a giant alien ray gun, but is actually surveying equipment. If you turn up the intensity, it kinda hurts and is a blinding hazard. The device contains an alien battery design and highly unstable capacitors, which can function as contact grenades if thrown hard enough.",["event","Anomalous"],stars=3),
 ])
 
-
+event_discovery = Mech("Discovery Day",
+[
+	CosmeticItem("event_discovery:ditto","2.5 metric tons of Ryegrass","Boosts Horse Part effectiveness by 2.5x.",["Horse", "Organic", "event"],stars=3),
+	KitItem("event_discovery:hal","Pulsating Bud","A small pulsating flower bud stuck to your mech. The mere presence of this bud causes plant life to react violently, creating large thorns on any plants on Terra parts on your mech. These thorns are laced with a strong dissolving agent that causes internal damage to any parts punctured by them.",["Terra", "event"],stars=3),
+	WeaponItem("event_discovery:styietus","GRUNT SUIT GUARD","A seemingly simple shield, attached reassuringly to one of your mech's arms. It resonates with Classic and Unremarkable parts, becoming sturdier the more you have equipped. It's rumored that a shield like this once survived the destruction of an entire universe, but surely that couldn't be true...",["Classic", "event"],stars=3),
+	WeaponItem("event_discovery:shork","Fuel Injector","A high-pressure sniper rifle that resembles a petrol pump. By default, it fires a fuel-filled, armour-piercing bullet, which explodes when the targeted part touches or is damaged by another Pyro part. The liquid ammo can also be live-swapped to use fluids from any other equipped Aqua or Gooey part.",["Aqua", "Pyro", "event"],stars=3),
+	WeaponItem("event_discovery:triangle","Forced Attunement Fork","A massive shoulder-mounted tuning fork. When struck, its vibrations overwhelm all other sounds, replacing them with the purest tone of the universe. For as long as it vibrates, this fork can negate or amplify; it just depends on how other sonic parts are tuned. All sound becomes one",["Sonic", "event"],stars=3),
+	KitItem("event_discovery:blueberry","Non-Newtonian Fluid Convertor","this generator makes any gooey fluids your parts may ooze out have the properties of Non-Newtonian fluid and toughen up to block blows when hit by a physical attack or another source of high physical stress.",["Gooey", "event"],stars=3),
+	WeaponItem("event_discovery:oneirocartographer","The Power of Friendship and This Gun I Found","A laser cannon that draws on the pilot's positive emotions to fuel its neon pink beam. Becomes more powerful the more other Relationship parts you have equipped.",["Energy", "Relationship", "event"],stars=3),
+	KitItem("event_discovery:jbkenbot","Memory Updater","A kit that fires a memory alteration wave, replacing all memories of parts without flavor tags with “horse”. Rendering said parts unusable.",["Horse", "Sensory", "event"],stars=3),
+	PowerItem("event_discovery:ava_shinedrake","Luna Core","A huge orb of unknown magitech, eerily silent, with its own gravitational pull. Your Beast parts inflict Moonsickness, a desire to sit and stare at nothing, on hit. Your Aqua parts raise tides and pull things down. Your Arcane parts gain great power but grow tranquil, unable to directly harm mechs.",["Luminous", "Space", "event"],stars=3),
+	BackItem("event_discovery:hillexed","Equilibrium Embodiment","When the elements are in tune, mount this painted sigil to harness the power of feng shui. This engine speeds up twirling or rotating mecha movements, as long as your mecha has an equal (but nonzero) number of functioning parts with the Pyro, Aqua, Terra, Aero, and Cryo tags.",["Energy", "Mythical", "event"],stars=3),
+	BackItem("event_discovery:jcterran","Fractus Deployable Solar Array","A huge folding frill of ultralight solar panels, held together by magnetic locks. Any Luminous effect that touches the panels is absorbed and converted into energy. The absorbed energy can be used to boost the power of mounted Energy parts, but dissipates quickly.",["Luminous", "Space", "event"],stars=3),
+	BackItem("event_discovery:urirles","Deployable Energy Relays","A quiver full of rods fitted with various antennas, mirrors and coils and specially designed to clamp on almost any surface even when thrown from a distance. Once planted, Energy attacks or powers that hit one of those will bounce off it, allowing new angle of attacks.",["Energy", "event"],stars=3),
+	KitItem("event_discovery:thecowofeternalflame","Matryoshka Drones","More drones per drone. All of your Drone parts have smaller, faster versions of themselves within them. When sufficiently damaged, they eject their outer shells to reveal this smaller version.",["Whimsy", "event"],stars=3),
+	PowerItem("event_discovery:chillychilichelle","The Imp","Something insidious has taken residence within your mech. At the beginning of the match, secretly select one non-Anomalous, non-Cosmetic part. That part becomes Anomalous and Cosmetic, losing all actual function. While that part is intact and attached, your mech cannot fully fail.",["Anomalous", "event"],stars=3),
+])
+																							
 
 
 starting_inventory = ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body"]
@@ -1131,8 +1148,8 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"legs": 2, "arms": 2, "powe
 
 ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, st_yietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, urirles, jcterran, bogle, avashinedrake, jkbenbot)
 
-event_mechs = (event_formal, event_fauna, event_labour, event_cryptid)
-event_gift_mech = event_cryptid
+event_mechs = (event_formal, event_fauna, event_labour, event_cryptid, event_discovery)
+event_gift_mech = event_discovery
 all_mechs = ratoon_pullable_mechs + (alto, nullified, boss) + event_mechs
 
 
