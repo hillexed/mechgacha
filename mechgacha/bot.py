@@ -129,8 +129,8 @@ async def handle_commands(message):
     elif message.content.startswith(prefix + "scrap"):
         await scrap.scrap_command(message, get_command_body(message, "scrap"), client)
     
-    elif message.content.startswith(prefix + "recycle"): # alias
-        await scrap.scrap_command(message, get_command_body(message, "recycle"), client)
+    elif message.content.startswith(prefix + "recycle"): # formerly an alias, splitting to use for manually recycling scrap
+        await scrap.recycle_command(message, get_command_body(message, "recycle"), client)
     
     elif message.content.startswith(prefix + "mech unequip"):
         await equip.unequip_command(message, get_command_body(message, "mech unequip"), client)
