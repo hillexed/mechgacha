@@ -74,30 +74,32 @@ async def scrap_command(message, message_body, client):
 
     stars = offered_item.stars
 
-
     playerdata = db.get_player_data(user_id)
     existing_scrap = int(playerdata["scrap"])
     added_scrap = stars
     playerdata["scrap"] = existing_scrap + added_scrap
-
-    traded_in = False
-    while playerdata["scrap"] >= SCRAP_TRADEIN_THRESHOLD:
-        # trade in!
-        traded_in = True
-        playerdata["scrap"] -= SCRAP_TRADEIN_THRESHOLD
-
-        # free pulls!
-        playerdata["ratoon_pulls"] += 1/4
-        playerdata["mech_pulls"] += 1
-
     db.set_player_data(user_id, playerdata)
 
     inventory.remove_from_inventory_by_position(offered_item_index, user_id)
 
     star_character = "☆" if "event" in offered_item.tags else "★"
     stars_string = star_character * stars
-    if not traded_in:
-        await message.channel.send(f"You scrapped your {offered_item.name} {stars_string} and got {added_scrap} scrap. You now have {playerdata['scrap']} scrap.")
-    else:
-        await message.channel.send(f"You scrapped your {offered_item.name} {stars_string} and got {added_scrap} scrap - enough to salvage a day's worth of pulls! You now have {playerdata['scrap']} scrap.")
+    await message.channel.send(f"You scrapped your {offered_item.name} {stars_string} and got {added_scrap} scrap. You now have {playerdata['scrap']} scrap.")
         
+async def recycle_command(message, message_body, client):
+    user_id = message.author.id
+    playerdata = db.get_player_data(user_id)
+    traded_in = False
+    if playerdata["scrap"] >= SCRAP_TRADEIN_THRESHOLD:
+        # trade in!
+        traded_in = True
+        playerdata["scrap"] -= SCRAP_TRADEIN_THRESHOLD
+        # free pulls!
+        playerdata["ratoon_pulls"] += 1/4
+        playerdata["mech_pulls"] += 1
+
+    db.set_player_data(user_id, playerdata)
+    if traded_in:
+        await message.channel.send(f"You recycled {SCRAP_TRADEIN_THRESHOLD} scrap and salvaged a day's worth of pulls! You now have {playerdata['scrap']} scrap.")
+    else:
+        await message.channel.send(f"You need {SCRAP_TRADEIN_THRESHOLD} scrap to salvage anything. You currently have {playerdata['scrap']} scrap.")
