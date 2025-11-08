@@ -989,10 +989,23 @@ jkbenbot=Mech("jkbenbot",
 	KitItem("jkbenbot:flip_device","Flip Device","A strange machine capable of firing a beam that can conceptually invert any part. Usable once per fight, the results are always comedic.",["Whimsy"],stars=4),
 ])
 
+shop = Mech("shop",
+			[
+				BackItem("shop:spampods","Spampods","Back-mounted missile salvos that can spew up to 24 heat-seeking missiles at once. The targeting systems are primitive, leading to a wide, spiralling area of effect, but not particularly great accuracy. Fortunately, the ammo protocols automatically print and reload 6 missiles every round.",["Classic","Pyro"],stars=1),
+				PowerItem("shop:three_lr44_batteries","Three LR44 Batteries","Turns out that once you optimize your mech's power distribution system properly, this is all the power you actually need...",["Whimsy"],stars=1),
+				BodyItem("shop:3d_printed_chassis","3D-Printed Chassis","A chassis printed from recyclable plastic in the space of a few hours. Very expendable and replacable, allowing for easy and consistent repairs and modification.",["Classic"],stars=1),
+				ArmsItem("shop:radix_regulators","Radix Regulators","High-speed, high-precision arms that are ideal for rapidly sorting items on a production line. They're not really built for mech combat, so don't take hits well, but they may be useful for quickly executing dexterous manoeuvres.",["Kinetic"],stars=1),
+				LegsItem("shop:magnetic_treads","Magnetic Treads","Heavy tank-style tracks. Each slat of the treads is magnetized, allowing for even stronger grip on metal flooring.",["Classic"],stars=1),
+				CockpitItem("shop:megazlord_cockpit","Megazlord Cockpit","Seats and controls for you and up to four teammates. Colour-coded matching uniform also included.",["cosmetic","Blaseball","Classic"],stars=1),
+				WeaponItem("shop:chainsaw","Chainsaw","An off-the-shelf chainsaw bolted onto an arm, ideal for cutting through wood.",["Kinetic"],stars=1),
+				KitItem("shop:mysterious_present","Mysterious Present","A large, gift-wrapped cardboard box, containing a surprise for your opponent once they tear into it... It's nets. The box is full of entangling nets.",["Whimsy"],stars=1),
+				BodyPlanItem("shop:wide","WIDEEEEEEEEEEEEEEEEEE","An extremely long series of flexible panels connects the left and right halves of your bot together, allowing you to wrap around your opposition and attack from odd angles.", {"legs":2,"arms":2},stars=1),
+				CosmeticItem("shop:tinkers_goggles","Tinkers' Goggles","A pair of goggles with metallic frames and huge lenses, worn incorrectly. Comes in both mech and pilot sizes!",["Classic"],stars=1),
+			])
 
 nullified = Mech("nullified",
 [
-    Item("nullified:null_pointer", "Null Pointer", "A jagged shard of unreality that, by all definitions, does not exist. Sensors and computer systems go haywire when nearby. Was something else here, before?", ["power","weapon","kit"], stars=5),
+    Item("nullified:null_pointer", "Null Pointer", "A jagged shard of unreality that, by all definitions, does not exist. Sensors and computer systems go haywire when nearby. Was something else here, before?", ["power","weapon","kit","Anomalous","Space"], stars=5),
     CosmeticItem("nullified:null_device", "Null Device", "A mysterious bucket that devours all inputted information. Useful for waste disposal.", stars=1),
 ])
 
@@ -1158,7 +1171,7 @@ ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, st_yietus, triangle,
 
 event_mechs = (event_formal, event_fauna, event_labour, event_cryptid, event_discovery)
 event_gift_mech = event_discovery
-all_mechs = ratoon_pullable_mechs + (alto, nullified, boss) + event_mechs
+all_mechs = ratoon_pullable_mechs + (alto, shop, nullified, boss) + event_mechs
 
 
 
