@@ -56,9 +56,9 @@ async def test_inventory(monkeypatch):
 -# **     **`[5]` • COSMETIC, MYTHICAL, WHIMSY
 - ROTBORN STOMPERS ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
 -# **     **`[6]` • LEGS, CLASSIC, MYTHICAL
-- Hook Lash ★★ - A whip with a spinning metal weight at the end that applies a random debuff on hit
+- Hook Lash ★★ - A whip with a spinning metal weight at the end that applies a random debuff on hit.
 -# **     **`[7]` • WEAPON
-- Gyrobomber ★ - A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts.
+- Gyrobomber ★ - A gyroscopic cockpit with 300 degrees of visibility, to allow for the stabilization of the cockpit even as the body contorts.
 -# **     **`[8]` • COCKPIT'''.strip()
 
     assert await inventory.inventory_command(MockMessage("m!inventory"), "", MockClient())  == expected_inventory
@@ -120,9 +120,9 @@ async def test_inventory_filtering(monkeypatch):
 -# **     **`[5]` • COSMETIC, MYTHICAL, WHIMSY
 - ROTBORN STOMPERS ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
 -# **     **`[6]` • LEGS, CLASSIC, MYTHICAL
-- Hook Lash ★★ - A whip with a spinning metal weight at the end that applies a random debuff on hit
+- Hook Lash ★★ - A whip with a spinning metal weight at the end that applies a random debuff on hit.
 -# **     **`[7]` • WEAPON
-- Gyrobomber ★ - A gyroscopic cockpit with 300 degrees of visibility to allow for the stabilization of the cockpit even as the body contorts.
+- Gyrobomber ★ - A gyroscopic cockpit with 300 degrees of visibility, to allow for the stabilization of the cockpit even as the body contorts.
 -# **     **`[8]` • COCKPIT'''.strip()
 
     assert await inventory.inventory_command(message, "", MockClient()) == expected_inventory
