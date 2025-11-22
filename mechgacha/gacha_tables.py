@@ -1298,21 +1298,21 @@ for item in shop.loot:
 	if "body" in item.tags or "back" in item.tags:
 		monday_shop.append(item)
 	if "arms" in item.tags or "legs" in item.tags:
-    	tuesday_shop.append(item)
-  	if "cockpit" in item.tags or "power" in item.tags:
-    	wednesday_shop.append(item)
-  	if "weapon" in item.tags:
-    	thursday_shop.append(item)
-  	if "kit" in item.tags:
-    	friday_shop.append(item)
-  	if "bodyplan" in item.tags:
-    	saturday_shop.append(item)
-  	if "cosmetic" in item.tags:
-    	sunday_shop.append(item)
+		tuesday_shop.append(item)
+	if "cockpit" in item.tags or "power" in item.tags:
+		wednesday_shop.append(item)
+	if "weapon" in item.tags:
+		thursday_shop.append(item)
+	if "kit" in item.tags:
+		friday_shop.append(item)
+	if "bodyplan" in item.tags:
+		saturday_shop.append(item)
+	if "cosmetic" in item.tags:
+		sunday_shop.append(item)
 
 # sunday shop is special and contains every event item (plus the null items). Will append in future to also include boss items, there's just too many that'd be spoilers right now.
 for mech in event_mechs:
-    sunday_shop.extend(mech.loot)
+	sunday_shop.extend(mech.loot)
 sunday_shop.extend(nullified.loot)
 
 
