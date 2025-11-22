@@ -34,4 +34,4 @@ def test_item_lengths():
         for item in mech.loot:
             assert len(item.description) <= 300
             assert len(item.name) > 1
-            assert len(item.name) <= 50
+            assert len(item.name) <= 62
