@@ -5,3 +5,4 @@ fuzzywuzzy
 python-Levenshtein
 pytest
 pytest-aio
+tzdata
