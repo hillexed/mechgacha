@@ -16,12 +16,13 @@ import equip
 import tradecommand
 import progress
 import scrap
+import shop
 import event
 import sleepy
 
 debug = False
 prefix = 'm!'
-version = '3'
+version = '3.1'
 
 if len(sys.argv) > 1:
     if sys.argv[1] == "debug":
@@ -128,6 +129,10 @@ async def handle_commands(message):
 
     elif message.content.startswith(prefix + "scrap"):
         await scrap.scrap_command(message, get_command_body(message, "scrap"), client)
+
+    elif message.content.startswith(prefix + "shop"):
+        await shop.shop_command(message, get_command_body(message, "shop"), client)
+    
     
     elif message.content.startswith(prefix + "recycle"): # alias
         await scrap.scrap_command(message, get_command_body(message, "recycle"), client)
@@ -196,6 +201,7 @@ async def handle_commands(message):
 `m!trade` - Trade parts with other users
 `m!progress <mech name>` - See how many parts you have collected from a specific mech
 `m!scrap` - Get rid of unwanted items. Scrap is recycled into free pulls.
+`m!shop` - View a rotating selection of items and trade your scrap for them!
 `m!event` - See info about ongoing events.
 - `m!event claim` - Claim any currently active event gifts.
 """)

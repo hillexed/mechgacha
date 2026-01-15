@@ -989,7 +989,7 @@ jkbenbot=Mech("jkbenbot",
 	KitItem("jkbenbot:flip_device","Flip Device","A strange machine capable of firing a beam that can conceptually invert any part. Usable once per fight, the results are always comedic.",["Whimsy"],stars=4),
 ])
 
-shop = Mech("shop",
+shop_gacha = Mech("shop",
 			[
 				BodyItem("shop:3d_printed_chassis","3D-Printed Chassis","A chassis printed from recyclable plastic in the space of a few hours. Very expendable and replacable, allowing for easy and consistent repairs and modification.",["Classic"],stars=1),
 				BodyItem("shop:teddy_armour","Teddy Armour","The outer armour of your mech is stitched together from hundreds of adorable stuffed animals. Surely your opponent doesn't have the heart to hurt them...",["Whimsy"],stars=1),
@@ -1292,30 +1292,7 @@ ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, st_yietus, triangle,
 
 event_mechs = (event_formal, event_fauna, event_labour, event_cryptid, event_discovery)
 event_gift_mech = event_discovery
-all_mechs = ratoon_pullable_mechs + (alto, shop, nullified, boss) + event_mechs
-
-# splitting shop gacha into each day's inventory
-monday_shop, tuesday_shop, wednesday_shop, thursday_shop, friday_shop, saturday_shop, sunday_shop = [],[],[],[],[],[],[]
-for item in shop.loot:
-	if "body" in item.tags or "back" in item.tags:
-		monday_shop.append(item)
-	if "arms" in item.tags or "legs" in item.tags:
-		tuesday_shop.append(item)
-	if "cockpit" in item.tags or "power" in item.tags:
-		wednesday_shop.append(item)
-	if "weapon" in item.tags:
-		thursday_shop.append(item)
-	if "kit" in item.tags:
-		friday_shop.append(item)
-	if "bodyplan" in item.tags:
-		saturday_shop.append(item)
-	if "cosmetic" in item.tags:
-		sunday_shop.append(item)
-
-# sunday shop is special and contains every event item (plus the null items). Will append in future to also include boss items, there's just too many that'd be spoilers right now.
-for mech in event_mechs:
-	sunday_shop.extend(mech.loot)
-sunday_shop.extend(nullified.loot)
+all_mechs = ratoon_pullable_mechs + (alto, shop_gacha, nullified, boss) + event_mechs
 
 
 all_parts_list = {} # a dict of item id: item
