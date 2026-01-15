@@ -2,7 +2,7 @@ import datetime
 import random
 
 from gacha_tables import all_parts_list, shop_gacha
-from inventory import format_item
+from inventory import format_item, add_id_to_inventory
 import db
 import scrap
 from fuzzywuzzy import process
@@ -20,8 +20,7 @@ def get_todays_shop_pool():
     weekday_index = datetime.datetime.now(timezone_for_shopchange).weekday()
 
 
-    parts_to_choose_from = all_parts_list.values()
-    # parts_to_choose_from = shop_gacha.loot
+    parts_to_choose_from = all_parts_list.values()# + shop_gacha.loot
 
     match weekday_index:
         case 0: # Monday
@@ -151,11 +150,11 @@ async def exchange_scrap_for_item(message, user_id, playerdata, item):
     if playerdata["scrap"] >= scrap_cost:
         # trade in!
         
-        inventory.add_id_to_inventory(item.id, user_id)
+        add_id_to_inventory(item.id, user_id)
         playerdata["scrap"] -= scrap_cost
 
         db.set_player_data(user_id, playerdata)
-        return await message.channel.send(f"You traded in {NUM_SCRAP_FOR_ONE_PULL} scrap and received a f{random.choice(['refurbished','refurbished','refurbished','lightly used','slightly scratched','polished','brand-new','lovingly worn','banged-up','dented','fine-looking','good quality','new','new','new','gift-wrapped','wrapped-up','wrapped-up','boxed','boxed'])} **{item.name}**! You now have {playerdata['scrap']} scrap.")
+        return await message.channel.send(f"You traded in {scrap_cost} scrap and received a {random.choice(['refurbished','refurbished','refurbished','lightly used','slightly scratched','polished','brand-new','lovingly worn','banged-up','dented','fine-looking','good quality','new','new','new','gift-wrapped','wrapped-up','wrapped-up','boxed','boxed'])} **{item.name}**! You now have {playerdata['scrap']} scrap.")
     else:
         return await message.channel.send(f"You don't have the {NUM_SCRAP_FOR_ONE_PULL} scrap needed to exchange for the {item.name}. You have {playerdata['scrap']} scrap. Use m!scrap to recycle parts in your inventory into scrap.")
 
@@ -196,7 +195,6 @@ async def shop_command(message, message_body, client):
         # user requested to exchange for something
         if item_index == len(current_shop_items):
             # last item in the index, which is always 'pull'.
-            # exchange 5 scrap for one pull
             # return await message.channel.send("Ya want a pull, eh? They're giving em away for free, you know. Don't even polish em. I'd love to give those pulls a bit of refurbishing first...")
             return await exchange_scrap_for_pull(message, user_id, playerdata)
 
