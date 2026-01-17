@@ -99,27 +99,27 @@ def shop_cost(item):
 def get_shop_info():
     weekday_index = datetime.datetime.now(timezone_for_shopchange).weekday()
     match weekday_index:
-    case 0: # Monday, body & back
-        today_shop_name = "Haydrian Mass Foundries"
-        today_shop_description = "The cycling of the Core has brought the Mech Gacha to a sprawling industrial park, conveniently aligned with Ratoon's home. The facility's open-plan design and endless iron supply makes it ideal for constructing bulkier components of mechs, such as Body and Back parts. An open hangar before the Mech Gacha holds some freshly-forged mech parts for trade:"
-    case 1: # Tuesday, arms & legs
-        today_shop_name = ""
-        today_shop_description = ""
-    case 2: # Wednesday, cockpit & power
-        today_shop_name = ""
-        today_shop_description = ""
-    case 3: # Thursday, weapons
-        today_shop_name = "Screwloose Botlabs"
-        today_shop_description = "The cycling of the Core has brought the Mech Gacha to the Combat Roblotics League campus, a compact arena intended for smaller RC robots to test their might. The Screwloose storefront holds a veritable arsenal of mech weaponry, optimized for winning through style, control, damage and aggression. Torus McGhee, eagerly manning the counter, revs with anticipation as you peruse your options:"
-    case 4: # Friday, kits
-        today_shop_name = ""
-        today_shop_description = ""
-    case 5: # Saturday, bodyplans
-        today_shop_name = "B.A.C.K. Market"
-        today_shop_description = "The cycling of the Core has brought the Mech Gacha to the B.A.C.K. Archives. Towering shelves loom overhead, holding endless mech blueprints and component Manuals. A handwritten note, beside a curated set of blueprints on a stand, simply reads: \"You may have a copy of these Body Plans, in exchange for an appropriate donation of scrap. M.B.\":"
-    case 6: # Sunday, special
-        today_shop_name = "[NULLIFIED]"
-        today_shop_description = "The cycling of the Core has brought the Mech Gacha to parts unknown. Suspended over blackest depths of the Pillars, a metal catwalk over the abyss holds an impromptu black market. Ethereal lighting illuminates the wares of the hooded shopkeeps. Trinkets and decals make up the majority of their collection, but a keen eye spots some worthwhile finds:"
+        case 0: # Monday, body & back
+            today_shop_name = "Haydrian Mass Foundries"
+            today_shop_description = "The cycling of the Core has brought the Mech Gacha to a sprawling industrial park, conveniently aligned with Ratoon's home. The facility's open-plan design and endless iron supply makes it ideal for constructing bulkier components of mechs, such as Body and Back parts. An open hangar before the Mech Gacha holds some freshly-forged mech parts for trade:"
+        case 1: # Tuesday, arms & legs
+            today_shop_name = ""
+            today_shop_description = ""
+        case 2: # Wednesday, cockpit & power
+            today_shop_name = ""
+            today_shop_description = ""
+        case 3: # Thursday, weapons
+            today_shop_name = "Screwloose Botlabs"
+            today_shop_description = "The cycling of the Core has brought the Mech Gacha to the Combat Roblotics League campus, a compact arena intended for smaller RC robots to test their might. The Screwloose storefront holds a veritable arsenal of mech weaponry, optimized for winning through style, control, damage and aggression. Torus McGhee, eagerly manning the counter, revs with anticipation as you peruse your options:"
+        case 4: # Friday, kits
+            today_shop_name = ""
+            today_shop_description = ""
+        case 5: # Saturday, bodyplans
+            today_shop_name = "B.A.C.K. Market"
+            today_shop_description = "The cycling of the Core has brought the Mech Gacha to the B.A.C.K. Archives. Towering shelves loom overhead, holding endless mech blueprints and component Manuals. A handwritten note, beside a curated set of blueprints on a stand, simply reads: \"You may have a copy of these Body Plans, in exchange for an appropriate donation of scrap. M.B.\":"
+        case 6: # Sunday, special
+            today_shop_name = "[NULLIFIED]"
+            today_shop_description = "The cycling of the Core has brought the Mech Gacha to parts unknown. Suspended over blackest depths of the Pillars, a metal catwalk over the abyss holds an impromptu black market. Ethereal lighting illuminates the wares of the hooded shopkeeps. Trinkets and decals make up the majority of their collection, but a keen eye spots some worthwhile finds:"
 
     return today_shop_name, today_shop_description
        
