@@ -45,6 +45,7 @@ async def test_shop_works(monkeypatch):
 
     import shop
     monkeypatch.setattr(shop, "get_shop_items", mock_shop_items)
+    monkeypatch.setattr(shop, "get_shop_info", ("The Repair Shop","An "under construction" sign bars the way, but if you squint you can see beyond it. Today, these items sit in front of the shop's messy entrance:"))
 
 
     
@@ -77,6 +78,7 @@ async def test_shop_redeeming_pulls(monkeypatch):
 
     import shop
     monkeypatch.setattr(shop, "get_shop_items", mock_shop_items)
+    monkeypatch.setattr(shop, "get_shop_info", ("The Repair Shop","An "under construction" sign bars the way, but if you squint you can see beyond it. Today, these items sit in front of the shop's messy entrance:"))
 
     # not enough scrap
     assert (await shop.shop_command(MockMessage("m!shop"), "4", MockClient())) == ("You don't have the 5 scrap needed to exchange for this item. You have 3 scrap. Use m!scrap to recycle parts in your inventory into scrap.")
