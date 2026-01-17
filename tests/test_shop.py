@@ -36,7 +36,7 @@ def mock_shop_items():
     return [all_parts_list["alto:unremarkable_legs"], all_parts_list["alto:unremarkable_arms"],all_parts_list["alto:unremarkable_body"]]
 
 def mock_shop_info():
-    return "The Repair Shop","An "under construction" sign bars the way, but if you squint you can see beyond it. Today, these items sit in front of the shop's messy entrance:"
+    return "The Repair Shop","An \"under construction\" sign bars the way, but if you squint you can see beyond it. Today, these items sit in front of the shop's messy entrance:"
 
 async def test_shop_works(monkeypatch):
 
