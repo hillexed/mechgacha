@@ -54,7 +54,7 @@ async def test_shop_works(monkeypatch):
     # the message changes with time, so .startswith() ensures the test doesn't fail because of the time of day
     assert (await shop.shop_command(MockMessage("m!shop"), "", MockClient())).startswith(f'''
 # **The Repair Shop**
-An "under construction" sign bars the way, but if you squint you can see beyond it. Today, these items sit in front of the shop's messy entrance:
+A "freshly renovated" sign beckons you into a wild array of half-disassembled bits and bobs with people at work all around you. Inside, several filing cabinets, car hoists, and horizontal painted doors have been combined to form display stands. Today, these items proudly sit on top of them:
 - `[1]` - Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement. 
 -# **     **LEGS
 -# **     **Cost: **10 scrap**

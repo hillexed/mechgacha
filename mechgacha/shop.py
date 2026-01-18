@@ -114,16 +114,13 @@ def view_shop(user_scrap="a competing standard (not yet accepted) of"):
     newline = '\n'
 
     return f"""# **The Repair Shop**
-An "under construction" sign bars the way, but if you squint you can see beyond it. Today, these items sit in front of the shop's messy entrance:
+A "freshly renovated" sign beckons you into a wild array of half-disassembled bits and bobs with people at work all around you. Inside, several filing cabinets, car hoists, and horizontal painted doors have been combined to form display stands. Today, these items proudly sit on top of them:
 {newline.join([
     format_item_listing(item, i) 
     for i, item in enumerate(shop_choices)])}
 {format_pull_listing(len(shop_choices))}
 
-    You have {user_scrap} scrap. Nothing catch your eye? The shop will change its selection in {time_left_string}. To exchange scrap for an item, go bug Ratoon to stop painting his scrap with that sticky stuff and maybe I'll think about letting ya trade. Now scram!"""
-
-
-#     "You have {user_scrap} scrap. To exchange scrap for an item, use m!shop <listing number>. Nothing catch your eye? The shop will change its selection in {time_left_string}."""
+    You have {user_scrap} scrap. To exchange scrap for an item, use m!shop <listing number>. Nothing catch your eye? The shop will change its selection in {time_left_string}."""
 
 async def exchange_scrap_for_pull(message, user_id, playerdata):
     playerdata = db.get_player_data(user_id)
