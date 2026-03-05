@@ -230,13 +230,10 @@ async def pull_command(message, message_body):
         else:
             react_message = await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}\nYou have {get_mech_pulls(playerdata)} pull{'s' if get_mech_pulls(playerdata) != 1  else ''} remaining.")
 
-        if not is_item_new:
-            return
-
-        missing_items = sum(0 if inventory.item_already_in_inventory(item, user_inv) else 1 for item in mech_to_pull_from.loot if item != new_item)
-        if missing_items > 0:
-            return
-
-        await react_message.add_reaction('🎉')
+        if is_item_new:
+            missing_items_from_this_gacha = sum(0 if inventory.item_already_in_inventory(item, user_inv) else 1 for item in mech_to_pull_from.loot if item != new_item)
+            if missing_items_from_this_gacha == 0:
+                # The user has finally pulled every item from this gacha!
+                await react_message.add_reaction('🎉')
     else:
         await message.channel.send(f"You are out of pulls!")
