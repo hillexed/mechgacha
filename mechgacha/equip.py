@@ -2,7 +2,7 @@ from inventory import compute_inventory, format_item
 import db
 import inventory
 from data_utils import paginate
-from pulls import get_playerdata, get_username
+from pulls import get_playerdata
 from gacha_tables import all_parts_list, all_mechs_by_part
 from gacha_mechanics import TagType
 from fuzzywuzzy import process

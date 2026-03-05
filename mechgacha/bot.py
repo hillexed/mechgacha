@@ -200,6 +200,8 @@ async def handle_commands(message):
 - `m!mech sources` - see which mechs your equipped items came from
 `m!trade` - Trade parts with other users
 `m!progress <mech name>` - See how many parts you have collected from a specific mech
+- `m!progress ratoon` - See how many mechs you have collected from ratoon
+- `m!progress all` - A quick glance to see how many items you've gotten from every mech you've got.
 `m!scrap` - Turn unwanted items into scrap, which can be used in the shop. 
 `m!shop` - View a rotating selection of items and trade your scrap for them!
 `m!event` - See info about ongoing events.

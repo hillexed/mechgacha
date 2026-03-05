@@ -1,16 +1,16 @@
 import db
-from inventory import compute_inventory
-from gacha_tables import all_mechs, event_mechs, shop_gacha
-from pulls import choose_mech_by_name, get_username, get_user_current_mechs, player_can_pull_from_mech
+from inventory import compute_inventory, item_already_in_inventory
+from gacha_tables import all_mechs, ratoon_pullable_mechs, event_mechs, shop_gacha
+from pulls import choose_mech_by_name, get_user_current_mechs, player_can_pull_from_mech
 from data_utils import get_playerdata
 
-
+PROGRESS_BAR_LENGTH = 12
 can_see_progress_without_unlocking = event_mechs # + (shop_gacha,)
 
 async def progress_command(message, message_body):
     userid = message.author.id
-    username = get_username(message)
-    playerdata = get_playerdata(username)
+    playerdata = get_playerdata(userid)
+    username = message.author.display_name.lower()
     
     if playerdata is None:
        return await message.channel.send(f"\nWelcome! To start getting parts, first use `m!pull ratoon` to get some mechs from Ratoon's gachapon (up to {get_ratoon_pulls(playerdata)} time{'s' if get_ratoon_pulls(playerdata) > 1 else ''}) Then use `m!pull <mech>` to get parts from any mech you have. You have {round(get_mech_pulls(playerdata), 2)} pulls.")
@@ -21,6 +21,33 @@ async def progress_command(message, message_body):
 
     if requested_mech == "":
         return await message.channel.send(f"\nUse m!progress <mech> to see your progress through their list! You can see progress for: {', '.join(player_mechs)}.")
+
+    if requested_mech.lower() == "ratoon":
+        number_of_mechs_user_doesnt_have = sum(1 for mech in ratoon_pullable_mechs if mech.username not in player_mechs)
+
+        if number_of_mechs_user_doesnt_have == 0:
+            return await message.channel.send(f"\nYou have all of the mechs!")
+        else:
+            return await message.channel.send(f"\nYou have {number_of_mechs_user_doesnt_have} mech{'s' if number_of_mechs_user_doesnt_have != 1 else ''} remaining to pull")
+
+    if requested_mech.lower() == "all":
+        inventory = compute_inventory(userid)
+
+        sub_array = [f"## {username}'s global progress on the gacha pool:"]
+        for mech in ratoon_pullable_mechs:
+            if mech.username not in player_mechs:
+                continue
+            sub_array.append(f"**{mech.username.lower()}**")
+            number_of_unique_items_owned = sum(1 for item in mech.loot if item_already_in_inventory(item, inventory))
+            number_of_possible_items = len(mech.loot)
+            increments = (number_of_unique_items_owned * PROGRESS_BAR_LENGTH) // len(mech.loot)
+            # tick the progress bar at least once if the user has at least one item
+            if increments == 0 and number_of_unique_items_owned != 0:
+                increments = 1
+
+            sub_array.append(f"> `[{increments * '#'}{(PROGRESS_BAR_LENGTH - increments) * '-'}]` {number_of_unique_items_owned}/{len(mech.loot)}")
+
+        return await message.channel.send("\n".join(sub_array))
 
     mech_to_see_progress_for: 'gacha_mechanics.Mech' = choose_mech_by_name(all_mechs, requested_mech)
 
@@ -42,8 +69,6 @@ async def progress_command(message, message_body):
         stars.setdefault(item.stars, []).append(matches)
         if item.stars > max_stars:
            max_stars = item.stars
-
-    username = message.author.display_name.lower()
 
     sub_array = [f"## {username}'s progress on {mech_to_see_progress_for.username.lower()}'s gacha:\n"]
     for star_count in range(max_stars+1):

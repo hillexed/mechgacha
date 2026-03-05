@@ -39,9 +39,6 @@ def deduct_ratoon_pull(username, playerdata):
     playerdata["ratoon_pulls"] -= 1
     db.set_player_data(username, playerdata)
 
-def get_username(message):
-    return message.author.id
-
 def get_user_current_mechs(playerdata):
     # sample playerdata = {"unlocked_mechs": ['alto'], 'ratoon_pulls':2, 'mech_pulls': 5}
     return playerdata["unlocked_mechs"]
@@ -104,14 +101,14 @@ def add_new_mech(username, playerdata, new_mech):
 
 async def pull_command(message, message_body):
 
-    username = get_username(message)
-    playerdata = get_playerdata(username)
+    userid = message.author.id
+    playerdata = get_playerdata(userid)
 
     # print(playerdata)
 
     if playerdata is None:
-        logging.info(f"Adding {username}")
-        inventory.add_new_player(username)
+        logging.info(f"Adding {userid}")
+        inventory.add_new_player(userid)
 
     requested_mech = message_body.strip()
 
@@ -139,7 +136,7 @@ async def pull_command(message, message_body):
                 if normalized_mech_name == mech.username and mech.username not in playerdata["unlocked_mechs"]:
                     mech_name = mech.username
                     playerdata["unlocked_mechs"][i] = mech_name
-                    db.set_player_data(username, playerdata)
+                    db.set_player_data(userid, playerdata)
             # valid
             if mech_name == mech.username:
                 invalid = False
@@ -151,7 +148,7 @@ async def pull_command(message, message_body):
         for mech_name in invalid_mechs:
             playerdata["unlocked_mechs"].remove(mech_name)
             playerdata["ratoon_pulls"] += 1
-        db.set_player_data(username, playerdata)
+        db.set_player_data(userid, playerdata)
         return await message.channel.send("Pull interrupted to refund invalid mechs: "+", ".join(invalid_mechs)+". "+str(len(invalid_mechs))+" ratoon pulls gained.")
 
 
@@ -163,12 +160,12 @@ async def pull_command(message, message_body):
             if len(mechs_user_doesnt_have) == 0:
                 playerdata["mech_pulls"] += 3
                 playerdata["ratoon_pulls"] -= 1
-                db.set_player_data(username, playerdata)
+                db.set_player_data(userid, playerdata)
                 return await message.channel.send("*A hollow clunk resounds from the Mech Gacha...* \n ...Ah. Looks like ya already got all da mechs. \n Here's a lil' something for da trouble tho... 3 more pulls!")
 
             new_mech = random.choice(mechs_user_doesnt_have)
-            add_new_mech(username, playerdata, new_mech)
-            deduct_ratoon_pull(username, playerdata)
+            add_new_mech(userid, playerdata, new_mech)
+            deduct_ratoon_pull(userid, playerdata)
 
             message_to_send = f"You got... \n**{new_mech}**!\nNow you can use `m!pull {new_mech}` to get their parts!"
 
@@ -210,24 +207,36 @@ async def pull_command(message, message_body):
 
         # try repeatedly to get a new item you don't already have. 
         # If you get unlucky and get all duplicates in a row, then you deserve a duplicate
-        user_inv = inventory.compute_inventory(username)
+        user_inv = inventory.compute_inventory(userid)
+        is_item_new = False
         for i in range(tries_to_get_new_item):
             # pull!
             new_item = pull(mech_to_pull_from,1)[0]
             # if the item isn't a duplicate, we're done!
             if not inventory.item_already_in_inventory(new_item, user_inv):
+                is_item_new = True
                 break
 
         # april fool's!
-        inventory.add_to_inventory(new_item, username)
-        deduct_pull(username, playerdata)
+        inventory.add_to_inventory(new_item, userid)
+        deduct_pull(userid, playerdata)
 
         tags_string = f'{"-# " if len(new_item.tags) > 0 else ""}{", ".join([tag.upper() for tag in new_item.tags])}'
         star_character = "☆" if "event" in new_item.tags else "★"
         stars_string = star_character * new_item.stars
+        react_message = None
         if requested_mech.lower() == "random":
-            await message.channel.send(f"You pulled from all of your unlocked item pools and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}\n-# from {new_item.id.split(':')[0]}\nYou have {get_mech_pulls(playerdata)} pull{'s' if get_mech_pulls(playerdata) != 1 else ''} remaining.")
+            react_message = await message.channel.send(f"You pulled from all of your unlocked item pools and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}\n-# from {new_item.id.split(':')[0]}\nYou have {get_mech_pulls(playerdata)} pull{'s' if get_mech_pulls(playerdata) != 1 else ''} remaining.")
         else:
-            await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}\nYou have {get_mech_pulls(playerdata)} pull{'s' if get_mech_pulls(playerdata) != 1  else ''} remaining.")
+            react_message = await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}\nYou have {get_mech_pulls(playerdata)} pull{'s' if get_mech_pulls(playerdata) != 1  else ''} remaining.")
+
+        if not is_item_new:
+            return
+
+        missing_items = sum(0 if inventory.item_already_in_inventory(item, user_inv) else 1 for item in mech_to_pull_from.loot if item != new_item)
+        if missing_items > 0:
+            return
+
+        await react_message.add_reaction('🎉')
     else:
         await message.channel.send(f"You are out of pulls!")
