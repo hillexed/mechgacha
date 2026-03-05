@@ -59,7 +59,7 @@ def get_shop_items():
     seed = "Shop seeded by day:" + str(datetime.datetime.now(timezone_for_shopchange).date())
     shop_rng = random.Random(seed)
 
-    num_shop_items = 3
+    num_shop_items = 4
 
     shop_pool = get_todays_shop_pool() # changes based on weekday
     return shop_rng.sample(shop_pool, k=num_shop_items)
@@ -80,7 +80,7 @@ def format_shop_listing(item_string, item_index, cost):
 
 shop_time_interval = datetime.timedelta(days=2)
 num_shops = 11
-shop_change_reference = datetime.datetime(2026,1,2, tzinfo=timezone_for_shopchange)
+shop_change_reference = datetime.datetime(2026,3,5, tzinfo=timezone_for_shopchange)
 
 def shop_change_time_computations():
     first_time = datetime.datetime.now(timezone_for_shopchange)
