@@ -99,18 +99,6 @@ def shop_cost(item):
     if "event" in item.tags:
         match item.stars:
             case 1:
-                return 20
-            case 2:
-                return 45
-            case 3:
-                return 50
-            case 4:
-                return 75
-            case _:
-                return 100
-    else:
-        match item.stars:
-            case 1:
                 return 10
             case 2:
                 return 20
@@ -120,6 +108,18 @@ def shop_cost(item):
                 return 40
             case _:
                 return 50
+    else:
+        match item.stars:
+            case 1:
+                return 10
+            case 2:
+                return 15
+            case 3:
+                return 20
+            case 4:
+                return 25
+            case _:
+                return 30
 
 def view_shop(user_scrap="a competing standard (not yet accepted) of"):
     shop_choices = get_shop_items()
