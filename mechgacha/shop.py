@@ -1,5 +1,6 @@
 import datetime
 import random
+import math
 
 from gacha_tables import all_parts_list, shop_gacha, shop_pullable_mechs
 from inventory import format_item, add_id_to_inventory
@@ -22,25 +23,33 @@ for mech in shop_pullable_mechs:
             
 def get_todays_shop_pool():
     # this index will update whenever it is midnight in the timezone timezone_for_shopchange
-    weekday_index = datetime.datetime.now(timezone_for_shopchange).weekday()
+    shop_index, _ = shop_change_time_computations()
 
     parts_to_choose_from = shop_pullable_parts
 
-    match weekday_index:
-        case 0: # Monday
-            shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["body","back"])
-        case 1: # Tuesday
-            shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["arms","legs"])
-        case 2: # Wednesday
-            shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["cockpit","power"])
-        case 3: # Thursday
+    match shop_index:
+        case 0:
+            shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["body"])
+        case 1:
+            shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["arms"])
+        case 2:
+            shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["power"])
+        case 3:
             shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["weapon"])
-        case 4: # Friday
+        case 4:
             shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["kit"])
-        case 5: # Saturday
+        case 5:
             shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["bodyplan"])
-        case 6: # Sunday
-            shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["cosmetic","event"])
+        case 6:
+            shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["event"])
+        case 7: # Pillar Utilities
+            shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["cockpit"])
+        case 8: # Back Market
+            shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["back"])
+        case 9: # Great Furnace
+            shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["legs"])
+        case 10: # Crossroads
+            shop_selection = get_all_parts_with_tags(parts_to_choose_from, ["cosmetic"])
 
     return shop_selection
 
@@ -67,30 +76,62 @@ def format_shop_listing(item_string, item_index, cost):
     return f"""- `[{item_index+1}]` {item_string}
 -# **     **Cost: **{cost} scrap**"""
 
+
+
+shop_time_interval = datetime.timedelta(days=2)
+num_shops = 11
+shop_change_reference = datetime.datetime(2026,1,2, tzinfo=timezone_for_shopchange)
+
+def shop_change_time_computations():
+    first_time = datetime.datetime.now(timezone_for_shopchange)
+    difference = first_time - shop_change_reference
+
+    shop_index = math.floor((difference / shop_time_interval) % num_shops)
+
+    time_since_last_shop_change = difference % shop_time_interval
+
+    time_until_next_shop = shop_time_interval - time_since_last_shop_change
+
+    return shop_index, time_until_next_shop
+
+    
+
 def get_shop_info():
-    weekday_index = datetime.datetime.now(timezone_for_shopchange).weekday()
-    match weekday_index:
-        case 0: # Monday, body & back
+    shop_index, _ = shop_change_time_computations()
+    match shop_index:
+        case 0: # body
             today_shop_name = "Haydrian Mass Foundries"
-            today_shop_description = "The cycling of the Core has brought the Mech Gacha to a sprawling industrial park, conveniently aligned with Ratoon's home. The facility's open-plan design and endless iron supply makes it ideal for constructing bulkier components of mechs, such as Body and Back parts. An open hangar before the Mech Gacha holds some freshly-forged mech parts for trade:"
-        case 1: # Tuesday, arms & legs
+            today_shop_description = "The cycling of the Core has brought the Mech Gacha to a sprawling industrial park, conveniently aligned with Ratoon's home. The facility's open-plan design and endless iron supply makes it ideal for constructing bulkier components of mechs, such as Body parts. An open hangar before the Mech Gacha holds some freshly-forged mech parts for trade:"
+        case 1: # arms
             today_shop_name = "The Workhouse"
             today_shop_description = "The cycling of the Core has brought the Mech Gacha to The Workhouse. The sounds of exercise machines and milling machines greet you as you enter the massive gym/workshop complex—this is where denizens of the Core both mechanical and biological go to build their perfect body. Looking up from their work, an unbelievably buff alien and a robot with distressingly many appendages hurry over, excited to show off their latest mech-scale gains:"
-        case 2: # Wednesday, cockpit & power
+        case 2: # power
             today_shop_name = "Generator #56562 Waste Management Outlet"
-            today_shop_description = "The cycling of the Core has brought the Mech Gacha to a sprawling power plant. Facilities like this one help keep the entire Core running, with endless engines and management systems working in tandem to send power to wherever it's needed. A stockpile of Cockpit interfaces and Power systems no longer fit for use in the power grid, but perfect for retrofitting, lie before you:"
-        case 3: # Thursday, weapons
+            today_shop_description = "The cycling of the Core has brought the Mech Gacha to a sprawling power plant. Facilities like this one help keep the entire Core running, with endless engines and management systems working in tandem to send power to wherever it's needed. A stockpile of Power systems no longer fit for use in the power grid, but perfect for retrofitting, lie before you:"
+        case 3: # weapons
             today_shop_name = "Screwloose Botlabs"
             today_shop_description = "The cycling of the Core has brought the Mech Gacha to the Combat Roblotics League campus, a compact arena intended for smaller RC robots to test their might. The Screwloose storefront holds a veritable arsenal of mech weaponry, optimized for winning through style, control, damage and aggression. Torus McGhee, eagerly manning the counter, revs with anticipation as you peruse your options:"
-        case 4: # Friday, kits
+        case 4: # kits
             today_shop_name = "C.E.N.T.E.R. Surplus"
             today_shop_description = "The cycling of the Core has brought the Mech Gacha to C.E.N.T.E.R.'s DownTown HQ. The hub is a hive of activity, with recruits busy at work training for their future roles in reconnaissance, and often willing to help out with mech repairs after particularly fierce battles. Most useful, though, is the wide variety of utility Kits available, which have been upcycled for mech use as a part of project work:"
-        case 5: # Saturday, bodyplans
+        case 5: # bodyplans
             today_shop_name = "B.A.C.K. Market"
             today_shop_description = "The cycling of the Core has brought the Mech Gacha to the B.A.C.K. Archives. Towering shelves loom overhead, holding endless mech blueprints and component Manuals. A handwritten note, beside a curated set of blueprints on a stand, simply reads: \"You may have a copy of these Body Plans, in exchange for an appropriate donation of scrap. M.B.\""
-        case 6: # Sunday, special
+        case 6: # special
             today_shop_name = "[NULLIFIED]"
             today_shop_description = "The cycling of the Core has brought the Mech Gacha to parts unknown. Suspended over blackest depths of the Pillars, a metal catwalk over the abyss holds an impromptu black market. Ethereal lighting illuminates the wares of the hooded shopkeeps. Trinkets and decals make up the majority of their collection, but a keen eye spots some worthwhile finds:"
+        case 7: 
+            today_shop_name = "Pillar Utilities Central"
+            today_shop_description = "The cycling of the Core has brought the Mech Gacha to Pillar Utilities Central. A sprawling mass of connectors, cables, pipes and tubes form a mesmerizing backdrop. Given the interconnected nature of this place, it has become part hub part fashion runway; a place for trading, reworking, and showing off Cockpit systems, such as:"
+        case 8: 
+            today_shop_name = "Back Market"
+            today_shop_description = "The cycling of the Core has brought the Mech Gacha to the underground metropolis of the FBL Battle City. From the shade of reinforced back alleys, weary mech pilots spectate an ongoing mech brawl across the North Plaza. A few of them have some spare Back parts they're looking to offload:"
+        case 9:
+            today_shop_name = "The Great Furnace"
+            today_shop_description = "The cycling of the Core has brought the Mech Gacha to the depths of the Foundries, the red-hot birthplace of many artificial beings in the Core. Dodging colorful fireproof banners and sticking to the temperature controlled catwalks above the white-hot vats, you visit the furnace of a Kiln Angel and Foundry Demon couple, known for being the best legsmiths in the game, to peruse their wares:"
+        case 6: # Sunday, special
+            today_shop_name = "The Crossroads"
+            today_shop_description = "The cycling of the Core has brought the Mech Gacha to a dense yet cozy transport hub. Hand-built stores fill every nook and cranny of this ersatz mall. Travellers, collectors or even those just passing through swap art supplies, stories, stickers, postcards, and other mementos from their various journeys. Your modest pile of scrap attracts the interest of several Mechs, each with their own collection of Cosmetic curios:"
 
     return today_shop_name, today_shop_description
 
@@ -130,10 +171,19 @@ def view_shop(user_scrap="a competing standard (not yet accepted) of"):
     midnight_today = datetime.datetime.combine(now.date(), t)
     time_before_shop_change = midnight_today - now 
 
+
+    _, time_before_shop_change = shop_change_time_computations()
+
     secs_in_hour = 60*60
-    if time_before_shop_change.seconds > secs_in_hour:
+    secs_in_day = secs_in_hour * 24
+
+    if time_before_shop_change.days > 1:
+        time_left_string = f"{time_before_shop_change.days} days"
+    elif time_before_shop_change.total_seconds() > secs_in_day:
+        time_left_string = f"one day and {int(time_before_shop_change.total_seconds() - secs_in_day) // secs_in_hour} hours"
+    elif time_before_shop_change.total_seconds() > secs_in_hour:
         time_left_string = f"{time_before_shop_change.seconds // secs_in_hour} hours"
-    elif time_before_shop_change.seconds > (60):
+    elif time_before_shop_change.total_seconds() > (60):
         time_left_string = f"{time_before_shop_change.seconds // 60} minutes"
     else:
         time_left_string = f"{time_before_shop_change.seconds} seconds"
