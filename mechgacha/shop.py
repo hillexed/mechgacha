@@ -129,7 +129,7 @@ def get_shop_info():
         case 9:
             today_shop_name = "The Great Furnace"
             today_shop_description = "The cycling of the Core has brought the Mech Gacha to the depths of the Foundries, the red-hot birthplace of many artificial beings in the Core. Dodging colorful fireproof banners and sticking to the temperature controlled catwalks above the white-hot vats, you visit the furnace of a Kiln Angel and Foundry Demon couple, known for being the best legsmiths in the game, to peruse their wares:"
-        case 6: # Sunday, special
+        case 10:
             today_shop_name = "The Crossroads"
             today_shop_description = "The cycling of the Core has brought the Mech Gacha to a dense yet cozy transport hub. Hand-built stores fill every nook and cranny of this ersatz mall. Travellers, collectors or even those just passing through swap art supplies, stories, stickers, postcards, and other mementos from their various journeys. Your modest pile of scrap attracts the interest of several Mechs, each with their own collection of Cosmetic curios:"
 
