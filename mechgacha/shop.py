@@ -13,6 +13,10 @@ timezone_for_shopchange = zoneinfo.ZoneInfo('US/Eastern')# At midnight, when the
 
 NUM_SCRAP_FOR_ONE_PULL = 5
 
+shop_time_interval = datetime.timedelta(days=2)
+num_shops = 11
+shop_change_reference = datetime.datetime(2026,3,5, tzinfo=timezone_for_shopchange)
+
 def get_all_parts_with_tags(itemlist, desired_tags):
     return list(filter(lambda item: any([tag in desired_tags for tag in item.tags]), itemlist))
 
@@ -23,7 +27,7 @@ for mech in shop_pullable_mechs:
             
 def get_todays_shop_pool():
     # this index will update whenever it is midnight in the timezone timezone_for_shopchange
-    shop_index, _ = shop_change_time_computations()
+    shop_index, _, _ = shop_change_time_computations()
 
     parts_to_choose_from = shop_pullable_parts
 
@@ -54,14 +58,16 @@ def get_todays_shop_pool():
     return shop_selection
 
 def get_shop_items():
-    # Seed the RNG using today's date. This means when the day changes, the 3 random items will change too
+    # Seed the RNG using a number that goes up every time the shop item changes. That means the shop's inventory will be the same until the change
 
-    seed = "Shop seeded by day:" + str(datetime.datetime.now(timezone_for_shopchange).date())
+    _, _, num_shopchanges_since_reference = shop_change_time_computations()
+
+    seed = "Shop seed:" + num_shopchanges_since_reference
     shop_rng = random.Random(seed)
 
     num_shop_items = 4
 
-    shop_pool = get_todays_shop_pool() # changes based on weekday
+    shop_pool = get_todays_shop_pool() # changes based on interval
     return shop_rng.sample(shop_pool, k=num_shop_items)
 
 
@@ -78,26 +84,28 @@ def format_shop_listing(item_string, item_index, cost):
 
 
 
-shop_time_interval = datetime.timedelta(days=2)
-num_shops = 11
-shop_change_reference = datetime.datetime(2026,3,5, tzinfo=timezone_for_shopchange)
-
 def shop_change_time_computations():
+    # returns:
+    # shop_index: a number that's from 1 to num_shops
+    # time_until_next_shop: a datetime.timedelta representing how long until next change
+    # num_shop_changes_since_reference: an integer that goes up by 1 every time the shop should change. Used for seeding shop RNG
     first_time = datetime.datetime.now(timezone_for_shopchange)
     difference = first_time - shop_change_reference
 
-    shop_index = math.floor((difference / shop_time_interval) % num_shops)
+    num_shop_changes_since_reference = math.floor((difference / shop_time_interval)) # this number goes up by 1 every shop_time_interval days
+
+    shop_index = num_shop_changes_since_reference % num_shops
 
     time_since_last_shop_change = difference % shop_time_interval
 
     time_until_next_shop = shop_time_interval - time_since_last_shop_change
 
-    return shop_index, time_until_next_shop
+    return shop_index, time_until_next_shop, num_shop_changes_since_reference
 
     
 
 def get_shop_info():
-    shop_index, _ = shop_change_time_computations()
+    shop_index, _, _ = shop_change_time_computations()
     match shop_index:
         case 0: # body
             today_shop_name = "Haydrian Mass Foundries"
@@ -166,13 +174,7 @@ def view_shop(user_scrap="a competing standard (not yet accepted) of"):
     shop_choices = get_shop_items()
     shop_name, shop_description = get_shop_info()
 
-    now = datetime.datetime.now(timezone_for_shopchange)
-    t = datetime.time(23, 59, 59, tzinfo=timezone_for_shopchange)
-    midnight_today = datetime.datetime.combine(now.date(), t)
-    time_before_shop_change = midnight_today - now 
-
-
-    _, time_before_shop_change = shop_change_time_computations()
+    _, time_before_shop_change, _ = shop_change_time_computations()
 
     secs_in_hour = 60*60
     secs_in_day = secs_in_hour * 24
