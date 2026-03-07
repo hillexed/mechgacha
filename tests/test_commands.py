@@ -23,8 +23,8 @@ class MockMessage:
     def __init__(self, message):
         self.content = message
 
-def mock_playerdata(userid, mech_pulls=5):
-    return {"unlocked_mechs": ["loading","st_yietus"], 'ratoon_pulls':2, 'mech_pulls': mech_pulls, 'equipment': [1], "scrap": 0}
+def mock_playerdata(userid, mech_pulls=5, scrap=0):
+    return {"unlocked_mechs": ["loading","st_yietus"], 'ratoon_pulls':2, 'mech_pulls': mech_pulls, 'equipment': [1], "scrap": scrap}
 
 def mock_onepage_inventory(userid):
     return ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body", "bee:artificial_satellite", "st_yietus:weird_lil_guy", "st_yietus:rotborn_stomper", "loading:hook_lash", "loading:gyrobomber"]
@@ -82,7 +82,7 @@ async def test_pull_message(monkeypatch, starting_pulls=5):
     pre_pull_playerdata = db.get_player_data("testid")
     pre_pull_inventory = db.get_inventory_data("testid")
     num_pulls = pre_pull_playerdata["mech_pulls"]
-    def set_playerdata(user, data):
+    def set_player_data(user, data):
         global post_pull_playerdata
         post_pull_playerdata = data
 
@@ -90,7 +90,7 @@ async def test_pull_message(monkeypatch, starting_pulls=5):
         global last_modified_inventory
         last_modified_inventory = data
 
-    monkeypatch.setattr(db, "set_player_data", set_playerdata)
+    monkeypatch.setattr(db, "set_player_data", set_player_data)
     monkeypatch.setattr(db, "set_inventory_data", set_inventory_data)
 
 
@@ -157,3 +157,65 @@ async def test_progress_all_message(monkeypatch):
 > `[#-----------]` 2/24
 **loading**
 > `[##----------]` 2/10""".strip()
+
+async def test_shop_no_crash(monkeypatch):
+    import db
+    monkeypatch.setattr(db, "get_inventory_data", mock_onepage_inventory)
+    monkeypatch.setattr(db, "get_player_data", lambda userid: mock_playerdata(userid, mech_pulls=0, scrap=10))
+    monkeypatch.setattr(db, "update_data", lambda db_name,key,value: 5)
+
+    import bot
+    await bot.handle_commands(MockMessage("m!shop"))
+
+    assert "You have 10 scrap." in last_bot_message
+
+    assert "An extra gacha pull, freshly refurbished!" in last_bot_message
+    assert "★" in last_bot_message or "☆" in last_bot_message
+
+async def test_shop(monkeypatch):
+    import db
+    monkeypatch.setattr(db, "get_inventory_data", mock_onepage_inventory)
+    monkeypatch.setattr(db, "update_data", lambda db_name,key,value: 5)
+
+    import bot
+
+
+    def set_player_data(user, data):
+        global post_pull_playerdata
+        post_pull_playerdata = data
+
+    def set_inventory_data(userid, data):
+        global last_modified_inventory
+        last_modified_inventory = data
+
+    monkeypatch.setattr(db, "set_player_data", set_player_data)
+    monkeypatch.setattr(db, "set_inventory_data", set_inventory_data)
+
+
+    # test exchanging for a refurbished gacha pull with no scrap
+    initial_scrap_count = 2
+    monkeypatch.setattr(db, "get_player_data", lambda userid: mock_playerdata(userid, mech_pulls=0, scrap=initial_scrap_count))
+    await bot.handle_commands(MockMessage("m!shop 5"))
+
+    assert last_bot_message == "You don't have the 5 scrap needed to exchange for this item. You have 2 scrap. Use m!scrap to recycle parts in your inventory into scrap."
+
+
+    # test exchanging for a refurbished gacha pull with scrap
+    initial_scrap_count = 23
+    monkeypatch.setattr(db, "get_player_data", lambda userid: mock_playerdata(userid, mech_pulls=0, scrap=initial_scrap_count))
+    await bot.handle_commands(MockMessage("m!shop 5"))
+
+    assert last_bot_message == f"You traded in 5 scrap - enough to salvage a day's worth of pulls! You now have {initial_scrap_count-5} scrap."
+    assert post_pull_playerdata["scrap"] == initial_scrap_count-5
+
+
+    initial_scrap_count = 1000
+    monkeypatch.setattr(db, "get_player_data", lambda userid: mock_playerdata(userid, mech_pulls=0, scrap=initial_scrap_count))
+
+    # test buying an item
+    previous_inventory = db.get_inventory_data("testid")
+    await bot.handle_commands(MockMessage("m!shop 1"))
+
+    assert "You traded in" in last_bot_message
+    assert len(last_modified_inventory) == len(previous_inventory) + 1 # assert one more item has been added to inventory
+    assert post_pull_playerdata["scrap"] < initial_scrap_count

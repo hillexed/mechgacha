@@ -271,7 +271,6 @@ async def shop_command(message, message_body, client):
         # user requested to exchange for something
         if item_index == len(current_shop_items):
             # last item in the index, which is always 'pull'.
-            # return await message.channel.send("Ya want a pull, eh? They're giving em away for free, you know. Don't even polish em. I'd love to give those pulls a bit of refurbishing first...")
             return await exchange_scrap_for_pull(message, user_id, playerdata)
 
         elif item_index < 0 or item_index > len(current_shop_items):
@@ -279,7 +278,6 @@ async def shop_command(message, message_body, client):
         else:
             selected_item = current_shop_items[item_index]
             return await exchange_scrap_for_item(message, user_id, playerdata, selected_item)
-            # return await message.channel.send(f"Ya want the {selected_item.name}? I told ya, I have a hard time with touching that rat's scrap. Maybe I'll think about buying some gloves once shop construction is done. For now, scram!")
     else:
         return await message.channel.send(view_shop(scrap_amount))
 
