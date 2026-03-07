@@ -44,11 +44,11 @@ async def test_inventory(monkeypatch):
     expected_inventory = '''
 **Your inventory:**
 (Page 1/1)
-- Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement. 
+- Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement.
 -# **     **`[1]` • LEGS, CLASSIC
 - Unremarkable Arms ★ - Hydraulic mecha arms, ready for painting, aftermarket tinkering, or full replacement.
 -# **     **`[2]` • ARMS, CLASSIC • **EQUIPPED**
-- Unremarkable Body ★ - Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement. 
+- Unremarkable Body ★ - Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement.
 -# **     **`[3]` • BODY, CLASSIC
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
 -# **     **`[4]` • COSMETIC, SPACE
@@ -108,11 +108,11 @@ async def test_inventory_filtering(monkeypatch):
     expected_inventory = '''
 **Your inventory:**
 (Page 1/1)
-- Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement. 
+- Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement.
 -# **     **`[1]` • LEGS, CLASSIC
 - Unremarkable Arms ★ - Hydraulic mecha arms, ready for painting, aftermarket tinkering, or full replacement.
 -# **     **`[2]` • ARMS, CLASSIC • **EQUIPPED**
-- Unremarkable Body ★ - Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement. 
+- Unremarkable Body ★ - Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement.
 -# **     **`[3]` • BODY, CLASSIC
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
 -# **     **`[4]` • COSMETIC, SPACE
