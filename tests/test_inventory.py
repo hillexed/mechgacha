@@ -140,7 +140,7 @@ async def test_inventory_filtering(monkeypatch):
 
     assert await inventory.inventory_command(message, "legs", MockClient()) == '''
 **Your inventory:**
-- Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement. 
+- Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement.
 -# **     **`[1]` • LEGS, CLASSIC
 - ROTBORN STOMPERS ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
 -# **     **`[6]` • LEGS, CLASSIC, MYTHICAL'''.strip()
