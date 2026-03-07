@@ -644,7 +644,7 @@ shade = Mech("shade",
     WeaponItem("shade:harpoon_katars","Harpoon Katars","A matched pair of punching daggers capable of being \"fired\" off at range and retracted or manipulated by a length of chain."),
     CosmeticItem("shade:woad_enchantments","Woad Enchantments","Twisting spiral patterns of coruscating magical runes wrap around the mech, hovering just above every surface. They appear to shift and change over time."),
     KitItem("shade:spheroid_transport_form","Spheroid Transport Form","This mech is capable of rolling up into a ball in order to move quicker or minimize surface area."),
-    ArmsItem("shade:5star_hexagonal_hands","Hexagonal Hands","Metallic graspers with 6 digits on the end, positioned in a hexagonal pattern. Now with built in phase cannons in the palms!", stars=5),
+    ArmsItem("shade:5star_hexagonal_hands","Hexagonal Hands EX","Metallic graspers with 6 digits on the end, positioned in a hexagonal pattern. Now with built in phase cannons in the palms!", stars=5),
 ])
 
 babaloga = Mech("babaloga", 
