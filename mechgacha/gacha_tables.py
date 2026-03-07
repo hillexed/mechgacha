@@ -7,22 +7,22 @@ from gacha_mechanics import TagType, Mech, Item, PowerItem, BodyItem, ArmsItem, 
 
 
 bee = Mech("bee", [
-    PowerItem("bee:star_drive", "Star Drive","The heart of a solar system, keeping the mech together and providing it power.", stars=2),
-    LegsItem("bee:dark_matter_propulsion", "Dark Matter Propulsion","The force that keeps everything apart and the universe expanding. It also makes your mech go fast!", stars=2),
-    ArmsItem("bee:gravity_wells", "Gravity Wells","The force that keeps things in orbit, and also the force to grab things with your mech!"),
-    BodyItem("bee:rocky_armor", "Rocky Armor","Rocks float around the core to protect it and provide structure to your mech."),
-    CockpitItem("bee:orbital_cockpit","ORBital Cockpit","A transparent bubble with no gravity within it, controls floating around effortlessly where you need them to be, controlling it almost like a dance."),
-    BackItem("bee:cloak_of_stars","Cloak of Stars","A field of stars that moves and adapts as an armor where you need it to, absorbing medium impacts provided you move it to the impact site before the impact happens.", stars=4),
-    WeaponItem("bee:void_slicer","Void Slicer","A glittering blade so sharp that it feels like it can tear the fabric of space if you put enough force into it. it leaves a glittering trail.", stars=2),
-    CosmeticItem("bee:living_satellite","Living Satellite","A small planet orbits your mech, supporting a microcosm of life.", stars=3),
+    PowerItem("bee:star_drive", "Star Drive","The heart of a solar system, keeping the mech together and providing it power.",["Space"], stars=2),
+    LegsItem("bee:dark_matter_propulsion", "Dark Matter Propulsion","The force that keeps everything apart and the universe expanding. It also makes your mech go fast!",["Space"], stars=2),
+    ArmsItem("bee:gravity_wells", "Gravity Wells","The force that keeps things in orbit, and also the force to grab things with your mech!",["Space"],stars=1),
+    BodyItem("bee:rocky_armor", "Rocky Armor","Rocks float around the core to protect it and provide structure to your mech.",["Space","Terra"],stars=1),
+    CockpitItem("bee:orbital_cockpit","ORBital Cockpit","A transparent bubble with no gravity within it, controls floating around effortlessly where you need them to be, controlling it almost like a dance."["Space"],stars=1),
+    BackItem("bee:cloak_of_stars","Cloak of Stars","A field of stars that moves and adapts as an armor where you need it to, absorbing medium impacts provided you move it to the impact site before the impact happens.",["Space"], stars=4),
+    WeaponItem("bee:void_slicer","Void Slicer","A glittering blade so sharp that it feels like it can tear the fabric of space if you put enough force into it. it leaves a glittering trail.",["Kinetic","Space"], stars=2),
+    CosmeticItem("bee:living_satellite","Living Satellite","A small planet orbits your mech, supporting a microcosm of life.",["Space"], stars=3),
     BodyPlanItem("bee:comet_form","Comet Form","A long thin form, with one leg and 6 arm slots, trailing behind the cockpit and core like a comet trail.",{"legs": 1, "arms": 6}, stars=4),
-    CosmeticItem("bee:satellite","Gas Satellite","A small ball of swirling gases orbits your mech.", stars=3),
-    CosmeticItem("bee:gas_satellite","Rock Satellite","A tiny comet and trail orbit your mech.", stars=3),
-    CosmeticItem("bee:artificial_satellite","Artificial Satellite","A small artificial space structure (a satellite, space ship, etc) orbits your mech.", stars=3),
-    PowerItem("bee:blackhole_drive","Blackhole Drive","An infinitely deep hole in reality, the pull of the density object in the universe, contained only by the mech itself.", stars=5),
-    PowerItem("bee:supernova_drive","Supernova Drive","A core of swirling energy, the captured explosion of a star, held together with the force of dark matter. Iridescent and an unstoppable force.", stars=5),
-    WeaponItem("bee:gravitational_lensing", "Gravitational Lensing", "Using gravity, you can shunt power in to a strong focal beam to stab through your enemies at range.", stars=4),
-    WeaponItem("bee:gravity_mines", "Gravity Mines", "These mines stick to surfaces and change gravity in their radius, both strength and direction can be changed upon, but not after, throwing. ", stars=4)
+    CosmeticItem("bee:satellite","Gas Satellite","A small ball of swirling gases orbits your mech.",["Space"], stars=3),
+    CosmeticItem("bee:gas_satellite","Rock Satellite","A tiny comet and trail orbit your mech.",["Space"], stars=3),
+    CosmeticItem("bee:artificial_satellite","Artificial Satellite","A small artificial space structure (a satellite, space ship, etc) orbits your mech.",["Space"], stars=3),
+    PowerItem("bee:blackhole_drive","Blackhole Drive","An infinitely deep hole in reality, the pull of the density object in the universe, contained only by the mech itself.",["Space"], stars=5),
+    PowerItem("bee:supernova_drive","Supernova Drive","A core of swirling energy, the captured explosion of a star, held together with the force of dark matter. Iridescent and an unstoppable force.",["Space"], stars=5),
+    WeaponItem("bee:gravitational_lensing", "Gravitational Lensing", "Using gravity, you can shunt power in to a strong focal beam to stab through your enemies at range.",["Kinetic"], stars=4),
+    WeaponItem("bee:gravity_mines", "Gravity Mines", "These mines stick to surfaces and change gravity in their radius, both strength and direction can be changed upon, but not after, throwing.",["Kinetic"], stars=4)
 ]
 )
 
