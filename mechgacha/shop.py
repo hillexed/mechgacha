@@ -62,7 +62,7 @@ def get_shop_items():
 
     _, _, num_shopchanges_since_reference = shop_change_time_computations()
 
-    seed = "Shop seed:" + num_shopchanges_since_reference
+    seed = "Shop seed:" + str(num_shopchanges_since_reference)
     shop_rng = random.Random(seed)
 
     num_shop_items = 4
