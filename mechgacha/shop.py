@@ -17,6 +17,8 @@ shop_time_interval = datetime.timedelta(days=2)
 num_shops = 11
 shop_change_reference = datetime.datetime(2026,3,5, tzinfo=timezone_for_shopchange)
 
+num_shop_items = 4 # number of item entries in the shop (plus one refurbished pull entry afterwards)
+
 def get_all_parts_with_tags(itemlist, desired_tags):
     return list(filter(lambda item: any([tag in desired_tags for tag in item.tags]), itemlist))
 
@@ -64,8 +66,6 @@ def get_shop_items():
 
     seed = "Shop seed:" + str(num_shopchanges_since_reference)
     shop_rng = random.Random(seed)
-
-    num_shop_items = 4
 
     shop_pool = get_todays_shop_pool() # changes based on interval
     return shop_rng.sample(shop_pool, k=num_shop_items)
