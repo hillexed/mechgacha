@@ -51,13 +51,13 @@ async def test_inventory(monkeypatch):
 - Unremarkable Body ★ - Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement. 
 -# **     **`[3]` • BODY
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
--# **     **`[4]` • COSMETIC
+-# **     **`[4]` • COSMETIC, SPACE
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
 -# **     **`[5]` • COSMETIC, MYTHICAL, WHIMSY
 - ROTBORN STOMPERS ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
 -# **     **`[6]` • LEGS, CLASSIC, MYTHICAL
 - Hook Lash ★★ - A whip with a spinning metal weight at the end that applies a random debuff on hit.
--# **     **`[7]` • WEAPON
+-# **     **`[7]` • WEAPON, KINETIC
 - Gyrobomber ★ - A gyroscopic cockpit with 300 degrees of visibility, to allow for the stabilization of the cockpit even as the body contorts.
 -# **     **`[8]` • COCKPIT'''.strip()
 
@@ -115,13 +115,13 @@ async def test_inventory_filtering(monkeypatch):
 - Unremarkable Body ★ - Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement. 
 -# **     **`[3]` • BODY
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
--# **     **`[4]` • COSMETIC
+-# **     **`[4]` • COSMETIC, SPACE
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
 -# **     **`[5]` • COSMETIC, MYTHICAL, WHIMSY
 - ROTBORN STOMPERS ★★ - Sturdy weatherproofed legs. Slow and steady, but surprisingly agile. Capable of performing short leaps and dashes to clear obstacles or close the distance. Slightly reduces the effects of debuffs.
 -# **     **`[6]` • LEGS, CLASSIC, MYTHICAL
 - Hook Lash ★★ - A whip with a spinning metal weight at the end that applies a random debuff on hit.
--# **     **`[7]` • WEAPON
+-# **     **`[7]` • WEAPON, KINETIC
 - Gyrobomber ★ - A gyroscopic cockpit with 300 degrees of visibility, to allow for the stabilization of the cockpit even as the body contorts.
 -# **     **`[8]` • COCKPIT'''.strip()
 
@@ -133,7 +133,7 @@ async def test_inventory_filtering(monkeypatch):
     assert await inventory.inventory_command(message, "3 stars", MockClient()) == '''
 **Your inventory:**
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
--# **     **`[4]` • COSMETIC
+-# **     **`[4]` • COSMETIC, SPACE
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
 -# **     **`[5]` • COSMETIC, MYTHICAL, WHIMSY'''.strip()
 
@@ -148,7 +148,7 @@ async def test_inventory_filtering(monkeypatch):
     assert await inventory.inventory_command(message, "unequipped cosmetic 3 stars", MockClient()) == '''
 **Your inventory:**
 - Artificial Satellite ★★★ - A small artificial space structure (a satellite, space ship, etc) orbits your mech.
--# **     **`[4]` • COSMETIC
+-# **     **`[4]` • COSMETIC, SPACE
 - WEIRD LIL' GUY ★★★ - A bizarre, chimeric creature akin to an illumination has begun following you around. Its presence seems to spur your mech forwards, increasing its speed and giving it a short forward charge. Plus, it's cute.
 -# **     **`[5]` • COSMETIC, MYTHICAL, WHIMSY'''.strip()
 
