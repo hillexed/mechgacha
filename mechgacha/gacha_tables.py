@@ -285,10 +285,10 @@ intergalacticsky = Mech("intergalacticsky",
 
 alto = Mech("alto", 
 [
-    LegsItem("alto:unremarkable_legs","Unremarkable Legs","Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement. "),
-    ArmsItem("alto:unremarkable_arms","Unremarkable Arms","Hydraulic mecha arms, ready for painting, aftermarket tinkering, or full replacement."),
-    BodyItem("alto:unremarkable_body","Unremarkable Body","Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement. "),
-    BodyPlanItem("alto:light_mecha","Light Mecha","Plans for an ultralight mobile suit consisting of only a powersource, a weapon, and a back mounted accessory. Perhaps closer to power armor than a proper mecha. Given to Alto by the original Polkadot.", {"weapon": 1, "power":1, "back":1}, stars=5),
+    LegsItem("alto:unremarkable_legs","Unremarkable Legs","Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement.",["Classic"]),
+    ArmsItem("alto:unremarkable_arms","Unremarkable Arms","Hydraulic mecha arms, ready for painting, aftermarket tinkering, or full replacement.",["Classic"]),
+    BodyItem("alto:unremarkable_body","Unremarkable Body","Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement.",["Classic"]),
+    BodyPlanItem("alto:light_mecha","Light Mecha","Plans for an ultralight mobile suit consisting of only a powersource, a weapon, and a back mounted accessory. Perhaps closer to power armor than a proper mecha. Given to Alto by the original Polkadot.", {"weapon": 1, "power":1, "back":1}, stars=5,tags=("Blaseball","Classic")),
 ]
 )
 
