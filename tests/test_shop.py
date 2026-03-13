@@ -53,14 +53,14 @@ async def test_shop_works(monkeypatch):
 
     # the message changes with time, so .startswith() ensures the test doesn't fail because of the time of day
     assert f'''
-- `[1]` - Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement. 
--# **     **LEGS
+- `[1]` - Unremarkable Legs ★ - Hydraulic mecha legs, ready for painting, aftermarket tinkering, or full replacement.
+-# **     **LEGS, CLASSIC
 -# **     **Cost: **10 scrap**
 - `[2]` - Unremarkable Arms ★ - Hydraulic mecha arms, ready for painting, aftermarket tinkering, or full replacement.
--# **     **ARMS
+-# **     **ARMS, CLASSIC
 -# **     **Cost: **10 scrap**
-- `[3]` - Unremarkable Body ★ - Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement. 
--# **     **BODY
+- `[3]` - Unremarkable Body ★ - Hydraulic mecha body, ready for painting, aftermarket tinkering, or full replacement.
+-# **     **BODY, CLASSIC
 -# **     **Cost: **10 scrap**
 - `[4]` An extra gacha pull, freshly refurbished!
 -# **     **Cost: **5 scrap**
