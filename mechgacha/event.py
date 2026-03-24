@@ -4,10 +4,10 @@ import db
 import inventory
 from data_utils import get_playerdata
 
-event_active = True
-event_name = "Discovery Day"
-event_submission_active = False
-event_submission_link = "https://forms.gle/SpKogNFCy5TyTxno9"
+event_active = False
+event_name = "Myths & Magic LARP Festival"
+event_submission_active = True
+event_submission_link = "https://forms.gle/ek4nwRMa5VTaZsUc8"
 
 # Remember to change these when adding or expiring event gifts
 starting_event_pulls = 0 # This counts up to max_event_pulls (I think)
