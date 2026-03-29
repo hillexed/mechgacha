@@ -298,3 +298,4 @@ async def send_splittable_message(message_text, destination_channel, charlimit=2
     # don't use if you need to see reacts to this message
         for msg in split_message_across_character_limit(message_text):
             await destination_channel.send(msg)
+        return message_text

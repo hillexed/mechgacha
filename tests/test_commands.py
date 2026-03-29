@@ -164,13 +164,28 @@ async def test_shop_no_crash(monkeypatch):
     monkeypatch.setattr(db, "get_player_data", lambda userid: mock_playerdata(userid, mech_pulls=0, scrap=10))
     monkeypatch.setattr(db, "update_data", lambda db_name,key,value: 5)
 
+    
+    # shop description may spill over into two lines. If so, last_bot_message will not contain all of the shop dscription.
+    # this captures outputs from both messages
+    bot_output = ''
+    class MockAppendingChannel:
+        id = 1
+        @staticmethod
+        async def send(msg):
+            nonlocal bot_output
+            bot_output += msg
+            return msg
+
+    message = MockMessage("m!shop")
+    message.channel = MockAppendingChannel()
+
     import bot
-    await bot.handle_commands(MockMessage("m!shop"))
+    await bot.handle_commands(message)
 
-    assert "You have 10 scrap." in last_bot_message
+    assert "You have 10 scrap." in bot_output
 
-    assert "An extra gacha pull, freshly refurbished!" in last_bot_message
-    assert "★" in last_bot_message or "☆" in last_bot_message
+    assert "An extra gacha pull, freshly refurbished!" in bot_output
+    assert "★" in bot_output or "☆" in bot_output
 
 async def test_shop(monkeypatch):
     import db
@@ -178,6 +193,7 @@ async def test_shop(monkeypatch):
     monkeypatch.setattr(db, "update_data", lambda db_name,key,value: 5)
 
     import bot
+    import shop
 
 
     def set_player_data(user, data):
@@ -193,23 +209,25 @@ async def test_shop(monkeypatch):
 
 
     # test exchanging for a refurbished gacha pull with no scrap
-    initial_scrap_count = 2
+    command_to_get_refurbished_pull = f'm!shop {shop.num_shop_items+1}'
+    initial_scrap_count = shop.NUM_SCRAP_FOR_ONE_PULL - 1
     monkeypatch.setattr(db, "get_player_data", lambda userid: mock_playerdata(userid, mech_pulls=0, scrap=initial_scrap_count))
-    await bot.handle_commands(MockMessage("m!shop 5"))
+    await bot.handle_commands(MockMessage(command_to_get_refurbished_pull))
 
-    assert last_bot_message == "You don't have the 5 scrap needed to exchange for this item. You have 2 scrap. Use m!scrap to recycle parts in your inventory into scrap."
+    assert last_bot_message == f"You don't have the {shop.NUM_SCRAP_FOR_ONE_PULL} scrap needed to exchange for this item. You have {initial_scrap_count} scrap. Use m!scrap to recycle parts in your inventory into scrap."
 
 
     # test exchanging for a refurbished gacha pull with scrap
-    initial_scrap_count = 23
+    initial_scrap_count = shop.NUM_SCRAP_FOR_ONE_PULL + 3
     monkeypatch.setattr(db, "get_player_data", lambda userid: mock_playerdata(userid, mech_pulls=0, scrap=initial_scrap_count))
-    await bot.handle_commands(MockMessage("m!shop 5"))
+    await bot.handle_commands(MockMessage(command_to_get_refurbished_pull))
 
-    assert last_bot_message == f"You traded in 5 scrap - enough to salvage a day's worth of pulls! You now have {initial_scrap_count-5} scrap."
-    assert post_pull_playerdata["scrap"] == initial_scrap_count-5
+    assert last_bot_message == f"You traded in {shop.NUM_SCRAP_FOR_ONE_PULL} scrap - enough to salvage a day's worth of pulls! You now have {initial_scrap_count-shop.NUM_SCRAP_FOR_ONE_PULL} scrap."
+    assert post_pull_playerdata["scrap"] == initial_scrap_count-shop.NUM_SCRAP_FOR_ONE_PULL
+    assert post_pull_playerdata["mech_pulls"] == 1
 
 
-    initial_scrap_count = 1000
+    initial_scrap_count = 1000 # hopefully enough to buy any item
     monkeypatch.setattr(db, "get_player_data", lambda userid: mock_playerdata(userid, mech_pulls=0, scrap=initial_scrap_count))
 
     # test buying an item

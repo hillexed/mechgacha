@@ -1,6 +1,5 @@
 import pytest
 
-from gacha_tables import all_parts_list
 
 class MockClient:
     pass
@@ -33,6 +32,7 @@ def mock_onepage_inventory(userid):
     return ["alto:unremarkable_legs", "alto:unremarkable_arms", "alto:unremarkable_body", "bee:artificial_satellite", "st_yietus:weird_lil_guy", "st_yietus:rotborn_stomper", "loading:hook_lash", "loading:gyrobomber"]
 
 def mock_shop_items():
+    from gacha_tables import all_parts_list
     return [all_parts_list["alto:unremarkable_legs"], all_parts_list["alto:unremarkable_arms"],all_parts_list["alto:unremarkable_body"]]
 
 async def test_shop_works(monkeypatch):
