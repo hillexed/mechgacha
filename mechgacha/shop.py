@@ -279,6 +279,22 @@ async def shop_command(message, message_body, client):
             selected_item = current_shop_items[item_index]
             return await exchange_scrap_for_item(message, user_id, playerdata, selected_item)
     else:
-        return await message.channel.send(view_shop(scrap_amount))
+        print(view_shop(scrap_amount))
+        print(len(view_shop(scrap_amount)))
 
+        message_text = view_shop(scrap_amount)
+        return await send_splittable_message(message_text, message.channel)
     
+
+def split_message_across_character_limit(message_text, charlimit=2000):
+    # if a message is over `charlimit` characters, split it into two messages
+    return [
+        message_text[start_index:start_index+charlimit]
+        for start_index in range(0,len(message_text),charlimit)
+    ]
+
+async def send_splittable_message(message_text, destination_channel, charlimit=2000):
+    # if a message is over `charlimit` characters, send it as two messages
+    # don't use if you need to see reacts to this message
+        for msg in split_message_across_character_limit(message_text):
+            await destination_channel.send(msg)
