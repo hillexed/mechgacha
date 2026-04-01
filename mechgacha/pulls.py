@@ -70,7 +70,7 @@ def player_can_pull_from_mech(mech_to_pull_from, playerdata):
 
     return mech_to_pull_from.username.lower() in [m.lower() for m in playerdata["unlocked_mechs"]] # deal with any accidental caps
 
-comparative_adjectives = ["angrier","more beautiful","bigger","more boring","cheaper","cleaner","cleverer","closer","colder","cooler","crazier","crispier","cuter","darker","deeper","dirtier","drier","earlier","easier","more expensive","faster","fatter","fewer","fitter","freakier","flatter","fresher","funnier","greater","hairier","happier","healthier","heavier","higher","hotter","hungrier","more interesting","kinder","larger","later","lighter","littler","longer","louder","lower","more modern","more retro"," nearer","newer","nicer","older","older","older","older","poorer","more popular","quicker","richer","sadder","saltier","scarier","shorter","skinnier","slower","smaller","smarter","softer","stronger","taller","thicker","more tired","uglier","warmer","weaker","wetter","wider","younger","better","worse"]
+comparative_adjectives = ["angrier","more beautiful","bigger","more boring","cheaper","cleaner","cleverer","closer","colder","cooler","crazier","crispier","cuter","darker","deeper","dirtier","drier","earlier","easier","more expensive","faster","fatter","fewer","fitter","freakier","flatter","fresher","funnier","greater","hairier","happier","healthier","heavier","higher","hotter","hungrier","more interesting","kinder","larger","later","lighter","littler","longer","louder","lower","more modern","more retro"," nearer","newer","nicer","older","older","older","older","poorer","more popular","quicker","richer","sadder","saltier","scarier","shorter","skinnier","slower","smaller","smarter","softer","stronger","taller","thicker","more tired","uglier","warmer","weaker","wetter","wider","younger","better","worse","thicker","thinner"]
 
 
 def create_aprilfools_item():
@@ -81,9 +81,9 @@ def create_aprilfools_item():
     adj = comparative_adjectives[num]
     item = Item("the steady march of time:"+adj, f"{adj.title()}.", "", stars=(0))
 
-    # funnytag = random.choice(["your inventory is unaffected","Not your mecha. You.","Not your mecha. You.","Not your mecha. You.","Not your mecha. You.","Are you still the same?","How have you changed?","You are different now.","What would your mom think?","You have changed as a person.","oh no","your body","your body","your body","your body","your body","your body","your body","your body","your body"])
+    funnytag = random.choice(["your inventory is unaffected","Not your mecha. You.","Not your mecha. You.","Not your mecha. You.","Not your mecha. You.","Are you still the same?","How have you changed?","You are different now.","What would your mom think?","You have changed as a person.","oh no","your body","your body","your body","your body","your body","your body","your body","your body","your body"])
 
-    item.tags = [" "]
+    item.tags = [funnytag.upper()]
     return item
 
 
@@ -218,17 +218,18 @@ async def pull_command(message, message_body):
                 break
 
         # april fool's!
-        inventory.add_to_inventory(new_item, userid)
-        deduct_pull(userid, playerdata)
+        new_item = create_aprilfools_item()
+        #inventory.add_to_inventory(new_item, userid)
+        #deduct_pull(userid, playerdata)
 
         tags_string = f'{"-# " if len(new_item.tags) > 0 else ""}{", ".join([tag.upper() for tag in new_item.tags])}'
         star_character = "☆" if "event" in new_item.tags else "★"
         stars_string = star_character * new_item.stars
         react_message = None
         if requested_mech.lower() == "random":
-            react_message = await message.channel.send(f"You pulled from all of your unlocked item pools and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}\n-# from {new_item.id.split(':')[0]}\nYou have {get_mech_pulls(playerdata)} pull{'s' if get_mech_pulls(playerdata) != 1 else ''} remaining.")
+            react_message = await message.channel.send(f"You pulled from all of your unlocked item pools and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}\n")
         else:
-            react_message = await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}\nYou have {get_mech_pulls(playerdata)} pull{'s' if get_mech_pulls(playerdata) != 1  else ''} remaining.")
+            react_message = await message.channel.send(f"You pulled from {mech_to_pull_from.username.lower()} and got... \n**{new_item.name} {stars_string}**\n{new_item.description}\n{tags_string}")
 
         if is_item_new:
             missing_items_from_this_gacha = sum(0 if inventory.item_already_in_inventory(item, user_inv) else 1 for item in mech_to_pull_from.loot if item != new_item)
