@@ -279,9 +279,6 @@ async def shop_command(message, message_body, client):
             selected_item = current_shop_items[item_index]
             return await exchange_scrap_for_item(message, user_id, playerdata, selected_item)
     else:
-        print(view_shop(scrap_amount))
-        print(len(view_shop(scrap_amount)))
-
         message_text = view_shop(scrap_amount)
         return await send_splittable_message(message_text, message.channel)
     
