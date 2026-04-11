@@ -4,15 +4,15 @@ import db
 import inventory
 from data_utils import get_playerdata
 
-event_active = False
+event_active = True
 event_name = "Myths & Magic LARP Festival"
-event_submission_active = True
+event_submission_active = False
 event_submission_link = "https://forms.gle/ek4nwRMa5VTaZsUc8"
 
 # Remember to change these when adding or expiring event gifts
 starting_event_pulls = 0 # This counts up to max_event_pulls (I think)
-max_event_pulls = 2
-current_event = "discovery"
+max_event_pulls = 1
+current_event = "fantasy"
 gift_item_count = 3
 
 async def debug_add_gift(message, user_id):
@@ -109,4 +109,4 @@ async def clam(message):
     playerdata = get_playerdata(user_id)
     playerdata["clammed"] = 1
     db.set_player_data(user_id, playerdata)
-    return await message.channel.send("*clamps you... with synergy!*")
+    return await message.channel.send("*Roll to clamp... does a 27 hit?*")
