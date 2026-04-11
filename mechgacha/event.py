@@ -1,4 +1,4 @@
-from gacha_tables import event_gift_mech
+import gacha_tables
 import random
 import db
 import inventory
