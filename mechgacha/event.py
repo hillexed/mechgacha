@@ -14,6 +14,7 @@ starting_event_pulls = 0 # This counts up to max_event_pulls (I think)
 max_event_pulls = 1
 current_event = "fantasy"
 gift_item_count = 3
+event_gift_mech = gacha_tables.event_fantasy
 
 async def debug_add_gift(message, user_id):
     playerdata = get_playerdata(user_id)
