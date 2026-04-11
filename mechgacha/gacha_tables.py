@@ -1324,7 +1324,7 @@ BodyPlanItem("ratoon:bipedal","Standard Bipedal","",{"legs": 2, "arms": 2, "powe
 ratoon_pullable_mechs = (bee, oneirocartographer, hillexed, st_yietus, triangle, cheshire, loading, metanite64, deric, syl, vel, amutecrypt, intergalacticsky, renne, moonbug, cheesesnack, spellweaver, bytes, thecowofeternalflame, p_rker, shork, ditto, hal2000, turtlelover2244, zweihawke, colabot, loftyinclination, shade, babaloga, theoddman, only, chillychilichelle, chimera, homeslice, shieldcaptain, n217, nevephoenix, zapterra, urirles, jcterran, bogle, avashinedrake, jkbenbot)
 
 event_mechs = (event_formal, event_fauna, event_labour, event_cryptid, event_discovery)
-event_gift_mech = event_discovery
+event_gift_mech = event_fantasy
 
 shop_pullable_mechs = ratoon_pullable_mechs + (alto, shop_gacha, boss) + event_mechs
 all_mechs = shop_pullable_mechs + (nullified, )
